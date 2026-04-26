@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
 import { lessonMap } from "../data/lessons";
+import { lessonGraphics } from "../data/lessonGraphics";
 import courses from "../data/courses.json";
 import { cls } from "../themes";
+import Graphic from "../components/graphics/Graphic";
 
 const TABS = [
   { id: "lesson", label: "Lesson" },
@@ -15,6 +17,26 @@ function findModule(courseId) {
 }
 
 function LessonTab({ lesson }) {
+  const graphics = lessonGraphics[lesson.id] || [];
+  // Distribute graphics across sections: first graphic at top, rest interleaved
+  // between sections after objectives.
+  const sectionCount = lesson.sections.length;
+  // If we have N graphics and S sections: place 1st graphic before section 0,
+  // remaining graphics evenly distributed between later sections.
+  const placements = {};
+  if (graphics.length > 0) {
+    placements[0] = [graphics[0]];
+    if (graphics.length > 1) {
+      const remaining = graphics.slice(1);
+      const stride = Math.max(1, Math.floor(sectionCount / (remaining.length + 1)));
+      remaining.forEach((g, i) => {
+        const idx = Math.min(sectionCount - 1, (i + 1) * stride + 1);
+        placements[idx] = placements[idx] || [];
+        placements[idx].push(g);
+      });
+    }
+  }
+
   return (
     <div className="space-y-6">
       <div className="rounded-lg border border-purple-200 dark:border-purple-700 bg-purple-50 dark:bg-purple-900/30 p-4">
@@ -34,6 +56,9 @@ function LessonTab({ lesson }) {
       <article className="space-y-6">
         {lesson.sections.map((s, i) => (
           <section key={i}>
+            {(placements[i] || []).map((gid) => (
+              <Graphic key={gid} id={gid} />
+            ))}
             <h2 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">
               {s.heading}
             </h2>
