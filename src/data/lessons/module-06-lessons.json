@@ -1,0 +1,248 @@
+{
+  "moduleId": 6,
+  "moduleTitle": "Aseptic Technique and Related Work Practices",
+  "lessons": [
+    {
+      "id": "6-1",
+      "title": "Aseptic Technique and Conduct for Sterile Compounding",
+      "objectives": [
+        "Explain the concept of critical site and state the required spatial relationship between critical sites and the ISO 5 airstream",
+        "Describe shadowing and explain why it is the most common media fill failure",
+        "State the correct garbing sequence from first item to last"
+      ],
+      "sections": [
+        {
+          "heading": "The fundamental principle: protecting every critical site",
+          "body": "Aseptic technique is the collection of practices that prevent microorganisms from entering the sterile compounding system. The entire system rests on one foundational principle: every critical site must remain continuously in unobstructed first air throughout the compounding process. A critical site is any opening into the sterile system — any point where contamination could enter: the tip of a needle, the hub of a syringe, the septum of a vial after it is swabbed, the port of an IV bag after it is swabbed, and the tip of a transfer set. These sites are never touched by ungloved hands, never laid on surfaces, and never removed from the first-air zone of the ISO 5 PEC for any reason."
+        },
+        {
+          "heading": "Shadowing — the invisible hazard",
+          "body": "Shadowing occurs when any object is placed between the HEPA filter and a critical site, interrupting the first-air path. The shadow blocks unidirectional airflow to the critical site, replacing it with turbulent, potentially contaminated room air. Shadowing is the most common technical failure observed in media fill testing and live compounding observation. It is particularly insidious because many common compounding actions naturally shadow: reaching across an open vial to grab a syringe; placing the body of a syringe between the hood and the needle tip; setting down an uncapped syringe so the body lies between the filter and the tip; or positioning a bag port toward the room side of the hood rather than toward the filter. Compounders must develop spatial awareness of the first-air zone and the shadow created by every object in the hood."
+        },
+        {
+          "heading": "Garbing sequence",
+          "body": "The garbing sequence is not arbitrary — each step builds on the previous in a logical contamination-control order. The sequence is: (1) Shoe covers; (2) Hair cover (and beard cover if applicable); (3) Face mask; (4) Hand and forearm wash — a 30-second scrub from fingertips to elbows using approved antiseptic soap, rinsing thoroughly, air drying or using lint-free towels; (5) Gown; (6) Sterile gloves — donned last, after gowning, using sterile technique to avoid contaminating the glove exterior. The gown must be closed and secured before gloves are donned. The logic: head/facial coverings go on before hand washing to prevent hair or skin particles falling onto freshly washed hands; gowning before gloving ensures the glove is the last, outermost, and cleanest layer. Once garbed, the compounder re-sanitizes gloves with sterile IPA before entering the ISO 5 zone."
+        },
+        {
+          "heading": "Conduct inside the classified environment",
+          "body": "Behavior inside the buffer room directly affects air quality. Personnel must: minimize unnecessary movement (rapid movements increase turbulence and particle generation); avoid talking directly over open critical sites; not sneeze or cough without immediately stepping away from open preparations and covering with the sleeve (not the glove); keep all materials organized and off the floor; never eat, drink, or apply personal care products; minimize personnel entries and exits (each door opening disturbs pressure differentials); and keep the buffer room door closed at all times except for necessary entries and exits. The buffer room is a controlled workspace, not a general-purpose room."
+        },
+        {
+          "heading": "Common technique errors and their consequences",
+          "body": "The most frequently observed technique errors in sterile compounding include: coring (pushing the needle through the vial stopper at an angle, generating rubber particulates into the solution); touching critical sites with gloved fingers; placing critical sites on the hood surface; two-hand needle recapping (high needlestick risk); inconsistent glove sanitization between preparations; and not maintaining zone discipline (keeping compounding materials within the designated critical zone of the hood). Each of these errors has a specific patient-safety consequence — coring introduces particulate contamination; touching critical sites introduces microbial contamination; two-hand recapping causes needlestick injuries. Understanding the consequence helps motivate consistent correct technique."
+        }
+      ],
+      "keyTerms": [
+        { "term": "Critical site", "definition": "Any opening into the sterile compounding system — needle tip, vial septum after swabbing, IV bag port after swabbing, syringe tip — must remain in unobstructed first air at all times." },
+        { "term": "Shadowing", "definition": "Interruption of first-air flow to a critical site by placing an object between the HEPA filter and the site — the most common aseptic technique failure in media fill testing." },
+        { "term": "First air", "definition": "HEPA-filtered air immediately exiting the filter before contacting any surface — the cleanest air in the PEC; all critical sites must be in this airstream during compounding." },
+        { "term": "Coring", "definition": "Generation of rubber particles from a vial stopper by improper needle insertion angle — introduces visible and sub-visible particulate contamination into the preparation." },
+        { "term": "Zone discipline", "definition": "The practice of keeping critical sites and manipulations within the defined high-cleanliness zone of the PEC, away from the edges and from objects that could shadow them." }
+      ],
+      "clinicalExample": {
+        "scenario": "A technician is drawing up 250 mg of vancomycin from a reconstituted vial into a 50 mL syringe inside the LAF hood. To steady the vial, she braces it against the left side wall of the hood and draws back the plunger with her right hand. The vial septum is now against the side wall, not facing the HEPA filter.",
+        "analysis": "The vial septum (a critical site) is now against the hood sidewall rather than oriented toward the HEPA filter. The needle entering the septum at this orientation is in a shadowed zone — the body of the vial and the sidewall are between the HEPA filter and the needle-septum junction. First air is not reaching the critical site. This is a shadowing error even though no contamination may be visible and the preparation may appear fine. During media fill evaluation, this technique would be flagged as a failure.",
+        "takeaway": "Critical site orientation matters constantly, not just at key manipulations. The vial septum must face the HEPA filter at the moment of needle insertion and while the needle remains in the septum. Technique is three-dimensional — height, lateral position, and angular orientation all matter."
+      },
+      "selfCheck": [
+        {
+          "question": "A syringe filled with drug is placed cap-off on the hood surface between manipulations. What aseptic technique rule has been violated?",
+          "answer": "The uncapped syringe tip (a critical site) is resting on the hood surface — critical sites must never contact surfaces; additionally, the syringe body may be shadowing the tip from first air",
+          "explanation": "Critical sites must never rest on surfaces, even the cleaned hood surface. The correct practice is to keep the capped or uncapped syringe elevated with the tip toward the HEPA filter, or to immediately cap the syringe between manipulations using single-hand technique."
+        },
+        {
+          "question": "Which step in the garbing sequence comes immediately before donning sterile gloves?",
+          "answer": "Gowning — the gown must be fully donned and secured before sterile gloves are applied",
+          "explanation": "Gowning before gloving ensures the glove exterior does not contact the non-sterile gown exterior during donning. If gloves are donned before gowning, the gowning process contaminates the glove exterior — the last, cleanest layer must go on last."
+        },
+        {
+          "question": "True or False: Talking at a normal conversational volume directly over open vials in the ISO 5 zone is acceptable if wearing a face mask.",
+          "answer": "False",
+          "explanation": "A standard surgical face mask does not completely prevent aerosol and droplet generation from speech. Conversation directed over open critical sites increases contamination risk regardless of mask. Personnel should orient their face away from open critical sites or minimize unnecessary talking inside the ISO 5 zone."
+        }
+      ]
+    },
+    {
+      "id": "6-2",
+      "title": "Use of Supplies and Components",
+      "objectives": [
+        "Describe the inspection requirements for all supplies before they enter the buffer room",
+        "Explain how to visually inspect drug vials and bags for integrity before use in compounding",
+        "State the component handling requirements that apply at the ISO 5 compounding surface"
+      ],
+      "sections": [
+        {
+          "heading": "Pre-entry inspection of all supplies",
+          "body": "Every item that enters the buffer room — vials, bags, transfer sets, syringes, needles, alcohol wipes — must be inspected before passing through the pass-through window. The inspection at this stage is for: package integrity (no tears, punctures, or breaches in outer packaging); expiration date (no expired items enter the buffer room under any circumstances); quantity and identity (confirm the correct item is being passed through, not a look-alike); and physical condition (no visible damage to vials or bags). Items that fail inspection are returned to the anteroom for appropriate disposition. An inspection done hurriedly or incompletely at the pass-through is a gap in the contamination prevention chain."
+        },
+        {
+          "heading": "Wiping all items at the pass-through",
+          "body": "Before entering the buffer room through the pass-through, all supply items — every vial, every bag, every package — must be wiped with sterile 70% IPA. This includes items in intact outer packaging that will be opened inside the buffer room. The rationale: outer packaging surfaces have been handled by multiple people along the supply chain and carry unknown environmental contamination. Wiping removes surface bioburden before the item enters the ISO 7 environment. The wipe must cover all surfaces of the item, not just the top or label side. This step is never abbreviated regardless of how 'clean' an item appears."
+        },
+        {
+          "heading": "Vial and bag inspection before use",
+          "body": "At the compounding bench, each drug vial and diluent bag must be inspected before use. For glass vials: check for cracks, chips (especially at the neck), particulate contamination visible through the glass, cloudiness or color abnormality, and intact/undamaged closure. For bags: check for leaks (invert and squeeze gently), particulate contamination, cloudiness, integrity of all ports and seals. For powders being reconstituted: check the powder for color consistency and absence of caking. Expired or compromised items are never used regardless of supply constraints — the pharmacist must make alternative arrangements."
+        },
+        {
+          "heading": "Supplies inside the ISO 5 zone",
+          "body": "Inside the ISO 5 compounding zone, strict rules govern supply handling: supplies must be positioned so that they do not shadow critical sites; no item should be placed between the HEPA filter and any open critical site; excess packaging materials (outer boxes, non-sterile outer wrappers) are removed in the anteroom and never brought into the buffer room; items brought into the ISO 5 zone should be the minimum necessary for the current preparation to reduce clutter and turbulence; and all items are placed within the ISO 5 zone, not at the edge where the air curtain boundary may be compromised."
+        }
+      ],
+      "keyTerms": [
+        { "term": "Pass-through wiping", "definition": "Required IPA wipe of all supply items at the pass-through window before they enter the buffer room — applies to every item regardless of outer packaging integrity." },
+        { "term": "Component inspection", "definition": "Visual examination of each vial, bag, and supply item for integrity, expiration date, appearance, and identity before use — conducted both at the pass-through and at the compounding bench." },
+        { "term": "Intact closure", "definition": "A vial or bag closure that shows no visible damage, missing seal, or evidence of prior puncture — required for use; any integrity concern requires rejection of the unit." }
+      ],
+      "clinicalExample": {
+        "scenario": "Due to a supplier shortage, the only available normal saline bags are from a new, unfamiliar manufacturer. A box of 50 bags arrives. The technician wipes the box exterior and passes it through the pass-through without opening it.",
+        "analysis": "The box exterior has been wiped, but each individual bag inside the box has not been wiped before entering the buffer room. The box is not a sterile container — the bags inside it carry the same surface contamination as any other supply item. The correct process is to open the box in the anteroom, wipe each bag individually with sterile IPA, and pass them through the pass-through in manageable quantities. Additionally, the new manufacturer's bags should be inspected individually for integrity and particulate content before first use.",
+        "takeaway": "Wiping the outer box is not equivalent to wiping the individual items inside. The required step is wiping every individual item before it enters the buffer room — regardless of whether it was inside a wiped outer package."
+      },
+      "selfCheck": [
+        {
+          "question": "A technician notices a vial of gentamicin has a small chip at the base of the neck when inspecting it at the compounding bench. What should she do?",
+          "answer": "Reject the vial — do not use it; quarantine and dispose appropriately; obtain an intact vial for the preparation",
+          "explanation": "A chipped glass vial has compromised integrity and may shed glass particles into the preparation. No drug shortage, no urgency, and no apparent intact seal justifies using a physically damaged vial."
+        },
+        {
+          "question": "Is it acceptable to stack supply items (vials, syringes) in a pile inside the ISO 5 zone during compounding to save space?",
+          "answer": "No — stacked items create shadowing zones, interfere with first-air flow, and may obscure critical sites; only the minimum necessary items should be in the ISO 5 zone, organized to maintain clear first-air paths to all critical sites",
+          "explanation": "Clutter in the ISO 5 zone increases turbulence and shadowing risk. Items should be arranged methodically with critical sites oriented toward the HEPA filter and no objects positioned to shadow them."
+        }
+      ]
+    },
+    {
+      "id": "6-3",
+      "title": "Best Practices for USP 797 Material Handling",
+      "objectives": [
+        "Describe the correct material flow from receiving dock through to the buffer room",
+        "Explain why outer cardboard boxes may not enter the buffer room",
+        "State how materials are transferred between the anteroom and buffer room"
+      ],
+      "sections": [
+        {
+          "heading": "Material flow — from receiving to buffer room",
+          "body": "Materials follow a defined, one-directional path from the receiving dock through increasing levels of cleanliness to the compounding bench: receiving area (general pharmacy) → staging/unpacking area → anteroom → pass-through → buffer room → ISO 5 PEC. At each transition, materials are progressively cleaned. In the receiving area, outer shipping cartons are inspected and outer packaging removed. In the anteroom, individual items are removed from packaging, inspected, and wiped with sterile IPA before transfer through the pass-through. In the buffer room, items are placed directly on a clean, disinfected cart or shelf and moved to the ISO 5 zone as needed. The direction of material flow is always toward the cleaner environment — materials never travel from the buffer room back to the anteroom without being considered potentially contaminated."
+        },
+        {
+          "heading": "Why cardboard is prohibited in the buffer room",
+          "body": "Cardboard boxes are prohibited from entering any ISO-classified area. Corrugated cardboard is a microbiological nightmare: its corrugated structure traps and sustains moisture, providing a habitat for bacterial and fungal growth; cardboard fibers shed into the air; and cardboard boxes used in shipping have been in warehouses, trucks, and loading docks that are heavily contaminated with environmental microorganisms. Introducing cardboard into an ISO 7 or ISO 8 environment dramatically increases particulate and microbial burden. All supplies are removed from outer cardboard packaging in the general pharmacy area before they reach the anteroom. This rule is absolute — no cardboard, no exceptions, regardless of how urgently supplies are needed."
+        },
+        {
+          "heading": "Pass-through window protocols",
+          "body": "The pass-through window is a critical contamination control point between the anteroom and buffer room. Properly used, the pass-through allows material transfer without requiring the buffer room door to open — which would disturb pressure differentials and allow anteroom air to enter the buffer room. Pass-through protocol: only one door of the pass-through is open at a time (both doors open simultaneously negates the pressure differential benefit); items placed in the pass-through are wiped with sterile IPA before the buffer room side is opened; the pass-through interior is cleaned and disinfected as part of the regular anteroom cleaning schedule. HEPA-filtered pass-throughs provide the highest level of protection by filtering air within the pass-through itself."
+        }
+      ],
+      "keyTerms": [
+        { "term": "Material flow", "definition": "The one-directional path from receiving through increasing cleanliness levels to the compounding bench — materials do not travel backward toward less clean areas." },
+        { "term": "Cardboard prohibition", "definition": "Absolute rule: corrugated cardboard may not enter any ISO-classified area due to fiber shedding and microbial harboring properties." },
+        { "term": "Pass-through window", "definition": "A double-door transfer hatch between anteroom and buffer room that allows material transfer without opening the buffer room door — only one door open at a time." }
+      ],
+      "clinicalExample": {
+        "scenario": "A rush delivery of chemotherapy drug arrives and the receiving technician, wanting to save time, brings the sealed manufacturer box directly into the anteroom and begins opening it there to wipe the bags.",
+        "analysis": "Opening the manufacturer box inside the anteroom brings cardboard into an ISO-classified area — a violation. The box should be opened in the general pharmacy area, with individual bags removed and inspected there, before the bags enter the anteroom for IPA wiping. Additionally, the receiving technician's hands should be sanitized before handling items destined for the anteroom.",
+        "takeaway": "Time pressure does not override contamination control protocols. A 2-minute shortcut at receiving can introduce contamination that takes hours to investigate and remediate."
+      },
+      "selfCheck": [
+        {
+          "question": "A staff member opens both doors of the pass-through simultaneously to quickly transfer a large tray of supplies from the anteroom to the buffer room. What contamination risk does this create?",
+          "answer": "Opening both doors simultaneously eliminates the pressure differential benefit of the pass-through — anteroom air (lower cleanliness) can flow directly into the buffer room; this is equivalent to opening the buffer room door to the anteroom",
+          "explanation": "The pass-through's contamination control function depends on only one door being open at a time. With both open, there is no barrier between the anteroom and buffer room air masses."
+        }
+      ]
+    },
+    {
+      "id": "6-4",
+      "title": "Best Practices for Mixing Outside of ISO-Classified Conditions (USP 797)",
+      "objectives": [
+        "Define immediate-use CSPs and state the strict criteria that must ALL be met",
+        "Explain the clinical situations where immediate-use compounding is appropriate vs inappropriate",
+        "Describe the documentation requirements for immediate-use CSPs"
+      ],
+      "sections": [
+        {
+          "heading": "What is immediate-use compounding?",
+          "body": "Immediate-use compounding is the preparation of a CSP outside of a full cleanroom or SCA environment — essentially, in a non-classified setting such as a patient care unit, emergency room, or clinic — when the preparation is needed urgently for a specific patient and there is not time to obtain a traditionally compounded CSP from the pharmacy. USP 797 permits this pathway under strict conditions, but it is not a routine compounding pathway and is not a mechanism for pharmacy convenience."
+        },
+        {
+          "heading": "The strict criteria — ALL must be met simultaneously",
+          "body": "Immediate-use compounding is only permissible when ALL of the following criteria are met simultaneously: (1) The preparation involves simple aseptic mixing — no complex manipulations, no dissolution, no pH adjustment; (2) The preparation contains no more than three commercially manufactured sterile products; (3) Administration begins within 1 hour of the start of preparation — not 1 hour from completion, from preparation start; (4) The preparation is for a specific patient — not for a group of patients, not for stock; (5) No antimicrobial preservatives are used; (6) The preparation is not a hazardous drug as defined by NIOSH. If any single criterion is not met, the immediate-use pathway is not available and the preparation must be obtained from a licensed sterile compounding pharmacy."
+        },
+        {
+          "heading": "Common misuses of immediate-use",
+          "body": "Immediate-use is frequently misused in clinical settings as a workaround for inadequate pharmacy supply, staffing shortages, or inconvenient timing. Common non-compliant applications include: preparing multiple 'immediate-use' doses of the same drug for several patients consecutively (not patient-specific); preparing antibiotics for 'immediate use' that are then placed in the refrigerator for use later in the shift; labeling preparations as 'immediate use' without a BUD because 'they'll be given right away'; and preparing hazardous drugs as immediate-use at the bedside. Each of these scenarios represents a regulatory violation and, more importantly, a patient safety failure — the immediate-use pathway provides no environmental controls whatsoever."
+        },
+        {
+          "heading": "Documentation for immediate-use CSPs",
+          "body": "Even in urgent bedside preparation, documentation is required. The immediate-use CSP must be labeled with: patient name and identifier; drug name, amount, and diluent; lot numbers of all components; preparer's name and initials; exact time of preparation; and the explicit notation that administration must begin within 1 hour. Without this documentation, the preparation is undocumented and untraceable. If an adverse event occurs, the absence of documentation prevents investigation and recovery. The documentation requirement is not suspended by urgency."
+        }
+      ],
+      "keyTerms": [
+        { "term": "Immediate-use CSP", "definition": "A CSP prepared outside classified conditions under strict criteria — single patient, simple mixing, ≤3 sterile products, administration starts within 1 hour of prep start, no preservatives, no hazardous drugs." },
+        { "term": "1-hour rule", "definition": "Administration of an immediate-use CSP must begin within 1 hour of preparation start — not completion; the clock starts when the first component is accessed." }
+      ],
+      "clinicalExample": {
+        "scenario": "A nurse on the oncology floor prepares 4 doses of ondansetron 4 mg/50 mL NS for 4 different patients having chemotherapy that afternoon, labeling each as 'immediate use' to avoid calling the pharmacy.",
+        "analysis": "This is non-compliant for multiple reasons: (1) The preparations are not patient-specific at the time of preparation — all four doses are made in anticipation, not for a single specific patient under immediate need; (2) If all four are not administered within 1 hour of preparation, the 1-hour rule is violated for the remaining doses; (3) Multiple doses prepared sequentially by the same person in a non-classified environment represents batch-level compounding without appropriate controls. Each of these violations independently disqualifies the immediate-use pathway.",
+        "takeaway": "Immediate-use means one patient, one preparation, one hour — it is not a mechanism for small-batch nursing preparation of ward stock."
+      },
+      "selfCheck": [
+        {
+          "question": "A nurse prepares an immediate-use vancomycin dose at 2:00 PM. The patient's IV site requires replacement and the infusion does not start until 3:15 PM. Is this compliant?",
+          "answer": "No — administration must begin within 1 hour of the start of preparation; 2:00 PM + 1 hour = 3:00 PM; starting at 3:15 PM exceeds the immediate-use window",
+          "explanation": "The 1-hour clock starts at preparation start, not at any other reference point. If circumstances prevent administration within 1 hour, the preparation must be discarded and a new preparation obtained from a licensed compounding pharmacy."
+        }
+      ]
+    },
+    {
+      "id": "6-5",
+      "title": "Quality Management of Sterile Compounding",
+      "objectives": [
+        "Describe the key components of a quality management system for sterile compounding",
+        "Explain what a Sterility Assurance Level (SAL) represents for Category 1 and Category 2 CSPs",
+        "Explain the role of error reporting and near-miss capture in a quality management system"
+      ],
+      "sections": [
+        {
+          "heading": "What is quality management in sterile compounding?",
+          "body": "Quality management in sterile compounding is the systematic, documented program that ensures every CSP consistently meets its specifications for identity, strength, quality, and purity. It is not a single checkpoint or a final inspection — it is a continuous cycle of planning, execution, monitoring, deviation detection, and improvement that encompasses every aspect of the compounding operation. The quality management system (QMS) includes: the documentation ecosystem (MFRs, CRs, SOPs, logs); personnel qualification; environmental monitoring; equipment calibration and maintenance; supplier qualification; and error management. A functioning QMS is what transforms a collection of compliant individual practices into a reliable, safe compounding system."
+        },
+        {
+          "heading": "Sterility Assurance Level (SAL)",
+          "body": "Sterility Assurance Level (SAL) is the probability that a CSP is non-sterile. It is expressed as a negative power of 10: SAL 10⁻³ means a 1 in 1,000 probability of a non-sterile unit; SAL 10⁻⁶ means a 1 in 1,000,000 probability. Category 1 CSPs are prepared in an SCA without sterility testing — they carry a SAL of 10⁻³ (1:1,000 probability of non-sterility). Category 2 CSPs prepared in a full cleanroom suite with sterility testing carry a SAL of 10⁻⁶ (1:1,000,000 probability). This is why the BUD difference is so dramatic: the ISO 7 infrastructure and sterility testing together reduce the probability of non-sterility by three orders of magnitude, justifying much longer BUDs. Understanding SAL helps you communicate with medical staff about the inherent risk in compounded products."
+        },
+        {
+          "heading": "Error reporting and near-miss capture",
+          "body": "A quality management system without error reporting is blind to its own failures. USP 797 requires a mechanism for reporting and investigating compounding errors and near-misses. A near-miss is an event that could have resulted in a patient harm but was caught before it reached the patient. Near-misses are as valuable as actual errors — they identify system vulnerabilities before patient harm occurs. The QMS must create a reporting culture where personnel report errors and near-misses without fear of punitive consequence. Punishment-based cultures suppress reporting; suppressed reporting eliminates the feedback mechanism that prevents recurrence. Error analysis should ask 'what system condition allowed this to happen?' rather than 'who made the mistake?'"
+        },
+        {
+          "heading": "Continuous improvement",
+          "body": "The quality management cycle in sterile compounding is a version of the Plan-Do-Check-Act (PDCA) framework: Plan procedures and processes with quality in mind; Do — execute with fidelity to SOPs; Check — monitor through EM, GFS, media fills, error reports, and audits; Act — respond to findings with CAPA and SOP updates. The QMS review should occur formally at minimum annually, with the pharmacist-in-charge reviewing all significant events, CAPA outcomes, and trend data to identify systemic improvements. This is not optional documentation — it is the engine that keeps the compounding program improving rather than simply maintaining the status quo."
+        }
+      ],
+      "keyTerms": [
+        { "term": "Sterility Assurance Level (SAL)", "definition": "The probability that a CSP is non-sterile — Category 1 SAL is 10⁻³ (1:1,000); Category 2 SAL is 10⁻⁶ (1:1,000,000)." },
+        { "term": "Quality Management System (QMS)", "definition": "The complete, systematic, documented program ensuring every CSP consistently meets quality specifications — encompasses documentation, personnel, EM, equipment, suppliers, and error management." },
+        { "term": "Near-miss", "definition": "An event that could have caused patient harm but was caught before reaching the patient — as valuable as actual errors for identifying system vulnerabilities." },
+        { "term": "PDCA cycle", "definition": "Plan-Do-Check-Act — the continuous improvement framework underlying quality management; applies to all compounding processes." }
+      ],
+      "clinicalExample": {
+        "scenario": "A technician catches a wrong-drug error (potassium chloride 20 mEq was about to be prepared instead of potassium phosphate 20 mM) during the in-process check before final pharmacist verification. She reports it to the pharmacist but does not document it formally because 'no patient was harmed.'",
+        "analysis": "This is a near-miss that requires formal documentation. The error was caught before harm occurred — but the system condition that allowed the near-miss must be identified and corrected. Was there a look-alike/sound-alike labeling problem? Were the two products stored in adjacent bins? Was the order unclear? Without a formal near-miss report, the investigation cannot happen, the root cause remains, and the next event may not be caught before it reaches a patient. Potassium chloride is an ISMP high-alert medication; errors with it can be fatal.",
+        "takeaway": "Near-miss reporting is not optional and not contingent on patient harm. Every near-miss is a warning the system is offering you — the quality management system exists to hear those warnings and act on them."
+      },
+      "selfCheck": [
+        {
+          "question": "What is the Sterility Assurance Level for a Category 2 CSP?",
+          "answer": "SAL 10⁻⁶ — a 1 in 1,000,000 probability of non-sterility",
+          "explanation": "The ISO 7 cleanroom infrastructure, personnel qualification, EM program, and sterility testing that support Category 2 BUDs collectively reduce the probability of a non-sterile unit to 1:1,000,000 — three orders of magnitude safer than Category 1 SCA compounding."
+        },
+        {
+          "question": "Why is a punitive response to compounding errors counterproductive to patient safety?",
+          "answer": "Punishment suppresses error reporting — staff who fear consequences stop reporting errors and near-misses; without reports, the QMS cannot identify system vulnerabilities, investigate root causes, or implement preventive actions; the result is an uncorrected system that continues to generate errors",
+          "explanation": "Safety science consistently demonstrates that systems with open, non-punitive reporting cultures catch more errors, investigate more effectively, and achieve better safety outcomes. The goal is to fix the system, not to penalize the individual caught in the system's failure mode."
+        }
+      ]
+    }
+  ]
+}

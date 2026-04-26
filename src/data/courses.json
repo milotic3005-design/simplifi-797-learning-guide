@@ -1,0 +1,352 @@
+{
+  "meta": {
+    "title": "CriticalPoint Simplifi 797",
+    "subtitle": "USP 797 (2023 Revised) — Currently Enforceable",
+    "totalCourses": 28,
+    "totalModules": 8,
+    "version": "2023"
+  },
+  "modules": [
+    {
+      "id": 1,
+      "number": "01",
+      "title": "Fundamentals of Sterile Compounding",
+      "theme": "info",
+      "courseCount": 6,
+      "tag": "Foundation layer",
+      "courses": [
+        { "id": "1-1", "title": "Master Formulation and Compounding Records for Sterile Compounding" },
+        { "id": "1-2", "title": "General Elements of Documentation for Sterile Compounding" },
+        { "id": "1-3", "title": "History of Sterile Compounding" },
+        { "id": "1-4", "title": "Quality Releases and Final Checks for Sterile Compounding" },
+        { "id": "1-5", "title": "Standard Operating Procedures for Sterile Compounding" },
+        { "id": "1-6", "title": "USP 797 CSP Handling: Staging through Transport" }
+      ],
+      "mustKnow": [
+        "MFR (template) vs CR (batch record) — both required; each has specific required elements that must be verified before CSP release",
+        "Quality release requires pharmacist verification of labeling, identity, quantity, integrity, and BUD before dispensing every CSP",
+        "SOPs must cover all critical operations and be reviewed at minimum every 2 years per USP 797 (2023)",
+        "2012 NECC fungal meningitis outbreak (64 deaths) → Drug Quality and Security Act 2013 → current regulatory framework"
+      ],
+      "keyConcepts": [
+        {
+          "term": "Master Formulation Record (MFR)",
+          "definition": "Master template specifying formula, ingredients, equipment, stability data, storage, and BUD basis — never modified per batch"
+        },
+        {
+          "term": "Compounding Record (CR)",
+          "definition": "Lot-specific batch record documenting actual ingredients used, calculations, personnel, QA checks, and pharmacist sign-off"
+        },
+        {
+          "term": "Documentation chain",
+          "definition": "Every deviation, yield calculation, labeling step, and final check must be traceable and retrievable for any CSP lot"
+        },
+        {
+          "term": "SOPs",
+          "definition": "Written step-by-step instructions for all critical processes — must be immediately accessible at point of use, dated, versioned, and signed"
+        },
+        {
+          "term": "CSP transport requirements",
+          "definition": "Maintain temperature-controlled chain, tamper-evident packaging, complete patient labeling from preparation through delivery"
+        }
+      ],
+      "clinicalConnection": "The MFR/CR chain is your audit trail when something goes wrong. During any adverse event investigation or accreditation survey, reviewers will trace every IV bag back to its batch record. Incomplete or missing documentation is a direct patient safety risk and a regulatory finding. Make this your non-negotiable standard from day one."
+    },
+    {
+      "id": 2,
+      "number": "02",
+      "title": "Engineering Controls for Sterile Compounding",
+      "theme": "info",
+      "courseCount": 2,
+      "tag": "Physical infrastructure",
+      "courses": [
+        { "id": "2-1", "title": "USP 797 Primary Engineering Controls (PEC)" },
+        { "id": "2-2", "title": "USP 797 Secondary Engineering Controls (SEC)" }
+      ],
+      "mustKnow": [
+        "PEC type determines HD suitability — positive-pressure LAF is NEVER appropriate for hazardous drug compounding; must use BSC or CACI",
+        "SEC design determines your max achievable BUD: SCA = Category 1 only (12h/24h), ISO 7 cleanroom suite = Category 2 eligible (45+ days)",
+        "ISO 7 buffer room: ≥30 ACPH total with ≥15 ACPH from HEPA; maintained at positive pressure relative to anteroom",
+        "PEC and SEC must be certified every 6 months by a qualified Certifying Organization (CO) — airflow velocity, HEPA integrity, particle counts"
+      ],
+      "keyConcepts": [
+        {
+          "term": "PEC types",
+          "definition": "LAF workbench (positive pressure, non-HD) · BSC Class II (negative pressure, for HD) · CACI/isolator (closed-system, highest protection)"
+        },
+        {
+          "term": "SEC configurations",
+          "definition": "ISO 7 buffer room + ISO 8 anteroom = full cleanroom suite (Category 2 eligible) vs SCA = ISO 5 PEC in non-classified room (Category 1 only)"
+        },
+        {
+          "term": "SCA limitation",
+          "definition": "Regardless of hood quality, an ISO 5 PEC in a non-classified space can only produce Category 1 CSPs — 12h CRT, 24h refrigerated maximum BUD"
+        },
+        {
+          "term": "Pressure relationships",
+          "definition": "Positive pressure buffer room pushes contaminants outward; C-SEC negative pressure contains HD vapors and aerosolized particles inward"
+        },
+        {
+          "term": "Pass-throughs",
+          "definition": "HEPA-filtered pass-through between anteroom and buffer room required for material transfer without compromising pressure differential"
+        }
+      ],
+      "clinicalConnection": "Your engineering control configuration directly dictates what BUDs you can assign. Operating from an SCA caps you at 12-hour room-temperature BUDs — a fundamental operational constraint for outpatient infusion. Understanding this link between physical space and BUD policy is critical for pharmacy leadership decisions about facility design and program scope."
+    },
+    {
+      "id": 3,
+      "number": "03",
+      "title": "Personnel Sampling Metrics",
+      "theme": "neutral",
+      "courseCount": 1,
+      "tag": "Personnel qualification",
+      "courses": [
+        { "id": "3-1", "title": "Personnel Competency Testing in Aseptic Manipulation" }
+      ],
+      "mustKnow": [
+        "Initial qualification requires 3 separate satisfactory passes for both GFS and media fill before any independent compounding is permitted",
+        "GFS action level: ≤1 CFU per gloved hand at ISO 5 — any growth above this triggers investigation, retraining, and re-qualification",
+        "Media fill failure = immediate suspension from independent compounding; 3 consecutive passing re-qualifications required to return",
+        "Ongoing competency: every 6 months for all compounders — both GFS and media fill; triggered earlier by any technique failure or EM excursion"
+      ],
+      "keyConcepts": [
+        {
+          "term": "Gloved fingertip sampling (GFS)",
+          "definition": "Both hands, all 5 fingertips + thumbs imprinted on TSA contact plates immediately after final garbing step — tests garbing quality and hand hygiene technique"
+        },
+        {
+          "term": "Media fill / process simulation test",
+          "definition": "Fills simulated doses using soybean-casein digest (SCD) broth under actual compounding conditions; incubated 14 days at two temperature ranges (20–25°C and 30–35°C)"
+        },
+        {
+          "term": "Initial vs ongoing qualification",
+          "definition": "3 passes required to establish initial qualification; then every 6 months regardless of role — any growth = failure, any gap in documentation = unqualified"
+        },
+        {
+          "term": "Garbing observation",
+          "definition": "Trained assessor must observe full hand hygiene and garbing sequence and document compliance against written SOP — cannot self-assess"
+        },
+        {
+          "term": "Documentation requirements",
+          "definition": "All qualification records (dates, results, pass/fail, remediation, sign-offs) must be maintained, organized, and immediately retrievable on request"
+        }
+      ],
+      "clinicalConnection": "As the supervising pharmacist, you are accountable for every compounder's qualification status. Before allowing a technician to compound independently, verify documented initial qualification exists (3 passes, all signed). Accreditation surveyors will ask for these records by individual name. A gap in any record = immediate finding. Build a living tracker and audit it quarterly."
+    },
+    {
+      "id": 4,
+      "number": "04",
+      "title": "Viable Facility Sampling Metrics",
+      "theme": "success",
+      "courseCount": 2,
+      "tag": "Environmental monitoring",
+      "courses": [
+        { "id": "4-1", "title": "Overview of Environmental Monitoring" },
+        { "id": "4-2", "title": "Investigation and Remediation of Viable EM and Personnel Sampling Excursions" }
+      ],
+      "mustKnow": [
+        "Action level excursion = immediate cessation of compounding, root cause investigation, CAPA, documentation, and re-sampling — in that order",
+        "Alert level = signal requiring investigation and increased monitoring frequency — does not automatically halt operations",
+        "USP 797 (2023) viable EM sampling frequency: monthly for ISO 5 and ISO 7; quarterly minimum for ISO 8 anteroom",
+        "Common EM excursion sources: garbing failures, poor aseptic technique, HVAC issues, inadequate cleaning, excessive traffic in classified areas"
+      ],
+      "keyConcepts": [
+        {
+          "term": "Viable monitoring (microbiological)",
+          "definition": "Settle plates, contact/RODAC plates, and active air samplers — measure colony-forming units (CFU) to detect microbial contamination"
+        },
+        {
+          "term": "Non-viable monitoring",
+          "definition": "Electronic particle counters measuring airborne particle concentration (0.5 µm, 5.0 µm) — separate program from viable EM, both required"
+        },
+        {
+          "term": "Sample map",
+          "definition": "Defined locations for each ISO zone — ISO 5 work surface, ISO 7 floor/walls/supply vents, ISO 8 anteroom — must be pre-specified in written EM program"
+        },
+        {
+          "term": "CAPA framework",
+          "definition": "Corrective Action (address the immediate failure) + Preventive Action (prevent recurrence) — time-bound, documented, with re-sampling for verification"
+        },
+        {
+          "term": "Trend analysis",
+          "definition": "Upward trending CFU counts warrant investigation even before hitting formal action levels — the EM program should be reviewed monthly for trends"
+        }
+      ],
+      "clinicalConnection": "When an action-level excursion occurs, you must decide whether to halt compounding — a decision with direct patient supply consequences. Having a pre-written, pharmacist-approved excursion response protocol means this decision is made calmly in advance, not reactively during a crisis. Write it before you ever need it."
+    },
+    {
+      "id": 5,
+      "number": "05",
+      "title": "Sanitization of Pharmacy Controlled Environments",
+      "theme": "success",
+      "courseCount": 3,
+      "tag": "Cleaning and disinfection",
+      "courses": [
+        { "id": "5-1", "title": "Sterile Compounding Environments: Principles of Cleaning and Disinfection" },
+        { "id": "5-2", "title": "Cleaning of Primary Engineering Controls for Sterile Compounding" },
+        { "id": "5-3", "title": "Cleaning of Secondary Engineering Controls for Sterile Compounding" }
+      ],
+      "mustKnow": [
+        "Cleaning must always precede disinfection — organic debris neutralizes disinfectant activity; skipping or reversing this order is a critical compliance failure",
+        "Sterile 70% IPA (not standard unsterilized IPA) is required inside ISO 5 and ISO 7 classified areas — the word 'sterile' is load-bearing",
+        "Sporicidal agent required at minimum monthly for all ISO-classified areas per USP 797 (2023); must be documented and rotated to prevent resistance",
+        "PEC cleaning: at beginning of each production shift, after any potential contamination event, after every ~30 min of continuous use, and at end of shift"
+      ],
+      "keyConcepts": [
+        {
+          "term": "Cleaning hierarchy",
+          "definition": "Cleaning (physical debris removal, first step always) → disinfection (microbial reduction) → sterilization (complete kill) — each step is distinct and sequential"
+        },
+        {
+          "term": "Cleaning sequence",
+          "definition": "Always proceed from cleanest to most contaminated and top-to-bottom: anteroom → buffer room → PEC interior; never reverse this flow"
+        },
+        {
+          "term": "Disinfectant agents",
+          "definition": "Sterile 70% IPA for routine; sporicidal agents (sodium hypochlorite 1:10, peracetic acid, VHP) for scheduled sporicidal sessions; document agent lot, date, and contact times"
+        },
+        {
+          "term": "Dwell time",
+          "definition": "The most commonly missed step — disinfectant must remain wet on surface for the full required contact time (varies by agent: 30 seconds to 10 minutes)"
+        },
+        {
+          "term": "LAF hood technique",
+          "definition": "Wipe side panels → back panel → work surface using overlapping strokes; sterile low-lint wipes; one direction only; do not wipe back into already-cleaned areas"
+        }
+      ],
+      "clinicalConnection": "Cleaning SOPs must be specific: which agent, which surface, dwell time required, wipe technique, and documentation requirements. Inspectors compare actual observed practices to your written SOPs in real time. The two most common surveyor findings: non-sterile IPA used inside classified areas, and no documented sporicidal agent rotation schedule."
+    },
+    {
+      "id": 6,
+      "number": "06",
+      "title": "Aseptic Technique and Related Work Practices",
+      "theme": "info",
+      "courseCount": 5,
+      "tag": "Core compounding practice",
+      "courses": [
+        { "id": "6-1", "title": "Aseptic Technique and Conduct for Sterile Compounding" },
+        { "id": "6-2", "title": "Use of Supplies and Components" },
+        { "id": "6-3", "title": "Best Practices for USP 797 Material Handling" },
+        { "id": "6-4", "title": "Best Practices for Mixing Outside of ISO-Classified Conditions (USP 797)" },
+        { "id": "6-5", "title": "Quality Management of Sterile Compounding" }
+      ],
+      "mustKnow": [
+        "Critical site = any opening into the sterile system (needle tip, vial septum, bag port, syringe tip) — must never be shadowed or touched at any point",
+        "Garbing order: shoe covers → hair/beard cover → face mask → hand hygiene (30-sec scrub to elbows) → gown → sterile gloves (last, after gown)",
+        "All supply items wiped with sterile 70% IPA at the pass-through before entering the buffer room — this step is never optional, never abbreviated",
+        "Immediate-use: single patient, single dose, no preservatives, administration starts ≤1 hour from prep start — not a convenience tool; strict criteria"
+      ],
+      "keyConcepts": [
+        {
+          "term": "Critical site protection",
+          "definition": "Every critical site must remain continuously in the unidirectional HEPA airstream (first air) from ISO 5 — this is the foundational principle of aseptic technique"
+        },
+        {
+          "term": "Shadowing",
+          "definition": "Any action that blocks first air to a critical site (crossing hand over open vial, placing a syringe body between hood airflow and needle tip) — most common media fill failure"
+        },
+        {
+          "term": "Syringe technique",
+          "definition": "Maintain plunger grip without contaminating plunger, avoid vial coring, single-hand needle recap only, never lay an uncapped syringe flat on the hood surface"
+        },
+        {
+          "term": "Material handling",
+          "definition": "All supply items wiped with sterile IPA at pass-through window before entering buffer room; pre-staged in anteroom, not inside the PEC itself"
+        },
+        {
+          "term": "Quality management framework",
+          "definition": "Sterility assurance level (SAL) targets — Category 1 SAL 10⁻³, Category 2 SAL 10⁻⁶; includes error reporting, near-miss capture, and corrective action loops"
+        }
+      ],
+      "clinicalConnection": "As the final quality gate before dispensing, you must recognize aseptic technique breaks during technician observation in real time. Shadowing is subtle and often unconscious — technicians frequently shadow without awareness. Train your eye to watch the critical sites continuously, not the compounding action. That shift in focus is the difference between catching a break and missing one."
+    },
+    {
+      "id": 7,
+      "number": "07",
+      "title": "Nonsterile to Sterile Compounding Practices",
+      "theme": "success",
+      "courseCount": 4,
+      "tag": "Sterilization science",
+      "courses": [
+        { "id": "7-1", "title": "Steam and Dry-Heat Sterilization Methods" },
+        { "id": "7-2", "title": "Sterilization by Filtration" },
+        { "id": "7-3", "title": "Bacterial Endotoxin (Pyrogen) Testing" },
+        { "id": "7-4", "title": "Sterility Testing Requirements of USP <71> and 797" }
+      ],
+      "mustKnow": [
+        "0.22 µm filtration removes bacteria but NOT endotoxins — filtration sterilization and bacterial endotoxin testing (BET) are two separate, independent requirements",
+        "Autoclaving (121°C, 15 psi, ≥15 min) sterilizes but does NOT depyrogenate — dry heat at 250°C required to destroy endotoxins from glassware and equipment",
+        "Sterility testing (USP <71>) extends BUD for Category 2 CSPs only — no effect on Category 1; this is the pathway from 45-day to 90-day room temperature BUD",
+        "Intrathecal route carries the most stringent endotoxin limit (0.2 EU/kg/hr) — errors here cause fever, seizures, and death; no tolerance for BET failure"
+      ],
+      "keyConcepts": [
+        {
+          "term": "Steam sterilization (autoclave)",
+          "definition": "Moist heat kills bacteria, fungi, spores, viruses — 121°C at 15 psi for ≥15 min minimum; gold standard for aqueous solutions and heat-stable equipment"
+        },
+        {
+          "term": "Dry heat sterilization",
+          "definition": "160–180°C for 1–2 hours for oils/anhydrous vehicles/glassware; 250°C for depyrogenation — kills AND removes endotoxins from equipment surfaces"
+        },
+        {
+          "term": "Filtration sterilization",
+          "definition": "0.22 µm (or 0.2 µm) membrane filter removes bacteria and fungi from heat-labile drug solutions — does not remove viruses, prions, or endotoxins"
+        },
+        {
+          "term": "BET / LAL test (USP <85>)",
+          "definition": "Limulus Amebocyte Lysate detects gram-negative bacterial endotoxins; required for all aqueous parenterals; intrathecal limit = 0.2 EU/kg/hr (most stringent)"
+        },
+        {
+          "term": "Sterility testing (USP <71>)",
+          "definition": "14-day incubation at two temperature ranges (20–25°C and 30–35°C); direct inoculation or membrane filtration method; any growth = failure, batch rejection"
+        }
+      ],
+      "clinicalConnection": "For OPAT or specialty programs that batch-compound at scale (vancomycin, cefepime, etc.), sterility testing is the operational lever that extends BUD from 45 to 90 days at room temperature. That difference nearly doubles your shelf life, directly impacting batch planning, waste rates, and patient care continuity. Understanding when and how to implement sterility testing is a high-value pharmacist competency."
+    },
+    {
+      "id": 8,
+      "number": "08",
+      "title": "Requirements and Best Practices — Hazardous Drug Compounding",
+      "theme": "danger",
+      "courseCount": 5,
+      "tag": "USP 795 · USP 797 · USP 800",
+      "courses": [
+        { "id": "8-1", "title": "Hazardous Drug Overview (USP 795 and 797)" },
+        { "id": "8-2", "title": "Containment Primary and Secondary Engineering Controls (C-PEC and C-SEC)" },
+        { "id": "8-3", "title": "Personal Protective Equipment for HD Handling (USP 795 and 797)" },
+        { "id": "8-4", "title": "HD Work Practice: Receiving through Transport to Patients" },
+        { "id": "8-5", "title": "HD Work Practice: Decontamination and Spill Management (USP 795 and 797)" }
+      ],
+      "mustKnow": [
+        "C-PEC must be negative pressure — a standard positive-pressure LAF workbench is categorically never acceptable for HD compounding under any circumstances",
+        "Deactivation precedes decontamination — deactivation chemically neutralizes the HD; decontamination then physically removes residue; reversing the order defeats both steps",
+        "NIOSH HD list: Group 1 = antineoplastics (highest risk), Group 2 = non-antineoplastics requiring special handling, Group 3 = reproductive hazard only",
+        "USP 800 applies to ALL personnel handling HDs — receiving staff, nursing staff hanging chemo, transport staff — not pharmacy only; documented training required for everyone"
+      ],
+      "keyConcepts": [
+        {
+          "term": "NIOSH HD list",
+          "definition": "Updated annually — verify your facility's HD list against the current NIOSH publication; drugs are added and reclassified; your policy must reflect the current list"
+        },
+        {
+          "term": "C-PEC",
+          "definition": "BSC Class II Type B2 (100% HEPA-exhausted to outside) or negative-pressure closed-system isolator — must maintain negative pressure relative to the room at all times"
+        },
+        {
+          "term": "C-SEC",
+          "definition": "Negative pressure room containing the C-PEC; pressure differential -0.01 to -0.03 inches WC relative to adjacent areas; HEPA-filtered or dedicated exhaust that does not recirculate air"
+        },
+        {
+          "term": "PPE hierarchy",
+          "definition": "Double chemotherapy-rated gloves (ASTM D6978 tested) + chemo gown (AAMI PB70 Level 2 minimum) + eye/face protection for splash risk + N95/P100 respirator for volatile HDs"
+        },
+        {
+          "term": "Deactivation → decontamination → disinfection",
+          "definition": "Deactivate with sodium hypochlorite solution (most antineoplastics), then decontaminate with detergent and water, then disinfect with approved agent — three distinct sequential steps"
+        }
+      ],
+      "clinicalConnection": "USP 800 extends your accountability beyond the cleanroom. Nursing staff who hang chemotherapy bags, receiving clerks who handle HD deliveries, and any pharmacy staff who touch HD containers all require documented USP 800 training and access to appropriate PPE. Occupational HD exposure is a long-latency health risk — and as the pharmacist, you are the subject-matter expert your institution depends on to get this right.",
+      "highPriority": true
+    }
+  ]
+}

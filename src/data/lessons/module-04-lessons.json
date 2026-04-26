@@ -1,0 +1,128 @@
+{
+  "moduleId": 4,
+  "moduleTitle": "Viable Facility Sampling Metrics",
+  "lessons": [
+    {
+      "id": "4-1",
+      "title": "Overview of Environmental Monitoring",
+      "objectives": [
+        "Distinguish between viable and non-viable environmental monitoring and state the purpose of each",
+        "Describe the types of viable sampling methods and where each is used",
+        "State the minimum sampling frequency for each ISO classification under USP 797 (2023)"
+      ],
+      "sections": [
+        {
+          "heading": "The two arms of environmental monitoring",
+          "body": "Environmental monitoring (EM) is the systematic program of measuring and tracking contamination in the cleanroom environment over time. It has two distinct arms that address different contamination types and require different equipment and interpretation. Viable EM detects living microorganisms (bacteria and fungi) using culture-based methods that produce colony counts. Non-viable EM detects airborne particles of any kind (living or not) using electronic particle counters. Both arms are required by USP 797, but they serve complementary purposes: viable EM tells you whether microorganisms are present; non-viable EM tells you whether the HVAC and HEPA systems are maintaining required particle counts. A room can pass non-viable EM and still have a viable excursion — and vice versa."
+        },
+        {
+          "heading": "Viable sampling methods",
+          "body": "Three methods are used for viable air and surface sampling. Settle plates are open TSA petri dishes placed at defined locations in the cleanroom for a timed exposure period (typically 1–4 hours per USP guidelines) — they passively capture airborne particles that fall by gravity. They are simple and inexpensive but collect only larger, heavier particles. Active air sampling uses a volumetric air impaction device (e.g., RCS centrifugal sampler, SAS impactor) that actively draws a defined volume of air through the sampling head, impacting particles onto a culture medium strip — more sensitive than settle plates and provides a quantifiable CFU/m³ result. Contact/RODAC plates (Replicate Organism Detection and Counting) are TSA-filled plates pressed directly against surfaces (floor, work surface, wall, equipment exterior) to sample surface bioburden."
+        },
+        {
+          "heading": "Sampling locations — the sample map",
+          "body": "USP 797 requires a pre-defined sample map that specifies exactly where each type of sampling occurs in each ISO zone. The sample map is not improvised — it is written into the EM program SOP before sampling begins and validated by the pharmacist-in-charge. Required sampling locations include: ISO 5 PEC work surface (contact plate after compounding activity), ISO 5 PEC interior (settle plate or active air during compounding), ISO 7 buffer room surfaces and floor (contact plates), ISO 7 air (settle plates or active air), and ISO 8 anteroom (contact and settle plates). The sample map ensures that results are comparable across different sampling events and over time — you cannot identify trends if sampling locations change each time."
+        },
+        {
+          "heading": "Sampling frequency under USP 797 (2023)",
+          "body": "USP 797 (2023) requires viable EM sampling at minimum monthly for ISO 5 (PEC) and ISO 7 (buffer room) areas. ISO 8 anteroom requires sampling at minimum quarterly. Sampling should occur during active compounding to capture the worst-case contamination conditions — sampling an empty cleanroom during off hours systematically underestimates bioburden and does not represent actual risk. Additionally, sampling events must be conducted when personnel are actively present, since personnel are the primary source of microbial contamination in classified environments."
+        },
+        {
+          "heading": "Alert and action levels",
+          "body": "The EM program must establish written alert levels and action levels for each sampling location and method. Alert levels are lower-threshold values that signal a potential trend requiring increased surveillance — they do not mandate operational changes but trigger enhanced monitoring and investigation. Action levels are higher-threshold values that mandate immediate response: cessation of compounding if appropriate, root cause investigation, CAPA implementation, re-cleaning and re-sampling, and documentation. USP 797 does not prescribe specific CFU thresholds for all environments — these are established by the pharmacy based on the literature and certified baseline data for their specific facility."
+        }
+      ],
+      "keyTerms": [
+        { "term": "Viable environmental monitoring", "definition": "Culture-based microbiological sampling of air and surfaces to detect and quantify living microorganisms (bacteria, fungi) — produces CFU counts." },
+        { "term": "Non-viable environmental monitoring", "definition": "Electronic particle counting to verify ISO cleanliness classifications — measures airborne particle concentration regardless of viability." },
+        { "term": "Settle plates", "definition": "Open TSA petri dishes placed at defined locations for passive air sampling — collect organisms that settle by gravity; simple, low-cost, limited to larger particles." },
+        { "term": "Active air sampler", "definition": "Volumetric device that actively draws a defined air volume through a sampling head onto culture medium — more sensitive and quantifiable than settle plates." },
+        { "term": "RODAC plate", "definition": "Replicate Organism Detection and Counting plate — convex TSA surface pressed against flat surfaces to sample surface bioburden." },
+        { "term": "Action level", "definition": "The CFU threshold above which compounding must be suspended and mandatory CAPA initiated — a hard line requiring immediate operational response." },
+        { "term": "Alert level", "definition": "A lower CFU threshold signaling a potential trend — triggers enhanced monitoring and investigation but does not mandate operational halt." }
+      ],
+      "clinicalExample": {
+        "scenario": "Monthly EM results for the past 3 months show 0 CFU on ISO 7 settle plates in January, 1 CFU in February, and 3 CFU in March. None of these values individually exceed your pharmacy's written action level of 5 CFU.",
+        "analysis": "Even though no individual result exceeds the action level, the upward trend (0 → 1 → 3 CFU over 3 months) is a signal that should trigger investigation before an action-level excursion occurs. A well-designed EM program includes trend analysis as a separate review step from single-point action level assessment. The trend analysis should prompt: reviewing cleaning records for the past 3 months, reviewing personnel changes in the cleanroom, checking HVAC maintenance logs, and increasing sampling frequency to monthly active air sampling until the trend reverses.",
+        "takeaway": "Trend analysis is as important as single-result threshold monitoring. An EM program that only reacts to action-level excursions misses the early warning signals that precede them."
+      },
+      "selfCheck": [
+        {
+          "question": "Is it acceptable to perform viable EM sampling of the buffer room after the last compounding batch of the day, when the room is empty and cleaned?",
+          "answer": "No — sampling should occur during active compounding when personnel are present, to capture worst-case contamination conditions",
+          "explanation": "An empty, cleaned room will almost always show low or zero CFU. This does not represent the contamination risk during actual operations. Sampling during active use gives you the data that reflects real patient risk."
+        },
+        {
+          "question": "What is the minimum viable EM sampling frequency for an ISO 5 PEC under USP 797 (2023)?",
+          "answer": "Monthly",
+          "explanation": "Both ISO 5 (PEC) and ISO 7 (buffer room) require monthly viable sampling at minimum. ISO 8 anteroom requires quarterly sampling at minimum."
+        },
+        {
+          "question": "A settle plate in the ISO 5 PEC shows 2 CFU after a compounding session. The action level is 3 CFU. What is the required response?",
+          "answer": "This is at or near the alert level — it requires investigation and potentially increased monitoring frequency; it does not automatically require halting compounding",
+          "explanation": "Alert levels trigger investigation without mandatory operational halt. The pharmacist must review possible causes (garbing, technique, cleaning), document the investigation, and increase monitoring frequency. If the next sampling event also exceeds the alert level, escalation to action-level response may be warranted."
+        }
+      ]
+    },
+    {
+      "id": "4-2",
+      "title": "Investigation and Remediation of Viable EM and Personnel Sampling Excursions",
+      "objectives": [
+        "Describe the required sequence of steps following an action-level EM excursion",
+        "Identify common root causes of EM excursions in sterile compounding environments",
+        "Explain what a CAPA is and what elements it must contain"
+      ],
+      "sections": [
+        {
+          "heading": "The action-level excursion response sequence",
+          "body": "When an EM result exceeds the written action level, the response is not optional and not discretionary — it must follow a defined, pre-written protocol. The sequence is: (1) Immediately quarantine any CSPs prepared in the affected area during the sampling period and assess whether they can be released; (2) Suspend compounding in the affected area if the excursion is in an active compounding zone; (3) Notify the pharmacist-in-charge; (4) Initiate root cause investigation; (5) Implement corrective actions; (6) Re-clean and re-sample to verify correction; (7) Document the entire event, investigation, and resolution in the excursion log. This sequence must happen in this order — corrective action before root cause investigation is treating a symptom without understanding the disease."
+        },
+        {
+          "heading": "Root cause investigation",
+          "body": "Root cause investigation for an EM excursion is a structured analytical process, not a guess. Common frameworks include the '5 Whys' method (asking 'why?' repeatedly until the fundamental cause is identified) or fishbone/Ishikawa diagrams. Investigators should review: personnel factors (who was in the area, were they qualified, were garbing records complete); process factors (was the cleaning SOP followed, what was the cleaning frequency, were the correct agents used with correct dwell times); equipment factors (is the PEC certified and functional, is the HVAC system performing, when was the last filter inspection); environmental factors (was there unusual foot traffic, were the pass-through protocols followed, were supply items properly wiped). The investigation must be documented in writing with a conclusion identifying the most probable root cause."
+        },
+        {
+          "heading": "Corrective and Preventive Action (CAPA)",
+          "body": "CAPA is the formal response structure for addressing a quality excursion. The Corrective Action component addresses the specific event that occurred — what immediate steps were taken to resolve the active issue (retraining, re-cleaning, equipment repair). The Preventive Action component addresses the systemic conditions that allowed the excursion to occur — what process changes, SOP updates, or monitoring enhancements will prevent recurrence. Both components must be: specific (not 'we will improve garbing' but 'all compounders will complete a re-qualification garbing observation by [date]'); time-bound (with completion deadlines); and verifiable (how will you confirm the action was implemented and effective). CAPA records are reviewed during accreditation surveys as evidence of a functional quality management system."
+        },
+        {
+          "heading": "Identification of the organism — why it matters",
+          "body": "When viable EM produces a positive result, the isolate (the colony that grew) should be identified to at least genus level and preferably species level. Organism identification provides crucial intelligence: Staphylococcus epidermidis is a normal skin flora commensal suggesting personnel contamination, which points toward garbing or technique failures. Bacillus species are environmental spore-formers suggesting cleaning failures or facility ingress. Aspergillus or Penicillium (molds) suggest HVAC or facility-level environmental problems. Gram-negative rods in the ISO 5 zone are a serious finding — they suggest a water or cleaning solution contamination source. The identity of the organism directs the root cause investigation toward the most likely source."
+        },
+        {
+          "heading": "GFS excursion — personnel-level response",
+          "body": "A GFS action-level excursion by a specific compounder triggers a personnel-level investigation rather than a facility investigation. The likely cause is a garbing technique error — inadequate hand washing, improper glove donning, contaminating the glove exterior during gowning, or failure to re-sanitize after breaks. The response includes: suspending that individual from independent compounding, reviewing their garbing technique via direct observation, retraining on hand hygiene and garbing sequence, and requiring them to complete a re-qualification sequence (3 passing GFS). The goal is not punitive — it is to identify and correct the specific technique error before that individual's next patient-facing compounding event."
+        }
+      ],
+      "keyTerms": [
+        { "term": "Excursion", "definition": "Any EM result that exceeds a defined alert or action level — requires documented investigation and response." },
+        { "term": "CAPA", "definition": "Corrective and Preventive Action — the formal documented response to a quality excursion; corrective = fix the immediate problem; preventive = prevent recurrence." },
+        { "term": "Root cause investigation", "definition": "Structured analytical process to identify the fundamental reason an excursion occurred — must be completed before corrective action is implemented." },
+        { "term": "5 Whys", "definition": "Root cause analysis technique of repeatedly asking 'why?' to trace a problem back to its fundamental cause rather than treating surface symptoms." },
+        { "term": "Isolate identification", "definition": "Laboratory identification of the specific organism(s) recovered from an EM positive — genus and species identification directs root cause investigation toward the most likely source." }
+      ],
+      "clinicalExample": {
+        "scenario": "Active air sampling during morning compounding in the ISO 7 buffer room shows 8 CFU/m³. Your pharmacy's action level for this location is 5 CFU/m³. The sampling was performed during a period when two technicians were compounding simultaneously.",
+        "analysis": "This is an action-level excursion requiring immediate response. Step one: quarantine any CSPs prepared during that sampling period pending pharmacist assessment. Step two: suspend compounding in the buffer room and notify the pharmacist-in-charge. Step three: begin root cause investigation — review both technicians' qualification records and recent GFS results; review the morning cleaning log; check the HVAC monitoring log for any pressure differential changes; identify the organism when culture results are available. Step four: implement corrective actions based on root cause findings and document a CAPA. Step five: re-clean, re-sample, and verify the environment has returned to baseline before resuming Category 2 operations.",
+        "takeaway": "The action-level response protocol must be pre-written and practiced. A pharmacist who has to figure out the response in the moment of an excursion will inevitably miss steps. Build the protocol before you need it."
+      },
+      "selfCheck": [
+        {
+          "question": "An action-level EM excursion occurs on a Monday. The pharmacist begins CAPA implementation without completing root cause investigation first. What is the problem with this approach?",
+          "answer": "CAPA without root cause investigation addresses symptoms, not causes — the corrective action may be irrelevant or ineffective because the actual cause has not been identified",
+          "explanation": "If the excursion was caused by an HVAC problem but CAPA focuses on garbing retraining, the root cause remains unaddressed and a recurrent excursion is likely. Root cause must be established before corrective action is defined."
+        },
+        {
+          "question": "Active air sampling in the ISO 5 PEC grows Staphylococcus epidermidis at action-level concentrations. What does this organism identity suggest about the likely root cause?",
+          "answer": "Staphylococcus epidermidis is normal skin flora — its presence in the ISO 5 zone suggests a personnel source, pointing toward garbing failures, inadequate hand hygiene, or aseptic technique breaks",
+          "explanation": "S. epidermidis does not survive in water or cleaning solutions. Finding it in the ISO 5 zone strongly implicates a human source. The investigation should focus on personnel: review recent GFS results for all compounders who worked in that PEC, observe garbing technique, and check whether technique breaks were documented."
+        },
+        {
+          "question": "How long must CAPA documentation be retained?",
+          "answer": "A minimum of 3 years per USP 797 (2023) — longer if required by state regulations",
+          "explanation": "CAPA records are part of the pharmacy's quality documentation and subject to the same retention requirements as other USP 797 records. During accreditation surveys, reviewers may ask to see CAPA records from prior years to assess the quality management system's effectiveness over time."
+        }
+      ]
+    }
+  ]
+}

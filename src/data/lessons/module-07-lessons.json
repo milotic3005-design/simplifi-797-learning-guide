@@ -1,0 +1,225 @@
+{
+  "moduleId": 7,
+  "moduleTitle": "Nonsterile to Sterile Compounding Practices",
+  "lessons": [
+    {
+      "id": "7-1",
+      "title": "Steam and Dry-Heat Sterilization Methods",
+      "objectives": [
+        "Describe the mechanism of steam sterilization and state the standard autoclave parameters",
+        "Explain the difference between sterilization and depyrogenation and state which method achieves each",
+        "Identify which materials and preparations are suitable for each sterilization method"
+      ],
+      "sections": [
+        {
+          "heading": "What is sterilization?",
+          "body": "Sterilization is the process of eliminating all microbial life — including vegetative bacteria, fungi, viruses, and bacterial spores — from a material or preparation. It is distinct from disinfection (which reduces but may not eliminate all microorganisms) and distinct from depyrogenation (which destroys endotoxins — the heat-stable lipopolysaccharide fragments from gram-negative bacteria that cause fever even when the organisms themselves are dead). A preparation can be sterile but still pyrogen-containing; it can be endotoxin-free but non-sterile. Sterilization and endotoxin testing are therefore separate, complementary requirements — not redundant ones."
+        },
+        {
+          "heading": "Steam sterilization (moist heat — autoclave)",
+          "body": "Steam sterilization uses saturated steam under pressure to kill all microbial life including spores. The mechanism is protein denaturation — the moist heat irreversibly unfolds and inactivates proteins critical to microbial cell function and reproduction. Standard autoclave parameters are 121°C at 15 psi (1 atmosphere above ambient) for a minimum of 15 minutes — though many cycles run longer depending on the load type and size. Steam sterilization is the gold standard for: aqueous solutions that are heat-stable; glassware and stainless steel equipment; instruments and trays; and certain plastics rated for autoclave temperatures. It cannot be used for heat-labile compounds (most biologics, many antibiotics) or for oils and anhydrous materials (steam cannot penetrate effectively without water)."
+        },
+        {
+          "heading": "Autoclave validation and monitoring",
+          "body": "Autoclaves used in sterile compounding must be validated for each load type — a cycle validated for a small vial may not achieve sterilization conditions throughout a large bag. Biological indicators (BIs) containing spores of Geobacillus stearothermophilus (the most heat-resistant organism used as the reference for steam sterilization) are placed within the load at the coldest point during validation runs to verify that lethal conditions were achieved throughout. Chemical indicators (color-changing tape or inserts) provide visible evidence that the package was exposed to heat — they confirm exposure, not sterilization. Autoclave cycle logs (time, temperature, pressure) must be maintained for every run."
+        },
+        {
+          "heading": "Dry heat sterilization",
+          "body": "Dry heat sterilization uses hot air (without steam) to kill microorganisms through oxidation — a fundamentally different mechanism from moist heat protein denaturation. Because oxidation is less efficient than protein denaturation, dry heat requires higher temperatures and longer times: typically 160–180°C for 1–2 hours for sterilization. Crucially, dry heat at 250°C is the method for depyrogenation — the destruction of endotoxins on glass and metal equipment surfaces. This is the only practical method available in a compounding pharmacy that reliably destroys endotoxins. Dry heat is used for: anhydrous materials (oils, waxes); glassware depyrogenation; powders that cannot tolerate moisture; and metal equipment. It cannot be used for aqueous solutions, plastics, rubber, or paper."
+        },
+        {
+          "heading": "Sterilization vs depyrogenation — the critical distinction",
+          "body": "Endotoxins are heat-stable lipopolysaccharide (LPS) fragments from the outer membrane of gram-negative bacteria. They are not destroyed by autoclaving (121°C), not filtered by 0.22 µm filters, and not inactivated by standard disinfectants. Endotoxins cause fever, hypotension, and in severe cases septic shock when introduced intravascularly — even in the absence of living bacteria. Depyrogenation at 250°C (dry heat) is required for glassware and equipment that will contact parenteral preparations. Autoclaved glassware is sterile but may still be pyrogenic — depyrogenation is a separate required step for any glassware used in aseptic preparation of final dosage forms."
+        }
+      ],
+      "keyTerms": [
+        { "term": "Sterilization", "definition": "The elimination of all microbial life including spores from a material or preparation — achieved by steam (121°C/15 psi/15 min) or dry heat (160–180°C/1–2 h)." },
+        { "term": "Depyrogenation", "definition": "The destruction of endotoxins (pyrogens) — requires dry heat at 250°C; autoclaving and filtration do not depyrogenate." },
+        { "term": "Endotoxin", "definition": "Heat-stable lipopolysaccharide fragment from gram-negative bacterial outer membranes — causes fever and hemodynamic compromise even without viable organisms; not removed by 0.22 µm filtration." },
+        { "term": "Biological indicator (BI)", "definition": "A device containing a defined population of the most resistant reference organism (G. stearothermophilus for steam) used to validate that sterilization conditions were achieved throughout the load." },
+        { "term": "D-value", "definition": "The time required at a given temperature to reduce the microbial population by 90% (1 log) — used to calculate required sterilization time for a given initial bioburden." }
+      ],
+      "clinicalExample": {
+        "scenario": "Your pharmacy compound cysteamine eye drops in glass vials that are autoclaved for sterilization. A patient using the eye drops develops a fever after instillation. Could the eye drops cause fever despite being sterile?",
+        "analysis": "Yes — if the glass vials were not depyrogenated before filling, they could harbor endotoxins on their surfaces that would dissolve into the preparation during compounding. The preparation could pass a sterility test (no viable organisms) while containing pyrogenic levels of endotoxins. Autoclaving at 121°C sterilizes but does not depyrogenate. Dry heat at 250°C is required to destroy endotoxins on glassware. The clinical workup should include endotoxin testing of the remaining preparation and a review of the preparation records to determine whether depyrogenation of glassware was performed.",
+        "takeaway": "Sterilization and depyrogenation are both required for ophthalmic and parenteral preparations — they are not interchangeable or redundant. A sterile but pyrogenic preparation will cause fever."
+      },
+      "selfCheck": [
+        {
+          "question": "An autoclave cycle runs at 121°C and 15 psi for 12 minutes. Is this sterilization cycle compliant?",
+          "answer": "No — the minimum exposure time at 121°C/15 psi is 15 minutes; 12 minutes is insufficient",
+          "explanation": "The 15-minute minimum at standard conditions is based on the time required to achieve a 12-log reduction of the reference spore-forming organism. Shorter cycles may not achieve sterilization throughout the load, particularly for larger or denser loads."
+        },
+        {
+          "question": "Can an oil-based preparation (e.g., an injectable oil) be sterilized by autoclave?",
+          "answer": "No — steam sterilization requires moisture for effective heat transfer; oils and anhydrous materials are hydrophobic and steam cannot penetrate them effectively; dry heat sterilization is required",
+          "explanation": "Steam sterilization depends on moist heat protein denaturation. In an anhydrous oil phase, steam cannot contact the microbial proteins — the mechanism doesn't work. Dry heat oxidation is effective for oils."
+        },
+        {
+          "question": "A glass flask that was autoclaved last week is now going to be used to prepare a batch of preservative-free morphine for intrathecal use. What additional step is required before it can be used?",
+          "answer": "Depyrogenation at 250°C (dry heat) — autoclaving sterilized the flask but did not destroy endotoxins; for intrathecal preparations (most stringent endotoxin limit: 0.2 EU/kg/hr), depyrogenated glassware is essential",
+          "explanation": "Intrathecal route carries the lowest endotoxin tolerance in the body — the CNS is exquisitely sensitive to endotoxins. Endotoxins on non-depyrogenated glassware would contaminate the preparation during compounding. This is a life-safety requirement, not a regulatory formality."
+        }
+      ]
+    },
+    {
+      "id": "7-2",
+      "title": "Sterilization by Filtration",
+      "objectives": [
+        "Describe the mechanism of membrane filtration and state the standard filter pore size for sterilization",
+        "Explain what filtration does and does not remove from a preparation",
+        "Describe filter integrity testing and why it is required before use of the filtrate"
+      ],
+      "sections": [
+        {
+          "heading": "When filtration is used",
+          "body": "Sterilization by filtration is the method of choice for heat-labile preparations — drugs that would be chemically degraded or physically altered by the high temperatures of steam or dry-heat sterilization. This includes most protein-based biologics, peptide hormones, many small-molecule antibiotics, and complex formulations with heat-sensitive excipients. The principle is physical size exclusion: the filter membrane has pores small enough to retain bacteria and fungi but allow drug molecules, which are much smaller, to pass through."
+        },
+        {
+          "heading": "The 0.22 µm filter",
+          "body": "The standard sterilizing-grade filter has a pore size of 0.22 µm (also specified as 0.2 µm by some manufacturers — functionally equivalent). This pore size is sufficient to retain all bacteria and fungi, whose minimum sizes are well above 0.22 µm. The smallest bacteria (Pseudomonas diminuta is the reference organism for filter validation) measures approximately 0.3 µm and is retained by a validated 0.22 µm filter. The filter is only effective when used at appropriate pressure differentials and appropriate flow rates — excessive pressure can deform filter membranes and allow passage of organisms. Filters must be used within their validated conditions and must be discarded if any integrity test failure occurs."
+        },
+        {
+          "heading": "What filtration does NOT remove",
+          "body": "This is the most clinically important concept in filtration sterilization: 0.22 µm filtration does NOT remove endotoxins, prions, viruses, or small molecular toxins. Endotoxins are macromolecules (lipopolysaccharide) that can aggregate into large complexes but at the concentration typically found in pharmaceutical preparations, they pass through 0.22 µm membranes freely. This is why bacterial endotoxin testing (BET) is required independently of filtration — filtration achieves sterility but not pyrogenicity control. Similarly, viruses (20–300 nm) may or may not be retained depending on size, and prions (misfolded proteins, ~10 nm) pass completely through sterilizing-grade filters."
+        },
+        {
+          "heading": "Filter integrity testing",
+          "body": "Before releasing any filtration-sterilized batch, filter integrity must be confirmed by a bubble point test or other validated integrity test. The bubble point test works by wetting the filter with a liquid (typically water or IPA) and then applying increasing air pressure to the upstream side. The minimum pressure at which a continuous stream of bubbles appears on the downstream side (the 'bubble point') is characteristic of that filter's pore size — a lower-than-expected bubble point indicates filter damage or a defect that would allow organisms to bypass the membrane. The integrity test must be performed after filtration (not before), because the filtering process itself can sometimes damage a membrane. If the filter fails integrity testing, the batch must be re-filtered through a new, integrity-tested filter."
+        }
+      ],
+      "keyTerms": [
+        { "term": "Sterilizing-grade filter", "definition": "A 0.22 µm (or 0.2 µm) membrane filter validated to retain all bacteria and fungi — does not remove endotoxins, viruses, or prions." },
+        { "term": "Bubble point test", "definition": "Filter integrity test performed after filtration — identifies membrane defects that would compromise sterility assurance; a failed bubble point requires the batch to be re-filtered." },
+        { "term": "Pseudomonas diminuta", "definition": "The reference organism (smallest gram-negative rod) used to validate sterilizing-grade 0.22 µm filters — retained by an intact 0.22 µm membrane." }
+      ],
+      "clinicalExample": {
+        "scenario": "Your pharmacy filters a batch of 5-fluorouracil solution through a 0.22 µm filter. The post-filtration bubble point test shows a result 15% below the expected minimum for that filter type.",
+        "analysis": "A bubble point result below specification indicates possible filter membrane damage or defect — the filter may have allowed organisms to bypass it during filtration. The batch cannot be released. The entire batch must be re-filtered through a new, validated filter with a passing post-filtration integrity test. The failed filter should be retained for investigation (was the pressure too high during filtration, damaging the membrane?). Any batch previously filtered with similar parameters should be reviewed.",
+        "takeaway": "A failed bubble point test after filtration means the sterility of the batch cannot be assured — regardless of how clean the preparation looks. Integrity testing is not a formality; it is the evidence that filtration achieved its sterility objective."
+      },
+      "selfCheck": [
+        {
+          "question": "A pharmacist filters a solution through a validated 0.22 µm filter. Can she assign a BUD based on sterility testing without also performing bacterial endotoxin testing?",
+          "answer": "No — filtration provides sterility but does not remove endotoxins; BET is required independently; the preparation may be sterile but pyrogenic without passing BET",
+          "explanation": "Sterility and pyrogenicity are independent quality attributes. Both must be confirmed independently — a preparation is not acceptable for injection unless it meets both requirements."
+        },
+        {
+          "question": "Why is the filter integrity test performed AFTER filtration rather than before?",
+          "answer": "Because the filtration process itself can damage the filter membrane; testing before filtration does not detect damage caused during use; post-filtration testing confirms the membrane was intact throughout the filtration event",
+          "explanation": "A filter that passes pre-filtration integrity testing could still fail during use due to excessive flow rate, overpressure, or physical damage during handling. Only post-filtration testing can confirm the membrane maintained integrity during the actual sterilizing filtration."
+        }
+      ]
+    },
+    {
+      "id": "7-3",
+      "title": "Bacterial Endotoxin (Pyrogen) Testing",
+      "objectives": [
+        "Explain what endotoxins are and why they are clinically significant in parenteral preparations",
+        "Describe the LAL test and how it detects endotoxins",
+        "State the endotoxin limits for different routes of administration"
+      ],
+      "sections": [
+        {
+          "heading": "What are endotoxins and why do they matter?",
+          "body": "Endotoxins are lipopolysaccharide (LPS) molecules derived from the outer cell membrane of gram-negative bacteria. When gram-negative bacteria grow, die, or are killed (even by antibiotics or sterilization), they shed LPS into the surrounding environment. LPS is extraordinarily potent — nanogram quantities can cause fever, rigors, hypotension, and in extreme cases endotoxin shock. Parenteral preparations, which bypass the GI tract's natural barrier to endotoxins, are at particular risk. A preparation can be completely free of viable organisms (sterile) yet still contain sufficient endotoxin to cause severe adverse reactions. The NECC meningitis outbreak, while primarily a contamination event, is a stark reminder of what happens when sterile compounding quality fails — endotoxin-related adverse events are a separate but equally serious failure mode."
+        },
+        {
+          "heading": "The LAL test — mechanism and types",
+          "body": "Bacterial Endotoxin Testing (BET) uses Limulus Amebocyte Lysate (LAL) — a clotting protein derived from the blood cells (amebocytes) of the horseshoe crab (Limulus polyphemus). When LAL contacts endotoxin, it initiates a clotting cascade that can be measured in several ways. Gel-clot method: the simplest — the sample is mixed with LAL reagent; a positive (endotoxin present above the limit) results in gel formation; a negative does not clot. Turbidimetric methods: measure the increase in turbidity as clot forms. Chromogenic methods: use a synthetic substrate that releases a color-forming compound when cleaved by activated LAL — absorbance is measured spectrophotometrically and compared to a standard curve. Chromogenic methods are most commonly used in compounding settings for their quantitative accuracy."
+        },
+        {
+          "heading": "Endotoxin limits by route of administration",
+          "body": "USP and FDA have established endotoxin limits for different routes of administration based on the clinical consequences of endotoxin exposure by that route. The limits are expressed in Endotoxin Units (EU) per volume or per kg of body weight per hour of infusion. General IV: 5 EU/kg/hr. Intrathecal/intracisternal: 0.2 EU/kg/hr — 25 times more stringent than general IV because the CNS lacks the complement and reticuloendothelial clearance mechanisms that help clear endotoxin from the systemic circulation; intrathecal endotoxin exposure can cause severe meningism, fever, and seizures with no safety margin. Any CSP intended for intrathecal, epidural, or intracisternal administration must meet the most stringent endotoxin limit."
+        },
+        {
+          "heading": "BET in compounding practice",
+          "body": "For Category 2 CSPs that require sterility testing to achieve extended BUDs, BET is also required for all aqueous parenteral preparations. In practice, many compounding pharmacies outsource BET to certified analytical testing laboratories rather than performing it in-house, as the equipment and validated testing protocols require significant investment. The pharmacy retains the chain of custody documentation and the laboratory certificates of analysis as part of the batch CR. BET results must be received and confirmed as passing before the extended BUD can be assigned — a batch cannot be labeled with a Category 2 BUD if BET is still pending."
+        }
+      ],
+      "keyTerms": [
+        { "term": "Endotoxin", "definition": "Lipopolysaccharide (LPS) from gram-negative bacterial outer membranes — heat-stable, not removed by filtration, causes fever and hemodynamic compromise intravascularly even without viable organisms." },
+        { "term": "LAL test", "definition": "Limulus Amebocyte Lysate test — the standard BET method using horseshoe crab blood protein that clots in the presence of endotoxin; available as gel-clot, turbidimetric, and chromogenic formats." },
+        { "term": "Endotoxin Unit (EU)", "definition": "The unit of endotoxin biological activity — defined relative to an international reference standard; IV limit is 5 EU/kg/hr; intrathecal limit is 0.2 EU/kg/hr." },
+        { "term": "Pyrogen", "definition": "Any substance that causes fever when administered parenterally — endotoxins are the most clinically important pyrogens in pharmaceutical compounding." }
+      ],
+      "clinicalExample": {
+        "scenario": "A patient receiving intrathecal baclofen via an implanted pump develops a sudden high fever, severe back pain, and increased spasms 4 hours after the pump reservoir is refilled with compounded baclofen. The preparation passed sterility testing.",
+        "analysis": "The clinical presentation is consistent with endotoxin-mediated pyrogen reaction. The preparation passed sterility testing, so viable organisms are unlikely — but endotoxin testing was not performed or the results are unknown. Endotoxins that were present in the preparation (from manufacturing process, water source, or non-depyrogenated equipment) would cause exactly this reaction in the intrathecal space. Investigation must include: reviewing BET documentation for this batch; testing remaining preparation for endotoxin; reviewing water source and equipment depyrogenation records; and reporting to MedWatch. The patient requires immediate clinical management including pump aspiration and corticosteroids.",
+        "takeaway": "For intrathecal preparations, BET is not optional documentation — it is a patient safety requirement. The consequences of endotoxin exposure in the CNS are severe and immediate."
+      },
+      "selfCheck": [
+        {
+          "question": "What is the endotoxin limit for intrathecal preparations?",
+          "answer": "0.2 EU/kg/hr — 25 times more stringent than the general IV limit of 5 EU/kg/hr",
+          "explanation": "The CNS has far less capacity to clear endotoxins than the systemic circulation. Even small amounts of endotoxin in the intrathecal space cause severe inflammatory reactions. The 0.2 EU/kg/hr limit reflects this pharmacological reality."
+        },
+        {
+          "question": "Can you substitute a sterility test result for a bacterial endotoxin test when assigning a Category 2 BUD to an aqueous IV preparation?",
+          "answer": "No — sterility testing and BET are independent requirements; a passing sterility test does not demonstrate the absence of endotoxins, and both must be performed and passed",
+          "explanation": "Sterility testing confirms no viable organisms grow from the sample. BET confirms endotoxin content is below the applicable limit. These are orthogonal quality attributes — passing one says nothing about the other."
+        }
+      ]
+    },
+    {
+      "id": "7-4",
+      "title": "Sterility Testing Requirements of USP <71> and 797",
+      "objectives": [
+        "Describe the two methods of sterility testing and state the required incubation conditions",
+        "Explain how a positive sterility test result is handled",
+        "State which CSP categories benefit from sterility testing in terms of BUD extension"
+      ],
+      "sections": [
+        {
+          "heading": "What sterility testing proves",
+          "body": "Sterility testing provides a probabilistic assessment that a CSP or batch does not contain viable microorganisms. It cannot guarantee that every unit in a batch is sterile — no test can examine every unit without destroying them all. What it demonstrates is that a representative sample from the batch, under conditions designed to detect the broadest possible range of organisms, shows no growth after the full incubation period. The statistical confidence in the sterility of the batch depends on the sample size relative to batch size, the culture conditions used, and the completeness of the incubation period."
+        },
+        {
+          "heading": "Two methods: direct inoculation and membrane filtration",
+          "body": "USP <71> specifies two testing methods. Direct inoculation: a defined volume of the test article is directly transferred into tubes of fluid thioglycolate medium (FTM, for bacteria) and soybean-casein digest (SCD) broth (for fungi and aerobes) and incubated. Simple and applicable to most preparations. Membrane filtration: the test article is filtered through a 0.45 µm membrane that retains microorganisms; the membrane is then rinsed and incubated in FTM and SCD broth. This method is preferred for preparations containing antimicrobial agents (which would inhibit growth in direct inoculation even if organisms were present), oils, or other preparations that cannot be directly inoculated. Membrane filtration is generally more sensitive because a larger volume of the preparation is tested."
+        },
+        {
+          "heading": "Incubation conditions",
+          "body": "Both media are incubated for 14 days under the following conditions: FTM is incubated at 30–35°C (optimized for anaerobic and aerobic bacteria); SCD broth is incubated at 20–25°C (optimized for fungi and aerobes). Many laboratories incubate both media through both temperature ranges sequentially — the order (30–35°C first or 20–25°C first) must be specified in the test method. All tubes and membranes are examined visually for turbidity (cloudiness) at days 3, 7, and 14. Any turbidity at any time point constitutes a positive result — the test is not complete until day 14 with no turbidity."
+        },
+        {
+          "heading": "Positive result — what happens",
+          "body": "A positive sterility test result means the batch is presumed non-sterile and must not be dispensed. The positive result initiates: (1) immediate quarantine of all remaining units from the batch; (2) investigation — is the positive result a true positive (actual contamination) or a false positive (contamination of the test procedure itself)? A false positive is demonstrated by invaliding the test per USP <71> criteria and retesting; (3) if the positive is confirmed as true, the batch is destroyed and a full investigation and CAPA is initiated; (4) any units of the batch already dispensed must be recalled and prescribers and patients notified."
+        },
+        {
+          "heading": "BUD extension — Category 2 only",
+          "body": "Passing sterility testing extends the BUD for Category 2 CSPs only — not Category 1. This is the clinical lever that matters for batch-compounding programs: without sterility testing, Category 2 aqueous CSPs are limited to 45 days at room temperature/60 days refrigerated; with a passing sterility test, these limits extend to 90 days/120 days. For high-volume OPAT preparations (vancomycin, cefepime, ceftriaxone home infusion batches), this difference has major operational implications. Category 1 CSPs prepared in an SCA do not benefit from sterility testing — even if tested and passed, they cannot exceed 12 hours at room temperature."
+        }
+      ],
+      "keyTerms": [
+        { "term": "Sterility testing (USP <71>)", "definition": "14-day microbiological culture test using FTM and SCD broth to detect viable microorganisms in a CSP sample; any turbidity at any time point = positive (failure)." },
+        { "term": "Fluid thioglycolate medium (FTM)", "definition": "Culture medium incubated at 30–35°C; optimized for detection of anaerobic and aerobic bacteria." },
+        { "term": "Soybean-casein digest (SCD) broth", "definition": "Culture medium incubated at 20–25°C; optimized for detection of fungi and aerobes." },
+        { "term": "Membrane filtration method", "definition": "Sterility testing method where the preparation is filtered through a 0.45 µm membrane; preferred for preparations with antimicrobial agents; generally more sensitive than direct inoculation." },
+        { "term": "Invalid test", "definition": "A sterility test result that is considered unreliable due to a procedural error or contamination of the test system — requires repeat testing; does not release the batch." }
+      ],
+      "clinicalExample": {
+        "scenario": "Your pharmacy batches vancomycin 1.25 g/250 mL bags and wants to assign a 90-day refrigerated BUD. You submit a sample of the batch for sterility testing. On day 7, one SCD tube shows faint turbidity. What happens next?",
+        "analysis": "This is a presumptive positive sterility test result. The batch must be immediately quarantined. The positive is investigated — is this a true positive or a false positive due to contamination of the test environment? If the laboratory can demonstrate that the testing conditions were compromised (e.g., a positive growth promotion test in the negative control), the test may be invalidated and repeated. If no invalidation criterion is met, the positive is confirmed and the batch is not released. The batch is destroyed, and a CAPA is initiated examining the compounding environment, personnel technique, and sterilization process for that batch.",
+        "takeaway": "A positive sterility test result at any time point requires immediate batch quarantine. The 90-day BUD cannot be assigned to a batch with an unresolved positive sterility test — ever."
+      },
+      "selfCheck": [
+        {
+          "question": "At what temperature is FTM incubated during sterility testing, and what types of organisms is it optimized to detect?",
+          "answer": "30–35°C; optimized for anaerobic and aerobic bacteria",
+          "explanation": "FTM is a thioglycolate-containing medium that creates an oxygen gradient — the bottom is anaerobic, the surface is aerobic — allowing detection of both aerobic and anaerobic bacteria in a single tube."
+        },
+        {
+          "question": "A Category 1 CSP prepared in an SCA passes a sterility test. Can the BUD now be extended beyond 12 hours at room temperature?",
+          "answer": "No — sterility testing does not extend BUD for Category 1 CSPs; the 12h/24h limits are determined by the SCA environment, not by sterility testing results",
+          "explanation": "BUD extension from sterility testing is a benefit available to Category 2 CSPs only. The Category 1 BUD limits are a function of the SCA environment's lower cleanliness level — a passing sterility test does not change the environmental classification."
+        },
+        {
+          "question": "How long must sterility testing incubation continue before a negative result can be declared?",
+          "answer": "14 days — no turbidity in any vessel at any time point across the full 14-day incubation period",
+          "explanation": "Slow-growing organisms may not produce visible turbidity until late in the incubation period. Declaring a negative before day 14 risks missing a contamination event involving fastidious or slow-growing organisms."
+        }
+      ]
+    }
+  ]
+}

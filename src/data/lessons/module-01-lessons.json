@@ -1,0 +1,344 @@
+{
+  "moduleId": 1,
+  "moduleTitle": "Fundamentals of Sterile Compounding",
+  "lessons": [
+    {
+      "id": "1-1",
+      "title": "Master Formulation and Compounding Records for Sterile Compounding",
+      "objectives": [
+        "Distinguish between a Master Formulation Record and a Compounding Record and state the purpose of each",
+        "List the required elements that must appear in both an MFR and a CR",
+        "Explain why the MFR cannot be altered on a per-batch basis"
+      ],
+      "sections": [
+        {
+          "heading": "Why two records?",
+          "body": "USP 797 requires two distinct documents for every compounded sterile preparation: the Master Formulation Record (MFR) and the Compounding Record (CR). These are not interchangeable — they serve fundamentally different purposes and exist at different levels of the compounding operation. The MFR is the permanent template; the CR is the batch-specific execution record. Together they form the complete documentation chain that allows any CSP lot to be traced from formula to patient."
+        },
+        {
+          "heading": "The Master Formulation Record (MFR)",
+          "body": "The MFR is the approved, standing formula for a specific CSP. Think of it as the recipe that has already been validated and approved by the pharmacist-in-charge. It contains: the complete formula with ingredient names, sources, and amounts; equipment and supplies required; preparation instructions step-by-step; beyond-use dating with the supporting stability evidence; packaging and storage requirements; labeling requirements; and quality control procedures. The MFR is never modified at the time of compounding — it is only updated through a formal revision process. If a change is needed (e.g., a supplier changes), a new MFR version is created, reviewed, and approved before it is used in production."
+        },
+        {
+          "heading": "The Compounding Record (CR)",
+          "body": "The CR is generated for each individual batch compounded. It documents what actually happened during that specific compounding event. Required CR elements include: the date and time of compounding; the MFR reference (which version was followed); names and lot numbers of every ingredient actually used; calculations performed; equipment used and its calibration status; who compounded and who verified each step; environmental monitoring results if applicable; any deviations from the MFR and how they were addressed; the assigned BUD; and the pharmacist's final verification signature. Without a complete CR, a CSP cannot be released for dispensing."
+        },
+        {
+          "heading": "Practical consequences of incomplete records",
+          "body": "During a patient adverse event or accreditation survey, the first thing investigators ask for is the batch CR. If a patient develops a suspected contamination-related infection, the CR tells you who compounded the batch, which ingredients were used, what their lot numbers were, whether there were any deviations, and whether all quality checks were completed. An incomplete or missing CR means you cannot answer these questions — and in a regulatory context, if it wasn't documented, it didn't happen. This is not bureaucratic formality; it is the core of patient safety in sterile compounding."
+        }
+      ],
+      "keyTerms": [
+        { "term": "Master Formulation Record (MFR)", "definition": "The standing, approved template for a specific CSP formula — contains all preparation instructions, ingredients, stability data, BUD basis, and QC requirements. Never modified at the bench." },
+        { "term": "Compounding Record (CR)", "definition": "The lot-specific batch record documenting every detail of a specific compounding event — ingredients used, lot numbers, calculations, personnel, deviations, and pharmacist sign-off." },
+        { "term": "Beyond-Use Date (BUD)", "definition": "The date and time after which a CSP must not be used — assigned at compounding based on category, storage condition, and dosage form per USP 797." },
+        { "term": "Deviation documentation", "definition": "Any departure from the MFR that occurs during compounding must be recorded in the CR along with the reason and the pharmacist's assessment of whether the batch can still be released." }
+      ],
+      "clinicalExample": {
+        "scenario": "Your infusion pharmacy batches vancomycin 1.25 g/250 mL bags every Monday for OPAT patients. A technician accidentally uses a 500 mL bag for one preparation instead of 250 mL, resulting in a concentration of 2.5 mg/mL instead of 5 mg/mL. The error is caught during final pharmacist check.",
+        "analysis": "The CR for that batch must document the deviation — wrong bag size, resulting concentration error, the lot number of the incorrect bag used. The pharmacist must decide whether to release, reprocess, or quarantine that unit. The MFR remains unchanged. The CR gets a deviation note with the pharmacist's decision and signature. This CR creates an auditable trail if this preparation reaches a patient and an adverse event is later reported.",
+        "takeaway": "The CR is where deviations live. Its completeness directly determines your ability to defend any release decision and protect patients from CSPs that do not meet specification."
+      },
+      "selfCheck": [
+        {
+          "question": "Which document would you consult to find the approved BUD basis for a Category 2 vancomycin preparation your pharmacy has been making for 3 years?",
+          "answer": "The MFR",
+          "explanation": "The MFR contains the standing formula including the BUD basis and supporting stability evidence. The CR for any given batch will record the actual BUD assigned, but the justification for that BUD lives in the MFR."
+        },
+        {
+          "question": "A technician realizes mid-preparation that the lot number for one ingredient was not recorded on the CR. What should happen?",
+          "answer": "Stop, retrieve the correct lot number, and document it on the CR before proceeding or releasing the batch",
+          "explanation": "Lot number traceability is a required CR element. Without it, a recall cannot be executed if a contaminated lot is identified later. The batch should not be released until documentation is complete."
+        },
+        {
+          "question": "Your pharmacy wants to change the diluent for a CSP from NS to D5W based on new stability data. Where does this change get made?",
+          "answer": "A new version of the MFR is created, reviewed, and pharmacist-approved before any batch is compounded under the new formula",
+          "explanation": "MFRs are never changed at the bench mid-batch. A formal revision process creates a new MFR version, which is approved before production changes. The old version is archived, not discarded."
+        }
+      ]
+    },
+    {
+      "id": "1-2",
+      "title": "General Elements of Documentation for Sterile Compounding",
+      "objectives": [
+        "List the universal documentation requirements that apply to all CSPs under USP 797",
+        "Explain the principle that 'if it wasn't documented, it didn't happen' in a regulatory context",
+        "Identify which documentation must be immediately accessible versus archived"
+      ],
+      "sections": [
+        {
+          "heading": "The documentation ecosystem",
+          "body": "USP 797 creates a documentation ecosystem — a set of interrelated records that collectively prove a CSP was prepared correctly, by qualified personnel, in a compliant environment, and released appropriately. No single record is sufficient on its own. The ecosystem includes: MFRs and CRs (preparation records), personnel qualification records (training, media fill, GFS results), environmental monitoring logs, equipment calibration and certification records, cleaning logs, SOP version-controlled documents, and corrective action records. Each component answers a different question an inspector or investigator might ask."
+        },
+        {
+          "heading": "What every CSP label must contain",
+          "body": "Every CSP must bear a label before it leaves the pharmacy. Required label elements include: patient name and identifier; drug name and amount; diluent and volume; route of administration; storage requirements; BUD (date and time); compounding facility name and address; lot number; and any required auxiliary labeling (e.g., protect from light). For anticipated CSPs that do not yet have a patient assigned, the label includes all elements except patient name, which is added at dispensing. A CSP without a complete label is never dispensed."
+        },
+        {
+          "heading": "Retention requirements",
+          "body": "USP 797 (2023) requires documentation to be retained for a minimum of 3 years for most records. State boards of pharmacy may require longer retention periods — always apply the more stringent standard. Records must be organized, secure, and immediately retrievable. 'Immediately retrievable' means that if a surveyor asks for the CR for batch lot #20240315-001 during an inspection, you can produce it within minutes — not 'I'll have to look for it.' Electronic records are acceptable and encouraged, provided they meet audit trail requirements (entries cannot be deleted; corrections are made as amendments with date and author)."
+        },
+        {
+          "heading": "Amendments vs alterations",
+          "body": "In paper records, errors are never whited out or scribbled over — they are corrected with a single strikethrough, the correct information written adjacent, dated, and initialed by the person making the correction. The incorrect entry must remain legible. In electronic systems, the system must prevent deletion and must log who made what change and when. Altering a record to hide an error — whether on paper or electronically — is fraud, not a documentation error. This distinction matters: an honest error documented transparently is manageable; an altered record is a federal offense."
+        }
+      ],
+      "keyTerms": [
+        { "term": "Documentation ecosystem", "definition": "The complete set of interrelated records required by USP 797 — preparation records, personnel qualification, EM logs, equipment records, cleaning logs, SOPs, and CAPA records — that collectively prove CSP quality." },
+        { "term": "Lot number", "definition": "A unique identifier assigned to each batch of CSPs, enabling traceability from dispensed product back to every ingredient, personnel, and process detail recorded in the CR." },
+        { "term": "Audit trail", "definition": "The complete, unalterable chronological record of who did what and when — required for all electronic documentation systems; errors are amended, never deleted." },
+        { "term": "Anticipated CSP", "definition": "A CSP prepared before a specific patient order exists, based on predicted clinical demand — must still meet all labeling and documentation requirements except patient name at time of preparation." }
+      ],
+      "clinicalExample": {
+        "scenario": "During a ACHC accreditation survey, the surveyor asks to see the environmental monitoring records for the past 6 months and the personnel qualification file for a specific technician who compounded that morning.",
+        "analysis": "If your documentation ecosystem is functioning correctly: EM logs are in a dedicated binder or electronic folder organized by date and location, showing monthly viable sampling results with any excursion investigations; the technician's file contains initial GFS results (3 passes), initial media fill results (3 passes), ongoing 6-month results, garbing observation records, and training sign-offs. The surveyor can verify compliance within minutes. If any of these are missing or disorganized, it becomes a finding regardless of whether the actual practice was compliant.",
+        "takeaway": "Documentation compliance is not separate from clinical compliance — it is the proof of clinical compliance. A perfect process that isn't documented is indistinguishable from a process that didn't happen."
+      },
+      "selfCheck": [
+        {
+          "question": "A pharmacist makes an arithmetic error on a paper CR and wants to correct it. What is the correct method?",
+          "answer": "Single line through the error (keeping it legible), correct information written next to it, dated, and initialed",
+          "explanation": "White-out and scribbling obscure the original entry. Regulatory standards require the original entry to remain legible. This applies to all paper-based records in a compounding pharmacy."
+        },
+        {
+          "question": "How long must compounding records be retained under USP 797 (2023)?",
+          "answer": "Minimum 3 years — longer if required by state board of pharmacy",
+          "explanation": "Always apply the more stringent standard between federal (USP) and state requirements. Some state boards require 5 years. Check your state-specific rules."
+        },
+        {
+          "question": "True or False: An anticipated CSP can be released without a patient name on the label as long as one is added before it leaves the building.",
+          "answer": "True — with conditions",
+          "explanation": "Anticipated CSPs are prepared without a specific patient order. All label elements except patient name are applied at compounding. Patient name is added at the time of dispensing. The CSP must not be administered without a patient-specific label."
+        }
+      ]
+    },
+    {
+      "id": "1-3",
+      "title": "History of Sterile Compounding",
+      "objectives": [
+        "Describe the events that led to the current USP 797 regulatory framework",
+        "Explain the significance of the 2012 NECC outbreak and the Drug Quality and Security Act of 2013",
+        "Identify the key difference between 503A and 503B compounding facilities"
+      ],
+      "sections": [
+        {
+          "heading": "Why does this history matter?",
+          "body": "Understanding the history of sterile compounding regulation is not an academic exercise — it is a reminder of what happens when safeguards fail. Every requirement in USP 797 exists because something went wrong at some point, either causing patient harm or creating conditions that enabled it. Knowing the origin of these rules helps you understand their intent, which is critical when you encounter novel situations not explicitly covered by the written standard."
+        },
+        {
+          "heading": "Early compounding and the rise of large-scale outsourcing",
+          "body": "For most of pharmacy history, compounding was the core of pharmacy practice — pharmacists prepared nearly all medications individually for patients. The 20th century shift toward mass-manufactured pharmaceuticals changed this, but sterile compounding never disappeared. By the 1990s and 2000s, a new model emerged: large outsourcing compounders producing thousands of units of the same preparation for hospitals and clinics — functioning economically like manufacturers but operating under the far-less-stringent regulatory framework of pharmacy compounding. This gap between scale and oversight created the conditions for disaster."
+        },
+        {
+          "heading": "2012 NECC outbreak and the Drug Quality and Security Act",
+          "body": "In fall 2012, the New England Compounding Center (NECC) in Framingham, Massachusetts shipped contaminated methylprednisolone acetate injections to pain clinics across 23 states. The injections were contaminated with Exserohilum rostratum, a fungal pathogen. The outbreak caused 64 deaths and 753 cases of fungal meningitis or other infections — the deadliest pharmaceutical contamination event in US history. Investigation revealed pervasive contamination of NECC's facility, falsified records, and distribution of CSPs without adequate quality testing. Congress responded with the Drug Quality and Security Act (DQSA) of 2013, which created the modern regulatory framework for compounding, including the 503A and 503B distinctions and FDA oversight of outsourcing facilities."
+        },
+        {
+          "heading": "503A vs 503B: the two pathways",
+          "body": "The DQSA created two legal pathways for compounding. 503A pharmacies are traditional compounding pharmacies — they compound based on valid patient-specific prescriptions and are regulated primarily by state boards of pharmacy. They must follow USP standards but are not FDA-registered as drug manufacturers. 503B outsourcing facilities are registered with the FDA, operate under current Good Manufacturing Practices (cGMP), can produce large batches without patient-specific prescriptions, and are subject to FDA inspection. The distinction determines which regulatory framework applies — your pharmacy's designation affects your compliance obligations."
+        },
+        {
+          "heading": "USP 797 evolution",
+          "body": "The first version of USP 797 was published in 2004, establishing the first national standards for sterile compounding. It was revised in 2008. A major revision process began in the mid-2010s and was finalized in 2023. The 2023 revision — currently enforceable — made significant changes to BUD categories, EM programs, and personnel qualification requirements. Simplifi 797 teaches the 2023 revised standard, which is what your pharmacy must comply with today."
+        }
+      ],
+      "keyTerms": [
+        { "term": "NECC", "definition": "New England Compounding Center — outsourcing compounder whose contaminated methylprednisolone injections caused 64 deaths in the 2012 fungal meningitis outbreak that directly prompted federal compounding reform." },
+        { "term": "Drug Quality and Security Act (DQSA)", "definition": "Federal law enacted in 2013 in response to the NECC outbreak; created the 503A/503B regulatory distinction and gave the FDA explicit oversight authority over outsourcing facilities." },
+        { "term": "503A pharmacy", "definition": "Traditional compounding pharmacy operating under state board oversight; compounds based on patient-specific prescriptions; must follow USP standards." },
+        { "term": "503B outsourcing facility", "definition": "FDA-registered compounder operating under cGMP; may compound large batches without patient-specific prescriptions; subject to regular FDA inspections." }
+      ],
+      "clinicalExample": {
+        "scenario": "A physician asks your infusion pharmacy if you can batch 200 units of methylprednisolone 80 mg/mL for a pain clinic and ship them across state lines without individual patient prescriptions.",
+        "analysis": "As a 503A pharmacy, this is not permitted. 503A pharmacies must compound based on patient-specific prescriptions. Shipping across state lines at this scale without prescriptions is a 503B activity requiring FDA registration and cGMP compliance. Accepting this order without the appropriate registration is a federal violation — and it is exactly the operational model that enabled the NECC catastrophe.",
+        "takeaway": "Know your registration status and its limits. The 503A/503B boundary is not a technicality — it defines your entire regulatory posture and the patient safety standards you are held to."
+      },
+      "selfCheck": [
+        {
+          "question": "What pathogen caused the 2012 NECC meningitis outbreak?",
+          "answer": "Exserohilum rostratum — a fungal pathogen",
+          "explanation": "The contamination was fungal, not bacterial, which is clinically significant because the initial presentation in patients was often delayed and atypical, contributing to diagnostic confusion and delayed treatment."
+        },
+        {
+          "question": "What federal law created the 503A/503B distinction in compounding?",
+          "answer": "The Drug Quality and Security Act (DQSA) of 2013",
+          "explanation": "Enacted directly in response to the NECC outbreak, the DQSA gave the FDA explicit statutory authority over compounding for the first time and created the outsourcing facility category."
+        },
+        {
+          "question": "Your pharmacy is a 503A compounder. Can you legally batch 500 units of a preparation without individual patient prescriptions?",
+          "answer": "No — 503A pharmacies must compound based on patient-specific prescriptions",
+          "explanation": "Large-scale batch compounding without patient-specific orders is a 503B activity. 503A pharmacies may prepare limited quantities in anticipation of prescriptions but must have a licensed prescriber-patient-pharmacist relationship to justify each unit."
+        }
+      ]
+    },
+    {
+      "id": "1-4",
+      "title": "Quality Releases and Final Checks for Sterile Compounding",
+      "objectives": [
+        "List the specific elements a pharmacist must verify during the final quality release check for a CSP",
+        "Explain why the pharmacist's final check cannot be delegated to a technician",
+        "Describe what happens when a CSP fails the final check"
+      ],
+      "sections": [
+        {
+          "heading": "The pharmacist as the final control point",
+          "body": "In sterile compounding, the pharmacist's final check is the last opportunity to catch an error before a CSP reaches a patient. USP 797 is explicit: the final verification and quality release of a CSP must be performed by a pharmacist. This is not an administrative formality — it is a substantive review that requires clinical and compounding expertise. Technicians prepare; pharmacists release. That distinction is the foundational patient safety principle of compounding practice."
+        },
+        {
+          "heading": "What the final check must cover",
+          "body": "The pharmacist's final quality release check must verify all of the following: identity of each ingredient (correct drug name, source); concentration and quantity (correct amount as specified in the MFR and CR); physical appearance (correct color, clarity, absence of particulates, absence of unexpected precipitate, correct volume); container integrity (no leaks, no cracks, closure secured properly); label accuracy and completeness (all required elements present and correct, BUD accurate); CR completeness (all required fields completed, calculations checked, lot numbers recorded); and compliance with any specific quality checks required by the MFR (e.g., pH testing, filter integrity testing). Each element must be assessed independently — the check is not complete until all are verified."
+        },
+        {
+          "heading": "Visual inspection in practice",
+          "body": "Visual inspection is a core component of the final check that requires technique. The pharmacist inspects each CSP against a white background and a black background using adequate lighting to detect particulate matter. The container is inverted and rotated gently to bring particles into suspension and into the light path. Common findings that require rejection: white or colored particulates in solution; cloudiness or haziness in a preparation that should be clear; unexpected color change; visible incompatibility (precipitate, oiliness, or layer separation); visible leaks or seal failure. Solutions that are inherently opaque (e.g., lipid emulsions, certain suspensions) require particulate inspection using appropriate technique for that dosage form."
+        },
+        {
+          "heading": "When a CSP fails the final check",
+          "body": "A CSP that fails the final check is rejected and quarantined — it is never dispensed. The CR must be annotated with the reason for rejection, the observed finding, and the pharmacist's decision. If the failure indicates a systemic problem (e.g., multiple units from the same batch fail visual inspection, suggesting a contamination or compatibility issue), the entire batch is quarantined pending investigation. The root cause must be identified before additional batches of that preparation are released. Rejected CSPs are documented, segregated from releasable product, and disposed of per institutional and state requirements — they are never repurposed or relabeled."
+        }
+      ],
+      "keyTerms": [
+        { "term": "Quality release", "definition": "The formal pharmacist verification that a CSP meets all required standards before it is dispensed — covers identity, concentration, appearance, labeling, container integrity, and documentation completeness." },
+        { "term": "Visual inspection", "definition": "Examination of a CSP against white and black backgrounds with adequate lighting to detect particulate matter, cloudiness, precipitate, color abnormality, or container defects." },
+        { "term": "Quarantine", "definition": "Physical and/or administrative segregation of a CSP that fails quality release, pending investigation or disposal — quarantined product is never dispensed." },
+        { "term": "In-process checks", "definition": "Quality verification steps performed during compounding (not just at the end) — include ingredient ID check, calculation verification, and volume confirmation at key steps." }
+      ],
+      "clinicalExample": {
+        "scenario": "During the final check of a batch of 20 amphotericin B lipid complex bags, the pharmacist notices that 3 units have a yellowish discoloration and visible particulate when held against the white background. The other 17 appear normal.",
+        "analysis": "The 3 discolored units are immediately quarantined and rejected. Because the abnormality appears in units from the same batch, the pharmacist must consider whether the entire batch is at risk — the 3 failures may represent a preparation error, a compatibility issue, or ingredient-level contamination. The entire batch should be held pending investigation. The CR is reviewed: were the correct ingredients used? Was the correct lot number of amphotericin used? Was the preparation technique within specification? Root cause drives the disposition of the remaining 17 units.",
+        "takeaway": "A single visual inspection failure in a batch is never an isolated event — it is a signal to question the entire batch. The disposition of every unit in that batch is your responsibility."
+      },
+      "selfCheck": [
+        {
+          "question": "A CSP visually appears clear and colorless during the final check, but the label indicates the BUD was calculated incorrectly. What should the pharmacist do?",
+          "answer": "Reject and quarantine the CSP — relabeling with the correct BUD requires re-verification and documentation; the original label cannot simply be crossed out",
+          "explanation": "Labeling errors are failures of the final check just as much as visual defects. The CSP cannot be dispensed with an incorrect BUD. Proper correction requires documenting the error, applying a corrected label, and re-signing the CR noting the correction."
+        },
+        {
+          "question": "Can a verified, PTCB-certified pharmacy technician perform the final quality release check for a CSP?",
+          "answer": "No — the final quality release of a CSP must be performed by a pharmacist",
+          "explanation": "USP 797 is explicit that pharmacist verification is required for CSP release. This is a professional and legal requirement, not simply a preference."
+        },
+        {
+          "question": "When inspecting a clear IV bag for particulates, what two backgrounds should be used?",
+          "answer": "White background and black background",
+          "explanation": "White background helps detect dark particulates; black background helps detect white/light particulates. Using only one background significantly increases the risk of missing particulate contamination."
+        }
+      ]
+    },
+    {
+      "id": "1-5",
+      "title": "Standard Operating Procedures for Sterile Compounding",
+      "objectives": [
+        "Explain what a Standard Operating Procedure (SOP) must contain to comply with USP 797",
+        "State the minimum review frequency for SOPs under USP 797 (2023)",
+        "Describe why SOPs must be accessible at the point of use"
+      ],
+      "sections": [
+        {
+          "heading": "What is a Standard Operating Procedure?",
+          "body": "A Standard Operating Procedure (SOP) is a written, step-by-step instruction for performing a specific process or task in a way that is consistent, reproducible, and compliant with applicable standards. In a sterile compounding pharmacy, SOPs govern every critical process: hand hygiene and garbing, cleaning and disinfecting each area, environmental monitoring sampling and documentation, equipment use and calibration, handling a spill, responding to an EM excursion, media fill execution, and dozens more. If a process is critical to product quality or personnel safety, it needs an SOP."
+        },
+        {
+          "heading": "Required SOP elements",
+          "body": "A compliant SOP for sterile compounding must contain: a title clearly identifying the process; a stated purpose or scope explaining what the SOP covers and why it exists; applicability (which staff, which areas, which scenarios it applies to); materials and equipment required; a numbered, sequential procedure in enough detail that a trained person can follow it without ambiguity; documentation requirements (what gets recorded, where, and by whom); references to applicable regulations or guidelines; and version control information — the SOP number, version number, effective date, author, and the date and signature of the pharmacist or director who approved it. Each revision creates a new version; old versions are archived, not destroyed."
+        },
+        {
+          "heading": "Review frequency and the 2-year requirement",
+          "body": "USP 797 (2023) requires that all SOPs be reviewed at minimum every 2 years. The review process must be documented — a reviewer signature and date on the SOP or in a SOP review log confirms that a qualified person examined the SOP, found it current and accurate, and approved its continued use. Reviews triggered by events (a new piece of equipment, a regulatory update, an adverse finding) happen in addition to the scheduled 2-year cycle, not instead of it. During an accreditation survey, inspectors routinely ask to see the SOP review log. An SOP with an effective date more than 2 years old and no documented review is an immediate finding."
+        },
+        {
+          "heading": "Accessible at the point of use",
+          "body": "SOPs must be immediately accessible to staff at the location where the process is performed. This means the cleaning SOP is accessible inside or adjacent to the cleanroom — not filed in the pharmacist's office. The garbing SOP is accessible in the anteroom. The media fill SOP is accessible at the compounding bench. 'Accessible' means a staff member performing the task can reference it in real time without leaving the work area or asking someone else for it. Electronic systems that require logging in on a workstation in the preparation area fulfill this requirement; a binder locked in a filing cabinet does not."
+        }
+      ],
+      "keyTerms": [
+        { "term": "Standard Operating Procedure (SOP)", "definition": "A written, approved, step-by-step instruction for performing a critical process — must be specific, current, versioned, and accessible at point of use." },
+        { "term": "Version control", "definition": "The system for managing SOP revisions — each version has a unique version number, effective date, and approval signature; superseded versions are archived." },
+        { "term": "Review cycle", "definition": "The scheduled interval at which SOPs are re-examined for accuracy and currency — minimum every 2 years per USP 797 (2023), with event-triggered reviews as needed." },
+        { "term": "Point of use", "definition": "The physical location where a process is performed — SOPs must be immediately accessible there, not stored remotely." }
+      ],
+      "clinicalExample": {
+        "scenario": "During a surprise state board inspection, an inspector asks the technician currently cleaning the LAF workbench to show where the cleaning SOP is. The technician says the SOP is in the pharmacist's office and they will go get it.",
+        "analysis": "This is a finding. The cleaning SOP must be accessible in or immediately adjacent to the area where cleaning occurs — the cleanroom, the anteroom, or mounted near the PEC. If the technician cannot reference the SOP without leaving the work area, the requirement for point-of-use access has not been met. Additionally, the inspector will then ask to see the SOP itself — if it has not been reviewed in the last 2 years, that is a second finding.",
+        "takeaway": "SOPs locked in offices are not compliant SOPs regardless of how well-written they are. Accessibility is a requirement, not a convenience."
+      },
+      "selfCheck": [
+        {
+          "question": "Your pharmacy's SOP for viable environmental monitoring was last updated and approved on March 1, 2022. It is now April 15, 2024. Is this SOP compliant?",
+          "answer": "No — the 2-year review cycle has been exceeded; the SOP is overdue for documented review",
+          "explanation": "March 2022 + 2 years = March 2024. As of April 2024, the review is one month overdue. Even if the content is still accurate, the absence of a documented review within the 2-year window is a compliance failure."
+        },
+        {
+          "question": "A new automated compounder is installed in the IV room. When should the corresponding SOP be updated?",
+          "answer": "Before the equipment is put into use for patient preparations",
+          "explanation": "New equipment or processes require SOP updates triggered by the change event, independent of the scheduled 2-year review cycle. Staff should not use new equipment in production without an approved SOP governing its use."
+        },
+        {
+          "question": "What happens to an old version of an SOP when it is replaced by a new version?",
+          "answer": "It is archived (retained for the minimum retention period) — not destroyed",
+          "explanation": "Archived SOPs may be needed during investigations to determine what procedure was in effect at the time of a specific event. Destroying superseded versions eliminates this traceability."
+        }
+      ]
+    },
+    {
+      "id": "1-6",
+      "title": "USP 797 CSP Handling: Staging through Transport",
+      "objectives": [
+        "Describe the required conditions for CSP storage at each stage from preparation through patient delivery",
+        "Explain the impact of temperature excursion on BUD",
+        "State the labeling requirements that must be maintained through the transport chain"
+      ],
+      "sections": [
+        {
+          "heading": "The journey of a CSP from bench to patient",
+          "body": "A compounded sterile preparation does not become safe simply by being correctly prepared — it must be correctly handled from the moment it leaves the compounding bench until the moment it is administered. Contamination, physical degradation, and temperature excursion can all compromise a CSP after preparation. USP 797 addresses the post-compounding lifecycle: staging (holding in the pharmacy before dispensing), storage (controlled temperature conditions), transport, and receipt by the patient or administering clinician."
+        },
+        {
+          "heading": "Staging in the pharmacy",
+          "body": "After final quality release, CSPs awaiting dispensing are staged in dedicated, labeled storage areas. Staging areas must be separated physically or by clear labeling from rejected/quarantined product, from non-pharmaceutical storage, and from in-process preparations. Refrigerated CSPs are stored in a pharmaceutical refrigerator (2–8°C) with a continuous temperature log or alarm system. Room-temperature CSPs are stored in a controlled room temperature environment (20–25°C). Freezer storage (-25 to -10°C) is used when BUD requires it. All storage equipment must have calibrated thermometers with continuous monitoring and documented temperature excursion response procedures."
+        },
+        {
+          "heading": "Temperature excursions and BUD",
+          "body": "A temperature excursion — any deviation from the required storage temperature — does not automatically invalidate a CSP, but it must be evaluated. The pharmacist must assess the excursion duration, the magnitude of the deviation, and the known stability characteristics of the drug(s) involved to determine whether the CSP remains safe and efficacious. If the stability data cannot support continued use after the excursion, the BUD may need to be shortened or the CSP discarded. Crucially, a BUD cannot be extended because of a temperature excursion — the original BUD was assigned based on the assumption that storage conditions were maintained. Excursions are documented, investigated, and may require notification of the affected patient's prescriber."
+        },
+        {
+          "heading": "Transport requirements",
+          "body": "CSPs transported from the pharmacy to a patient or infusion suite must be packaged to maintain integrity during transit: tamper-evident sealing, temperature-controlled packaging if required (insulated containers with validated cold packs for refrigerated products), light-protective packaging for photosensitive preparations, and protection from physical damage. The transport container should be labeled with temperature requirements so any handler along the chain knows the storage requirements. For home infusion patients, transport may involve courier services — the pharmacy must validate that the carrier can maintain required conditions and that patients understand how to receive, inspect, and store their medications."
+        },
+        {
+          "heading": "Patient receipt and home storage",
+          "body": "For home infusion programs, patient education about CSP receipt and storage is a pharmacist responsibility. Patients must be trained to: inspect the package and each CSP for integrity on receipt; immediately place refrigerated products in their refrigerator; identify the BUD and not use CSPs past it; store products away from light if required; and recognize and report any visual abnormality (cloudiness, precipitate, color change, leaking container). A patient who receives and properly stores their medication is the last link in the safety chain — and their ability to do this correctly depends on the education you provide."
+        }
+      ],
+      "keyTerms": [
+        { "term": "Staging", "definition": "The holding of released CSPs in the pharmacy awaiting dispensing — requires designated, temperature-controlled, clearly labeled storage areas separated from quarantined product." },
+        { "term": "Controlled room temperature (CRT)", "definition": "20–25°C (68–77°F) — the storage condition for room-temperature CSPs; must be monitored with calibrated thermometers and documented excursion response." },
+        { "term": "Temperature excursion", "definition": "Any deviation from the required storage temperature range — must be documented, evaluated by a pharmacist, and may require shortening the BUD or discarding the CSP." },
+        { "term": "Tamper-evident packaging", "definition": "Packaging that provides visible evidence if a container has been opened or compromised during transport — required for all CSPs in transit." }
+      ],
+      "clinicalExample": {
+        "scenario": "A home infusion patient calls to report that her weekly delivery of ceftriaxone 2g/50mL bags arrived at her door and the cold pack in the shipping box was fully melted and warm. She asks if the bags are still okay to use.",
+        "analysis": "This is a temperature excursion that requires pharmacist evaluation. You need to know: What time did the package arrive? How long was it in transit? What was the expected transit time and what temperature is the package now? For ceftriaxone, room-temperature stability data must be referenced. If the excursion duration and temperature suggest degradation is possible, the bags must not be used and replacement must be arranged. The event is documented, the carrier is notified, and corrective action is taken to prevent recurrence (better insulation, shorter transit window, different delivery schedule).",
+        "takeaway": "Temperature excursion management is a clinical decision requiring pharmacist judgment — it is not automatically resolved by 'the bags look fine.' Stability data, not appearance, drives the decision."
+      },
+      "selfCheck": [
+        {
+          "question": "A pharmacist-released CSP that requires refrigeration is accidentally left on the counter for 4 hours at room temperature before being placed in the refrigerator. Can its original BUD be extended to compensate for the time at room temperature?",
+          "answer": "No — BUDs cannot be extended after the fact",
+          "explanation": "The BUD was assigned based on the assumption that specified storage conditions would be maintained. The 4-hour room temperature excursion must be evaluated against available stability data. Depending on the drug and duration, the BUD may need to be shortened or the preparation discarded — but it cannot be extended."
+        },
+        {
+          "question": "What is the required storage temperature range for controlled room temperature (CRT) storage of CSPs?",
+          "answer": "20–25°C (68–77°F)",
+          "explanation": "USP defines CRT as 20–25°C with allowed brief excursions between 15–30°C. For CSP staging and storage, maintaining 20–25°C is the standard — the extended excursion range does not apply to CSP storage."
+        },
+        {
+          "question": "A CSP is released for a home infusion patient. What packaging requirement must be met before it leaves the pharmacy?",
+          "answer": "Tamper-evident packaging with temperature-controlled packaging if required, complete patient labeling, and light-protective packaging if the drug requires it",
+          "explanation": "All three elements protect CSP integrity during transport. Tamper-evidence protects against diversion or contamination; temperature packaging maintains stability; light protection prevents photodegradation for sensitive preparations."
+        }
+      ]
+    }
+  ]
+}

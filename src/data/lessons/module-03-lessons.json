@@ -1,0 +1,70 @@
+{
+  "moduleId": 3,
+  "moduleTitle": "Personnel Sampling Metrics",
+  "lessons": [
+    {
+      "id": "3-1",
+      "title": "Personnel Competency Testing in Aseptic Manipulation",
+      "objectives": [
+        "Describe the two components of initial personnel qualification and state how many successful attempts are required for each",
+        "Explain the action threshold for gloved fingertip sampling at ISO 5 and the required response to an exceedance",
+        "State the ongoing qualification frequency and the reinstatement process after a media fill failure"
+      ],
+      "sections": [
+        {
+          "heading": "Why personnel qualification matters",
+          "body": "The most sophisticated cleanroom and PEC cannot overcome contamination introduced by the people working inside them. Personnel are the greatest source of microbial contamination in a sterile compounding environment — skin flora, expired air, hair, and clothing all shed particles and microorganisms constantly. Personnel qualification is the systematic process of verifying that each individual who compounds has the knowledge, technique, and demonstrated skill to work in the classified environment without introducing contamination into the CSP. USP 797 sets mandatory qualification standards that define the floor — below which no compounder may operate."
+        },
+        {
+          "heading": "Gloved Fingertip Sampling (GFS)",
+          "body": "GFS tests the quality of the compounder's garbing and hand hygiene by sampling the fingertips — the highest-risk body part in aseptic compounding. Immediately after completing the full garbing sequence (including sterile gloves as the final step), both gloved hands are pressed onto separate TSA (tryptic soy agar) contact plates — all five fingertips and thumb of each hand must contact the plate surface. The plates are incubated and read at 48–72 hours. The action level is ≤1 CFU per gloved hand. Any CFU count above 0 on either plate at ISO 5 represents an exceedance requiring investigation. For initial qualification, the compounder must demonstrate 3 consecutive successful GFS attempts (across 3 separate garbing events, not 3 plates at once). For ongoing qualification, GFS is performed every 6 months."
+        },
+        {
+          "heading": "Media Fill / Process Simulation Test",
+          "body": "The media fill simulates the actual compounding process but substitutes sterile culture media (soybean-casein digest broth, also called tryptic soy broth) for the actual drug. The compounder performs representative compounding manipulations using the media — filling syringes, spiking bags, transferring volumes — under actual working conditions including the same PEC, same garbing, same technique they use in practice. Completed media-filled units are incubated for 14 days at two temperature ranges: 20–25°C for 7 days, then 30–35°C for 7 days (or vice versa). Any turbidity (cloudiness) in any unit at any time during incubation constitutes a positive — a failure. Initial qualification requires 3 separate passing media fills. The media fill must challenge the compounding process at the same complexity level the compounder will perform in practice."
+        },
+        {
+          "heading": "Initial vs ongoing qualification",
+          "body": "Initial qualification: before any independent compounding is permitted, a compounder must complete 3 separate successful GFS attempts AND 3 separate successful media fills. These may be performed concurrently (same garbing event produces both a GFS plate and a media-filled unit), but each attempt must be a separate event. Ongoing qualification: every 6 months thereafter, each compounder must successfully complete both GFS and a media fill. The 6-month clock restarts after each successful ongoing qualification. A compounder who misses their 6-month window is considered unqualified and must not compound independently until qualification is completed."
+        },
+        {
+          "heading": "Media fill failure — response and reinstatement",
+          "body": "A media fill failure — any turbidity in any filled unit — requires immediate suspension of independent compounding for the individual who failed. The failure must be documented, investigated for root cause (garbing error, technique break, inadequate glove change, equipment issue), and a retraining plan implemented. To return to independent compounding, the individual must complete 3 consecutive successful media fills (passing all three without a failure). This is a significant burden deliberately — media fill failure indicates a technique problem serious enough that a single passing re-qualification is not sufficient assurance."
+        },
+        {
+          "heading": "Garbing observation",
+          "body": "In addition to GFS and media fills, USP 797 requires observation and documentation of each compounder's garbing technique. The observation must be performed by a trained, qualified assessor (typically a supervising pharmacist) who evaluates the compounder's hand hygiene and garbing sequence against the written SOP. Self-assessment does not meet this requirement. The observation must be documented with the assessor's signature and date. This observation component is a frequently overlooked element of the qualification program — many programs have excellent GFS and media fill records but no documented garbing observations."
+        }
+      ],
+      "keyTerms": [
+        { "term": "Gloved fingertip sampling (GFS)", "definition": "Personnel qualification test where both gloved hands (all fingertips + thumbs) are pressed onto TSA contact plates immediately after garbing — action level ≤1 CFU per hand at ISO 5." },
+        { "term": "Media fill", "definition": "Process simulation test using soybean-casein digest broth instead of drug; simulates actual compounding; incubated 14 days at two temperatures; any turbidity = failure." },
+        { "term": "Soybean-casein digest (SCD) broth", "definition": "The culture medium used in media fills — supports growth of a broad range of bacteria and fungi; any contamination introduced during the simulation produces visible turbidity during incubation." },
+        { "term": "Initial qualification", "definition": "The 3-pass GFS + 3-pass media fill requirement that must be completed before a compounder performs any independent sterile compounding." },
+        { "term": "Ongoing qualification", "definition": "The every-6-month GFS + media fill requirement that maintains a compounder's active qualification status." }
+      ],
+      "clinicalExample": {
+        "scenario": "A new pharmacy technician just completed her 3rd initial media fill, all 3 passed. Her first GFS showed 2 CFU on the right hand and 0 on the left. Her second and third GFS were both clean (0 CFU on both hands). She wants to start compounding independently.",
+        "analysis": "She cannot begin independent compounding yet. The first GFS showed 2 CFU on the right hand — this exceeds the ≤1 CFU action level and counts as a failure. She has only 2 successful GFS attempts (passes 2 and 3). She needs one more successful GFS attempt to reach the 3-pass initial qualification threshold. Additionally, the initial GFS failure should have triggered an investigation and retraining of garbing technique before the subsequent passes were performed.",
+        "takeaway": "Each element of the 3-pass requirement must be met independently. A GFS failure during the initial qualification sequence resets the GFS count — it does not restart the media fill requirement."
+      },
+      "selfCheck": [
+        {
+          "question": "A technician successfully completes their 6-month ongoing qualification in January. When must their next qualification be completed?",
+          "answer": "By July (within 6 months of the previous qualification)",
+          "explanation": "The 6-month clock restarts after each successful ongoing qualification. A compounder whose next qualification is due in July must complete it by the end of July — compounding after that date without completing qualification means they are operating unqualified."
+        },
+        {
+          "question": "A media fill is incubated for 12 days and appears clear. Can it be declared a pass at day 12?",
+          "answer": "No — the required incubation period is 14 days; the unit cannot be declared a pass until the full 14-day incubation at both required temperatures is complete",
+          "explanation": "Slow-growing organisms may not produce visible turbidity until late in the incubation period. Declaring a pass before day 14 risks missing a contamination event."
+        },
+        {
+          "question": "Who is permitted to perform the garbing observation assessment for personnel qualification?",
+          "answer": "A trained, qualified assessor — typically a supervising pharmacist; self-assessment does not meet the requirement",
+          "explanation": "The purpose of the garbing observation is to catch technique errors the compounder may not notice themselves. An external, trained observer is required by USP 797 for this component of qualification."
+        }
+      ]
+    }
+  ]
+}

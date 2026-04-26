@@ -1,0 +1,126 @@
+{
+  "moduleId": 2,
+  "moduleTitle": "Engineering Controls for Sterile Compounding",
+  "lessons": [
+    {
+      "id": "2-1",
+      "title": "USP 797 Primary Engineering Controls (PEC)",
+      "objectives": [
+        "Identify the three major types of PECs and state which types are appropriate for hazardous vs non-hazardous drug compounding",
+        "Explain how a laminar airflow workbench maintains an ISO 5 environment",
+        "Describe PEC certification requirements under USP 797 (2023)"
+      ],
+      "sections": [
+        {
+          "heading": "What is a Primary Engineering Control?",
+          "body": "A Primary Engineering Control (PEC) is the piece of equipment that directly provides the ISO 5 environment in which sterile compounding occurs. It is your first line of defense against microbial and particulate contamination of the CSP. The ISO 5 environment (≤100 particles/m³ of particles ≥0.5 µm) is achieved through HEPA-filtered, unidirectional airflow that continuously sweeps the work zone. Every critical site — every needle, vial septum, bag port, and syringe tip — must remain within this HEPA-filtered airstream throughout compounding. There is no substitute for the PEC; if the PEC fails or is offline, compounding stops."
+        },
+        {
+          "heading": "Laminar Airflow Workbench (LAF) — non-hazardous only",
+          "body": "The horizontal laminar airflow workbench directs HEPA-filtered air horizontally from the back of the hood toward the operator. This positive-pressure design pushes room air away from the work surface, protecting the CSP from contamination. Vertical LAF workbenches direct airflow from above, downward toward the work surface and operator, also under positive pressure. Both types are appropriate only for non-hazardous drug compounding. Because LAF workbenches operate under positive pressure, they would push hazardous drug aerosols and vapors toward the operator and into the room — making them categorically unsuitable for any chemotherapy or other NIOSH-listed hazardous drug preparation. This is not a matter of technique; it is a design absolute."
+        },
+        {
+          "heading": "Biological Safety Cabinet (BSC) — hazardous drugs",
+          "body": "The Biological Safety Cabinet Class II provides both product protection and operator/environmental protection. Unlike a LAF workbench, a BSC draws room air through a front intake grill and recirculates HEPA-filtered air in a negative-pressure design that captures hazardous drug aerosols before they can reach the operator or escape into the room. Class II Type A2 BSCs recirculate 70% of HEPA-filtered air and exhaust 30% through a HEPA filter — these may be used for hazardous drug compounding but ideally in a dedicated C-SEC. Class II Type B2 BSCs exhaust 100% of air to the outside through dedicated hard-duct connection — these provide maximum containment and are the preferred C-PEC for antineoplastic compounding."
+        },
+        {
+          "heading": "Compounding Aseptic Containment Isolator (CACI) — maximum protection",
+          "body": "The CACI is a glove-box style isolator in which the operator works through permanently attached gloves into a sealed, HEPA-filtered, negative-pressure chamber. Because the operator never directly contacts the compounding environment, the CACI provides the highest level of product protection and operator containment simultaneously. CACIs are increasingly preferred for high-volume hazardous drug compounding. Their limitation is operational — the gloves restrict dexterity and manipulations are slower. Compounding Aseptic Isolators (CAI, non-containment version) are used for non-hazardous drugs and provide ISO 5 through a positive-pressure isolated chamber."
+        },
+        {
+          "heading": "PEC certification requirements",
+          "body": "All PECs must be certified by a qualified Certifying Organization (CO) at minimum every 6 months. Certification includes: HEPA filter integrity testing (DOP or PAO challenge), airflow velocity measurement, and particle count verification. Additional certification events are required when a PEC is moved, serviced, repaired, or when routine certification fails. Certification reports must be retained as part of the pharmacy's documentation ecosystem. A PEC with a lapsed certification is not compliant for use — compounding in an uncertified PEC is the same as compounding in an uncontrolled environment."
+        }
+      ],
+      "keyTerms": [
+        { "term": "Primary Engineering Control (PEC)", "definition": "Equipment that provides the ISO 5 compounding environment through HEPA-filtered unidirectional airflow — includes LAF workbenches, BSCs, and isolators." },
+        { "term": "ISO 5", "definition": "Airborne particulate cleanliness level of ≤100 particles/m³ (≥0.5 µm) — required for the direct compounding surface in all sterile compounding." },
+        { "term": "HEPA filter", "definition": "High-Efficiency Particulate Air filter capturing ≥99.97% of particles ≥0.3 µm — the core filtration component of all PECs." },
+        { "term": "First air", "definition": "Air that exits the HEPA filter before contacting any surface — the cleanest air in the PEC; all critical sites must be in first air during compounding." },
+        { "term": "Certifying Organization (CO)", "definition": "A qualified third-party firm that performs PEC and SEC certification testing per established standards — must be used for all required certification events." }
+      ],
+      "clinicalExample": {
+        "scenario": "Your infusion pharmacy's current setup uses a horizontal laminar airflow workbench for all IV preparations including weekly cyclophosphamide and paclitaxel for your oncology patients. A newly hired pharmacist tells you this is incorrect.",
+        "analysis": "The newly hired pharmacist is correct. Cyclophosphamide and paclitaxel are both NIOSH Group 1 hazardous drugs. Preparing them in a horizontal LAF workbench directs aerosolized drug particles from the work surface directly toward the operator and into the room environment — exposing the compounding pharmacist and technician to carcinogenic agents. Preparation of these drugs requires a Class II BSC or CACI. This is a serious occupational safety and regulatory violation that must be corrected immediately.",
+        "takeaway": "PEC type is not a preference — it is a safety requirement determined by the drugs being compounded. Hazardous drugs require negative-pressure containment. No technique or PPE compensates for the wrong PEC type."
+      },
+      "selfCheck": [
+        {
+          "question": "A pharmacy compounds both vancomycin bags and carboplatin syringes. Can both preparations be performed in the same horizontal LAF workbench?",
+          "answer": "No — carboplatin is a NIOSH-listed hazardous antineoplastic and requires a negative-pressure C-PEC (BSC Class II or CACI); a horizontal LAF workbench is positive-pressure and prohibited for hazardous drug compounding",
+          "explanation": "Positive-pressure LAF workbenches push aerosols toward the operator. Carboplatin (a platinum-based alkylating agent) is carcinogenic and cannot be prepared in any positive-pressure environment."
+        },
+        {
+          "question": "How often must a PEC be certified under USP 797 (2023)?",
+          "answer": "At minimum every 6 months by a qualified Certifying Organization",
+          "explanation": "Certification covers HEPA filter integrity, airflow velocity, and particle counts. Any PEC that is moved, serviced, or fails routine certification requires immediate re-certification before being returned to service."
+        },
+        {
+          "question": "What is 'first air' and why does it matter for aseptic technique?",
+          "answer": "First air is the HEPA-filtered air that exits the filter before contacting any surface — it is the cleanest air in the PEC; all critical sites must remain in first air to prevent contamination from surfaces or personnel",
+          "explanation": "Any object placed between the HEPA filter and a critical site 'shadows' the critical site from first air, potentially exposing it to less clean air. Maintaining first air at all critical sites is the single most important aseptic technique principle."
+        }
+      ]
+    },
+    {
+      "id": "2-2",
+      "title": "USP 797 Secondary Engineering Controls (SEC)",
+      "objectives": [
+        "Describe the components of a full cleanroom suite SEC and explain how each contributes to the ISO environment",
+        "Explain the difference between an SCA and a full cleanroom suite and the BUD implications of each",
+        "State the pressure differential and ACPH requirements for ISO 7 buffer rooms"
+      ],
+      "sections": [
+        {
+          "heading": "What is a Secondary Engineering Control?",
+          "body": "The Secondary Engineering Control (SEC) is the physical room environment that contains and supports the PEC. While the PEC creates the ISO 5 zone at the bench, the SEC maintains background cleanliness in the surrounding environment. The SEC design — whether a full cleanroom suite or a Segregated Compounding Area — determines the maximum BUD category achievable for CSPs prepared within it. This is the critical link between facility design and clinical operations: your physical infrastructure sets a hard ceiling on your BUD policy."
+        },
+        {
+          "heading": "Full cleanroom suite: ISO 7 buffer room + ISO 8 anteroom",
+          "body": "A full cleanroom suite consists of at minimum an ISO 8 anteroom connected to an ISO 7 buffer room housing the PEC. The anteroom (ISO 8) is where garbing occurs and where supplies are staged before entering the buffer room. The buffer room (ISO 7) houses the PEC and is where compounding takes place. ISO 7 requires ≤352,000 particles/m³ (≥0.5 µm) and must receive ≥30 total air changes per hour (ACPH), with ≥15 ACPH from HEPA-filtered supply air. The buffer room must be maintained at positive pressure relative to the anteroom (and anteroom at positive pressure relative to general pharmacy) for non-hazardous drug compounding. These pressure differentials are maintained to prevent less-clean air from migrating into cleaner zones."
+        },
+        {
+          "heading": "Segregated Compounding Area (SCA)",
+          "body": "An SCA is a designated space that contains an ISO 5 PEC but does not meet cleanroom suite specifications — it lacks the ISO 7 buffer room and ISO 8 anteroom. The space is not ISO-classified. Many community pharmacies, small hospitals, and infusion suites operate with SCAs. An SCA is a legitimate and compliant compounding environment — it simply comes with a hard BUD ceiling: Category 1 only, meaning 12 hours at controlled room temperature or 24 hours refrigerated. No matter how sophisticated the PEC or how skilled the compounder, a CSP prepared in an SCA cannot be assigned Category 2 BUDs. This is not punitive — it reflects that the background environment has not been controlled to the level required to support longer-dated preparations."
+        },
+        {
+          "heading": "Pressure differential requirements",
+          "body": "For non-hazardous compounding, pressure differentials must be positive: buffer room is at positive pressure relative to anteroom, and anteroom is at positive pressure relative to general pharmacy. This means air flows outward from the cleaner space to the less clean space, preventing contamination from migrating inward. The differential must be maintained at all times, including during supply deliveries and personnel traffic. For hazardous drug compounding, the C-SEC (containment SEC) must maintain negative pressure relative to adjacent areas — typically -0.01 to -0.03 inches water column — to contain drug aerosols within the hazardous drug preparation area. Pressure differentials must be continuously monitored and documented."
+        },
+        {
+          "heading": "Certification of the SEC",
+          "body": "Like the PEC, the SEC must be certified every 6 months by a qualified CO. SEC certification includes: particle count measurements at defined locations throughout the ISO 7 and ISO 8 areas; verification of airflow direction and pressure differentials; HVAC performance verification against the ≥30 ACPH (≥15 ACPH from HEPA supply) requirement; and HEPA filter integrity testing. If the SEC fails certification, it must not be used for Category 2 compounding until corrected and re-certified. During SEC downtime, operations may continue using SCA protocols with Category 1 BUDs only."
+        }
+      ],
+      "keyTerms": [
+        { "term": "Secondary Engineering Control (SEC)", "definition": "The controlled room environment that contains the PEC — either a full cleanroom suite (ISO 7 + ISO 8) enabling Category 2 BUDs, or an SCA enabling Category 1 BUDs only." },
+        { "term": "Buffer room", "definition": "The ISO 7 classified room housing the PEC where compounding occurs — requires ≥30 ACPH (≥15 from HEPA supply) and positive pressure relative to anteroom." },
+        { "term": "Anteroom", "definition": "The ISO 8 classified transitional space for garbing and material staging between the general pharmacy and the buffer room." },
+        { "term": "Air changes per hour (ACPH)", "definition": "The number of times per hour the total air volume of a room is replaced — ISO 7 buffer rooms require ≥30 ACPH total with ≥15 from HEPA-filtered supply." },
+        { "term": "Pressure differential", "definition": "The maintained difference in air pressure between adjacent spaces — positive pressure (cleaner space at higher pressure) prevents contamination migration; negative pressure (for HD areas) contains drug aerosols." }
+      ],
+      "clinicalExample": {
+        "scenario": "A hospital pharmacy director proposes a cost-saving measure: because the cleanroom suite renovation is expensive, the pharmacy will instead install a high-quality ISO 5 BSC in a designated corner of the IV room and assign 45-day BUDs to all Category 2 aqueous preparations made in it.",
+        "analysis": "This plan is non-compliant. A designated corner of the IV room — regardless of how clean it appears or how sophisticated the BSC — is an SCA by definition because it lacks the ISO 7 buffer room and ISO 8 anteroom infrastructure. Category 2 BUDs (45+ days) are only achievable in a full cleanroom suite. Assigning 45-day BUDs to SCA-prepared CSPs is a critical compliance failure that exposes patients to preparations that have not been validated for that BUD.",
+        "takeaway": "You cannot engineer your way around the SEC requirement with a better PEC. The SEC infrastructure — the cleanroom suite — is the prerequisite for Category 2 BUDs, not an optional enhancement."
+      },
+      "selfCheck": [
+        {
+          "question": "Your hospital's ISO 7 buffer room HVAC system fails on a Friday afternoon. Patient preparations are urgently needed. What can you do while the HVAC is being repaired?",
+          "answer": "You may continue compounding using SCA protocols — but only Category 1 BUDs (12h room temp / 24h refrigerated) apply until the buffer room is recertified",
+          "explanation": "Without a functioning ISO 7 environment, you cannot support Category 2 BUDs. SCA-level operations are still available if you have an ISO 5 PEC in a designated area. Patient care can continue but preparations must be labeled with Category 1 BUDs and administration timing adjusted accordingly."
+        },
+        {
+          "question": "What is the minimum ACPH requirement from HEPA-filtered supply air in an ISO 7 buffer room?",
+          "answer": "≥15 ACPH from HEPA-filtered supply air (with ≥30 ACPH total)",
+          "explanation": "The total ACPH requirement is ≥30, but at least half of those must come from HEPA-filtered supply. This ensures that a significant fraction of the buffer room air is continuously being replaced with filtered, clean air."
+        },
+        {
+          "question": "For non-hazardous compounding, which direction should air flow at the anteroom-to-buffer-room boundary?",
+          "answer": "Air flows from the buffer room (higher pressure) outward into the anteroom (lower pressure) — positive pressure differential maintained by the buffer room",
+          "explanation": "Positive pressure in the buffer room means air exits into the anteroom rather than entering from it. This prevents less-clean anteroom air from migrating into the ISO 7 compounding environment during door openings."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,267 @@
+{
+  "moduleId": 8,
+  "moduleTitle": "Requirements and Best Practices — Hazardous Drug Compounding",
+  "lessons": [
+    {
+      "id": "8-1",
+      "title": "Hazardous Drug Overview (USP 795 and 797)",
+      "objectives": [
+        "Define what makes a drug 'hazardous' and describe the NIOSH HD classification system",
+        "State the three groups on the NIOSH HD list and give examples of each",
+        "Explain why USP 800 applies beyond the pharmacy"
+      ],
+      "sections": [
+        {
+          "heading": "What makes a drug hazardous?",
+          "body": "NIOSH defines hazardous drugs as drugs that exhibit one or more of the following characteristics in humans or animals: carcinogenicity (ability to cause cancer); teratogenicity or developmental toxicity (ability to cause birth defects or fetal harm); reproductive toxicity (ability to cause infertility or reproductive system harm); organ toxicity at low doses; genotoxicity (ability to damage DNA or chromosomes); or a structural or toxicity profile that mimics existing hazardous drugs. The concern is occupational exposure — not therapeutic use. Pharmacists and technicians who handle these drugs daily in non-therapeutic quantities face cumulative exposure risks that manifest as cancer, reproductive failure, and organ damage over years. The regulatory framework exists to protect workers, not to restrict patient access."
+        },
+        {
+          "heading": "The NIOSH HD list and three groups",
+          "body": "The National Institute for Occupational Safety and Health (NIOSH) publishes and updates the Hazardous Drug list annually. Drugs are organized into three groups: Group 1 — Antineoplastic drugs (highest risk): drugs primarily used to treat cancer; all require full USP 800 controls including closed-system drug transfer devices (CSTDs), C-PEC (negative pressure), C-SEC, chemo-rated PPE, and dedicated equipment. Examples: cyclophosphamide, doxorubicin, vincristine, paclitaxel, methotrexate, carboplatin, ifosfamide. Group 2 — Non-antineoplastic hazardous drugs: drugs not primarily used for cancer but meeting one or more hazardous criteria. Examples: azathioprine, ganciclovir, ribavirin, warfarin (reproductive), finasteride, dutasteride, mycophenolate, leflunomide. Group 3 — Drugs with reproductive hazard only: drugs that meet reproductive toxicity criteria but pose minimal other hazard at low occupational exposure levels. Examples: certain hormones (estradiol patches), some antivirals. Group 3 drugs may require less comprehensive controls but still require assessment-based precautions, especially for reproductive-age workers."
+        },
+        {
+          "heading": "Scope of USP 800: beyond the pharmacy",
+          "body": "USP 800 applies to any setting where hazardous drugs are handled — not only pharmacies. This includes: nursing units administering IV chemotherapy; oncology infusion centers; home care nurses administering HDs to patients at home; receiving/shipping personnel handling HD packages; environmental services staff cleaning areas where HDs are used; and transport staff moving HDs between facilities. Each of these populations requires documented USP 800 training, appropriate PPE access, and exposure assessment. The pharmacy is responsible for the policies that govern HD handling throughout the institution — not just within the cleanroom walls."
+        },
+        {
+          "heading": "Exposure routes and the occupational risk evidence",
+          "body": "Healthcare workers handling HDs can be exposed via: inhalation of drug aerosols (generated during vial reconstitution, bag spiking, pump priming); skin absorption (the most underappreciated route — small-molecule HDs penetrate intact skin); ingestion (hand-to-mouth after HD contact); and needlestick injury. Studies of healthcare workers who handle antineoplastics without adequate controls have demonstrated elevated rates of chromosomal aberrations, spontaneous abortion, premature delivery, and certain malignancies. Surface contamination studies consistently find cyclophosphamide residue on hospital floors, bed rails, nurses' stations, and pharmacy counter surfaces — demonstrating that HD contamination spreads far beyond the compounding area when controls are inadequate."
+        },
+        {
+          "heading": "Your pharmacy's HD list — not just NIOSH",
+          "body": "Your pharmacy must maintain its own HD list based on the NIOSH list. This list must be reviewed whenever NIOSH publishes an update (annually). Every drug handled by the pharmacy must be assessed against NIOSH criteria, and any newly identified HD must be added to the program with immediate implementation of required controls. New drug entities approved after the most recent NIOSH publication must be assessed by the pharmacy's risk assessment process. The HD list is a living document, not a one-time exercise."
+        }
+      ],
+      "keyTerms": [
+        { "term": "Hazardous drug (HD)", "definition": "Any drug meeting one or more of NIOSH criteria: carcinogenicity, teratogenicity, reproductive toxicity, organ toxicity at low doses, genotoxicity, or structural/toxicity similarity to known HDs." },
+        { "term": "NIOSH HD list", "definition": "The National Institute for Occupational Safety and Health's annually updated list of hazardous drugs, organized into Groups 1 (antineoplastics), 2 (non-antineoplastic HDs), and 3 (reproductive hazard only)." },
+        { "term": "Closed System Drug Transfer Device (CSTD)", "definition": "A device that mechanically prevents the escape of HD vapor or aerosol during drug transfer and provides a barrier against contamination — required for all Group 1 antineoplastic manipulations per USP 800." },
+        { "term": "Occupational exposure", "definition": "Repeated, low-level contact with hazardous drugs during the course of healthcare work — cumulative exposure causes cancer, reproductive toxicity, and organ damage; the risk the USP 800 framework is designed to prevent." }
+      ],
+      "clinicalExample": {
+        "scenario": "A pharmacy technician who is 8 weeks pregnant is assigned to compound methotrexate injections for the week because the HD-trained technician called in sick. The supervisor says PPE will protect her.",
+        "analysis": "This is an unacceptable assignment. Methotrexate is a Group 1 hazardous antineoplastic with well-documented teratogenicity and reproductive toxicity. USP 800 requires that employers implement an assessment of reproductive risk and allow reproductive-age workers to voluntarily absent from HD handling without occupational penalty. PPE reduces but does not eliminate exposure risk — no PPE regime provides zero exposure. Assigning a pregnant worker to methotrexate compounding — even with full PPE — is ethically and regulatorily unjustifiable. Alternative staffing must be arranged.",
+        "takeaway": "USP 800 reproductive risk assessment is not optional. Every pharmacy must have a documented policy for addressing requests from reproductive-age workers to limit HD exposure. 'We'll just use PPE' is not an adequate response to a pregnancy disclosure."
+      },
+      "selfCheck": [
+        {
+          "question": "Warfarin appears on the NIOSH Group 3 HD list (reproductive hazard). Does this mean it requires the same controls as cyclophosphamide?",
+          "answer": "No — Group 3 drugs require an assessment-based approach; the controls required depend on the drug's specific hazard profile, the exposure route and quantity, and the reproductive status of the workers involved; Group 3 may require less comprehensive controls than Group 1 antineoplastics",
+          "explanation": "Not all HDs require the same level of control. Group 1 antineoplastics require maximum controls. Group 2 and 3 drugs require risk-assessment-based controls that may be less comprehensive — but the assessment must be documented and controls appropriate to the identified risk implemented."
+        },
+        {
+          "question": "The NIOSH HD list was last updated 14 months ago. Your pharmacy recently started stocking a newly approved small-molecule tyrosine kinase inhibitor. What must the pharmacy do?",
+          "answer": "Assess the new drug against NIOSH hazard criteria using the pharmacy's internal assessment process; if it meets one or more criteria, add it to the pharmacy HD list and implement appropriate controls before handling",
+          "explanation": "New drugs approved between NIOSH list updates are the pharmacy's responsibility to assess. You cannot wait for the next NIOSH publication before implementing controls for a drug that clearly meets hazard criteria."
+        }
+      ]
+    },
+    {
+      "id": "8-2",
+      "title": "Containment Primary and Secondary Engineering Controls (C-PEC and C-SEC)",
+      "objectives": [
+        "Distinguish between a C-PEC and a regular PEC in terms of pressure and exhaust design",
+        "State the pressure differential requirements for a C-SEC",
+        "Explain why a standard positive-pressure LAF workbench is never acceptable for HD compounding"
+      ],
+      "sections": [
+        {
+          "heading": "The containment engineering control principle",
+          "body": "For hazardous drug compounding, the engineering control system serves two functions simultaneously: it must protect the CSP from contamination (as for any sterile preparation) AND it must protect the worker and environment from exposure to the drug. Standard sterile compounding PECs (horizontal LAF workbenches) achieve only the first function — they push air away from the CSP toward the operator, which is the opposite of what is needed for HD containment. The containment primary engineering control (C-PEC) and containment secondary engineering control (C-SEC) are specifically designed to achieve both protection goals."
+        },
+        {
+          "heading": "C-PEC: types and requirements",
+          "body": "The C-PEC must be a negative-pressure device that draws room air inward rather than pushing it outward. Acceptable C-PEC types: Class II Type A2 BSC — recirculates 70% of air through HEPA filter, exhausts 30% through a HEPA filter; provides operator and product protection; must ideally be connected to dedicated exhaust. Class II Type B2 BSC — exhausts 100% of air to the outside through hard-duct HEPA filtration; no recirculation; maximum containment; required for drugs with significant vapor pressure (e.g., carmustine, some nitrogen mustards). Negative-pressure isolator (CACI) — glove-box style; operator never directly contacts the HD environment; highest level of worker and product protection; increasingly preferred for high-volume HD compounding. All C-PECs must maintain negative pressure relative to the surrounding room at all times during use."
+        },
+        {
+          "heading": "C-SEC: the containment secondary engineering control",
+          "body": "The C-SEC is the room housing the C-PEC. For HD compounding, the C-SEC must maintain negative pressure relative to adjacent areas: the specified pressure differential is -0.01 to -0.03 inches water column. This ensures air flows from the adjacent (less contaminated) areas into the HD preparation room, not outward. If a drug aerosol or spill occurs in the C-SEC, the negative pressure prevents it from migrating into the corridor, anteroom, or general pharmacy. The C-SEC exhaust must be HEPA-filtered and directed outside the building, not recirculated into the HVAC system. Pressure differentials must be continuously monitored with visible indicators and audible alarms for pressure loss."
+        },
+        {
+          "heading": "Why positive-pressure environments are categorically prohibited for HD compounding",
+          "body": "A positive-pressure environment (higher pressure inside than outside) causes air to flow outward whenever a door opens, a pass-through is used, or any breach in the room envelope occurs. In a standard sterile compounding environment, this protects the product. In an HD environment, positive pressure would push drug-containing air into adjacent spaces — corridors, anteroom, adjacent patient care areas — creating an exposure hazard for every person in those areas. A horizontal LAF workbench in a standard positive-pressure buffer room directing airflow toward the operator is doubly wrong for HD compounding: the PEC pushes drug aerosols at the operator, and the room pushes them into the corridor. This is not a matter of degree — there is no PPE protocol and no technique that compensates for fundamentally wrong engineering control direction."
+        }
+      ],
+      "keyTerms": [
+        { "term": "Containment Primary Engineering Control (C-PEC)", "definition": "Negative-pressure ISO 5 device for HD compounding — BSC Class II (Type A2 or B2) or negative-pressure isolator (CACI); provides simultaneous product and worker protection." },
+        { "term": "Containment Secondary Engineering Control (C-SEC)", "definition": "Negative-pressure room housing the C-PEC; maintains -0.01 to -0.03 in WC relative to adjacent areas; HEPA-filtered exhaust directed outside." },
+        { "term": "Pressure differential (C-SEC)", "definition": "-0.01 to -0.03 inches water column — the negative pressure maintained in the C-SEC relative to adjacent areas; must be continuously monitored with alarms." },
+        { "term": "Hard-duct exhaust", "definition": "A dedicated, sealed exhaust duct connecting the C-PEC directly to the building exhaust system — required for Class II Type B2 BSCs and recommended for all HD exhaust." }
+      ],
+      "clinicalExample": {
+        "scenario": "A small infusion pharmacy wants to add oncology compounding to its services. It plans to place a Class II Type A2 BSC inside its existing ISO 7 buffer room (which is positive pressure). Is this setup compliant?",
+        "analysis": "No — the C-PEC (BSC Type A2) is negative pressure, but the room housing it (ISO 7 buffer room) is positive pressure. This means that if any HD vapor or aerosol escapes the BSC (during cleaning, when the sash is raised, during an alarm condition), the positive-pressure room will push it into the anteroom and corridor. The C-SEC must be a separate negative-pressure space, not the existing positive-pressure buffer room. The pharmacy must construct a dedicated C-SEC, or use a negative-pressure isolator (CACI) that is self-contained and does not require a negative-pressure room.",
+        "takeaway": "The entire engineering control system must be designed for HD use — placing a negative-pressure C-PEC inside a positive-pressure room creates a fundamentally contradictory setup that does not provide worker protection."
+      },
+      "selfCheck": [
+        {
+          "question": "A pharmacy's C-SEC pressure monitoring alarm sounds, indicating the room has lost negative pressure and is now at 0.00 inches WC (neutral pressure). Should HD compounding continue?",
+          "answer": "No — HD compounding must immediately stop; a neutral pressure C-SEC provides no containment; the room must be returned to the required -0.01 to -0.03 in WC before compounding resumes; HVAC engineering must be called immediately",
+          "explanation": "Loss of negative pressure in the C-SEC eliminates the primary environmental containment barrier. Any aerosolization event in the room would now allow drug contamination to escape into adjacent areas. Continuing to compound under these conditions exposes workers and patients to uncontrolled HD contamination."
+        },
+        {
+          "question": "What is the exhaust requirement for a Class II Type B2 BSC?",
+          "answer": "100% of air exhausted to the outside through a dedicated hard-duct HEPA-filtered connection — no recirculation; the 100% exhaust requirement is what distinguishes Type B2 from Type A2",
+          "explanation": "Class II Type B2 provides maximum containment by exhausting all air — including the HEPA-filtered recirculated air — to the outside. This makes it the preferred C-PEC for drugs with significant vapor pressure or volatility, where even HEPA-filtered recirculated air poses a vapor exposure risk."
+        }
+      ]
+    },
+    {
+      "id": "8-3",
+      "title": "Personal Protective Equipment for HD Handling (USP 795 and 797)",
+      "objectives": [
+        "List the required PPE components for HD compounding and state the specific testing standards each must meet",
+        "Explain the correct donning and doffing sequence for HD PPE",
+        "Describe the situations that require respiratory protection during HD handling"
+      ],
+      "sections": [
+        {
+          "heading": "Why standard sterile compounding PPE is insufficient for HDs",
+          "body": "Standard sterile compounding PPE (surgical gown, single pair of sterile gloves, face mask) is designed to protect the product from the compounder — not to protect the compounder from the drug. For HD compounding, the PPE system must protect the worker from the drug while also protecting the drug from contamination. These are different engineering problems requiring different PPE specifications. USP 800 sets specific testing standards for each component of HD PPE — specifications that standard sterile compounding garb does not meet."
+        },
+        {
+          "heading": "Gloves — the most critical component",
+          "body": "Chemotherapy-rated gloves must meet ASTM D6978 Standard Practice for Testing Gloves for Resistance to Permeation by Chemotherapy Drugs. Standard sterile gloves (even thicker surgical gloves) are NOT tested to this standard and are not acceptable for HD handling. Double-gloving is required for all HD compounding — the inner glove is donned under the gown cuff, the outer glove over the cuff (reversing this order leaves a gap at the wrist where skin is exposed). The outer glove is changed every 30 minutes during continuous compounding or immediately after any spill or suspected contamination. Powdered gloves are prohibited for HD use (talc particles carry surface drug contamination into the environment and are lung irritants). Torn or punctured gloves require immediate glove change and handwashing."
+        },
+        {
+          "heading": "Gown requirements",
+          "body": "HD gowns must meet AAMI PB70 Level 2 or higher for liquid barrier performance, and must be tested for HD permeation resistance. Acceptable gowns are closed-front (no open lapels), have a solid front panel (no seams or perforations in the front), long sleeves with tight-fitting or knit cuffs, and no elastic waistband (which can gap during movement). Cloth or reusable gowns are not acceptable — they are not validated as liquid-impermeable barriers. Gowns are single-use only — they are discarded (not laundered) after each HD compounding session or immediately after contamination. Gown donning occurs before the outer pair of gloves in the garbing sequence: inner gloves → gown (closed, cuffs secured) → outer gloves over cuffs."
+        },
+        {
+          "heading": "Eye and face protection",
+          "body": "Eye and face protection is required for any HD manipulation with a risk of splash: vial reconstitution (particularly when inverting the vial and withdrawing solution); priming IV tubing; connecting or disconnecting IV lines; and spill management. Safety glasses alone are insufficient — they do not protect against splash from below or the sides. Chemical splash goggles or a face shield (covering forehead, chin, and sides of the face) are required when splash risk exists. Safety glasses are acceptable only when there is no splash risk (e.g., when handling sealed, intact HD packages). Note: the face mask worn for sterile compounding does not provide eye protection."
+        },
+        {
+          "heading": "Respiratory protection",
+          "body": "Standard surgical face masks do not protect against inhalation of drug aerosols or vapors — they filter particles larger than approximately 3 µm but are inefficient against the finer aerosols generated during HD reconstitution and manipulation. When engineering controls provide adequate containment (a properly functioning C-PEC with sash in place), respiratory protection beyond a surgical mask may not be required. Respiratory protection is specifically required when: handling drugs with significant vapor pressure without a CSTD; performing operations where aerosol generation cannot be eliminated by engineering controls; cleaning up HD spills; or when using an isolator with compromised glove integrity. When required, a NIOSH-certified P100 respirator (air-purifying) or N95 is appropriate for particles; for volatile HDs, a combination organic vapor/P100 cartridge respirator is required."
+        }
+      ],
+      "keyTerms": [
+        { "term": "ASTM D6978", "definition": "The testing standard for chemotherapy drug permeation resistance of gloves — required for gloves used in HD compounding; standard sterile gloves do not meet this standard." },
+        { "term": "AAMI PB70 Level 2", "definition": "The minimum barrier performance standard for HD gowns — specifies liquid barrier resistance; closed-front, long-sleeve, HD-validated gowns required." },
+        { "term": "Double-gloving", "definition": "Required for all HD compounding — inner glove under gown cuff, outer glove over cuff; outer glove changed every 30 minutes or after any contamination event." },
+        { "term": "Closed-system drug transfer device (CSTD)", "definition": "A device that prevents escape of HD vapor or aerosol during drug transfer — required for all Group 1 antineoplastic manipulations; significantly reduces airborne HD contamination." }
+      ],
+      "clinicalExample": {
+        "scenario": "A pharmacy technician is reconstituting cyclophosphamide 1 g vials in a Class II BSC. She is wearing a standard sterile compounding gown, one pair of sterile gloves, and a surgical mask. She has not used a CSTD. Is her PPE appropriate?",
+        "analysis": "No — multiple deficiencies: (1) Standard sterile compounding gown may not meet AAMI PB70 Level 2 and is almost certainly not tested for HD permeation — must be replaced with an HD-validated gown; (2) Single sterile gloves are not ASTM D6978 tested and double-gloving is required — must be replaced with chemotherapy-rated double gloves; (3) CSTDs are required for all Group 1 antineoplastic manipulation — cyclophosphamide is Group 1; reconstituting without a CSTD generates aerosol inside the BSC and risks exposure through any gap in the sash. Each deficiency independently represents a USP 800 non-compliance.",
+        "takeaway": "PPE compliance for HD compounding is not about having any gown, gloves, and mask — it is about having the right gown (AAMI PB70 Level 2+), the right gloves (ASTM D6978 tested, double), and using CSTDs. Each standard exists because the lower-spec alternatives have been demonstrated to allow HD permeation or exposure."
+      },
+      "selfCheck": [
+        {
+          "question": "A pharmacist's outer chemotherapy glove tears while she is drawing up vincristine. What should she do immediately?",
+          "answer": "Stop the manipulation immediately; remove the torn outer glove without contaminating the inner glove; wash hands; don a new pair of outer gloves; inspect the inner glove for compromise; if the inner glove is intact, resume with new outer gloves; document the event",
+          "explanation": "A torn outer glove represents a breach in the primary hand barrier. The manipulation cannot continue with a compromised glove — the risk of HD skin contact is too high. Washing hands after removing the torn glove removes any drug that may have permeated through the glove at the tear site."
+        },
+        {
+          "question": "Can a healthcare worker use their prescription safety glasses as the required eye protection during IV cyclophosphamide bag preparation with a spiking set?",
+          "answer": "No — prescription safety glasses do not provide protection against splash from below or the sides; chemical splash goggles or a face shield is required for operations with splash risk",
+          "explanation": "Prescription glasses sit close to the face with open gaps at the top, bottom, and sides. Splash during bag spiking can easily reach the eye through these gaps. Splash goggles seal around the eye socket; a face shield protects the full face."
+        }
+      ]
+    },
+    {
+      "id": "8-4",
+      "title": "HD Work Practice: Receiving through Transport to Patients",
+      "objectives": [
+        "Describe the required precautions for receiving hazardous drug shipments",
+        "State the labeling, packaging, and transport requirements for HD CSPs",
+        "Explain what training is required for all personnel who handle HD packages"
+      ],
+      "sections": [
+        {
+          "heading": "Receiving HD shipments",
+          "body": "The HD supply chain begins at the receiving dock — and so does USP 800 compliance. Receiving personnel who handle HD packages must be trained in HD handling, must have access to appropriate PPE (at minimum one pair of chemotherapy-rated gloves for handling HD packages), and must know the procedure for responding to a damaged or leaking HD package. All HD deliveries must be inspected upon receipt for shipping damage, leakage, and seal integrity. Packages showing any signs of HD leakage (staining, crystalline residue, unusual odors) must be treated as a spill — isolated, contained, and not opened without appropriate PPE and spill kit. The receiving area must have a spill kit accessible at all times."
+        },
+        {
+          "heading": "Storage of HDs",
+          "body": "Hazardous drugs must be stored separately from non-hazardous drugs — in a negative-pressure storage area or in ventilated cabinets/enclosures designed for HD storage. The negative-pressure requirement for HD storage areas reflects the same principle as the C-SEC: if any HD container leaks or breaks during storage, the negative pressure prevents drug-containing air from migrating into adjacent areas. HDs requiring refrigeration are stored in a dedicated HD refrigerator, also under negative pressure or in a ventilated refrigerated enclosure. HD storage areas must be clearly labeled and accessible only to trained HD handlers."
+        },
+        {
+          "heading": "Labeling and packaging HD CSPs for transport",
+          "body": "HD CSPs must be labeled with a distinctive label identifying the preparation as hazardous — this label must remain on the preparation through all transport steps to the point of administration, so that anyone handling it knows the required precautions. Transport packaging for HDs must be: sealed and leak-proof (in case of container breakage during transport); labeled as hazardous; and sufficient to maintain temperature requirements. For courier or home delivery, the outer packaging must contain an HD warning and include emergency instructions and pharmacy contact information in case of package damage during delivery."
+        },
+        {
+          "heading": "Administration — the end of the chain",
+          "body": "The healthcare worker who administers an HD to a patient is the last person in the HD handling chain. They require the same USP 800 training and PPE access as pharmacy personnel: chemotherapy-rated gloves, HD gown, and eye/face protection for all administration activities involving HD solutions. CSTDs should be used for all IV HD administration connections and disconnections. Nurses who prime chemotherapy tubing, spike chemotherapy bags, or connect HD infusions are performing HD manipulations that generate aerosol — their PPE requirements are not reduced simply because they are at the bedside rather than in the pharmacy."
+        }
+      ],
+      "keyTerms": [
+        { "term": "HD receiving", "definition": "The process of accepting HD shipments — requires trained personnel with PPE access, immediate inspection for damage/leakage, and access to a spill kit." },
+        { "term": "HD storage area", "definition": "Dedicated negative-pressure (or ventilated enclosure) storage for HD inventory — separate from non-HD drugs; clearly labeled; accessible only to trained personnel." },
+        { "term": "HD transport labeling", "definition": "Distinctive hazardous drug label required on all HD CSPs through the full transport chain to point of administration — must include emergency contact information." }
+      ],
+      "clinicalExample": {
+        "scenario": "A home infusion patient receives a weekly box of fluorouracil cassettes for her CADD pump. She calls to report that one cassette appears to have leaked during shipping — there is a crystalline residue on the inside of the box.",
+        "analysis": "This is a hazardous drug spill in a patient's home. The patient must be instructed: do not handle the leaking cassette with bare hands; leave the box closed if possible; the pharmacy will arrange immediate replacement and provide instructions for safe disposal of the damaged package. The pharmacy must: arrange emergency cassette replacement; provide the patient with a spill cleanup kit if any skin exposure occurred (copious water washing); report the event; investigate the packaging failure; and document the event. The patient's home is not exempt from HD spill response — the pharmacist is responsible for ensuring the patient has the information and resources to handle this safely.",
+        "takeaway": "USP 800 extends pharmacist responsibility to the patient's home. Home infusion HD patients must receive training on what to do if a package is damaged — and that training must be documented."
+      },
+      "selfCheck": [
+        {
+          "question": "A nurse notices her uniform has a yellowish stain after administering a cyclophosphamide infusion. What should she do?",
+          "answer": "Remove the contaminated uniform immediately; wash the skin area with soap and water for 15 minutes; change into clean clothing; report the HD exposure per the institution's occupational exposure protocol; document the event; seek medical evaluation if skin irritation develops",
+          "explanation": "HD skin contact requires immediate decontamination — copious water washing. The occupational health record of the exposure must be documented for long-term health monitoring. Cyclophosphamide is a vesicant and carcinogen; even brief skin contact is a reportable exposure event."
+        }
+      ]
+    },
+    {
+      "id": "8-5",
+      "title": "HD Work Practice: Decontamination and Spill Management (USP 795 and 797)",
+      "objectives": [
+        "State the three-step decontamination sequence and explain why the order cannot be reversed",
+        "Describe the components of an HD spill kit and how to use them",
+        "Explain the documentation requirements for an HD spill event"
+      ],
+      "sections": [
+        {
+          "heading": "The decontamination triad: sequence is non-negotiable",
+          "body": "HD surface decontamination requires three sequential steps that cannot be reversed or combined: (1) Deactivation — the application of a chemical that neutralizes or chemically transforms the hazardous drug into a less hazardous form. Sodium hypochlorite (10% bleach) is the most commonly used deactivating agent for most antineoplastics — it oxidizes the alkylating groups of nitrogen mustard-type drugs, destroying their reactivity. Deactivation precedes all other steps; (2) Decontamination — physical removal of the deactivated drug residue and the deactivating agent using detergent and water; removes bulk material from the surface; (3) Disinfection — application of a standard disinfectant to achieve microbial decontamination. Each step addresses a different hazard: step 1 chemically neutralizes the drug, step 2 removes the chemical residue, step 3 reduces microbial contamination."
+        },
+        {
+          "heading": "Why sequence cannot be reversed",
+          "body": "Performing decontamination (removal) before deactivation (neutralization) physically removes some drug but leaves behind active HD molecules that are now dispersed more widely than before. You have cleaned up the visible mess while spreading the active hazard. Performing disinfection before deactivation applies a disinfectant agent over chemically active HD residue — the disinfectant does not neutralize HDs and the HD remains a skin and inhalation hazard. The only sequence that achieves true decontamination is: neutralize the drug chemically, then remove the neutralized residue, then disinfect the surface microbiologically."
+        },
+        {
+          "heading": "Spill kit composition and use",
+          "body": "Every HD compounding and administration area must have an HD spill kit immediately accessible. Required kit contents: two pairs of chemotherapy-rated gloves; HD gown; chemical splash goggles; disposable shoe covers; N95 or P100 respirator (for volatile HDs or large spills); HD-approved absorbent pads or towels; sealable, leak-proof waste bags labeled as hazardous waste; plastic bags for sharps; sodium hypochlorite solution and appropriate detergent for decontamination; and written spill management instructions. The kit must be inspected regularly to ensure all components are present and within expiration date. Spill kits in patient care areas (for administration spills) require the same contents as pharmacy spill kits."
+        },
+        {
+          "heading": "Spill management procedure",
+          "body": "For a liquid HD spill: (1) Don PPE immediately before approaching the spill — all required HD PPE for the drug involved; (2) Confine the spill — do not spread it further; use absorbent pads placed at the edges first, then work toward the center; (3) Deactivate with sodium hypochlorite (10%) applied over the absorbent material and spill area — allow adequate contact time; (4) Decontaminate with detergent and water; (5) Disinfect with approved disinfectant; (6) Double-bag all contaminated materials in labeled HD waste bags; (7) Remove PPE in reverse order (outside to inside) to avoid self-contamination — outer gloves last; (8) Wash hands. For volatile HD spills or large spills: evacuate the area, notify supervisors, potentially require a hazmat response depending on the drug and volume."
+        },
+        {
+          "heading": "Documentation of HD spill events",
+          "body": "Every HD spill — no matter how small — must be documented: date and time; location; drug name and approximate volume; how the spill occurred; PPE worn by responders; decontamination procedure and agents used; personnel potentially exposed and their immediate response; reporting to occupational health if any skin/mucous membrane contact occurred; and any corrective actions to prevent recurrence. Spill documentation is reviewed during surveys and investigations. An undocumented spill is a compliance failure even if the cleanup was properly performed. Personnel who respond to HD spills and sustain skin or inhalation exposure must be reported to occupational health for medical surveillance."
+        }
+      ],
+      "keyTerms": [
+        { "term": "Deactivation", "definition": "First step of HD decontamination — chemical neutralization of the drug using sodium hypochlorite or other validated deactivating agent; must precede all other decontamination steps." },
+        { "term": "Decontamination", "definition": "Second step — physical removal of the chemically neutralized drug residue using detergent and water; follows deactivation, precedes disinfection." },
+        { "term": "Spill kit", "definition": "Required assembly of PPE and decontamination materials for responding to HD spills — must be immediately accessible in all HD compounding and administration areas." },
+        { "term": "HD waste", "definition": "All materials contaminated with hazardous drugs — gloves, gowns, absorbent materials, empty vials, used CSTDs — must be sealed in labeled HD waste bags and disposed of as pharmaceutical hazardous waste." }
+      ],
+      "clinicalExample": {
+        "scenario": "A vial of doxorubicin (a Group 1 antineoplastic, vesicant) breaks inside the C-PEC during preparation. The bright red solution coats the work surface and interior walls of the BSC. Walk through the correct response.",
+        "analysis": "Step 1: Don full HD PPE before touching anything — double chemotherapy-rated gloves, HD gown, splash goggles, N95 respirator (aerosol risk from the broken vial). Step 2: Confine the spill within the BSC by keeping the sash in place; absorbent pads are placed to absorb liquid, starting at the periphery. Step 3: Deactivate the doxorubicin with 10% sodium hypochlorite solution applied over the surface — dwell per product instructions. Step 4: Decontaminate with detergent and water using clean absorbent pads. Step 5: Disinfect with sterile IPA or appropriate agent. Step 6: Double-bag all contaminated materials in labeled hazardous waste bags. Step 7: Doff PPE outside-in. Step 8: Wash hands. Step 9: Document the spill, cleanup, and any personnel exposure. Step 10: The BSC must be re-cleaned and re-certified before resuming HD compounding.",
+        "takeaway": "Spill response in the HD setting is procedural, not improvisational. The sequence — PPE first, confine, deactivate, decontaminate, disinfect, dispose, document — must be practiced and accessible in writing at every HD compounding and administration location."
+      },
+      "selfCheck": [
+        {
+          "question": "A small methotrexate spill (approximately 2 mL) occurs on the C-PEC work surface. A technician, wanting to quickly resume compounding, wipes the spill with a detergent wipe and then disinfects with sterile IPA. What step was omitted?",
+          "answer": "Deactivation — the first required step; sodium hypochlorite must be applied to chemically neutralize the methotrexate before removal and disinfection; skipping deactivation leaves chemically active HD residue on the surface",
+          "explanation": "Detergent removal without prior deactivation spreads active methotrexate over a wider surface area. The 'cleaned' surface still has active HD molecules that are now thinly distributed — harder to see but still present and hazardous. Deactivation is non-optional regardless of spill size."
+        },
+        {
+          "question": "How should contaminated PPE from an HD spill response be disposed of?",
+          "answer": "Double-bagged in labeled hazardous waste bags and disposed of as pharmaceutical hazardous waste — not in regular trash",
+          "explanation": "PPE worn during HD spill response is contaminated with hazardous drug — it is now HD waste regardless of how small the spill was. Regular trash disposal of HD-contaminated materials is an environmental and regulatory violation."
+        },
+        {
+          "question": "An HD spill occurs at a nursing station on the oncology floor where IV chemotherapy bags are spiked. The nurse calls pharmacy. What should the pharmacist advise?",
+          "answer": "Don PPE before approaching (gloves, gown, eye protection available in the unit spill kit); follow the posted spill management procedure; use the unit's spill kit for deactivation, decontamination, and disinfection; report any skin exposure to occupational health; document the spill; contact pharmacy for additional guidance",
+          "explanation": "HD spill kits must be available at all HD administration locations — not just in the pharmacy. Nursing staff must be trained in spill response and know where the spill kit is. The pharmacist should be the resource called for guidance, but nursing must be able to initiate the response immediately."
+        }
+      ]
+    }
+  ]
+}

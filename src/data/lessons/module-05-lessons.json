@@ -1,0 +1,177 @@
+{
+  "moduleId": 5,
+  "moduleTitle": "Sanitization of Pharmacy Controlled Environments",
+  "lessons": [
+    {
+      "id": "5-1",
+      "title": "Sterile Compounding Environments: Principles of Cleaning and Disinfection",
+      "objectives": [
+        "Explain the difference between cleaning, disinfection, and sterilization and state why sequence matters",
+        "Describe the mechanism by which organic matter interferes with disinfectant activity",
+        "Explain what dwell time is and why it is the most commonly non-compliant element of disinfection practice"
+      ],
+      "sections": [
+        {
+          "heading": "Three distinct processes — sequence is non-negotiable",
+          "body": "Sanitization of sterile compounding environments involves three distinct processes that must occur in a specific order: cleaning, disinfection, and (when required) sterilization. Cleaning is the physical removal of organic and inorganic debris from surfaces using a detergent or cleaning agent. Disinfection is the application of a chemical agent that kills or inactivates microorganisms on a pre-cleaned surface. Sterilization is the complete elimination of all microbial life on or within an item. The critical principle is that cleaning must always precede disinfection — not the other way around, not simultaneously. Disinfectants applied to soiled surfaces are chemically neutralized by organic matter (proteins, blood, drug residue) before they can act on microorganisms. Cleaning first removes the material that would block disinfectant activity."
+        },
+        {
+          "heading": "The chemistry of disinfectant inactivation by organic matter",
+          "body": "Most disinfectants used in sterile compounding (quaternary ammonium compounds, alcohols, sodium hypochlorite) work by chemically reacting with microbial cell components — disrupting cell membranes, denaturing proteins, or oxidizing cellular structures. When an undisinfected surface has visible (or invisible) drug residue, skin proteins from gloves, or other organic material, the disinfectant reacts preferentially with that material rather than with microorganism cell components. The disinfectant is consumed before it can kill bacteria or fungi. This is not a theoretical concern — it is a well-documented failure mode that has been implicated in compounding contamination events. Pre-cleaning removes the competing substrate and allows the disinfectant to reach and act on microbial targets."
+        },
+        {
+          "heading": "Dwell time — the most frequently violated requirement",
+          "body": "Dwell time (also called contact time) is the minimum amount of time that a disinfectant must remain wet on a surface to achieve its claimed microbicidal activity. Each disinfectant agent has a specific, validated dwell time — sterile 70% IPA requires approximately 30 seconds of wet contact; sodium hypochlorite solution may require up to 10 minutes; some quaternary ammonium compounds require 3–5 minutes. If a surface is wiped dry before the dwell time is complete — whether by a cloth wiping pass, by evaporation in a high-HVAC environment, or simply by wiping and moving on — the disinfectant has not been given adequate time to work. This is the single most commonly observed cleaning compliance failure in cleanroom inspections. The practical solution is to apply enough disinfectant to keep the surface visibly wet for the required dwell time, then allow it to air dry or wipe off according to the agent's instructions."
+        },
+        {
+          "heading": "Sterile vs non-sterile IPA — a critical distinction",
+          "body": "Inside ISO-classified areas (ISO 5 PEC and ISO 7 buffer room), only sterile 70% isopropyl alcohol (IPA) is permitted for disinfection. Standard, commercially purchased isopropyl alcohol is not sterile — it may contain low levels of microbial contamination. Applying non-sterile IPA inside a classified area introduces potential contamination while attempting to remove contamination — defeating the purpose. Sterile IPA is commercially available in sealed, sterile containers (spray bottles or saturated wipes) and is the only form acceptable inside classified environments. In the ISO 8 anteroom, non-sterile IPA may be used. This distinction — sterile IPA inside ISO 5 and ISO 7, potentially non-sterile in ISO 8 and general pharmacy — is one of the most common compliance findings during inspections."
+        },
+        {
+          "heading": "Sporicidal agents — when and why",
+          "body": "Standard disinfectants like IPA have no significant activity against bacterial spores (Bacillus and Clostridium species produce highly resistant dormant spore forms). Sporicide agents — sodium hypochlorite (bleach), peracetic acid, vaporized hydrogen peroxide (VHP) — are required to address spore-forming organisms that could establish in the cleanroom environment. USP 797 (2023) requires sporicidal agent application at minimum monthly for all ISO-classified areas. The sporicidal agent rotation schedule must be documented. Using the same disinfectant agent repeatedly without rotation can allow surviving organisms with reduced susceptibility to establish — agent rotation prevents this. The sporicidal program is typically a distinct, scheduled cleaning event separate from routine daily cleaning."
+        }
+      ],
+      "keyTerms": [
+        { "term": "Cleaning", "definition": "Physical removal of organic and inorganic debris from surfaces — must occur before disinfection; uses detergent or cleaning agent." },
+        { "term": "Disinfection", "definition": "Application of a chemical agent to destroy or inactivate microorganisms on a pre-cleaned surface — does not eliminate spores without a sporicidal agent." },
+        { "term": "Dwell time", "definition": "The minimum time a disinfectant must remain wet on a surface to achieve validated microbicidal activity — varies by agent; the most commonly violated disinfection requirement." },
+        { "term": "Sterile IPA", "definition": "Sterile 70% isopropyl alcohol — the required disinfectant for use inside ISO 5 and ISO 7 classified areas; non-sterile IPA is prohibited in these areas." },
+        { "term": "Sporicidal agent", "definition": "A chemical agent capable of killing bacterial spores — sodium hypochlorite, peracetic acid, VHP; required monthly at minimum in ISO-classified areas." },
+        { "term": "Agent rotation", "definition": "The practice of alternating between different disinfectant agents to prevent selection of resistant organisms — documented and scheduled as part of the cleaning program." }
+      ],
+      "clinicalExample": {
+        "scenario": "A technician is wiping the ISO 7 buffer room floor with sterile IPA. She sprays the floor, makes one sweeping wipe pass with a mop, and immediately moves on to the next section. The floor appears dry within 15 seconds of application. A surveyor observes this practice.",
+        "analysis": "The surveyor will note a dwell time violation. Sterile IPA requires approximately 30 seconds of wet contact to achieve disinfection. If the floor is dry after 15 seconds — either because not enough agent was applied or because the wipe pass removed it — the dwell time requirement has not been met. The correct technique is to apply enough IPA to maintain a visibly wet surface for at least 30 seconds, then allow to air dry or follow the agent's instructions. Additionally, the surveyor will ask to see the cleaning SOP to confirm whether the dwell time requirement is documented and whether the technician's observed practice matches the SOP.",
+        "takeaway": "Dwell time compliance requires a visible wet surface for the required duration — not just application of the agent. If you can observe the surface drying before dwell time is complete, you have a training and procedural problem to correct."
+      },
+      "selfCheck": [
+        {
+          "question": "A technician cleans the ISO 5 LAF hood with sterile IPA spray, immediately wipes it down thoroughly, then applies a quaternary ammonium disinfectant that requires a 3-minute dwell time. Three minutes later she wipes the surface dry. Has she completed proper disinfection?",
+          "answer": "Not necessarily — the first IPA application may have served as cleaning, but the standard cleaning sequence for ISO 5 requires dedicated cleaning step first; the sequence described may or may not meet the SOP; dwell time compliance for the quat is correct if the surface remained visibly wet for 3 minutes",
+          "explanation": "The key is whether the SOP specifies a cleaning agent distinct from the disinfectant, and whether both steps were performed in sequence. IPA alone is both a cleaner and disinfectant, which creates ambiguity. The pharmacy's written SOP defines the required sequence — the observed practice must match it."
+        },
+        {
+          "question": "Can standard commercial 70% IPA purchased from a drug store be used to disinfect the interior surfaces of a horizontal LAF workbench?",
+          "answer": "No — only sterile 70% IPA is permitted inside ISO 5 classified areas; commercial IPA is not sterile",
+          "explanation": "Non-sterile IPA may contain low-level microbial contamination. Introducing it into the ISO 5 environment contaminates the most critical area while attempting to disinfect it. Only purpose-manufactured sterile IPA in sealed sterile containers is compliant for ISO 5 use."
+        },
+        {
+          "question": "Your pharmacy has used only sterile 70% IPA for all routine cleaning for 6 months. What additional agent is now required?",
+          "answer": "A sporicidal agent — required at minimum monthly for all ISO-classified areas; IPA has no significant sporicidal activity",
+          "explanation": "Six months of IPA-only cleaning means no spore-killing has occurred in the classified environment. Spore-forming organisms (Bacillus species) that enter via air, personnel, or supplies would not be eliminated. Monthly sporicidal agent application is mandatory under USP 797 (2023)."
+        }
+      ]
+    },
+    {
+      "id": "5-2",
+      "title": "Cleaning of Primary Engineering Controls for Sterile Compounding",
+      "objectives": [
+        "Describe the correct cleaning technique and sequence for a horizontal LAF workbench",
+        "State the required frequency for PEC cleaning events",
+        "Explain what cleaning documentation must capture for each PEC cleaning event"
+      ],
+      "sections": [
+        {
+          "heading": "PEC cleaning frequency",
+          "body": "The PEC must be cleaned and disinfected: at the beginning of each production shift (before any compounding begins); after any spill or suspected contamination event; when moving from non-hazardous to hazardous drug preparation (additional decontamination required); after approximately every 30 minutes of continuous compounding (per USP 797 guidance for active compounding sessions); and at the end of each production shift. The beginning-of-shift cleaning event is non-negotiable — the PEC may have been idle overnight or over a weekend, during which time particles and microorganisms from HVAC air can settle on surfaces. Compounding without a beginning-of-shift clean is compounding in an environment of unknown cleanliness."
+        },
+        {
+          "heading": "LAF workbench cleaning technique",
+          "body": "The correct technique for cleaning a horizontal LAF workbench proceeds from cleanest to most contaminated and from back to front: (1) Clean the back panel (the HEPA filter face) first, using overlapping horizontal strokes from top to bottom; (2) Clean each side panel using overlapping strokes from top to bottom; (3) Clean the work surface last, using overlapping side-to-side strokes from the back of the hood to the front, moving systematically so that particles are swept toward the front (the lower-cleanliness end) rather than back toward the HEPA filter. Always use sterile, low-lint wipes — not cloth or household paper towels. Apply sterile IPA to the wipe rather than spraying directly onto hood surfaces to avoid introducing atomized droplets into the airstream. Never wipe back into an area that has already been cleaned."
+        },
+        {
+          "heading": "What the cleaning log must capture",
+          "body": "Every PEC cleaning event must be documented in real time — not retrospectively at the end of the shift. Required documentation elements include: date and time of cleaning; specific PEC cleaned (identifier/location); cleaning agent used including lot number and expiration date; method used (type of wipe, spray technique); dwell time observed; name and signature of the person who performed the cleaning; and any deviations or observations noted. The cleaning log serves as evidence during inspections and as a data source for trend analysis — a cluster of environmental monitoring excursions coinciding with a gap in the cleaning log is a powerful investigation finding."
+        },
+        {
+          "heading": "Cleaning after a spill in the PEC",
+          "body": "A drug spill inside the PEC requires immediate cleaning before compounding can resume. For non-hazardous drug spills: immediately wipe up the spill with sterile, absorbent wipes; discard all CSPs that may have been contaminated by the spill; decontaminate the affected surface with sterile IPA using the correct technique with full dwell time; and document the event, the extent of the spill, and any CSPs quarantined. For hazardous drug spills in a C-PEC: additional decontamination protocol applies (see Module 8) — the deactivation/decontamination/disinfection sequence is required. Compounding in a PEC that has not been properly cleaned after a spill is a critical aseptic technique failure."
+        }
+      ],
+      "keyTerms": [
+        { "term": "Beginning-of-shift cleaning", "definition": "Mandatory PEC cleaning and disinfection performed before any compounding begins at the start of each production shift — non-negotiable regardless of how clean the PEC appears." },
+        { "term": "Overlapping stroke technique", "definition": "The wiping method for PEC cleaning — each wipe stroke overlaps the previous by approximately 1/3 to ensure full surface coverage without leaving gaps." },
+        { "term": "Cleaning log", "definition": "Real-time documentation of each cleaning event — captures date/time, agent used (with lot/exp), person who cleaned, and any deviations." },
+        { "term": "Low-lint wipes", "definition": "Specially manufactured sterile wipes that minimize particulate shedding during use — required for PEC cleaning; cloth and standard paper towels are prohibited." }
+      ],
+      "clinicalExample": {
+        "scenario": "A technician is cleaning the horizontal LAF hood at the start of the morning shift. She starts wiping the work surface first (because it is the dirtiest-looking area), then wipes the back panel, then the side panels. She uses sterile IPA-saturated wipes.",
+        "analysis": "The cleaning sequence is incorrect. The correct sequence is back panel → side panels → work surface (back-to-front). By cleaning the work surface first, any particles disturbed or dislodged during that wiping can settle on the back and side panels as she moves to clean them — re-contaminating already-cleaned surfaces. The sequence from cleanest (back panel, closest to HEPA filter) to most contaminated (front of work surface) ensures particles are moved away from the cleanest area, not back into it.",
+        "takeaway": "Cleaning sequence in the PEC is not intuitive — the back panel feels least important but it is cleaned first because it is closest to the HEPA filter and 'first air.' The work surface looks most contaminated and is cleaned last."
+      },
+      "selfCheck": [
+        {
+          "question": "At what minimum frequency must the PEC be cleaned during an active compounding session?",
+          "answer": "Approximately every 30 minutes of continuous compounding, plus at the beginning and end of each shift",
+          "explanation": "Ongoing compounding activity generates particles from personnel proximity, manipulations, and normal hood operation. Periodic cleaning during active use maintains the ISO 5 environment and prevents progressive accumulation of drug residue and particulates on the work surface."
+        },
+        {
+          "question": "A pharmacist technician finishes cleaning the LAF hood at 7:55 AM. Compounding begins at 8:00 AM. At 8:30 AM, a vial of cefepime breaks on the work surface during preparation. What must happen before compounding resumes?",
+          "answer": "Compounding stops; the spill is cleaned up with sterile absorbent wipes; any CSPs potentially contaminated by the spill are quarantined; the affected surface is disinfected with sterile IPA with full dwell time; the event is documented in the cleaning log before resuming",
+          "explanation": "A spill is a contamination event that requires immediate cleaning and disinfection before compounding resumes. CSPs potentially contaminated during the spill must be assessed by the pharmacist — they cannot be dispensed without evaluation."
+        },
+        {
+          "question": "Can the cleaning log for a PEC be completed at the end of the shift to capture all cleaning events for the day?",
+          "answer": "No — documentation must occur in real time at each cleaning event, not retrospectively",
+          "explanation": "Retrospective documentation is legally and regulatorily problematic — it is indistinguishable from fabrication and does not accurately capture the time of each event. 'If it wasn't documented at the time, it didn't happen' applies directly here."
+        }
+      ]
+    },
+    {
+      "id": "5-3",
+      "title": "Cleaning of Secondary Engineering Controls for Sterile Compounding",
+      "objectives": [
+        "Describe the correct cleaning sequence for the buffer room and anteroom",
+        "State the required cleaning frequency for SEC surfaces",
+        "Explain why cleaning proceeds from highest to lowest ISO classification when entering the cleanroom suite"
+      ],
+      "sections": [
+        {
+          "heading": "SEC cleaning zones and the flow principle",
+          "body": "SEC cleaning operates on the same cleanest-to-most-contaminated principle as PEC cleaning, but applied at the room level. The general pharmacy is least clean, the anteroom (ISO 8) is cleaner, and the buffer room (ISO 7) is cleanest. Cleaning proceeds inward — starting in the anteroom before moving into the buffer room — and within each room, from top to bottom and from areas farthest from the door to areas closest to the exit. Particles dislodged during cleaning should move toward the exit of each classified zone, not be swept back into the cleaner areas. The person doing the cleaning enters each zone fully garbed and does not exit and re-enter the buffer room during the cleaning process without re-garbing."
+        },
+        {
+          "heading": "Buffer room cleaning requirements and frequency",
+          "body": "The ISO 7 buffer room must be cleaned and disinfected daily — this includes all reachable surfaces: walls, floors, ceilings (if accessible), shelving, equipment exteriors, and any fixed furniture. In addition to daily cleaning, the buffer room receives deep cleaning at least monthly, which includes moving equipment to clean behind and under it, cleaning HVAC supply vents, and applying the sporicidal agent. All cleaning in the buffer room uses sterile cleaning agents and sterile low-lint wipes — non-sterile agents are not acceptable in the ISO 7 environment. The buffer room floor is the most contaminated surface in the room (gravity settles particles to it) and is always the last surface cleaned in a top-to-bottom sequence."
+        },
+        {
+          "heading": "Anteroom cleaning",
+          "body": "The anteroom (ISO 8) is cleaned daily using the same top-to-bottom, far-to-near-exit sequence. The anteroom may use non-sterile cleaning agents for cleaning (before applying disinfectant), but the disinfectant applied must be consistent with the EM results for this area. Sporicidal treatment of the anteroom is required monthly at the same time as the buffer room. The anteroom receives heavier contamination from incoming personnel and supplies — it is the transition zone between general pharmacy and the classified environment. Cleaning the anteroom thoroughly before the buffer room prevents contamination from migrating inward during the cleaning process."
+        },
+        {
+          "heading": "Cleaning documentation for the SEC",
+          "body": "Like PEC cleaning, all SEC cleaning events must be documented in real time. The cleaning log for the buffer room and anteroom records: date and time; specific surfaces cleaned; cleaning agents used (with lot numbers and expiration dates); method; dwell times observed; person performing cleaning; supervisor verification if required by SOP; and any observations or deviations. Monthly sporicidal treatment events require separate documentation noting the agent, concentration, application method, dwell time, and verification that all required surfaces were treated. Cleaning logs for the SEC are reviewed during EM excursion investigations to identify potential correlations between cleaning failures and elevated CFU counts."
+        }
+      ],
+      "keyTerms": [
+        { "term": "SEC cleaning sequence", "definition": "Cleaning proceeds from anteroom into buffer room, within each room from top to bottom and far-to-exit — moves contamination away from the cleanest areas." },
+        { "term": "Daily cleaning", "definition": "Required daily disinfection of all buffer room and anteroom surfaces — includes walls, floors, ceilings, equipment exteriors, and fixed furniture." },
+        { "term": "Monthly deep cleaning", "definition": "Required monthly comprehensive cleaning including behind/under equipment, HVAC supply vents, and sporicidal agent application in all ISO-classified areas." },
+        { "term": "Top-to-bottom", "definition": "The vertical cleaning sequence within each room — ceiling first, walls next, horizontal surfaces (counters, shelves), floor last — ensures particles fall to the floor where they are removed last." }
+      ],
+      "clinicalExample": {
+        "scenario": "Environmental monitoring in the ISO 7 buffer room shows 2 CFU on a settle plate this month, up from 0 last month. Review of the cleaning log reveals that the buffer room deep cleaning (scheduled monthly) was skipped last month due to staffing shortages. The pharmacist-in-charge approved skipping it and documented this in the cleaning log.",
+        "analysis": "The skipped monthly deep cleaning is the most likely root cause of the elevated CFU count. Monthly deep cleaning removes accumulations that routine daily surface cleaning may not reach — behind equipment, inside HVAC vents, along floor-wall junctions. The accumulated organic material provides a substrate for microbial growth. The 2 CFU result, while below action level, represents an alert-level trend that requires correction: completing the overdue deep cleaning, increasing sampling frequency for the next month, and revising the staffing policy so that monthly deep cleaning cannot be waived without replacement. Documenting that the pharmacist approved skipping it is honest documentation — but it does not make the skip compliant.",
+        "takeaway": "Documentation of a deviation does not make the deviation acceptable. Approving non-compliant practices in writing creates a traceable record of knowing non-compliance — which is worse from a liability standpoint than an undocumented skip."
+      },
+      "selfCheck": [
+        {
+          "question": "A cleaning technician finishes cleaning the buffer room floor and then walks back through the buffer room to exit, dragging the dirty mop through the areas she just cleaned. What is wrong with this?",
+          "answer": "The dirty mop re-contaminates the cleaned buffer room floor; cleaning should proceed so that the exit path does not cross already-cleaned areas — the technician should exit without re-entering cleaned zones, or the floor should be cleaned moving systematically toward the exit",
+          "explanation": "The sequence of buffer room floor cleaning should end at the exit point so the technician exits without walking back across the cleaned floor. Planning the cleaning path before starting prevents this common technique error."
+        },
+        {
+          "question": "Can non-sterile cleaning agents be used anywhere in the cleanroom suite?",
+          "answer": "Non-sterile cleaning agents may be used in the ISO 8 anteroom for the cleaning step; the ISO 7 buffer room requires sterile agents for both cleaning and disinfection; ISO 5 PEC interior always requires sterile agents",
+          "explanation": "The ISO level determines the sterility requirement for cleaning agents: ISO 5 and ISO 7 require sterile agents; ISO 8 may use non-sterile for cleaning (not for disinfection if sterile is required by SOP). Individual pharmacy SOPs may apply the more stringent standard (sterile agents throughout)."
+        },
+        {
+          "question": "Monthly sporicidal treatment of the buffer room was performed last Tuesday. The buffer room EM sampling also occurs monthly. Should these events occur simultaneously?",
+          "answer": "No — EM sampling should occur during or after normal compounding operations, not immediately following sporicidal treatment; residual sporicidal agent on surfaces inhibits microbial growth on culture plates, producing falsely low CFU counts",
+          "explanation": "Sporicidal agents continue to inhibit microbial growth on surfaces for hours to days after application. EM sampling performed too soon after sporicidal treatment will produce artificially low results that do not represent the true contamination burden during normal operations. Schedule EM sampling before the sporicidal event or allow adequate time after application."
+        }
+      ]
+    }
+  ]
+}

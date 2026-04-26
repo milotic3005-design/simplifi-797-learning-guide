@@ -1,0 +1,157 @@
+{
+  "studyPath": {
+    "title": "Recommended Study Path",
+    "description": "Three phases based on concept dependency — each phase builds on the one before it",
+    "phases": [
+      {
+        "phase": 1,
+        "label": "Foundation — Concepts and Infrastructure",
+        "theme": "info",
+        "modules": [1, 2, 5],
+        "moduleNames": ["Fundamentals of Sterile Compounding", "Engineering Controls", "Sanitization"],
+        "courseCount": 11,
+        "estimatedHours": "3–4 hours",
+        "rationale": "You cannot understand aseptic technique or BUD compliance without first understanding what a cleanroom is, why documentation exists, and how cleaning hierarchies work. These three modules establish the physical and regulatory foundation everything else builds on."
+      },
+      {
+        "phase": 2,
+        "label": "Core Practice — Technique and Monitoring",
+        "theme": "success",
+        "modules": [6, 3, 4],
+        "moduleNames": ["Aseptic Technique", "Personnel Sampling", "Viable Facility Sampling"],
+        "courseCount": 8,
+        "estimatedHours": "2–3 hours",
+        "rationale": "With the physical infrastructure understood, you can now master how people work inside it: garbing, technique, critical site protection, and how the monitoring programs verify that the environment and personnel remain in compliance."
+      },
+      {
+        "phase": 3,
+        "label": "Advanced — Sterilization Science and Hazardous Drugs",
+        "theme": "warning",
+        "modules": [7, 8],
+        "moduleNames": ["Nonsterile to Sterile Compounding", "Hazardous Drug Compounding"],
+        "courseCount": 9,
+        "estimatedHours": "2–3 hours",
+        "rationale": "Sterilization methods and BET testing build on everything prior — you need to understand what sterility means before you learn how to verify it. Hazardous drug content is last because it overlays an additional safety layer on top of all preceding concepts."
+      }
+    ],
+    "studyTip": "After Phase 1, memorize the BUD table until you can recall all limits without looking. BUD category logic is the most frequently tested concept across every USP 797 competency assessment, accreditation survey, and pharmacist interview in sterile compounding."
+  },
+  "examPrep": {
+    "title": "High-Yield Exam and Accreditation Survey Topics",
+    "categories": [
+      {
+        "category": "Most Frequently Tested — BUD Rules",
+        "priority": "critical",
+        "items": [
+          "SCA vs cleanroom suite → which category of BUD is achievable",
+          "Category 1: 12h room temp / 24h refrigerated — no frozen",
+          "Category 2 aqueous without sterility testing: 45h / 60h / 365h (RT/refrig/frozen)",
+          "Category 2 aqueous with sterility testing: 90d / 120d / 365d",
+          "Sterility testing extends Category 2 BUD ONLY — not Category 1",
+          "BUD assigned at time of compounding — cannot be extended retroactively"
+        ]
+      },
+      {
+        "category": "Most Frequently Tested — Personnel Qualification",
+        "priority": "high",
+        "items": [
+          "Initial qualification = 3 separate passing GFS AND 3 separate passing media fills",
+          "GFS action level ≤1 CFU per gloved hand at ISO 5",
+          "Ongoing qualification frequency: every 6 months",
+          "Media fill failure = immediate suspension, 3 consecutive re-qualifications to return",
+          "Who may observe garbing: trained assessor — cannot self-assess"
+        ]
+      },
+      {
+        "category": "Most Frequently Tested — Engineering Controls",
+        "priority": "high",
+        "items": [
+          "LAF (positive pressure) = never for HDs",
+          "BSC Class II = for hazardous drug compounding",
+          "Certification frequency: every 6 months",
+          "ISO 5 inside ISO 7 = Category 2 possible",
+          "ISO 5 in unclassified space (SCA) = Category 1 only",
+          "ACPH requirement: ≥30 total, ≥15 from HEPA in ISO 7"
+        ]
+      },
+      {
+        "category": "Most Frequently Tested — Cleaning",
+        "priority": "high",
+        "items": [
+          "Cleaning always before disinfection — organic matter neutralizes disinfectant",
+          "Sterile 70% IPA required in ISO 5 and ISO 7 — non-sterile IPA is NOT compliant",
+          "Sporicidal agent: minimum monthly, documented, rotated",
+          "Dwell time must be observed — most commonly skipped step",
+          "Cleaning direction: cleanest to most contaminated, top to bottom"
+        ]
+      },
+      {
+        "category": "Most Frequently Tested — Hazardous Drugs",
+        "priority": "critical",
+        "items": [
+          "Deactivation before decontamination — order is not interchangeable",
+          "C-PEC must be negative pressure — no exceptions",
+          "NIOSH list Group 1 = antineoplastics (highest occupational risk)",
+          "USP 800 training required for ALL HD handlers (not just pharmacy)",
+          "Double chemo-rated gloves (ASTM D6978), chemo gown (AAMI PB70 Level 2 minimum)",
+          "C-SEC: -0.01 to -0.03 inches WC negative pressure"
+        ]
+      },
+      {
+        "category": "Most Frequently Tested — Sterilization",
+        "priority": "high",
+        "items": [
+          "0.22 µm filter removes bacteria — does NOT remove endotoxins",
+          "Autoclave: sterilizes but does NOT depyrogenate",
+          "Dry heat 250°C = depyrogenation (endotoxin destruction)",
+          "Intrathecal endotoxin limit = 0.2 EU/kg/hr (most stringent route)",
+          "Sterility testing: 14-day incubation, two temperature ranges"
+        ]
+      }
+    ]
+  },
+  "mnemonics": [
+    {
+      "topic": "Garbing order",
+      "mnemonic": "Shoes → Hair → Face → Wash → Gown → Gloves",
+      "detail": "Shoe covers, hair/beard cover, face mask, 30-sec hand/forearm wash, gown, THEN sterile gloves last"
+    },
+    {
+      "topic": "HD cleaning order",
+      "mnemonic": "3 D's in order: Deactivate → Decontaminate → Disinfect",
+      "detail": "Deactivate (chemical neutralization) → Decontaminate (physical removal) → Disinfect (microbial reduction)"
+    },
+    {
+      "topic": "BUD categories",
+      "mnemonic": "SCA = Short (12/24), Suite = Sixty days (45/60/365)",
+      "detail": "SCA gives Category 1 (12h/24h). Full cleanroom suite gives Category 2 (45d/60d/365d without sterility test)"
+    },
+    {
+      "topic": "Sterility vs endotoxin",
+      "mnemonic": "Filter stops bugs, not toxins — heat kills both",
+      "detail": "0.22µm filter removes organisms; endotoxins pass through. Dry heat at 250°C destroys both organisms and endotoxins"
+    },
+    {
+      "topic": "ISO levels",
+      "mnemonic": "5 = Spot (direct work surface), 7 = Suite (buffer room), 8 = Staging (anteroom)",
+      "detail": "ISO 5 = direct compounding surface (PEC), ISO 7 = buffer room housing PEC, ISO 8 = anteroom/garbing"
+    },
+    {
+      "topic": "EM excursion response",
+      "mnemonic": "STOP-FIND-FIX-CHECK: Stop compounding, Find root cause, Fix it (CAPA), Check (re-sample)",
+      "detail": "Action-level excursion requires: halt compounding, root cause investigation, documented CAPA with timeline, verification re-sampling"
+    }
+  ],
+  "commonSurveyorFindings": [
+    "Non-sterile IPA used inside ISO-classified areas (sterile IPA required)",
+    "Sporicidal agent rotation not documented or schedule not written",
+    "Personnel qualification records incomplete or not immediately retrievable",
+    "Category 2 BUDs assigned to CSPs prepared in an SCA",
+    "SOPs not reviewed within 2-year cycle or not accessible at point of use",
+    "Garbing sequence deviation observed but not documented or corrected",
+    "PEC certification lapsed or CO credentials not verified",
+    "Endotoxin testing not performed for Category 2 aqueous CSPs",
+    "USP 800 training records absent for non-pharmacy staff handling HDs",
+    "EM program lacks defined sample map with pre-specified locations"
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "budReference": {
+    "title": "BUD Quick Reference — USP 797 (2023 Revised)",
+    "note": "BUD is assigned at time of compounding. Storage condition changes after compounding do NOT extend BUD.",
+    "categories": [
+      {
+        "id": "immediate-use",
+        "label": "Immediate-Use CSP",
+        "requirements": [
+          "Single patient, single dose only",
+          "No antimicrobial preservatives",
+          "Administration MUST start within 1 hour of preparation start",
+          "Not for convenience — strict patient-specific criteria apply"
+        ],
+        "bud": {
+          "roomTemp": "Admin start ≤ 1 hour from prep start",
+          "refrigerated": "Not applicable",
+          "frozen": "Not applicable"
+        },
+        "color": "warning"
+      },
+      {
+        "id": "category-1",
+        "label": "Category 1 CSP",
+        "environmentRequired": "Prepared in ISO 5 PEC located in a Segregated Compounding Area (SCA) — NOT within a full cleanroom suite",
+        "bud": {
+          "roomTemp": "12 hours",
+          "refrigerated": "24 hours",
+          "frozen": "Not permitted"
+        },
+        "color": "warning"
+      },
+      {
+        "id": "category-2-no-test",
+        "label": "Category 2 CSP (no sterility testing)",
+        "environmentRequired": "ISO 5 PEC within ISO 7 buffer room + ISO 8 anteroom cleanroom suite",
+        "bud": {
+          "aqueous": {
+            "roomTemp": "45 days",
+            "refrigerated": "60 days",
+            "frozen": "365 days"
+          },
+          "nonaqueous": {
+            "roomTemp": "90 days",
+            "refrigerated": "90 days",
+            "frozen": "Not applicable"
+          }
+        },
+        "color": "success"
+      },
+      {
+        "id": "category-2-sterility-tested",
+        "label": "Category 2 CSP (passing sterility test)",
+        "environmentRequired": "ISO 5 PEC within ISO 7 buffer room + ISO 8 anteroom cleanroom suite",
+        "bud": {
+          "aqueous": {
+            "roomTemp": "90 days",
+            "refrigerated": "120 days",
+            "frozen": "365 days"
+          },
+          "nonaqueous": {
+            "roomTemp": "180 days",
+            "refrigerated": "180 days",
+            "frozen": "Not applicable"
+          }
+        },
+        "color": "success"
+      }
+    ],
+    "criticalDistinctions": [
+      "Sterility testing extends BUD for Category 2 ONLY — not Category 1",
+      "Aqueous = water-based solutions (most IV medications)",
+      "Nonaqueous = oils, anhydrous vehicles (some ophthalmics, certain injections in oil)",
+      "Category 2 BUDs cannot be applied to SCAs — this is the most common real-world compliance error",
+      "BUD ≠ expiration date — BUD is assigned at compounding; it cannot be extended by changing storage conditions after the fact",
+      "Multi-dose vials (commercially manufactured) are NOT subject to USP 797 BUD rules — defer to manufacturer labeling"
+    ]
+  },
+  "isoClassification": {
+    "title": "ISO Classification Reference",
+    "classes": [
+      {
+        "isoLevel": 5,
+        "commonName": "Primary Engineering Control (PEC)",
+        "examples": ["Laminar airflow (LAF) workbench", "Biological safety cabinet (BSC)", "Compounding aseptic isolator (CAI)", "Compounding aseptic containment isolator (CACI)"],
+        "particleLimit": "≤100 particles/m³ (≥0.5 µm)",
+        "hvac": "Unidirectional HEPA-filtered airflow at ≥0.45 m/s",
+        "role": "Direct compounding surface — all critical sites must remain in this airstream",
+        "color": "info"
+      },
+      {
+        "isoLevel": 7,
+        "commonName": "Buffer Room (cleanroom)",
+        "examples": ["Sterile compounding room housing the PEC"],
+        "particleLimit": "≤352,000 particles/m³ (≥0.5 µm)",
+        "hvac": "≥30 ACPH total air changes; ≥15 ACPH from HEPA-filtered supply",
+        "role": "Houses the PEC. Required to achieve Category 2 BUDs. Must be positive pressure relative to anteroom",
+        "certificationFrequency": "Every 6 months by qualified Certifying Organization",
+        "color": "success"
+      },
+      {
+        "isoLevel": 8,
+        "commonName": "Anteroom / Ante-Area",
+        "examples": ["Garbing room", "Material staging area adjacent to buffer room"],
+        "particleLimit": "≤3,520,000 particles/m³ (≥0.5 µm)",
+        "hvac": "Positive pressure relative to general pharmacy; negative pressure relative to buffer room is acceptable for hazardous drug suites",
+        "role": "Garbing and material staging. SCA uses a non-classified space (no ISO rating) — limits compounding to Category 1 BUDs only",
+        "color": "warning"
+      }
+    ],
+    "scaVsCleanroom": {
+      "title": "SCA vs Full Cleanroom Suite",
+      "sca": {
+        "label": "Segregated Compounding Area (SCA)",
+        "description": "ISO 5 PEC placed in a non-classified (no ISO rating) room or designated area",
+        "maxBUD": "Category 1 only — 12h room temp / 24h refrigerated",
+        "certificationRequired": "PEC still must be certified every 6 months",
+        "commonMistake": "Assigning Category 2 BUDs (45 days, etc.) to CSPs prepared in an SCA — this is a critical compliance failure regardless of hood quality"
+      },
+      "cleanroom": {
+        "label": "Full Cleanroom Suite",
+        "description": "ISO 5 PEC inside an ISO 7 buffer room connected to an ISO 8 anteroom with required pressure differentials and ACPH",
+        "maxBUD": "Category 2 eligible — up to 90 days room temp (with sterility testing) or 180 days (nonaqueous with sterility testing)",
+        "certificationRequired": "Every 6 months — particle counts, airflow velocity, HEPA filter integrity, pressure differentials"
+      }
+    }
+  }
+}
