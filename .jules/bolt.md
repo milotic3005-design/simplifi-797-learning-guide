@@ -1,0 +1,3 @@
+## 2024-05-18 - React DOM Mutation Anti-Pattern
+**Learning:** Found a performance bottleneck where `document.querySelectorAll` and `el.setAttribute` were used inside a `useEffect` to manually mutate the DOM for tab states. This is a severe anti-pattern in React that causes synchronous DOM thrashing and bypasses React's virtual DOM diffing, resulting in unnecessary main thread blocking and performance degradation.
+**Action:** Always prefer declarative rendering using props (e.g., `data-active={activeTab === t.id}`) over manual DOM queries. Additionally, memoize components like `Masthead` that rely on expensive calculations (like formatting dates) or render heavily, ensuring they don't re-render unnecessarily when unrelated parent state changes.
