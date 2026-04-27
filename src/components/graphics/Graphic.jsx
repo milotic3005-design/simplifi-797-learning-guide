@@ -50,11 +50,25 @@ export default function Graphic({ id }) {
   if (!entry) return null;
   const { component: C, title } = entry;
   return (
-    <figure className="my-6 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 overflow-hidden">
-      <figcaption className="px-4 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-        {title}
-      </figcaption>
-      <div className="p-4 pt-2 overflow-x-auto">
+    <figure
+      className="my-8 overflow-hidden border-y"
+      style={{
+        borderColor: "var(--rule)",
+        background: "var(--paper-2)",
+      }}
+    >
+      <div
+        className="px-4 py-2.5 border-b flex items-baseline justify-between"
+        style={{ borderColor: "var(--rule-soft)" }}
+      >
+        <figcaption className="smallcaps">
+          ¶ Figure · {title}
+        </figcaption>
+        <span className="font-mono text-[10px]" style={{ color: "var(--ink-3)" }}>
+          {id}
+        </span>
+      </div>
+      <div className="p-5 overflow-x-auto">
         <C />
       </div>
     </figure>

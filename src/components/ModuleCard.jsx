@@ -4,16 +4,16 @@ import { lessonMap } from "../data/lessons";
 
 function Tabs({ tabs, active, onChange }) {
   return (
-    <div className="flex gap-1 border-b border-slate-200 dark:border-slate-700 mb-4">
+    <div
+      className="flex gap-6 border-b mb-6"
+      style={{ borderColor: "var(--rule)" }}
+    >
       {tabs.map((t) => (
         <button
           key={t.id}
           onClick={() => onChange(t.id)}
-          className={`px-3 py-2 text-sm font-medium -mb-px border-b-2 transition-colors ${
-            active === t.id
-              ? "border-slate-900 dark:border-white text-slate-900 dark:text-white"
-              : "border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200"
-          }`}
+          data-active={active === t.id}
+          className="tab"
         >
           {t.label}
         </button>
@@ -22,73 +22,105 @@ function Tabs({ tabs, active, onChange }) {
   );
 }
 
-export default function ModuleCard({ module, completed, onToggle, onOpenLesson, lessonState }) {
+export default function ModuleCard({
+  module,
+  index,
+  completed,
+  onToggle,
+  onOpenLesson,
+  lessonState,
+}) {
   const [open, setOpen] = useState(false);
   const [tab, setTab] = useState("courses");
   const c = cls(module.theme);
   const completedCount = module.courses.filter((co) => completed[co.id]).length;
   const total = module.courses.length;
-  const pct = Math.round((completedCount / total) * 100);
+  const isComplete = completedCount === total;
 
   return (
-    <div
-      className={`rounded-lg border bg-white dark:bg-slate-800 dark:border-slate-700 shadow-sm overflow-hidden ${
-        module.highPriority ? "ring-2 ring-red-400 dark:ring-red-500" : ""
-      }`}
+    <article
+      className="border-t fade-up"
+      style={{
+        borderColor: "var(--rule)",
+        animationDelay: `${index * 0.04}s`,
+      }}
     >
+      {/* Chapter row */}
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center gap-4 p-4 text-left hover:bg-slate-50 dark:hover:bg-slate-700/40 transition-colors"
+        className="w-full text-left py-7 group"
       >
-        <div
-          className={`shrink-0 w-12 h-12 rounded-lg flex items-center justify-center font-semibold text-lg ${c.bg} ${c.text}`}
-        >
-          {module.number}
-        </div>
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 flex-wrap">
-            <h3 className="font-semibold text-slate-900 dark:text-white">
+        <div className="grid grid-cols-[80px_1fr_auto] sm:grid-cols-[120px_1fr_auto] gap-4 sm:gap-6 items-baseline">
+          {/* Chapter number */}
+          <div
+            className="chapter-num text-5xl sm:text-7xl"
+            style={{ color: c.accent }}
+          >
+            {module.number}
+          </div>
+
+          {/* Title block */}
+          <div>
+            <div className="flex items-center gap-3 mb-1.5 flex-wrap">
+              <span
+                className="font-mono text-[10px] tracking-widest uppercase"
+                style={{ color: c.accent }}
+              >
+                {c.label}
+              </span>
+              <span style={{ color: "var(--rule)" }}>·</span>
+              <span className="font-mono text-[10px] tracking-widest uppercase" style={{ color: "var(--ink-3)" }}>
+                {module.tag}
+              </span>
+              {module.highPriority && (
+                <>
+                  <span style={{ color: "var(--rule)" }}>·</span>
+                  <span
+                    className="font-mono text-[10px] tracking-widest uppercase"
+                    style={{ color: "var(--danger)" }}
+                  >
+                    ※ Critical
+                  </span>
+                </>
+              )}
+            </div>
+            <h3
+              className="font-display text-2xl sm:text-3xl font-normal leading-tight tracking-tight"
+              style={{ fontVariationSettings: '"SOFT" 30, "WONK" 0' }}
+            >
               {module.title}
             </h3>
-            <span className={`text-xs px-2 py-0.5 rounded-full ${c.badge}`}>
-              {module.tag}
-            </span>
-            {module.highPriority && (
-              <span className="text-xs px-2 py-0.5 rounded-full bg-red-100 text-red-700 dark:bg-red-900/50 dark:text-red-200 font-medium">
-                High priority
-              </span>
-            )}
           </div>
-          <div className="mt-1.5 flex items-center gap-3">
-            <span className="text-sm text-slate-600 dark:text-slate-400 tabular-nums">
-              {completedCount} / {total} completed
-            </span>
-            <div className="flex-1 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden max-w-[180px]">
-              <div
-                className={`${c.dot} h-full transition-all`}
-                style={{ width: `${pct}%` }}
-              />
+
+          {/* Status */}
+          <div className="text-right">
+            <div className="font-mono text-xs tabular-nums" style={{ color: "var(--ink-2)" }}>
+              {completedCount.toString().padStart(2, "0")} / {total.toString().padStart(2, "0")}
+            </div>
+            <div className="smallcaps mt-1" style={{ color: isComplete ? "var(--success)" : "var(--ink-3)" }}>
+              {isComplete ? "Complete" : open ? "Close ↑" : "Read ↓"}
             </div>
           </div>
         </div>
-        <svg
-          className={`w-5 h-5 text-slate-400 transition-transform ${
-            open ? "rotate-180" : ""
-          }`}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-        </svg>
       </button>
 
       {open && (
-        <div className="px-4 pb-4 pt-2 border-t border-slate-100 dark:border-slate-700">
+        <div className="pb-10 pt-2 fade-in">
           {module.highPriority && (
-            <div className="mb-4 p-3 rounded border-l-4 border-red-500 bg-red-50 dark:bg-red-900/30 text-sm text-red-800 dark:text-red-200">
-              <strong>High-priority module.</strong> Hazardous drug content overlays USP 800 and adds an additional safety layer over all preceding concepts.
+            <div
+              className="mb-6 px-5 py-4 text-sm"
+              style={{
+                background: "var(--danger-tint)",
+                borderLeft: "3px solid var(--danger)",
+                color: "var(--ink)",
+              }}
+            >
+              <div className="smallcaps mb-1" style={{ color: "var(--danger)" }}>
+                ※ High-priority module
+              </div>
+              Hazardous-drug content overlays USP 800 on top of all preceding concepts.
+              Approach this chapter only after the prior modules are solid.
             </div>
           )}
 
@@ -103,76 +135,90 @@ export default function ModuleCard({ module, completed, onToggle, onOpenLesson, 
           />
 
           {tab === "courses" && (
-            <ul className="space-y-2">
-              {module.courses.map((course) => {
+            <ol className="space-y-0 -mt-2">
+              {module.courses.map((course, i) => {
                 const done = !!completed[course.id];
                 const hasLesson = !!lessonMap[course.id];
                 const lstate = (lessonState && lessonState[course.id]) || {};
                 return (
                   <li
                     key={course.id}
-                    className="flex items-start gap-2 p-2.5 rounded hover:bg-slate-50 dark:hover:bg-slate-700/40 group"
+                    className="grid grid-cols-[28px_1fr_auto] gap-4 py-3.5 items-baseline border-t"
+                    style={{ borderColor: "var(--rule-soft)" }}
                   >
                     <input
                       type="checkbox"
                       checked={done}
                       onChange={() => onToggle(course.id)}
+                      className="checkbox mt-1"
                       onClick={(e) => e.stopPropagation()}
-                      className="mt-1 h-4 w-4 rounded border-slate-300 text-slate-900 focus:ring-slate-700 cursor-pointer"
                     />
                     <button
                       type="button"
                       onClick={() => hasLesson && onOpenLesson(course.id)}
                       disabled={!hasLesson}
-                      className="min-w-0 flex-1 text-left disabled:cursor-default"
+                      className="text-left disabled:cursor-default group flex items-baseline gap-3 flex-wrap"
                     >
-                      <div className="flex items-center gap-2 flex-wrap">
-                        <span className="text-xs text-slate-400 tabular-nums">
-                          {course.id}
-                        </span>
-                        {lstate.started && !done && (
-                          <span className="text-[10px] uppercase tracking-wide px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
-                            in progress
-                          </span>
-                        )}
-                      </div>
                       <span
-                        className={`text-sm ${
-                          done
-                            ? "line-through text-slate-400 dark:text-slate-500"
-                            : "text-slate-800 dark:text-slate-100"
-                        } ${hasLesson ? "group-hover:underline" : ""}`}
+                        className="font-mono text-[11px] tabular-nums"
+                        style={{ color: "var(--ink-3)" }}
+                      >
+                        {course.id}
+                      </span>
+                      <span
+                        className="text-[15px] leading-snug group-enabled:hover:link"
+                        style={{
+                          color: done ? "var(--ink-3)" : "var(--ink)",
+                          textDecoration: done ? "line-through" : "none",
+                        }}
                       >
                         {course.title}
                       </span>
+                      {lstate.started && !done && (
+                        <span
+                          className="font-mono text-[10px] tracking-widest uppercase"
+                          style={{ color: "var(--warning)" }}
+                        >
+                          · in progress
+                        </span>
+                      )}
                     </button>
-                    {hasLesson && (
-                      <svg
-                        className="w-4 h-4 text-slate-400 mt-1.5 shrink-0"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                    {hasLesson ? (
+                      <span
+                        className="font-mono text-[10px] tracking-widest uppercase"
+                        style={{ color: "var(--ink-3)" }}
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
+                        Read →
+                      </span>
+                    ) : (
+                      <span
+                        className="font-mono text-[10px] tracking-widest uppercase"
+                        style={{ color: "var(--ink-3)" }}
+                      >
+                        —
+                      </span>
                     )}
                   </li>
                 );
               })}
-            </ul>
+            </ol>
           )}
 
           {tab === "concepts" && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-7">
               {module.keyConcepts.map((kc, i) => (
                 <div
                   key={i}
-                  className="p-3 rounded border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/40"
+                  className="border-t pt-4"
+                  style={{ borderColor: "var(--rule-soft)" }}
                 >
-                  <div className="font-semibold text-sm text-slate-900 dark:text-white mb-1">
+                  <div
+                    className="font-display text-lg leading-tight mb-1.5"
+                    style={{ fontVariationSettings: '"SOFT" 30' }}
+                  >
                     {kc.term}
                   </div>
-                  <div className="text-sm text-slate-600 dark:text-slate-300">
+                  <div className="text-[15px] leading-relaxed" style={{ color: "var(--ink-2)" }}>
                     {kc.definition}
                   </div>
                 </div>
@@ -181,22 +227,41 @@ export default function ModuleCard({ module, completed, onToggle, onOpenLesson, 
           )}
 
           {tab === "must" && (
-            <div>
-              <ul className="space-y-2 mb-4">
+            <div className="space-y-6">
+              <ul className="space-y-3">
                 {module.mustKnow.map((m, i) => (
                   <li
                     key={i}
-                    className={`pl-3 py-2 ${c.borderL} bg-slate-50 dark:bg-slate-900/40 text-sm text-slate-800 dark:text-slate-200 rounded-r`}
+                    className="pl-5 py-3 text-[15px] leading-relaxed"
+                    style={{
+                      borderLeft: `3px solid ${c.accent}`,
+                      background: c.tint,
+                    }}
                   >
+                    <span
+                      className="font-mono text-[11px] tabular-nums mr-3"
+                      style={{ color: c.accent }}
+                    >
+                      № {(i + 1).toString().padStart(2, "0")}
+                    </span>
                     {m}
                   </li>
                 ))}
               </ul>
-              <div className="p-4 rounded-lg border border-purple-200 dark:border-purple-700 bg-purple-50 dark:bg-purple-900/30">
-                <div className="text-xs font-semibold uppercase tracking-wide text-purple-700 dark:text-purple-200 mb-1">
-                  Clinical connection
+              <div
+                className="px-5 py-5 border-l-[3px]"
+                style={{
+                  borderColor: "var(--plum)",
+                  background: "var(--plum-tint)",
+                }}
+              >
+                <div className="smallcaps mb-2" style={{ color: "var(--plum)" }}>
+                  ¶ Clinical connection
                 </div>
-                <div className="text-sm text-slate-800 dark:text-slate-200">
+                <div
+                  className="font-display text-base leading-relaxed"
+                  style={{ fontVariationSettings: '"SOFT" 50', color: "var(--ink)" }}
+                >
                   {module.clinicalConnection}
                 </div>
               </div>
@@ -204,6 +269,6 @@ export default function ModuleCard({ module, completed, onToggle, onOpenLesson, 
           )}
         </div>
       )}
-    </div>
+    </article>
   );
 }

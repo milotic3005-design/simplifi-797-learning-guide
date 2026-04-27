@@ -8,7 +8,7 @@ import Graphic from "../components/graphics/Graphic";
 const TABS = [
   { id: "lesson", label: "Lesson" },
   { id: "terms", label: "Key Terms" },
-  { id: "clinical", label: "Clinical Example" },
+  { id: "clinical", label: "Clinical" },
   { id: "self", label: "Self-Check" },
 ];
 
@@ -18,11 +18,7 @@ function findModule(courseId) {
 
 function LessonTab({ lesson }) {
   const graphics = lessonGraphics[lesson.id] || [];
-  // Distribute graphics across sections: first graphic at top, rest interleaved
-  // between sections after objectives.
   const sectionCount = lesson.sections.length;
-  // If we have N graphics and S sections: place 1st graphic before section 0,
-  // remaining graphics evenly distributed between later sections.
   const placements = {};
   if (graphics.length > 0) {
     placements[0] = [graphics[0]];
@@ -38,33 +34,68 @@ function LessonTab({ lesson }) {
   }
 
   return (
-    <div className="space-y-6">
-      <div className="rounded-lg border border-purple-200 dark:border-purple-700 bg-purple-50 dark:bg-purple-900/30 p-4">
-        <div className="text-xs font-semibold uppercase tracking-wide text-purple-700 dark:text-purple-200 mb-2">
-          Learning objectives
+    <div className="space-y-10">
+      {/* Objectives */}
+      <div
+        className="px-6 py-5"
+        style={{
+          background: "var(--plum-tint)",
+          borderLeft: "3px solid var(--plum)",
+        }}
+      >
+        <div className="smallcaps mb-3" style={{ color: "var(--plum)" }}>
+          ¶ After this lesson you will
         </div>
-        <ul className="space-y-1.5 text-[15px] text-slate-800 dark:text-slate-100">
+        <ol className="space-y-2 list-none">
           {lesson.objectives.map((o, i) => (
-            <li key={i} className="flex gap-2">
-              <span className="text-purple-500 mt-0.5">•</span>
+            <li
+              key={i}
+              className="flex gap-3 text-[15px] leading-relaxed"
+              style={{ color: "var(--ink)" }}
+            >
+              <span
+                className="font-mono text-[11px] tabular-nums mt-1.5"
+                style={{ color: "var(--plum)" }}
+              >
+                {(i + 1).toString().padStart(2, "0")}
+              </span>
               <span>{o}</span>
             </li>
           ))}
-        </ul>
+        </ol>
       </div>
 
-      <article className="space-y-6">
+      {/* Sections — textbook prose */}
+      <article className="space-y-12">
         {lesson.sections.map((s, i) => (
-          <section key={i}>
+          <section key={i} className="fade-in" style={{ animationDelay: `${i * 0.04}s` }}>
             {(placements[i] || []).map((gid) => (
               <Graphic key={gid} id={gid} />
             ))}
-            <h2 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">
-              {s.heading}
-            </h2>
-            <p className="text-[15px] leading-[1.7] text-slate-700 dark:text-slate-200 whitespace-pre-line">
-              {s.body}
-            </p>
+            <div className="grid md:grid-cols-[180px_1fr] gap-4 md:gap-10">
+              <div className="md:pt-2">
+                <div className="smallcaps">
+                  § {(i + 1).toString().padStart(2, "0")}
+                </div>
+              </div>
+              <div>
+                <h2
+                  className="font-display text-2xl sm:text-3xl font-normal leading-tight tracking-tight mb-4"
+                  style={{ fontVariationSettings: '"SOFT" 30, "WONK" 0' }}
+                >
+                  {s.heading}
+                </h2>
+                <p
+                  className={`text-[16px] leading-[1.75] ${i === 0 ? "dropcap" : ""}`}
+                  style={{
+                    color: "var(--ink)",
+                    whiteSpace: "pre-line",
+                  }}
+                >
+                  {s.body}
+                </p>
+              </div>
+            </div>
           </section>
         ))}
       </article>
@@ -74,18 +105,32 @@ function LessonTab({ lesson }) {
 
 function TermsTab({ lesson }) {
   return (
-    <ul className="divide-y divide-slate-100 dark:divide-slate-700 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 overflow-hidden">
-      {lesson.keyTerms.map((kt, i) => (
-        <li key={i} className="p-4">
-          <div className="font-semibold text-slate-900 dark:text-white text-[15px] mb-1">
-            {kt.term}
+    <div>
+      <div className="smallcaps mb-6">¶ Glossary</div>
+      <dl className="space-y-0">
+        {lesson.keyTerms.map((kt, i) => (
+          <div
+            key={i}
+            className="grid md:grid-cols-[1fr_2fr] gap-3 md:gap-10 py-6 border-t"
+            style={{ borderColor: "var(--rule)" }}
+          >
+            <dt
+              className="font-display text-xl leading-tight"
+              style={{ fontVariationSettings: '"SOFT" 30' }}
+            >
+              {kt.term}
+            </dt>
+            <dd
+              className="text-[15.5px] leading-[1.7]"
+              style={{ color: "var(--ink-2)" }}
+            >
+              {kt.definition}
+            </dd>
           </div>
-          <div className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-            {kt.definition}
-          </div>
-        </li>
-      ))}
-    </ul>
+        ))}
+        <div className="border-t" style={{ borderColor: "var(--rule)" }} />
+      </dl>
+    </div>
   );
 }
 
@@ -93,30 +138,61 @@ function ClinicalTab({ lesson, theme }) {
   const c = cls(theme);
   const ex = lesson.clinicalExample;
   return (
-    <div className="space-y-4">
-      <div className={`rounded-lg ${c.borderL} bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-4`}>
-        <div className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-1">
+    <div className="space-y-8">
+      {/* Scenario */}
+      <div>
+        <div className="smallcaps mb-3" style={{ color: c.accent }}>
           Scenario
         </div>
-        <p className="text-[15px] leading-[1.7] text-slate-800 dark:text-slate-100">
-          {ex.scenario}
-        </p>
-      </div>
-      <div className="rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-4">
-        <div className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-1">
-          Analysis
+        <div
+          className="px-6 py-5 border-l-[3px]"
+          style={{ borderColor: c.accent, background: c.tint }}
+        >
+          <p
+            className="font-display text-lg sm:text-xl leading-[1.55] italic"
+            style={{
+              fontVariationSettings: '"SOFT" 60, "WONK" 1',
+              color: "var(--ink)",
+            }}
+          >
+            {ex.scenario}
+          </p>
         </div>
-        <p className="text-[15px] leading-[1.7] text-slate-700 dark:text-slate-200">
+      </div>
+
+      {/* Analysis */}
+      <div>
+        <div className="smallcaps mb-3">Analysis</div>
+        <p
+          className="text-[16px] leading-[1.75]"
+          style={{ color: "var(--ink)" }}
+        >
           {ex.analysis}
         </p>
       </div>
-      <div className="rounded-lg border border-purple-300 dark:border-purple-700 bg-purple-50 dark:bg-purple-900/30 p-4">
-        <div className="text-xs font-semibold uppercase tracking-wide text-purple-700 dark:text-purple-200 mb-1">
-          Clinical takeaway
+
+      {/* Takeaway */}
+      <div>
+        <div className="smallcaps mb-3" style={{ color: "var(--plum)" }}>
+          ¶ Clinical takeaway
         </div>
-        <p className="text-[15px] leading-[1.6] font-semibold text-slate-900 dark:text-white">
-          {ex.takeaway}
-        </p>
+        <div
+          className="px-6 py-6"
+          style={{
+            background: "var(--plum-tint)",
+            borderLeft: "3px solid var(--plum)",
+          }}
+        >
+          <p
+            className="font-display text-xl sm:text-2xl leading-tight"
+            style={{
+              fontVariationSettings: '"SOFT" 40, "WONK" 1',
+              color: "var(--ink)",
+            }}
+          >
+            {ex.takeaway}
+          </p>
+        </div>
       </div>
     </div>
   );
@@ -124,7 +200,6 @@ function ClinicalTab({ lesson, theme }) {
 
 function SelfCheckTab({ lesson, courseId, lessonState, updateLesson }) {
   const [revealed, setRevealed] = useState({});
-
   const total = lesson.selfCheck.length;
   const revealedCount = Object.keys(revealed).filter((k) => revealed[k]).length;
 
@@ -137,52 +212,77 @@ function SelfCheckTab({ lesson, courseId, lessonState, updateLesson }) {
   }, [revealedCount, total, courseId, lessonState, updateLesson]);
 
   return (
-    <div className="space-y-4">
-      <div className="text-sm text-slate-600 dark:text-slate-300 tabular-nums">
-        Revealed {revealedCount} / {total}
+    <div className="space-y-0">
+      <div className="flex items-baseline justify-between mb-6">
+        <div className="smallcaps">¶ Self-check exam</div>
+        <div className="font-mono text-xs tabular-nums" style={{ color: "var(--ink-2)" }}>
+          {revealedCount} / {total} revealed
+        </div>
       </div>
-      <ol className="space-y-4">
+      <ol className="space-y-0">
         {lesson.selfCheck.map((q, i) => {
           const isRevealed = !!revealed[i];
           return (
             <li
               key={i}
-              className="rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 overflow-hidden"
+              className="border-t py-7"
+              style={{ borderColor: "var(--rule)" }}
             >
-              <div className="p-4">
-                <div className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-1">
-                  Question {i + 1} of {total}
+              <div className="grid md:grid-cols-[60px_1fr] gap-3 md:gap-8">
+                <div
+                  className="chapter-num text-3xl"
+                  style={{ color: "var(--ink-3)" }}
+                >
+                  {(i + 1).toString().padStart(2, "0")}
                 </div>
-                <p className="text-[15px] leading-relaxed text-slate-900 dark:text-white">
-                  {q.question}
-                </p>
-                {!isRevealed && (
-                  <button
-                    onClick={() =>
-                      setRevealed((r) => ({ ...r, [i]: true }))
-                    }
-                    className="mt-3 inline-flex items-center px-3 py-1.5 rounded text-sm font-medium bg-slate-900 text-white hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 transition-colors"
+                <div>
+                  <p
+                    className="font-display text-lg leading-snug mb-3"
+                    style={{ fontVariationSettings: '"SOFT" 30' }}
                   >
-                    Reveal answer
-                  </button>
-                )}
-              </div>
-              {isRevealed && (
-                <div className="border-l-4 border-green-500 bg-green-50 dark:bg-green-900/20 px-4 py-3">
-                  <div className="text-xs font-semibold uppercase tracking-wide text-green-700 dark:text-green-300 mb-1">
-                    Answer
-                  </div>
-                  <p className="text-[15px] text-slate-900 dark:text-white">
-                    {q.answer}
+                    {q.question}
                   </p>
-                  <p className="mt-2 text-sm italic text-slate-600 dark:text-slate-300">
-                    {q.explanation}
-                  </p>
+                  {!isRevealed ? (
+                    <button
+                      onClick={() => setRevealed((r) => ({ ...r, [i]: true }))}
+                      className="btn-ghost"
+                    >
+                      Reveal answer →
+                    </button>
+                  ) : (
+                    <div
+                      className="mt-2 px-5 py-4 fade-in"
+                      style={{
+                        background: "var(--success-tint)",
+                        borderLeft: "3px solid var(--success)",
+                      }}
+                    >
+                      <div
+                        className="smallcaps mb-2"
+                        style={{ color: "var(--success)" }}
+                      >
+                        Answer
+                      </div>
+                      <p
+                        className="text-[16px] leading-relaxed mb-3"
+                        style={{ color: "var(--ink)" }}
+                      >
+                        <span className="ink-highlight font-medium">{q.answer}</span>
+                      </p>
+                      <p
+                        className="text-[14.5px] leading-relaxed italic"
+                        style={{ color: "var(--ink-2)" }}
+                      >
+                        {q.explanation}
+                      </p>
+                    </div>
+                  )}
                 </div>
-              )}
+              </div>
             </li>
           );
         })}
+        <div className="border-t" style={{ borderColor: "var(--rule)" }} />
       </ol>
     </div>
   );
@@ -209,15 +309,12 @@ export default function LessonView({
 
   if (!lesson) {
     return (
-      <div className="space-y-4">
-        <button
-          onClick={onBack}
-          className="text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
-        >
+      <div className="space-y-6">
+        <button onClick={onBack} className="btn-ghost">
           ← Back
         </button>
-        <div className="rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 text-slate-700 dark:text-slate-200">
-          No lesson content found for {courseId}.
+        <div className="px-6 py-10 hairline">
+          <p style={{ color: "var(--ink-2)" }}>No lesson content for {courseId}.</p>
         </div>
       </div>
     );
@@ -227,57 +324,85 @@ export default function LessonView({
   const state = lessonState[courseId] || {};
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-10 fade-up">
+      {/* Back link */}
       <button
         onClick={onBack}
-        className="inline-flex items-center gap-1.5 text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+        className="link smallcaps"
+        style={{ color: "var(--ink-2)" }}
       >
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-        </svg>
-        Back to {module ? `Module ${module.number}` : "modules"}
+        ← {module ? `Back to Module ${module.number}` : "Back"}
       </button>
 
-      <div>
-        <div className="flex items-center gap-2 flex-wrap mb-2 text-xs">
-          {module && (
-            <span className={`px-2 py-0.5 rounded-full font-medium ${c.badge}`}>
-              Module {module.number} · {module.title}
-            </span>
-          )}
-          <span className="text-slate-400 tabular-nums">{lesson.id}</span>
-          {state.started && (
-            <span className="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
-              Started
-            </span>
-          )}
-          {state.selfCheckComplete && (
-            <span className="px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-200">
-              Self-check done
-            </span>
-          )}
-          {isComplete && (
-            <span className="px-2 py-0.5 rounded-full bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-200">
-              Complete
-            </span>
+      {/* Lesson header — newspaper article style */}
+      <header
+        className="border-t border-b py-10 grid md:grid-cols-[1fr_auto] gap-6 items-end"
+        style={{ borderColor: "var(--ink)" }}
+      >
+        <div>
+          <div className="flex items-center gap-3 mb-4 flex-wrap">
+            {module && (
+              <>
+                <span
+                  className="font-mono text-[10px] tracking-widest uppercase"
+                  style={{ color: c.accent }}
+                >
+                  {c.label} · Module {module.number}
+                </span>
+                <span style={{ color: "var(--rule)" }}>·</span>
+                <span
+                  className="font-mono text-[10px] tracking-widest uppercase"
+                  style={{ color: "var(--ink-3)" }}
+                >
+                  Course {lesson.id}
+                </span>
+              </>
+            )}
+          </div>
+          <h1
+            className="font-display text-4xl sm:text-5xl md:text-6xl font-light leading-[0.95] tracking-tight"
+            style={{ fontVariationSettings: '"SOFT" 30, "WONK" 1' }}
+          >
+            {lesson.title}
+          </h1>
+          {(state.started || state.selfCheckComplete || isComplete) && (
+            <div className="mt-5 flex items-center gap-3 flex-wrap">
+              {state.started && (
+                <span className="smallcaps" style={{ color: "var(--ink-3)" }}>
+                  ◦ Started
+                </span>
+              )}
+              {state.selfCheckComplete && (
+                <span className="smallcaps" style={{ color: "var(--info)" }}>
+                  ◦ Self-check done
+                </span>
+              )}
+              {isComplete && (
+                <span className="smallcaps" style={{ color: "var(--success)" }}>
+                  ✓ Complete
+                </span>
+              )}
+            </div>
           )}
         </div>
-        <h1 className="text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-white leading-tight">
-          {lesson.title}
-        </h1>
-      </div>
+      </header>
 
-      <div className="border-b border-slate-200 dark:border-slate-700 -mx-4 px-4 sticky top-[105px] bg-slate-50/95 dark:bg-slate-950/95 backdrop-blur z-[5]">
-        <div className="flex gap-1 overflow-x-auto -mb-px">
+      {/* Tabs */}
+      <div
+        className="sticky top-0 z-[5] -mx-6 px-6 py-3 border-b"
+        style={{
+          background: "color-mix(in srgb, var(--paper) 92%, transparent)",
+          backdropFilter: "blur(8px)",
+          borderColor: "var(--rule)",
+        }}
+      >
+        <div className="flex gap-6 sm:gap-8 overflow-x-auto">
           {TABS.map((t) => (
             <button
               key={t.id}
               onClick={() => setTab(t.id)}
-              className={`px-3 py-2 text-sm font-medium whitespace-nowrap border-b-2 transition-colors ${
-                tab === t.id
-                  ? "border-slate-900 dark:border-white text-slate-900 dark:text-white"
-                  : "border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200"
-              }`}
+              data-active={tab === t.id}
+              className="tab !py-2"
             >
               {t.label}
             </button>
@@ -285,7 +410,8 @@ export default function LessonView({
         </div>
       </div>
 
-      <div>
+      {/* Body */}
+      <div className="max-w-3xl">
         {tab === "lesson" && <LessonTab lesson={lesson} />}
         {tab === "terms" && <TermsTab lesson={lesson} />}
         {tab === "clinical" && (
@@ -301,19 +427,19 @@ export default function LessonView({
         )}
       </div>
 
-      <div className="pt-4 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between flex-wrap gap-3">
-        <div className="text-xs text-slate-500 dark:text-slate-400">
-          Progress is saved automatically.
+      {/* Footer — mark complete */}
+      <div
+        className="pt-8 border-t flex items-center justify-between flex-wrap gap-4"
+        style={{ borderColor: "var(--rule)" }}
+      >
+        <div className="font-mono text-[11px]" style={{ color: "var(--ink-3)" }}>
+          ¶ Progress saves automatically.
         </div>
         <button
           onClick={() => setComplete(courseId, !isComplete)}
-          className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-            isComplete
-              ? "bg-green-100 text-green-800 hover:bg-green-200 dark:bg-green-900/40 dark:text-green-200 dark:hover:bg-green-900/60"
-              : "bg-slate-900 text-white hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
-          }`}
+          className={isComplete ? "btn-ghost" : "btn-primary"}
         >
-          {isComplete ? "✓ Lesson complete" : "Mark lesson complete"}
+          {isComplete ? "✓ Marked complete" : "Mark lesson complete"}
         </button>
       </div>
     </div>

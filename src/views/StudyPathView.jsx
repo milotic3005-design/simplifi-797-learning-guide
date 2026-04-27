@@ -1,84 +1,129 @@
 import data from "../data/study-path-and-exam-prep.json";
 import { cls } from "../themes";
 
+const ROMANS = ["I", "II", "III", "IV", "V"];
+
 export default function StudyPathView() {
   const sp = data.studyPath;
   return (
-    <div className="space-y-5">
-      <div>
-        <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">
+    <div className="space-y-14">
+      <section className="fade-up">
+        <div className="smallcaps mb-3">§ IV — Suggested route</div>
+        <h2
+          className="font-display text-4xl sm:text-5xl md:text-6xl font-light leading-[0.95] tracking-tight"
+          style={{ fontVariationSettings: '"SOFT" 50, "WONK" 1' }}
+        >
           {sp.title}
         </h2>
-        <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">
+        <p
+          className="mt-4 max-w-2xl text-[16px] leading-relaxed"
+          style={{ color: "var(--ink-2)" }}
+        >
           {sp.description}
         </p>
-      </div>
+        <div className="rule-thick mt-8" style={{ background: "var(--ink)" }} />
+      </section>
 
-      <div className="space-y-4">
-        {sp.phases.map((p) => {
+      <section>
+        {sp.phases.map((p, i) => {
           const c = cls(p.theme);
           return (
-            <div
+            <article
               key={p.phase}
-              className={`rounded-lg border bg-white dark:bg-slate-800 dark:border-slate-700 ${c.borderL} overflow-hidden`}
+              className="fade-up py-12 border-t grid md:grid-cols-[180px_1fr] gap-8"
+              style={{
+                borderColor: "var(--rule)",
+                animationDelay: `${i * 0.06}s`,
+              }}
             >
-              <div className="p-4">
-                <div className="flex items-center gap-3 flex-wrap">
-                  <span
-                    className={`text-xs px-2 py-0.5 rounded-full font-semibold ${c.badge}`}
-                  >
-                    Phase {p.phase}
-                  </span>
-                  <h3 className="font-semibold text-slate-900 dark:text-white">
-                    {p.label}
-                  </h3>
+              <div>
+                <div className="smallcaps mb-2">Phase</div>
+                <div
+                  className="font-display tracking-tight leading-none"
+                  style={{
+                    fontSize: "clamp(80px, 11vw, 140px)",
+                    fontWeight: 200,
+                    fontVariationSettings: '"SOFT" 70, "WONK" 1',
+                    color: c.accent,
+                  }}
+                >
+                  {ROMANS[i]}
                 </div>
-                <div className="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
-                  <div>
-                    <div className="text-xs uppercase text-slate-500 dark:text-slate-400">
-                      Modules
-                    </div>
-                    <div className="font-medium text-slate-900 dark:text-white">
-                      {p.modules.join(", ")}
-                    </div>
-                    <div className="text-xs text-slate-600 dark:text-slate-300 mt-0.5">
-                      {p.moduleNames.join(" · ")}
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-xs uppercase text-slate-500 dark:text-slate-400">
-                      Courses
-                    </div>
-                    <div className="font-medium text-slate-900 dark:text-white">
-                      {p.courseCount}
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-xs uppercase text-slate-500 dark:text-slate-400">
-                      Estimated hours
-                    </div>
-                    <div className="font-medium text-slate-900 dark:text-white">
-                      {p.estimatedHours}
-                    </div>
-                  </div>
+              </div>
+              <div>
+                <h3
+                  className="font-display text-2xl sm:text-3xl font-normal leading-tight tracking-tight mb-3"
+                  style={{ fontVariationSettings: '"SOFT" 30' }}
+                >
+                  {p.label}
+                </h3>
+                <div
+                  className="flex flex-wrap items-center gap-x-5 gap-y-1 mb-5 font-mono text-[12px]"
+                  style={{ color: "var(--ink-2)" }}
+                >
+                  <span>Modules {p.modules.join(", ")}</span>
+                  <span style={{ color: "var(--rule)" }}>·</span>
+                  <span>{p.courseCount} courses</span>
+                  <span style={{ color: "var(--rule)" }}>·</span>
+                  <span>{p.estimatedHours}</span>
                 </div>
-                <p className="mt-3 text-sm text-slate-700 dark:text-slate-200">
+                <div
+                  className="grid md:grid-cols-3 gap-3 mb-5"
+                >
+                  {p.moduleNames.map((name, j) => (
+                    <div
+                      key={j}
+                      className="px-4 py-3 text-[13px] leading-tight"
+                      style={{
+                        background: c.tint,
+                        borderLeft: `3px solid ${c.accent}`,
+                      }}
+                    >
+                      <div className="smallcaps mb-1">№ {p.modules[j]}</div>
+                      <div style={{ color: "var(--ink)" }}>{name}</div>
+                    </div>
+                  ))}
+                </div>
+                <p
+                  className="font-display text-[18px] leading-[1.55] italic max-w-2xl"
+                  style={{
+                    fontVariationSettings: '"SOFT" 50, "WONK" 1',
+                    color: "var(--ink)",
+                  }}
+                >
                   {p.rationale}
                 </p>
               </div>
-            </div>
+            </article>
           );
         })}
-      </div>
+        <div className="border-t" style={{ borderColor: "var(--rule)" }} />
+      </section>
 
-      <div className="rounded-lg border border-purple-200 dark:border-purple-700 bg-purple-50 dark:bg-purple-900/30 p-4">
-        <div className="text-xs font-semibold uppercase tracking-wide text-purple-700 dark:text-purple-200 mb-1">
-          Study tip
+      {/* Study tip pull-quote */}
+      <section className="fade-up max-w-3xl">
+        <div className="smallcaps mb-4" style={{ color: "var(--plum)" }}>
+          ¶ Study tip
         </div>
-        <div className="text-sm text-slate-800 dark:text-slate-200">
+        <blockquote
+          className="font-display text-2xl sm:text-3xl leading-[1.3] tracking-tight"
+          style={{
+            fontVariationSettings: '"SOFT" 60, "WONK" 1',
+            color: "var(--ink)",
+          }}
+        >
+          <span
+            className="font-display text-5xl block leading-none mb-2"
+            style={{
+              color: "var(--plum)",
+              fontVariationSettings: '"SOFT" 80, "WONK" 1',
+            }}
+          >
+            “
+          </span>
           {sp.studyTip}
-        </div>
-      </div>
+        </blockquote>
+      </section>
     </div>
   );
 }

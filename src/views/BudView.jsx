@@ -1,125 +1,185 @@
 import data from "../data/bud-and-iso.json";
 
 const colorMap = {
-  warning: {
-    border: "border-orange-400 dark:border-orange-600",
-    bg: "bg-orange-50 dark:bg-orange-900/30",
-    badge: "bg-orange-100 text-orange-800 dark:bg-orange-900/50 dark:text-orange-200",
-  },
-  success: {
-    border: "border-green-400 dark:border-green-700",
-    bg: "bg-green-50 dark:bg-green-900/30",
-    badge: "bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-200",
-  },
+  warning: { accent: "var(--warning)", tint: "var(--warning-tint)", label: "CAT 1 / IMMEDIATE" },
+  success: { accent: "var(--success)", tint: "var(--success-tint)", label: "CAT 2" },
 };
 
 function BudCell({ label, value }) {
+  const isNa = /not (applicable|permitted)/i.test(value);
   return (
-    <div className="rounded border border-slate-200 dark:border-slate-700 bg-white/60 dark:bg-slate-900/40 p-3">
-      <div className="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-1">
-        {label}
+    <div
+      className="border-t pt-3 pb-1"
+      style={{ borderColor: "var(--rule)" }}
+    >
+      <div className="smallcaps mb-1">{label}</div>
+      <div
+        className="font-display text-2xl leading-none tracking-tight"
+        style={{
+          fontVariationSettings: '"SOFT" 0, "WONK" 1',
+          color: isNa ? "var(--ink-3)" : "var(--ink)",
+        }}
+      >
+        {value}
       </div>
-      <div className="font-medium text-slate-900 dark:text-white">{value}</div>
     </div>
   );
 }
 
-function CategoryCard({ cat }) {
+function CategoryCard({ cat, idx }) {
   const c = colorMap[cat.color] || colorMap.success;
   const isCompound = cat.bud && (cat.bud.aqueous || cat.bud.nonaqueous);
 
   return (
-    <div className={`rounded-lg border ${c.border} ${c.bg} p-4`}>
-      <div className="flex items-center justify-between flex-wrap gap-2 mb-3">
-        <h3 className="font-semibold text-slate-900 dark:text-white">{cat.label}</h3>
-        <span className={`text-xs px-2 py-0.5 rounded-full ${c.badge}`}>
-          {cat.id}
-        </span>
+    <article
+      className="fade-up border-t pt-8 pb-10"
+      style={{
+        borderColor: "var(--rule)",
+        animationDelay: `${idx * 0.05}s`,
+      }}
+    >
+      <div className="grid md:grid-cols-[140px_1fr] gap-6">
+        <div>
+          <div
+            className="chapter-num text-5xl"
+            style={{ color: c.accent }}
+          >
+            {(idx + 1).toString().padStart(2, "0")}
+          </div>
+          <div
+            className="font-mono text-[10px] tracking-widest uppercase mt-3"
+            style={{ color: c.accent }}
+          >
+            {c.label}
+          </div>
+        </div>
+        <div className="space-y-6">
+          <div>
+            <h3
+              className="font-display text-3xl font-normal leading-tight tracking-tight"
+              style={{ fontVariationSettings: '"SOFT" 30, "WONK" 0' }}
+            >
+              {cat.label}
+            </h3>
+            {cat.environmentRequired && (
+              <p
+                className="mt-2 text-[15px] leading-relaxed"
+                style={{ color: "var(--ink-2)" }}
+              >
+                <span className="smallcaps mr-2">Environment</span>
+                {cat.environmentRequired}
+              </p>
+            )}
+          </div>
+
+          {cat.requirements && (
+            <ul className="space-y-1.5">
+              {cat.requirements.map((r, i) => (
+                <li
+                  key={i}
+                  className="text-[15px] flex gap-3"
+                  style={{ color: "var(--ink-2)" }}
+                >
+                  <span style={{ color: c.accent }}>·</span>
+                  {r}
+                </li>
+              ))}
+            </ul>
+          )}
+
+          {isCompound ? (
+            <div className="space-y-6">
+              {cat.bud.aqueous && (
+                <div>
+                  <div className="smallcaps mb-3" style={{ color: c.accent }}>
+                    § Aqueous
+                  </div>
+                  <div className="grid grid-cols-3 gap-x-6 gap-y-2">
+                    <BudCell label="Room temp" value={cat.bud.aqueous.roomTemp} />
+                    <BudCell label="Refrigerated" value={cat.bud.aqueous.refrigerated} />
+                    <BudCell label="Frozen" value={cat.bud.aqueous.frozen} />
+                  </div>
+                </div>
+              )}
+              {cat.bud.nonaqueous && (
+                <div>
+                  <div className="smallcaps mb-3" style={{ color: c.accent }}>
+                    § Non-aqueous
+                  </div>
+                  <div className="grid grid-cols-3 gap-x-6 gap-y-2">
+                    <BudCell label="Room temp" value={cat.bud.nonaqueous.roomTemp} />
+                    <BudCell label="Refrigerated" value={cat.bud.nonaqueous.refrigerated} />
+                    <BudCell label="Frozen" value={cat.bud.nonaqueous.frozen} />
+                  </div>
+                </div>
+              )}
+            </div>
+          ) : (
+            <div className="grid grid-cols-3 gap-x-6 gap-y-2">
+              <BudCell label="Room temp" value={cat.bud.roomTemp} />
+              <BudCell label="Refrigerated" value={cat.bud.refrigerated} />
+              <BudCell label="Frozen" value={cat.bud.frozen} />
+            </div>
+          )}
+        </div>
       </div>
-
-      {cat.environmentRequired && (
-        <p className="text-sm text-slate-700 dark:text-slate-300 mb-3">
-          <strong>Environment:</strong> {cat.environmentRequired}
-        </p>
-      )}
-      {cat.requirements && (
-        <ul className="text-sm text-slate-700 dark:text-slate-300 list-disc list-inside space-y-1 mb-3">
-          {cat.requirements.map((r, i) => (
-            <li key={i}>{r}</li>
-          ))}
-        </ul>
-      )}
-
-      {isCompound ? (
-        <div className="space-y-3">
-          {cat.bud.aqueous && (
-            <div>
-              <div className="text-sm font-semibold text-slate-800 dark:text-slate-100 mb-2">
-                Aqueous
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                <BudCell label="Room temp" value={cat.bud.aqueous.roomTemp} />
-                <BudCell label="Refrigerated" value={cat.bud.aqueous.refrigerated} />
-                <BudCell label="Frozen" value={cat.bud.aqueous.frozen} />
-              </div>
-            </div>
-          )}
-          {cat.bud.nonaqueous && (
-            <div>
-              <div className="text-sm font-semibold text-slate-800 dark:text-slate-100 mb-2">
-                Nonaqueous
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                <BudCell label="Room temp" value={cat.bud.nonaqueous.roomTemp} />
-                <BudCell label="Refrigerated" value={cat.bud.nonaqueous.refrigerated} />
-                <BudCell label="Frozen" value={cat.bud.nonaqueous.frozen} />
-              </div>
-            </div>
-          )}
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-          <BudCell label="Room temp" value={cat.bud.roomTemp} />
-          <BudCell label="Refrigerated" value={cat.bud.refrigerated} />
-          <BudCell label="Frozen" value={cat.bud.frozen} />
-        </div>
-      )}
-    </div>
+    </article>
   );
 }
 
 export default function BudView() {
   const b = data.budReference;
   return (
-    <div className="space-y-5">
-      <div>
-        <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">
+    <div className="space-y-12">
+      <section className="fade-up">
+        <div className="smallcaps mb-3">§ II — Reference</div>
+        <h2
+          className="font-display text-4xl sm:text-5xl md:text-6xl font-light leading-[0.95] tracking-tight"
+          style={{ fontVariationSettings: '"SOFT" 50, "WONK" 1' }}
+        >
           {b.title}
         </h2>
-        <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">{b.note}</p>
-      </div>
+        <p
+          className="mt-4 max-w-2xl text-[16px] leading-relaxed"
+          style={{ color: "var(--ink-2)" }}
+        >
+          {b.note}
+        </p>
+        <div className="rule-thick mt-8" style={{ background: "var(--ink)" }} />
+      </section>
 
-      <div className="space-y-4">
-        {b.categories.map((cat) => (
-          <CategoryCard key={cat.id} cat={cat} />
+      <section>
+        {b.categories.map((cat, i) => (
+          <CategoryCard key={cat.id} cat={cat} idx={i} />
         ))}
-      </div>
+        <div className="border-t" style={{ borderColor: "var(--rule)" }} />
+      </section>
 
-      <div className="rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-4">
-        <h3 className="font-semibold text-slate-900 dark:text-white mb-2">
-          Critical distinctions — common mistakes
-        </h3>
-        <ul className="space-y-2 text-sm text-slate-700 dark:text-slate-200">
+      <section className="fade-up">
+        <div className="smallcaps mb-4" style={{ color: "var(--danger)" }}>
+          ※ Critical distinctions — common mistakes
+        </div>
+        <ul className="space-y-3">
           {b.criticalDistinctions.map((d, i) => (
             <li
               key={i}
-              className="pl-3 py-1.5 border-l-4 border-amber-400 bg-amber-50 dark:bg-amber-900/20 rounded-r"
+              className="px-5 py-4 text-[15px] leading-relaxed"
+              style={{
+                background: "var(--danger-tint)",
+                borderLeft: "3px solid var(--danger)",
+              }}
             >
+              <span
+                className="font-mono text-[11px] tabular-nums mr-3"
+                style={{ color: "var(--danger)" }}
+              >
+                ※ {(i + 1).toString().padStart(2, "0")}
+              </span>
               {d}
             </li>
           ))}
         </ul>
-      </div>
+      </section>
     </div>
   );
 }

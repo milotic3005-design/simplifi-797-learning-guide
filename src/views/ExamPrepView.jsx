@@ -5,57 +5,70 @@ function PriorityBadge({ priority }) {
   const isCritical = priority === "critical";
   return (
     <span
-      className={`text-xs px-2 py-0.5 rounded-full font-semibold uppercase tracking-wide ${
-        isCritical
-          ? "bg-red-100 text-red-700 dark:bg-red-900/50 dark:text-red-200"
-          : "bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-200"
-      }`}
+      className="font-mono text-[10px] tracking-widest uppercase"
+      style={{ color: isCritical ? "var(--danger)" : "var(--info)" }}
     >
-      {priority}
+      {isCritical ? "※ Critical" : "◦ High"}
     </span>
   );
 }
 
-function Accordion({ category, open, onToggle }) {
+function Accordion({ category, idx, open, onToggle }) {
   return (
-    <div className="rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 overflow-hidden">
+    <article
+      className="border-t fade-up"
+      style={{
+        borderColor: "var(--rule)",
+        animationDelay: `${idx * 0.04}s`,
+      }}
+    >
       <button
         onClick={onToggle}
-        className="w-full flex items-center justify-between p-4 text-left hover:bg-slate-50 dark:hover:bg-slate-700/40 transition-colors"
+        className="w-full text-left py-6 group"
       >
-        <div className="flex items-center gap-3 flex-wrap">
-          <h3 className="font-semibold text-slate-900 dark:text-white">
-            {category.category}
-          </h3>
-          <PriorityBadge priority={category.priority} />
+        <div className="grid grid-cols-[60px_1fr_auto] gap-4 items-baseline">
+          <div
+            className="chapter-num text-3xl"
+            style={{ color: "var(--ink-3)" }}
+          >
+            {(idx + 1).toString().padStart(2, "0")}
+          </div>
+          <div>
+            <div className="mb-1.5">
+              <PriorityBadge priority={category.priority} />
+            </div>
+            <h3
+              className="font-display text-xl sm:text-2xl font-normal leading-tight tracking-tight"
+              style={{ fontVariationSettings: '"SOFT" 30' }}
+            >
+              {category.category}
+            </h3>
+          </div>
+          <div className="smallcaps" style={{ color: "var(--ink-3)" }}>
+            {open ? "Close ↑" : "Open ↓"}
+          </div>
         </div>
-        <svg
-          className={`w-5 h-5 text-slate-400 transition-transform ${
-            open ? "rotate-180" : ""
-          }`}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-        </svg>
       </button>
       {open && (
-        <div className="px-4 pb-4 border-t border-slate-100 dark:border-slate-700">
-          <ul className="mt-3 space-y-2">
-            {category.items.map((item, i) => (
-              <li
-                key={i}
-                className="text-sm text-slate-700 dark:text-slate-200 flex gap-2"
+        <ul className="pb-8 pl-[76px] space-y-2.5 fade-in">
+          {category.items.map((item, i) => (
+            <li
+              key={i}
+              className="flex gap-3 text-[15px] leading-relaxed"
+              style={{ color: "var(--ink)" }}
+            >
+              <span
+                className="font-mono text-[11px] tabular-nums mt-1"
+                style={{ color: "var(--ink-3)" }}
               >
-                <span className="text-slate-400 mt-0.5">•</span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+                {(i + 1).toString().padStart(2, "0")}
+              </span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
       )}
-    </div>
+    </article>
   );
 }
 
@@ -63,63 +76,103 @@ export default function ExamPrepView() {
   const [openIdx, setOpenIdx] = useState(0);
   const ep = data.examPrep;
   return (
-    <div className="space-y-6">
-      <div>
-        <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">
+    <div className="space-y-14">
+      <section className="fade-up">
+        <div className="smallcaps mb-3">§ V — Practice</div>
+        <h2
+          className="font-display text-4xl sm:text-5xl md:text-6xl font-light leading-[0.95] tracking-tight"
+          style={{ fontVariationSettings: '"SOFT" 50, "WONK" 1' }}
+        >
           {ep.title}
         </h2>
-      </div>
+        <p
+          className="mt-4 max-w-2xl text-[16px] leading-relaxed"
+          style={{ color: "var(--ink-2)" }}
+        >
+          The handful of topics that surveyors and competency assessments lean on
+          hardest. Open each card to study the underlying details.
+        </p>
+        <div className="rule-thick mt-8" style={{ background: "var(--ink)" }} />
+      </section>
 
-      <div className="space-y-3">
+      {/* Topics */}
+      <section>
         {ep.categories.map((cat, i) => (
           <Accordion
             key={i}
             category={cat}
+            idx={i}
             open={openIdx === i}
             onToggle={() => setOpenIdx(openIdx === i ? -1 : i)}
           />
         ))}
-      </div>
+        <div className="border-t" style={{ borderColor: "var(--rule)" }} />
+      </section>
 
-      <div>
-        <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">
-          Mnemonics
+      {/* Mnemonics */}
+      <section className="fade-up">
+        <div className="smallcaps mb-3">¶ Mnemonics</div>
+        <h3
+          className="font-display text-3xl font-light leading-tight tracking-tight mb-8"
+          style={{ fontVariationSettings: '"SOFT" 40, "WONK" 1' }}
+        >
+          Anchors for recall
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px" style={{ background: "var(--rule)" }}>
           {data.mnemonics.map((m, i) => (
             <div
               key={i}
-              className="rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-4"
+              className="p-6 hover:bg-paper-3 transition-colors"
+              style={{ background: "var(--paper-2)" }}
             >
-              <div className="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-1">
-                {m.topic}
-              </div>
-              <div className="font-mono font-bold text-slate-900 dark:text-white text-sm mb-2">
+              <div className="smallcaps mb-3">{m.topic}</div>
+              <div
+                className="font-mono text-[15px] leading-snug font-bold mb-3"
+                style={{ color: "var(--ink)" }}
+              >
                 {m.mnemonic}
               </div>
-              <div className="text-sm text-slate-600 dark:text-slate-300">
+              <div
+                className="text-[14px] leading-relaxed"
+                style={{ color: "var(--ink-2)" }}
+              >
                 {m.detail}
               </div>
             </div>
           ))}
         </div>
-      </div>
+      </section>
 
-      <div>
-        <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">
-          Common surveyor findings
+      {/* Surveyor findings */}
+      <section className="fade-up">
+        <div className="smallcaps mb-3" style={{ color: "var(--danger)" }}>
+          ※ Common surveyor findings
+        </div>
+        <h3
+          className="font-display text-3xl font-light leading-tight tracking-tight mb-6"
+          style={{ fontVariationSettings: '"SOFT" 40, "WONK" 1' }}
+        >
+          Where programs most often fail
         </h3>
-        <ol className="rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 divide-y divide-slate-100 dark:divide-slate-700">
+        <ol className="space-y-0">
           {data.commonSurveyorFindings.map((f, i) => (
-            <li key={i} className="flex items-start gap-3 p-3 text-sm">
-              <span className="shrink-0 inline-flex items-center justify-center w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold tabular-nums">
-                {i + 1}
+            <li
+              key={i}
+              className="grid grid-cols-[60px_1fr] gap-4 py-4 border-t text-[15px] leading-relaxed"
+              style={{ borderColor: "var(--rule)", color: "var(--ink)" }}
+            >
+              <span
+                className="chapter-num text-2xl"
+                style={{ color: "var(--danger)" }}
+              >
+                {(i + 1).toString().padStart(2, "0")}
               </span>
-              <span className="text-slate-800 dark:text-slate-100">{f}</span>
+              <span>{f}</span>
             </li>
           ))}
+          <div className="border-t" style={{ borderColor: "var(--rule)" }} />
         </ol>
-      </div>
+      </section>
     </div>
   );
 }
