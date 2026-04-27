@@ -13,7 +13,7 @@
       "sections": [
         {
           "heading": "What is a Primary Engineering Control?",
-          "body": "A Primary Engineering Control (PEC) is the piece of equipment that directly provides the ISO 5 environment in which sterile compounding occurs. It is your first line of defense against microbial and particulate contamination of the CSP. The ISO 5 environment (≤100 particles/m³ of particles ≥0.5 µm) is achieved through HEPA-filtered, unidirectional airflow that continuously sweeps the work zone. Every critical site — every needle, vial septum, bag port, and syringe tip — must remain within this HEPA-filtered airstream throughout compounding. There is no substitute for the PEC; if the PEC fails or is offline, compounding stops."
+          "body": "A Primary Engineering Control (PEC) is the piece of equipment that directly provides the ISO 5 environment in which sterile compounding occurs. It is your first line of defense against microbial and particulate contamination of the CSP. The ISO 5 environment (≤3,520 particles/m³ at ≥0.5 µm and ≤29 particles/m³ at ≥5 µm per ISO 14644-1) is achieved through HEPA-filtered, unidirectional airflow that continuously sweeps the work zone. Every critical site — every needle, vial septum, bag port, and syringe tip — must remain within this HEPA-filtered airstream throughout compounding. There is no substitute for the PEC; if the PEC fails or is offline, compounding stops."
         },
         {
           "heading": "Laminar Airflow Workbench (LAF) — non-hazardous only",
@@ -34,7 +34,7 @@
       ],
       "keyTerms": [
         { "term": "Primary Engineering Control (PEC)", "definition": "Equipment that provides the ISO 5 compounding environment through HEPA-filtered unidirectional airflow — includes LAF workbenches, BSCs, and isolators." },
-        { "term": "ISO 5", "definition": "Airborne particulate cleanliness level of ≤100 particles/m³ (≥0.5 µm) — required for the direct compounding surface in all sterile compounding." },
+        { "term": "ISO 5", "definition": "Airborne particulate cleanliness class per ISO 14644-1: ≤3,520 particles/m³ at ≥0.5 µm and ≤29 particles/m³ at ≥5 µm — required for the direct compounding surface in all sterile compounding. (Legacy 'Class 100' = particles per cubic foot under retired FS 209E.)" },
         { "term": "HEPA filter", "definition": "High-Efficiency Particulate Air filter capturing ≥99.97% of particles ≥0.3 µm — the core filtration component of all PECs." },
         { "term": "First air", "definition": "Air that exits the HEPA filter before contacting any surface — the cleanest air in the PEC; all critical sites must be in first air during compounding." },
         { "term": "Certifying Organization (CO)", "definition": "A qualified third-party firm that performs PEC and SEC certification testing per established standards — must be used for all required certification events." }

@@ -1,9 +1,13 @@
 import data from "../data/bud-and-iso.json";
 
-const colorMap = {
-  warning: { accent: "var(--warning)", tint: "var(--warning-tint)", label: "CAT 1 / IMMEDIATE" },
-  success: { accent: "var(--success)", tint: "var(--success-tint)", label: "CAT 2" },
-};
+function tagFor(cat) {
+  if (cat.id === "immediate-use") return { label: "Immediate-Use", accent: "var(--warning)", tint: "var(--warning-tint)" };
+  if (cat.id === "category-1") return { label: "Cat 1", accent: "var(--warning)", tint: "var(--warning-tint)" };
+  if (cat.id === "category-2-no-test") return { label: "Cat 2 · no test", accent: "var(--success)", tint: "var(--success-tint)" };
+  if (cat.id === "category-2-sterility-tested") return { label: "Cat 2 · sterility tested", accent: "var(--success)", tint: "var(--success-tint)" };
+  if (cat.id === "category-3") return { label: "Cat 3 · NEW 2023", accent: "var(--plum)", tint: "var(--plum-tint)" };
+  return { label: "", accent: "var(--ink)", tint: "var(--paper-3)" };
+}
 
 function BudCell({ label, value }) {
   const isNa = /not (applicable|permitted)/i.test(value);
@@ -27,7 +31,7 @@ function BudCell({ label, value }) {
 }
 
 function CategoryCard({ cat, idx }) {
-  const c = colorMap[cat.color] || colorMap.success;
+  const c = tagFor(cat);
   const isCompound = cat.bud && (cat.bud.aqueous || cat.bud.nonaqueous);
 
   return (
@@ -120,6 +124,15 @@ function CategoryCard({ cat, idx }) {
               <BudCell label="Refrigerated" value={cat.bud.refrigerated} />
               <BudCell label="Frozen" value={cat.bud.frozen} />
             </div>
+          )}
+
+          {cat.note && (
+            <p
+              className="text-[13.5px] leading-relaxed italic mt-4"
+              style={{ color: "var(--ink-2)" }}
+            >
+              {cat.note}
+            </p>
           )}
         </div>
       </div>

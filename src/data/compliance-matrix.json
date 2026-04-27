@@ -1,0 +1,343 @@
+{
+  "meta": {
+    "title": "TJC IV Room Inspection Readiness — Compliance Matrix",
+    "subtitle": "Survey-aligned checkpoints mapped to USP <797> (2023 Revised), USP <800>, and current TJC standards",
+    "primarySources": [
+      "USP General Chapter <797> Pharmaceutical Compounding — Sterile Preparations (2023 Revised, official 2023-11-01)",
+      "USP General Chapter <800> Hazardous Drugs — Handling in Healthcare Settings (effective 2019-12-01)",
+      "USP General Chapter <795> (2023 Revised) — referenced for nonsterile-to-sterile",
+      "TJC Comprehensive Accreditation Manual — Medication Management (MM) and Environment of Care (EC) chapters",
+      "NIOSH HD List (current edition)"
+    ],
+    "version": "1.0",
+    "validationNote": "Verify TJC standard numbers against your facility's current edition; standards renumber between accreditation cycles."
+  },
+  "modules": [
+    {
+      "id": "facility-design",
+      "moduleNumber": "01",
+      "title": "Facility Design & Environmental Controls",
+      "tag": "Air quality · pressure · ISO classifications · PEC/SEC",
+      "theme": "info",
+      "primaryRefs": [
+        "USP <797> §3, §4",
+        "USP <800> §5",
+        "ISO 14644-1:2015",
+        "TJC EC.02.05.01",
+        "TJC MM.04.01.01"
+      ],
+      "keyMetrics": [
+        { "label": "ISO 5 (PEC)", "value": "≤3,520 particles/m³ at ≥0.5 µm · ≤29 particles/m³ at ≥5 µm" },
+        { "label": "ISO 7 (buffer)", "value": "≤352,000 particles/m³ at ≥0.5 µm" },
+        { "label": "ISO 8 (anteroom)", "value": "≤3,520,000 particles/m³ at ≥0.5 µm" },
+        { "label": "ISO 7 ACPH", "value": "≥30 total · ≥15 from HEPA-filtered supply" },
+        { "label": "ISO 8 ACPH", "value": "≥20 total" },
+        { "label": "Buffer pressure (non-HD)", "value": "≥+0.020 in WC vs anteroom (positive)" },
+        { "label": "C-SEC pressure (HD)", "value": "−0.01 to −0.03 in WC (negative)" },
+        { "label": "Buffer temp / RH", "value": "≤20 °C / ≤60 % RH" },
+        { "label": "Cert frequency", "value": "Every 6 months by qualified Certifying Organization" }
+      ],
+      "checkpoints": [
+        {
+          "id": "FAC-01",
+          "objective": "ISO classification verified by current particle-count certification",
+          "criterion": "Certificate dated within 6 months on file; counts at ISO 5 ≤3,520/m³ at 0.5 µm and ≤29/m³ at 5 µm; ISO 7 ≤352,000/m³; ISO 8 ≤3,520,000/m³",
+          "evidence": ["Certificate from qualified Certifying Organization (CO)", "Particle-count printout per zone"],
+          "tjcFocus": "EC.02.05.01 EP 14"
+        },
+        {
+          "id": "FAC-02",
+          "objective": "Buffer-room ACPH and HEPA contribution meet minima",
+          "criterion": "ISO 7 buffer ≥30 ACPH total with ≥15 ACPH from HEPA-filtered supply; ISO 8 anteroom ≥20 ACPH",
+          "evidence": ["Most recent CO certification report", "HVAC commissioning documentation"],
+          "tjcFocus": "EC.02.05.01"
+        },
+        {
+          "id": "FAC-03",
+          "objective": "Continuous pressure-differential monitoring with alarms",
+          "criterion": "Buffer room ≥+0.020 in WC vs anteroom (non-HD); C-SEC HD buffer −0.01 to −0.03 in WC; documented daily review with audible/visual alarm on excursion",
+          "evidence": ["Magnehelic/digital gauge log", "Alarm test record", "Pressure-monitoring SOP"],
+          "tjcFocus": "EC.02.05.01 EP 15"
+        },
+        {
+          "id": "FAC-04",
+          "objective": "Temperature and humidity controls within tolerances",
+          "criterion": "Buffer ≤20 °C and ≤60 % RH; refrigerator 2–8 °C; freezer −25 to −10 °C; logs reviewed and signed daily",
+          "evidence": ["Daily temperature/humidity log", "Calibrated thermometer/hygrometer record"],
+          "tjcFocus": "MM.04.01.01 EP 4"
+        },
+        {
+          "id": "FAC-05",
+          "objective": "HD facility separation and external venting",
+          "criterion": "C-PEC for HD compounding is BSC II Type B2 or CACI externally vented (no recirculation); HD storage in dedicated negative-pressure room or in negative C-SEC if low-volume; segregated from non-HD active pharmaceuticals",
+          "evidence": ["Floor plan with pressure annotations", "Mechanical drawings showing exhaust path", "Storage segregation walkthrough"],
+          "tjcFocus": "EC.02.02.01"
+        }
+      ]
+    },
+    {
+      "id": "personnel-competency",
+      "moduleNumber": "02",
+      "title": "Personnel Competency & Hygiene",
+      "tag": "Garbing · GFS · media-fill · USP 800 training",
+      "theme": "neutral",
+      "primaryRefs": [
+        "USP <797> §2, §3",
+        "USP <800> §7",
+        "TJC HR.01.05.03",
+        "TJC MM.05.01.07",
+        "TJC LD.03.06.01"
+      ],
+      "keyMetrics": [
+        { "label": "Garbing order", "value": "Outer items off → shoe covers → hair/beard cover → mask → 30-s wash → gown → alcohol hand-rub → sterile gloves LAST → sanitize gloves with sterile 70% IPA on entering PEC" },
+        { "label": "Initial qualification (Cat 1/2)", "value": "3 separate passing events: garbing observation + GFS + media fill" },
+        { "label": "Initial qualification (Cat 3)", "value": "All Cat 1/2 + media fill under most stressful conditions + endotoxin/sterility expertise verification" },
+        { "label": "GFS / media-fill (Cat 1/2)", "value": "Every 6 months" },
+        { "label": "GFS / media-fill (Cat 3)", "value": "Every 3 months" },
+        { "label": "Garbing observation (Cat 1/2)", "value": "Every 12 months" },
+        { "label": "Garbing observation (Cat 3)", "value": "Every 6 months" },
+        { "label": "GFS action level", "value": "Initial: any growth = fail · Ongoing: >3 CFU per hand → action-level excursion" },
+        { "label": "Media-fill action", "value": "Any growth in any container after 14-day incubation at 20–25 °C and 30–35 °C = immediate suspension" },
+        { "label": "USP 800 training", "value": "Required for ALL HD handlers (pharmacy, nursing, receiving, transport) — refresh every 12 months" }
+      ],
+      "checkpoints": [
+        {
+          "id": "PER-01",
+          "objective": "Each compounder's initial qualification packet is complete and immediately retrievable",
+          "criterion": "On file for every compounder: garbing observation + 3 separate passing GFS + 3 separate passing media fills + didactic record + PIC sign-off; retrievable by name within minutes",
+          "evidence": ["Personnel competency binder / electronic records", "Pull a random name and produce within 5 minutes"],
+          "tjcFocus": "HR.01.05.03 EP 1–4"
+        },
+        {
+          "id": "PER-02",
+          "objective": "Ongoing competency cadence matches category",
+          "criterion": "Cat 1/2: GFS + media fill every 6 months · garbing every 12 months. Cat 3: every 3 months / 6 months. HD personnel: USP 800 retraining at minimum every 12 months and after any HD-list or facility change.",
+          "evidence": ["Competency calendar", "Most recent results within frequency window"],
+          "tjcFocus": "MM.05.01.07 EP 1"
+        },
+        {
+          "id": "PER-03",
+          "objective": "Garbing sequence performance matches written SOP",
+          "criterion": "Direct observation matches the USP 797 garbing order; sterile gloves donned LAST; gloves sanitized with sterile 70% IPA upon entering PEC; observed by trained assessor (no self-assessment)",
+          "evidence": ["SOP version controlled and signed", "Observation checklist with assessor signature and date"],
+          "tjcFocus": "MM.05.01.07"
+        },
+        {
+          "id": "PER-04",
+          "objective": "GFS and media-fill action-level excursions are investigated and documented",
+          "criterion": "Any GFS >3 CFU/hand or media-fill growth triggers documented suspension, root-cause investigation, retraining, and 3 consecutive passing re-qualifications before resuming independent compounding",
+          "evidence": ["CAPA log entries", "Re-qualification records"],
+          "tjcFocus": "MM.05.01.07 EP 2 / LD.04.04.05"
+        },
+        {
+          "id": "PER-05",
+          "objective": "USP 800 training extends beyond pharmacy",
+          "criterion": "Training records on file for ALL personnel handling HDs — receiving, materials management, pharmacy, nursing, environmental services, transport — with annual refresher and current NIOSH-list comparison",
+          "evidence": ["Multi-department training matrix", "Current HD list reviewed within 12 months"],
+          "tjcFocus": "EC.02.02.01 / HR.01.05.03"
+        }
+      ]
+    },
+    {
+      "id": "cleaning-disinfecting",
+      "moduleNumber": "03",
+      "title": "Cleaning, Disinfecting & Sporicidal Application",
+      "tag": "Frequencies · agents · contact times · sequence",
+      "theme": "success",
+      "primaryRefs": [
+        "USP <797> §3 (cleaning subsection)",
+        "USP <800> §5.5",
+        "TJC IC.02.02.01",
+        "TJC EC.02.06.01"
+      ],
+      "keyMetrics": [
+        { "label": "Sequence (CSP)", "value": "Clean → Disinfect → Apply Sporicidal · always cleanest → dirtiest, top → bottom" },
+        { "label": "Sequence (HD)", "value": "Deactivate → Decontaminate → Clean → Disinfect · order is NOT interchangeable" },
+        { "label": "Inside ISO 5 / ISO 7", "value": "Sterile 70% IPA only — non-sterile IPA is non-compliant" },
+        { "label": "PEC frequency", "value": "Start of shift · before each batch · every 30 min of continuous use · after contamination · end of shift" },
+        { "label": "Sporicidal", "value": "Monthly minimum (Cat 1/2) · Weekly (Cat 3 and HD areas)" },
+        { "label": "Buffer + anteroom daily", "value": "Floors · work surfaces · sinks · walls within 1 m of work surface · equipment exteriors" },
+        { "label": "Buffer + anteroom monthly", "value": "Walls (full) · ceilings · doors · light fixtures · storage shelving" },
+        { "label": "Pass-through", "value": "Both surfaces wiped with sterile 70% IPA between every transfer · daily full clean · monthly sporicidal" },
+        { "label": "Wiping supplies", "value": "Sterile, low-lint, single-use; one direction only with overlapping strokes" },
+        { "label": "Dwell time", "value": "Disinfectant must remain visibly wet for the full manufacturer contact time (most-missed step in surveys)" }
+      ],
+      "checkpoints": [
+        {
+          "id": "CLN-01",
+          "objective": "Sterile 70% IPA used inside ISO 5 and ISO 7",
+          "criterion": "All IPA spray bottles or wipes inside classified areas labeled 'Sterile' with lot number and use-by; non-sterile IPA never enters ISO 5/ISO 7",
+          "evidence": ["Container labels at point of use", "Receiving log showing sterile-grade procurement", "SOP specifying sterile IPA"],
+          "tjcFocus": "MM.05.01.07 / IC.02.02.01"
+        },
+        {
+          "id": "CLN-02",
+          "objective": "Sporicidal-agent rotation and documented monthly application",
+          "criterion": "Sporicidal applied at least monthly (weekly Cat 3 and HD); rotation schedule prevents resistance; agent, date, lot, and personnel documented for every application",
+          "evidence": ["Cleaning log with monthly sporicidal entries", "Written rotation schedule"],
+          "tjcFocus": "IC.02.02.01"
+        },
+        {
+          "id": "CLN-03",
+          "objective": "Dwell-time observance during direct observation",
+          "criterion": "Disinfectant remains visibly wet for the full manufacturer contact time; staff state the dwell time for each agent in use",
+          "evidence": ["Direct observation", "Posted dwell-time reference at point of use", "Staff competency interview"],
+          "tjcFocus": "MM.05.01.07"
+        },
+        {
+          "id": "CLN-04",
+          "objective": "Cleaning sequence — clean before disinfect, cleanest to dirtiest",
+          "criterion": "Cleaning physically removes debris BEFORE disinfectant applied; direction PEC outward (PEC → buffer → anteroom); SOP explicit; staff demonstrate correct order",
+          "evidence": ["SOP", "Direct observation", "Cleaning log signed by performer"],
+          "tjcFocus": "MM.05.01.07"
+        },
+        {
+          "id": "CLN-05",
+          "objective": "HD areas follow Deactivate → Decontaminate → Clean → Disinfect",
+          "criterion": "Each of the four steps performed in order with appropriate agents; deactivator residue removed before disinfectant applied; performed at start of shift, after every HD batch, after spills, and end of shift",
+          "evidence": ["HD cleaning log", "Spill response documentation", "SOP version-controlled"],
+          "tjcFocus": "EC.02.02.01"
+        }
+      ]
+    },
+    {
+      "id": "hazardous-drug-handling",
+      "moduleNumber": "04",
+      "title": "Hazardous Drug (HD) Handling — USP <800>",
+      "tag": "C-PEC/C-SEC · CSTDs · spill kits · PPE · transport",
+      "theme": "danger",
+      "primaryRefs": [
+        "USP <800> §5–13",
+        "NIOSH HD List (current)",
+        "TJC EC.02.02.01",
+        "TJC MM.05.01.07",
+        "TJC MM.06.01.01"
+      ],
+      "keyMetrics": [
+        { "label": "NIOSH groups", "value": "Group 1 antineoplastics · Group 2 non-antineoplastics meeting NIOSH criteria · Group 3 reproductive-only" },
+        { "label": "C-PEC", "value": "BSC Class II Type B2 (100 % HEPA-exhausted to outside) OR CACI externally vented" },
+        { "label": "C-SEC", "value": "ISO 7 with negative pressure −0.01 to −0.03 in WC · ≥30 ACPH · externally vented (no recirculation)" },
+        { "label": "C-SCA alternative", "value": "Permitted for low-volume HD compounding · LIMITS all HD CSPs to maximum 12-hour BUD" },
+        { "label": "CSTD compounding", "value": "RECOMMENDED in C-PEC where chemical/physical compatibility allows" },
+        { "label": "CSTD administration", "value": "REQUIRED for antineoplastic HD administration when dosage form allows" },
+        { "label": "Compounding PPE", "value": "Two pairs chemo gloves (ASTM D6978) · chemo gown (ASTM F739 or equivalent) · two pairs shoe covers · hair, beard, mask · eye/face protection · ≥N95 (P100 for volatile HDs)" },
+        { "label": "Glove change", "value": "Every 30 minutes or sooner if torn / contaminated" },
+        { "label": "Gown change", "value": "Every 2–3 hours or sooner if contaminated · single-use only" },
+        { "label": "Spill kits", "value": "At every HD touchpoint — receiving, storage, prep, transport, administration" },
+        { "label": "Spill > 5 mL", "value": "Trained spill responders only · consider P100 PAPR · evacuate non-essential staff" },
+        { "label": "Medical surveillance", "value": "Baseline + every 2–3 years for significant HD handlers · post-exposure evaluation triggered by spill / splash events" }
+      ],
+      "checkpoints": [
+        {
+          "id": "HD-01",
+          "objective": "Current NIOSH HD list adopted and assessment of risk on file",
+          "criterion": "Facility's HD list reviewed against current NIOSH publication within 12 months; written assessment of risk (AOR) on file for any drugs handled in alternative containment",
+          "evidence": ["AOR document signed by P&T or pharmacy leadership", "NIOSH list version on file with comparison date"],
+          "tjcFocus": "EC.02.02.01"
+        },
+        {
+          "id": "HD-02",
+          "objective": "C-PEC externally vented and certified",
+          "criterion": "BSC II Type B2 or CACI externally vented (no recirculation); certification within 6 months; airflow alarm functional; HEPA pre-filter change-out documented per manufacturer",
+          "evidence": ["Manufacturer specification sheet", "Most recent CO certification", "Airflow alarm test record"],
+          "tjcFocus": "EC.02.05.01 / EC.02.02.01"
+        },
+        {
+          "id": "HD-03",
+          "objective": "CSTDs used during administration of antineoplastics",
+          "criterion": "Direct observation: CSTD on every antineoplastic line; closed-system maintained from spike to administration; staff explain the closed-system principle and identify CSTD failure modes",
+          "evidence": ["Direct observation", "Procurement records for CSTD inventory", "Nursing competency records"],
+          "tjcFocus": "MM.06.01.01"
+        },
+        {
+          "id": "HD-04",
+          "objective": "Spill kits at all HD touchpoints with named, trained responders",
+          "criterion": "Spill kits within reach at every HD receiving, storage, prep, transport, and administration location; contents intact and within expiry; named, trained spill-response personnel posted on each shift",
+          "evidence": ["Walkthrough of spill-kit locations", "Spill-kit inspection log", "Spill-response training roster"],
+          "tjcFocus": "EC.02.02.01 EP 1, 8"
+        },
+        {
+          "id": "HD-05",
+          "objective": "Medical surveillance program in place for HD handlers",
+          "criterion": "Baseline health questionnaire on file at hire; reassessment every 2–3 years; post-exposure medical evaluation triggered for spill or splash events; records secured per HIPAA",
+          "evidence": ["Occupational-health partnership documentation", "De-identified surveillance summary", "Post-exposure SOP"],
+          "tjcFocus": "EC.02.02.01 / HR.01.04.01"
+        }
+      ]
+    },
+    {
+      "id": "compounding-bud-labeling",
+      "moduleNumber": "05",
+      "title": "Compounding · BUD · Security · Labeling",
+      "tag": "Cat 1/2/3 · immediate-use · MFR/CR · NPSG.03.04.01",
+      "theme": "warning",
+      "primaryRefs": [
+        "USP <797> §9–12",
+        "TJC MM.04.01.01",
+        "TJC MM.05.01.01",
+        "TJC MM.05.01.07",
+        "TJC MM.05.01.09",
+        "TJC MM.05.01.11",
+        "TJC NPSG.03.04.01"
+      ],
+      "keyMetrics": [
+        { "label": "Immediate-use", "value": "≤4 h administration window from prep start (USP 797 2023 — extended from 1 h legacy) · single patient/single dose · ≤3 sterile components · ≤2 entries per container · no HDs" },
+        { "label": "Category 1", "value": "ISO 5 PEC in unclassified SCA · 12 h CRT / 24 h refrigerated · no frozen" },
+        { "label": "Category 2", "value": "ISO 5 in ISO 7 + ISO 8 cleanroom · BUD per method × component status × storage × sterility test" },
+        { "label": "Category 3 (NEW 2023)", "value": "Cleanroom + enhanced controls · sterility + endotoxin + container-closure integrity + stability data · personnel q3 mo · max BUDs aqueous 60/90/120 d, nonaqueous 180/180" },
+        { "label": "Label required", "value": "Patient ID · drug + amount · diluent + volume · route · storage · BUD (date AND time) · facility · lot · auxiliary labeling" },
+        { "label": "Pharmacist quality release", "value": "Verifies labeling · identity · quantity · integrity · BUD · documentation BEFORE every dispense" },
+        { "label": "Documentation retention", "value": "Minimum 3 years (state may require longer — apply more stringent standard)" }
+      ],
+      "checkpoints": [
+        {
+          "id": "BUD-01",
+          "objective": "BUD policy reflects USP 797 (2023 revised) including Category 3",
+          "criterion": "Facility policy explicitly references Category 1, 2, AND 3; immediate-use window stated as ≤4 hours from prep start; BUD tables match the 2023 framework",
+          "evidence": ["Compounding policy version", "BUD reference table at point of use"],
+          "tjcFocus": "MM.05.01.07 EP 1"
+        },
+        {
+          "id": "BUD-02",
+          "objective": "BUDs assigned in Compounding Records match category and storage",
+          "criterion": "Random sample of 10 recent CRs: BUD recorded matches the category, storage condition, and (if applicable) sterility-test status. No Category 2 or 3 BUDs assigned to CSPs prepared in an SCA.",
+          "evidence": ["10 CR samples", "Cross-reference to MFR BUD basis"],
+          "tjcFocus": "MM.05.01.07"
+        },
+        {
+          "id": "LBL-01",
+          "objective": "Every CSP label contains all required elements",
+          "criterion": "Random sample of 5 dispensed CSPs: labels contain patient ID · drug + amount · diluent + volume · route · storage · BUD with date AND time · facility · lot · applicable auxiliary labeling",
+          "evidence": ["Direct sampling on the dispensing line", "MFR labeling specification"],
+          "tjcFocus": "MM.05.01.11 / NPSG.03.04.01"
+        },
+        {
+          "id": "SEC-01",
+          "objective": "Medication security maintained throughout IV room and storage",
+          "criterion": "All medications inaccessible to unauthorized personnel; controlled substances per DEA + state; HD storage segregated and labeled; high-alert and LASA separation per facility policy; refrigerator/freezer access restricted with continuous temp monitoring and alarming",
+          "evidence": ["Walkthrough", "Access-control records", "Temperature-monitoring system"],
+          "tjcFocus": "MM.04.01.01 EPs 1–6"
+        },
+        {
+          "id": "REL-01",
+          "objective": "Pharmacist quality release before every dispense",
+          "criterion": "CR shows pharmacist signature confirming labeling, identity, quantity, integrity, BUD, and documentation completeness BEFORE the CSP is released. No CSP released without all five verifications.",
+          "evidence": ["CR samples with verification fields populated", "Quality release SOP"],
+          "tjcFocus": "MM.05.01.01 / MM.05.01.09"
+        }
+      ]
+    }
+  ],
+  "tjcCrossReference": [
+    { "code": "EC.02.05.01", "topic": "HVAC, pressure differentials, humidity, temperature in cleanrooms" },
+    { "code": "MM.04.01.01", "topic": "Storage — temperature, security, HD segregation" },
+    { "code": "MM.05.01.01", "topic": "Pharmacist review and verification" },
+    { "code": "MM.05.01.07", "topic": "Compounding standards (USP 797/800)" },
+    { "code": "MM.05.01.11", "topic": "Labeling completeness" },
+    { "code": "MM.06.01.01", "topic": "Safe administration · CSTDs for HDs" },
+    { "code": "IC.02.02.01", "topic": "Cleaning, disinfection, sporicidal program" },
+    { "code": "EC.02.02.01", "topic": "HD program · spill kits · training" },
+    { "code": "HR.01.05.03", "topic": "Initial and ongoing competency" },
+    { "code": "NPSG.03.04.01", "topic": "Label every medication and container" }
+  ]
+}

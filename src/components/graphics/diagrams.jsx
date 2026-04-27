@@ -783,9 +783,9 @@ export function ImmediateUseRule() {
         <rect width="520" height="180" rx="10" className="fill-warning-tint stroke-warning" strokeWidth="1.5" />
         {[
           "Single patient · single dose",
-          "No antimicrobial preservatives",
-          "Administration MUST start ≤ 1 hour from prep start",
-          "NOT for batch convenience or stockpiling",
+          "≤ 3 sterile components · ≤ 2 entries per container",
+          "Administration MUST start ≤ 4 hours from prep start (USP 797 2023)",
+          "No HDs · NOT for batch convenience or stockpiling",
         ].map((s, i) => (
           <g key={i} transform={`translate(20, ${30 + i * 32})`}>
             <circle cx="14" cy="14" r="10" className="fill-warning" />
@@ -801,28 +801,49 @@ export function ImmediateUseRule() {
 
 export function BudDecisionTree() {
   return (
-    <Wrap vw={600} vh={360}>
-      <text x="300" y="26" textAnchor="middle" className={`${TEXT} font-semibold`} fontSize="13">Where was it compounded? → Which BUD applies?</text>
-      <rect x="240" y="50" width="120" height="46" rx="8" className="fill-paper-2 stroke-rule" strokeWidth="1.5" />
-      <text x="300" y="78" textAnchor="middle" className={`${TEXT} font-semibold`} fontSize="13">CSP prepared</text>
-      <line x1="300" y1="96" x2="160" y2="130" className="stroke-ink-2" strokeWidth="2" markerEnd="url(#arrow)" />
-      <line x1="300" y1="96" x2="450" y2="130" className="stroke-ink-2" strokeWidth="2" markerEnd="url(#arrow)" />
-      <rect x="80" y="130" width="160" height="46" rx="8" className="fill-warning-tint stroke-warning" strokeWidth="1.5" />
+    <Wrap vw={640} vh={420}>
+      <text x="320" y="26" textAnchor="middle" className={`${TEXT} font-semibold`} fontSize="13">Where was it compounded? → Which category applies?</text>
+      <rect x="260" y="50" width="120" height="46" rx="8" className="fill-paper-2 stroke-rule" strokeWidth="1.5" />
+      <text x="320" y="78" textAnchor="middle" className={`${TEXT} font-semibold`} fontSize="13">CSP prepared</text>
+      <line x1="320" y1="96" x2="160" y2="130" className="stroke-ink-2" strokeWidth="2" markerEnd="url(#arrow)" />
+      <line x1="320" y1="96" x2="320" y2="130" className="stroke-ink-2" strokeWidth="2" markerEnd="url(#arrow)" />
+      <line x1="320" y1="96" x2="500" y2="130" className="stroke-ink-2" strokeWidth="2" markerEnd="url(#arrow)" />
+      <rect x="60" y="130" width="200" height="46" rx="8" className="fill-warning-tint stroke-warning" strokeWidth="1.5" />
       <text x="160" y="158" textAnchor="middle" className={`${TEXT} font-semibold`} fontSize="13">SCA</text>
-      <rect x="370" y="130" width="160" height="46" rx="8" className="fill-success-tint stroke-success" strokeWidth="1.5" />
-      <text x="450" y="158" textAnchor="middle" className={`${TEXT} font-semibold`} fontSize="13">Cleanroom suite</text>
+      <rect x="270" y="130" width="100" height="46" rx="8" className="fill-success-tint stroke-success" strokeWidth="1.5" />
+      <text x="320" y="158" textAnchor="middle" className={`${TEXT} font-semibold`} fontSize="13">Cleanroom</text>
+      <rect x="380" y="130" width="220" height="46" rx="8" className="fill-success-tint stroke-success" strokeWidth="1.5" />
+      <text x="490" y="158" textAnchor="middle" className={`${TEXT} font-semibold`} fontSize="13">Cleanroom + enhanced controls</text>
       <line x1="160" y1="176" x2="160" y2="200" className="stroke-ink-2" strokeWidth="2" markerEnd="url(#arrow)" />
-      <line x1="450" y1="176" x2="450" y2="200" className="stroke-ink-2" strokeWidth="2" markerEnd="url(#arrow)" />
-      <rect x="60" y="200" width="200" height="120" rx="8" className="fill-warning-tint stroke-warning" strokeWidth="1.5" />
+      <line x1="320" y1="176" x2="320" y2="200" className="stroke-ink-2" strokeWidth="2" markerEnd="url(#arrow)" />
+      <line x1="490" y1="176" x2="490" y2="200" className="stroke-ink-2" strokeWidth="2" markerEnd="url(#arrow)" />
+      {/* Category 1 */}
+      <rect x="40" y="200" width="240" height="180" rx="8" className="fill-warning-tint stroke-warning" strokeWidth="1.5" />
       <text x="160" y="226" textAnchor="middle" className={`${TEXT} font-bold`} fontSize="13">Category 1</text>
       <text x="160" y="252" textAnchor="middle" className={SUB} fontSize="11">12 h room temp</text>
       <text x="160" y="272" textAnchor="middle" className={SUB} fontSize="11">24 h refrigerated</text>
-      <text x="160" y="298" textAnchor="middle" className="fill-danger font-semibold" fontSize="11">no frozen · no extension</text>
-      <rect x="350" y="200" width="200" height="120" rx="8" className="fill-success-tint stroke-success" strokeWidth="1.5" />
-      <text x="450" y="226" textAnchor="middle" className={`${TEXT} font-bold`} fontSize="13">Category 2</text>
-      <text x="450" y="252" textAnchor="middle" className={SUB} fontSize="11">aqueous: 45 d / 60 d / 365 d</text>
-      <text x="450" y="272" textAnchor="middle" className={SUB} fontSize="11">+ sterility test → 90 / 120 / 365</text>
-      <text x="450" y="298" textAnchor="middle" className={SUB} fontSize="11">RT · refrig · frozen</text>
+      <text x="160" y="292" textAnchor="middle" className="fill-danger font-semibold" fontSize="11">no frozen · no extension</text>
+      <text x="160" y="330" textAnchor="middle" className={SUB} fontSize="10" fontStyle="italic">Same-day / next-day use</text>
+      <text x="160" y="350" textAnchor="middle" className={SUB} fontSize="10" fontStyle="italic">low-risk only</text>
+      {/* Category 2 */}
+      <rect x="290" y="200" width="160" height="180" rx="8" className="fill-success-tint stroke-success" strokeWidth="1.5" />
+      <text x="370" y="226" textAnchor="middle" className={`${TEXT} font-bold`} fontSize="13">Category 2</text>
+      <text x="370" y="252" textAnchor="middle" className={SUB} fontSize="10">aqueous w/o test:</text>
+      <text x="370" y="266" textAnchor="middle" className={SUB} fontSize="10">4 / 10 / 45 d</text>
+      <text x="370" y="288" textAnchor="middle" className={SUB} fontSize="10">+ sterility &lt;71&gt; →</text>
+      <text x="370" y="302" textAnchor="middle" className={SUB} fontSize="10">30 / 45 / 60 d</text>
+      <text x="370" y="330" textAnchor="middle" className={SUB} fontSize="10" fontStyle="italic">RT · refrig · frozen</text>
+      <text x="370" y="350" textAnchor="middle" className={SUB} fontSize="10" fontStyle="italic">routine batches</text>
+      {/* Category 3 */}
+      <rect x="460" y="200" width="160" height="180" rx="8" className="fill-plum-tint stroke-plum" strokeWidth="1.5" />
+      <text x="540" y="226" textAnchor="middle" className={`${TEXT} font-bold`} fontSize="13">Category 3</text>
+      <text x="540" y="240" textAnchor="middle" className="fill-plum font-mono" fontSize="9">NEW · 2023</text>
+      <text x="540" y="262" textAnchor="middle" className={SUB} fontSize="10">aqueous max:</text>
+      <text x="540" y="276" textAnchor="middle" className={SUB} fontSize="10">60 / 90 / 120 d</text>
+      <text x="540" y="296" textAnchor="middle" className={SUB} fontSize="10">requires sterility +</text>
+      <text x="540" y="310" textAnchor="middle" className={SUB} fontSize="10">endotoxin + stability</text>
+      <text x="540" y="338" textAnchor="middle" className={SUB} fontSize="10" fontStyle="italic">extended-stability</text>
+      <text x="540" y="354" textAnchor="middle" className={SUB} fontSize="10" fontStyle="italic">programs only</text>
     </Wrap>
   );
 }

@@ -166,7 +166,7 @@
         },
         {
           "heading": "The strict criteria — ALL must be met simultaneously",
-          "body": "Immediate-use compounding is only permissible when ALL of the following criteria are met simultaneously: (1) The preparation involves simple aseptic mixing — no complex manipulations, no dissolution, no pH adjustment; (2) The preparation contains no more than three commercially manufactured sterile products; (3) Administration begins within 1 hour of the start of preparation — not 1 hour from completion, from preparation start; (4) The preparation is for a specific patient — not for a group of patients, not for stock; (5) No antimicrobial preservatives are used; (6) The preparation is not a hazardous drug as defined by NIOSH. If any single criterion is not met, the immediate-use pathway is not available and the preparation must be obtained from a licensed sterile compounding pharmacy."
+          "body": "Immediate-use compounding is only permissible when ALL of the following criteria are met simultaneously: (1) The preparation involves simple aseptic mixing — no complex manipulations, no dissolution, no pH adjustment; (2) The preparation contains no more than three commercially manufactured sterile products and involves no more than two entries into any one container; (3) Administration begins within 4 hours of the start of preparation per USP 797 (2023 revised) — not 4 hours from completion, from preparation start (the legacy 1-hour window was extended to 4 hours in the 2023 revision); (4) The preparation is for a specific patient — not for a group of patients, not for stock; (5) No antimicrobial preservatives are required; (6) The preparation is not a hazardous drug as defined by NIOSH. If any single criterion is not met, the immediate-use pathway is not available and the preparation must be obtained from a licensed sterile compounding pharmacy."
         },
         {
           "heading": "Common misuses of immediate-use",
@@ -174,23 +174,23 @@
         },
         {
           "heading": "Documentation for immediate-use CSPs",
-          "body": "Even in urgent bedside preparation, documentation is required. The immediate-use CSP must be labeled with: patient name and identifier; drug name, amount, and diluent; lot numbers of all components; preparer's name and initials; exact time of preparation; and the explicit notation that administration must begin within 1 hour. Without this documentation, the preparation is undocumented and untraceable. If an adverse event occurs, the absence of documentation prevents investigation and recovery. The documentation requirement is not suspended by urgency."
+          "body": "Even in urgent bedside preparation, documentation is required. The immediate-use CSP must be labeled with: patient name and identifier; drug name, amount, and diluent; lot numbers of all components; preparer's name and initials; exact time of preparation; and the explicit notation that administration must begin within 4 hours of preparation start (USP 797 2023 — extended from 1 h legacy). Without this documentation, the preparation is undocumented and untraceable. If an adverse event occurs, the absence of documentation prevents investigation and recovery. The documentation requirement is not suspended by urgency."
         }
       ],
       "keyTerms": [
-        { "term": "Immediate-use CSP", "definition": "A CSP prepared outside classified conditions under strict criteria — single patient, simple mixing, ≤3 sterile products, administration starts within 1 hour of prep start, no preservatives, no hazardous drugs." },
-        { "term": "1-hour rule", "definition": "Administration of an immediate-use CSP must begin within 1 hour of preparation start — not completion; the clock starts when the first component is accessed." }
+        { "term": "Immediate-use CSP", "definition": "A CSP prepared outside classified conditions under strict criteria — single patient, single dose, ≤3 sterile components and ≤2 entries per container, administration starts within 4 hours of prep start (USP 797 2023), no preservatives required, no hazardous drugs." },
+        { "term": "4-hour rule", "definition": "Administration of an immediate-use CSP must begin within 4 hours of preparation start — not completion; the clock starts when the first component is accessed. (Legacy 1-hour limit was extended to 4 hours in the 2023 USP 797 revision.)" }
       ],
       "clinicalExample": {
         "scenario": "A nurse on the oncology floor prepares 4 doses of ondansetron 4 mg/50 mL NS for 4 different patients having chemotherapy that afternoon, labeling each as 'immediate use' to avoid calling the pharmacy.",
-        "analysis": "This is non-compliant for multiple reasons: (1) The preparations are not patient-specific at the time of preparation — all four doses are made in anticipation, not for a single specific patient under immediate need; (2) If all four are not administered within 1 hour of preparation, the 1-hour rule is violated for the remaining doses; (3) Multiple doses prepared sequentially by the same person in a non-classified environment represents batch-level compounding without appropriate controls. Each of these violations independently disqualifies the immediate-use pathway.",
-        "takeaway": "Immediate-use means one patient, one preparation, one hour — it is not a mechanism for small-batch nursing preparation of ward stock."
+        "analysis": "This is non-compliant for multiple reasons: (1) The preparations are not patient-specific at the time of preparation — all four doses are made in anticipation, not for a single specific patient under immediate need; (2) Even with the extended 4-hour window in the 2023 revision, the immediate-use pathway requires single-patient single-dose preparation; (3) Multiple doses prepared sequentially by the same person in a non-classified environment represents batch-level compounding without appropriate controls. Each of these violations independently disqualifies the immediate-use pathway.",
+        "takeaway": "Immediate-use means one patient, one preparation, four hours — it is not a mechanism for small-batch nursing preparation of ward stock."
       },
       "selfCheck": [
         {
-          "question": "A nurse prepares an immediate-use vancomycin dose at 2:00 PM. The patient's IV site requires replacement and the infusion does not start until 3:15 PM. Is this compliant?",
-          "answer": "No — administration must begin within 1 hour of the start of preparation; 2:00 PM + 1 hour = 3:00 PM; starting at 3:15 PM exceeds the immediate-use window",
-          "explanation": "The 1-hour clock starts at preparation start, not at any other reference point. If circumstances prevent administration within 1 hour, the preparation must be discarded and a new preparation obtained from a licensed compounding pharmacy."
+          "question": "A nurse prepares an immediate-use vancomycin dose at 2:00 PM. The patient's IV site requires replacement and the infusion does not start until 6:30 PM. Is this compliant?",
+          "answer": "No — administration must begin within 4 hours of the start of preparation; 2:00 PM + 4 h = 6:00 PM; starting at 6:30 PM exceeds the immediate-use window",
+          "explanation": "Under USP 797 (2023 revised) the immediate-use window is 4 hours from preparation start (extended from the legacy 1 hour). The clock still starts at preparation start, not at any other reference point. If circumstances prevent administration within 4 hours, the preparation must be discarded and a new preparation obtained from a licensed compounding pharmacy."
         }
       ]
     },

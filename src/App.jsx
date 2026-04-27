@@ -8,6 +8,7 @@ import IsoView from "./views/IsoView";
 import StudyPathView from "./views/StudyPathView";
 import ExamPrepView from "./views/ExamPrepView";
 import LessonView from "./views/LessonView";
+import ComplianceView from "./views/ComplianceView";
 
 const TABS = [
   { id: "modules", label: "Modules" },
@@ -15,6 +16,7 @@ const TABS = [
   { id: "iso", label: "ISO" },
   { id: "study", label: "Study Path" },
   { id: "exam", label: "Exam Prep" },
+  { id: "compliance", label: "TJC Readiness" },
 ];
 
 function useDarkMode() {
@@ -178,6 +180,7 @@ export default function App() {
             {tab === "iso" && <IsoView />}
             {tab === "study" && <StudyPathView />}
             {tab === "exam" && <ExamPrepView />}
+            {tab === "compliance" && <ComplianceView />}
           </>
         )}
       </main>

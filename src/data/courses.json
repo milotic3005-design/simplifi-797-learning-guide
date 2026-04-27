@@ -234,7 +234,7 @@
         "Critical site = any opening into the sterile system (needle tip, vial septum, bag port, syringe tip) — must never be shadowed or touched at any point",
         "Garbing order: shoe covers → hair/beard cover → face mask → hand hygiene (30-sec scrub to elbows) → gown → sterile gloves (last, after gown)",
         "All supply items wiped with sterile 70% IPA at the pass-through before entering the buffer room — this step is never optional, never abbreviated",
-        "Immediate-use: single patient, single dose, no preservatives, administration starts ≤1 hour from prep start — not a convenience tool; strict criteria"
+        "Immediate-use: single patient, single dose, no preservatives, ≤3 sterile components, administration starts ≤4 hours from prep start (USP 797 2023 — extended from 1 h legacy); no HDs"
       ],
       "keyConcepts": [
         {

@@ -8,12 +8,13 @@
         "label": "Immediate-Use CSP",
         "requirements": [
           "Single patient, single dose only",
-          "No antimicrobial preservatives",
-          "Administration MUST start within 1 hour of preparation start",
-          "Not for convenience — strict patient-specific criteria apply"
+          "No antimicrobial preservatives required",
+          "≤3 sterile starting components AND ≤2 entries per container",
+          "Administration MUST begin within 4 hours of preparation start (USP 797 2023 — extended from 1 h legacy)",
+          "Excludes hazardous drugs (HDs)"
         ],
         "bud": {
-          "roomTemp": "Admin start ≤ 1 hour from prep start",
+          "roomTemp": "Admin start ≤ 4 hours from prep start",
           "refrigerated": "Not applicable",
           "frozen": "Not applicable"
         },
@@ -65,13 +66,42 @@
           }
         },
         "color": "success"
+      },
+      {
+        "id": "category-3",
+        "label": "Category 3 CSP (extended-stability)",
+        "environmentRequired": "ISO 5 PEC within ISO 7 buffer + ISO 8 anteroom cleanroom suite WITH enhanced controls — additional monitoring frequency, more stringent personnel qualification, and mandatory release testing",
+        "requirements": [
+          "Sterility testing per USP <71> (passing) — required, not optional",
+          "Bacterial endotoxin testing per USP <85> (passing) — required",
+          "Container–closure integrity testing for the formulation",
+          "Stability data supporting the assigned BUD",
+          "Personnel re-qualification every 3 months (vs 6 for Cat 2)",
+          "More frequent environmental monitoring than Category 2"
+        ],
+        "bud": {
+          "aqueous": {
+            "roomTemp": "60 days",
+            "refrigerated": "90 days",
+            "frozen": "120 days"
+          },
+          "nonaqueous": {
+            "roomTemp": "180 days",
+            "refrigerated": "180 days",
+            "frozen": "Not applicable"
+          }
+        },
+        "color": "success",
+        "note": "Category 3 BUDs are not defaults — the assigned BUD must be supported by documented testing AND stability evidence for that exact formulation. Introduced in USP 797 (2023 revised)."
       }
     ],
     "criticalDistinctions": [
-      "Sterility testing extends BUD for Category 2 ONLY — not Category 1",
+      "Sterility testing extends BUD for Category 2 and 3 ONLY — not Category 1",
+      "Category 3 (NEW in 2023) requires sterility, endotoxin, container-closure integrity, AND stability data — testing alone is insufficient without supporting stability evidence",
       "Aqueous = water-based solutions (most IV medications)",
       "Nonaqueous = oils, anhydrous vehicles (some ophthalmics, certain injections in oil)",
-      "Category 2 BUDs cannot be applied to SCAs — this is the most common real-world compliance error",
+      "Category 2 or 3 BUDs cannot be applied to CSPs prepared in an SCA — this is the most common real-world compliance error",
+      "Immediate-use BUD is ≤4 hours from start of preparation (changed in 2023 revision; legacy was 1 hour)",
       "BUD ≠ expiration date — BUD is assigned at compounding; it cannot be extended by changing storage conditions after the fact",
       "Multi-dose vials (commercially manufactured) are NOT subject to USP 797 BUD rules — defer to manufacturer labeling"
     ]
@@ -83,7 +113,7 @@
         "isoLevel": 5,
         "commonName": "Primary Engineering Control (PEC)",
         "examples": ["Laminar airflow (LAF) workbench", "Biological safety cabinet (BSC)", "Compounding aseptic isolator (CAI)", "Compounding aseptic containment isolator (CACI)"],
-        "particleLimit": "≤100 particles/m³ (≥0.5 µm)",
+        "particleLimit": "≤3,520 particles/m³ at ≥0.5 µm; ≤29 particles/m³ at ≥5 µm",
         "hvac": "Unidirectional HEPA-filtered airflow at ≥0.45 m/s",
         "role": "Direct compounding surface — all critical sites must remain in this airstream",
         "color": "info"
