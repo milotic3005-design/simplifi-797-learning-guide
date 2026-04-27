@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo, useCallback } from "react";
 import "./App.css";
 import courses from "./data/courses.json";
 import { useProgress } from "./useProgress";
@@ -32,13 +32,16 @@ function useDarkMode() {
   return [dark, setDark];
 }
 
-function Masthead({ dark, setDark, inLesson }) {
-  const today = new Date().toLocaleDateString("en-US", {
+// ⚡ Bolt: Memoized Masthead to prevent re-rendering when unrelated progress state changes
+// in App.jsx. Eliminates unnecessary main-thread work.
+const Masthead = React.memo(function Masthead({ dark, setDark, inLesson, activeTab, onNav }) {
+  // ⚡ Bolt: Memoize the date calculation to avoid re-calculating on every render.
+  const today = useMemo(() => new Date().toLocaleDateString("en-US", {
     weekday: "long",
     year: "numeric",
     month: "long",
     day: "numeric",
-  });
+  }), []);
 
   return (
     <header
@@ -99,8 +102,11 @@ function Masthead({ dark, setDark, inLesson }) {
             {TABS.map((t) => (
               <button
                 key={t.id}
-                onClick={() => window.dispatchEvent(new CustomEvent("nav-tab", { detail: t.id }))}
+                onClick={() => onNav(t.id)}
                 data-tab={t.id}
+                // ⚡ Bolt: Use declarative prop binding instead of document.querySelectorAll
+                // in a useEffect. Prevents synchronous DOM thrashing and bypasses manual mutations.
+                data-active={activeTab === t.id}
                 className="tab nav-tab"
               >
                 {t.label}
@@ -111,7 +117,7 @@ function Masthead({ dark, setDark, inLesson }) {
       )}
     </header>
   );
-}
+});
 
 export default function App() {
   const [tab, setTab] = useState("modules");
@@ -127,32 +133,20 @@ export default function App() {
     markStarted,
   } = useProgress();
 
-  // Listen to nav events from masthead
-  useEffect(() => {
-    const handler = (e) => {
-      setActiveLesson(null);
-      setTab(e.detail);
-    };
-    window.addEventListener("nav-tab", handler);
-    return () => window.removeEventListener("nav-tab", handler);
-  }, []);
-
-  // Update active tab attribute
-  useEffect(() => {
-    document.querySelectorAll(".nav-tab").forEach((el) => {
-      el.setAttribute("data-active", el.getAttribute("data-tab") === tab ? "true" : "false");
-    });
-  }, [tab, activeLesson]);
-
   useEffect(() => {
     if (activeLesson) window.scrollTo({ top: 0, behavior: "instant" });
   }, [activeLesson]);
 
   const inLesson = !!activeLesson;
 
+  const handleNav = useCallback((newTab) => {
+    setActiveLesson(null);
+    setTab(newTab);
+  }, [setActiveLesson]); // Ensure stable reference
+
   return (
     <div className="min-h-screen" style={{ background: "var(--paper)", color: "var(--ink)" }}>
-      <Masthead dark={dark} setDark={setDark} inLesson={inLesson} />
+      <Masthead dark={dark} setDark={setDark} inLesson={inLesson} activeTab={tab} onNav={handleNav} />
 
       <main className="max-w-6xl mx-auto px-6 py-10">
         {inLesson ? (
