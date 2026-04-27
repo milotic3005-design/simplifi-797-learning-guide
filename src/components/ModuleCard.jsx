@@ -50,6 +50,7 @@ export default function ModuleCard({
         type="button"
         onClick={() => setOpen((v) => !v)}
         className="w-full text-left py-7 group"
+        aria-expanded={open}
       >
         <div className="grid grid-cols-[80px_1fr_auto] sm:grid-cols-[120px_1fr_auto] gap-4 sm:gap-6 items-baseline">
           {/* Chapter number */}
@@ -152,6 +153,7 @@ export default function ModuleCard({
                       onChange={() => onToggle(course.id)}
                       className="checkbox mt-1"
                       onClick={(e) => e.stopPropagation()}
+                      aria-label={`Mark course ${course.id}: ${course.title} as complete`}
                     />
                     <button
                       type="button"
