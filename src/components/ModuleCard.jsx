@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { cls } from "../themes";
 import { lessonMap } from "../data/lessons";
+import { buildModuleGuide } from "../data/guidance";
 
 function Tabs({ tabs, active, onChange }) {
   return (
@@ -29,7 +30,7 @@ export default function ModuleCard({
   featured = false,
 }) {
   const [open, setOpen] = useState(false);
-  const [tab, setTab] = useState("courses");
+  const [tab, setTab] = useState("guided");
   const c = cls(module.theme);
   const completedCount = module.courses.filter((co) => completed[co.id]).length;
   const total = module.courses.length;
@@ -185,11 +186,21 @@ export default function ModuleCard({
             active={tab}
             onChange={setTab}
             tabs={[
+              { id: "guided", label: "Guided" },
               { id: "courses", label: "Courses" },
               { id: "concepts", label: "Concepts" },
               { id: "must", label: "Must Know" },
             ]}
           />
+
+          {tab === "guided" && (
+            <ModuleGuidedPanel
+              module={module}
+              theme={c}
+              completed={completed}
+              onTab={setTab}
+            />
+          )}
 
           {tab === "courses" && (
             <ol className="space-y-1.5">
@@ -327,5 +338,216 @@ export default function ModuleCard({
         </div>
       )}
     </article>
+  );
+}
+
+function ModuleGuidedPanel({ module, theme, completed, onTab }) {
+  const g = buildModuleGuide(module);
+  const completedCount = module.courses.filter((co) => completed[co.id]).length;
+  const total = module.courses.length;
+  const nextCourse = module.courses.find((co) => !completed[co.id]);
+
+  const phaseRoman = ["", "I", "II", "III"];
+
+  return (
+    <div className="space-y-3 fade-in">
+      {/* At-a-glance stats */}
+      <div className="glass-flat p-4 grid grid-cols-3 gap-3">
+        <Stat label="Courses" value={`${completedCount}/${total}`} />
+        <Stat label="Est. time" value={`${Math.round(g.estMinutes / 60 * 10) / 10}h`} />
+        <Stat label="Phase" value={g.phase ? phaseRoman[g.phase.phase] : "—"} />
+      </div>
+
+      {/* Where this fits */}
+      {g.phase && (
+        <div
+          className="glass-flat p-4"
+          style={{
+            borderLeft: `2px solid ${theme.accent}`,
+          }}
+        >
+          <div
+            className="text-[10px] font-bold tracking-widest uppercase mb-1.5"
+            style={{ color: theme.accent }}
+          >
+            ¶ Where this chapter fits
+          </div>
+          <div
+            className="font-display text-[14.5px] font-semibold mb-1"
+            style={{ color: "var(--ink)" }}
+          >
+            Phase {phaseRoman[g.phase.phase]} · {g.phase.label}
+          </div>
+          <div
+            className="text-[13px] leading-relaxed"
+            style={{ color: "var(--ink-2)" }}
+          >
+            {g.phase.rationale}
+          </div>
+        </div>
+      )}
+
+      {/* Prereqs */}
+      {g.prereqs.length > 0 && (
+        <div className="glass-flat p-4">
+          <div
+            className="text-[10px] font-bold tracking-widest uppercase mb-2"
+            style={{ color: "var(--warning)" }}
+          >
+            ◦ Read these first
+          </div>
+          <ul className="space-y-1">
+            {g.prereqs.map((p) => (
+              <li
+                key={p.id}
+                className="flex items-baseline gap-2.5 text-[13px]"
+                style={{ color: "var(--ink)" }}
+              >
+                <span
+                  className="font-num text-[11px] font-bold shrink-0 w-7"
+                  style={{ color: "var(--warning)" }}
+                >
+                  {p.number}
+                </span>
+                <span>{p.title}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {/* Recommended sequence */}
+      <div className="glass-flat p-4">
+        <div
+          className="text-[10px] font-bold tracking-widest uppercase mb-2"
+          style={{ color: theme.accent }}
+        >
+          ¶ Recommended order
+        </div>
+        <ol className="space-y-1.5">
+          {g.sequence.map((s) => {
+            const done = !!completed[s.id];
+            return (
+              <li
+                key={s.id}
+                className="flex items-baseline gap-2.5 text-[13px]"
+                style={{
+                  color: done ? "var(--ink-3)" : "var(--ink)",
+                  textDecoration: done ? "line-through" : "none",
+                }}
+              >
+                <span
+                  className="font-num text-[11px] font-bold shrink-0 w-7"
+                  style={{ color: theme.accent }}
+                >
+                  {s.id}
+                </span>
+                <span>{s.title}</span>
+                {done && (
+                  <span
+                    className="text-[10px] font-bold tracking-widest uppercase"
+                    style={{ color: "var(--success)" }}
+                  >
+                    ✓
+                  </span>
+                )}
+              </li>
+            );
+          })}
+        </ol>
+      </div>
+
+      {/* Goals */}
+      <div className="glass-flat p-4">
+        <div
+          className="text-[10px] font-bold tracking-widest uppercase mb-2"
+          style={{ color: "var(--info)" }}
+        >
+          ¶ After this chapter you should
+        </div>
+        <ul className="space-y-2">
+          {g.learningGoals.map((goal, i) => (
+            <li
+              key={i}
+              className="flex gap-3 text-[13px] leading-relaxed"
+              style={{ color: "var(--ink)" }}
+            >
+              <span
+                className="font-num text-[11px] mt-1 shrink-0 font-semibold"
+                style={{ color: "var(--info)" }}
+              >
+                {(i + 1).toString().padStart(2, "0")}
+              </span>
+              <span>{goal}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Wrap-up actions */}
+      <div className="glass-flat p-4">
+        <div
+          className="text-[10px] font-bold tracking-widest uppercase mb-2"
+          style={{ color: "var(--plum)" }}
+        >
+          ¶ Wrap-up checklist
+        </div>
+        <ul className="space-y-1.5">
+          {g.afterChapter.map((action, i) => (
+            <li
+              key={i}
+              className="flex gap-2.5 text-[13px] leading-relaxed"
+              style={{ color: "var(--ink-2)" }}
+            >
+              <span
+                className="font-num text-[10px] mt-1 shrink-0 font-semibold"
+                style={{ color: "var(--plum)" }}
+              >
+                ☐
+              </span>
+              <span>{action}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Start CTA */}
+      <div className="flex items-center justify-end gap-2 pt-1">
+        <button
+          onClick={() => onTab("courses")}
+          className="btn-ghost"
+        >
+          See course list
+        </button>
+        {nextCourse && (
+          <button
+            onClick={() => onTab("courses")}
+            className="btn-primary"
+            title={`Next: ${nextCourse.title}`}
+          >
+            {completedCount === 0 ? "Start chapter" : "Continue"} →
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function Stat({ label, value }) {
+  return (
+    <div>
+      <div
+        className="text-[10px] font-bold tracking-widest uppercase mb-1"
+        style={{ color: "var(--ink-3)" }}
+      >
+        {label}
+      </div>
+      <div
+        className="font-display font-semibold leading-none tracking-tight font-num"
+        style={{ fontSize: "clamp(20px, 3vw, 26px)", color: "var(--ink)" }}
+      >
+        {value}
+      </div>
+    </div>
   );
 }

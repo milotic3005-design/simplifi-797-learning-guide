@@ -4,8 +4,10 @@ import { lessonGraphics } from "../data/lessonGraphics";
 import courses from "../data/courses.json";
 import { cls } from "../themes";
 import Graphic from "../components/graphics/Graphic";
+import LessonGuidedTab from "./LessonGuidedTab";
 
 const TABS = [
+  { id: "guided", label: "Guided" },
   { id: "lesson", label: "Lesson" },
   { id: "terms", label: "Terms" },
   { id: "clinical", label: "Clinical" },
@@ -298,7 +300,7 @@ export default function LessonView({
 }) {
   const lesson = lessonMap[courseId];
   const module = findModule(courseId);
-  const [tab, setTab] = useState("lesson");
+  const [tab, setTab] = useState("guided");
 
   useEffect(() => {
     if (lesson) markStarted(courseId);
@@ -404,6 +406,9 @@ export default function LessonView({
 
       {/* Tab body */}
       <div>
+        {tab === "guided" && (
+          <LessonGuidedTab lesson={lesson} module={module} onTab={setTab} />
+        )}
         {tab === "lesson" && (
           <LessonTab lesson={lesson} theme={module?.theme || "neutral"} />
         )}

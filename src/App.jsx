@@ -57,14 +57,14 @@ function Header({ dark, setDark, tab, setTab, inLesson, onHome }) {
                   "0 1px 0 rgba(255,255,255,0.4) inset, 0 4px 14px -4px rgba(99,102,241,0.5)",
               }}
             >
-              S
+              {(courses.meta.shortTitle || courses.meta.title || "U").trim().charAt(0)}
             </div>
             <div className="hidden sm:block leading-tight text-left">
               <div
                 className="font-display text-[15px] font-semibold tracking-tight"
                 style={{ color: "var(--ink)" }}
               >
-                Simplifi 797
+                {courses.meta.shortTitle || courses.meta.title}
               </div>
               <div className="text-[10px]" style={{ color: "var(--ink-3)" }}>
                 {courses.meta.subtitle}
@@ -189,7 +189,7 @@ export default function App() {
 
       <footer className="max-w-6xl mx-auto px-6 py-10 text-center">
         <div className="smallcaps">
-          {courses.meta.title} · v{courses.meta.version} · {courses.meta.totalCourses} courses · {courses.meta.totalModules} modules
+          {courses.meta.totalCourses} courses · {courses.meta.totalModules} modules · v{courses.meta.version}
         </div>
       </footer>
     </div>
