@@ -32,7 +32,7 @@ function useDarkMode() {
   return [dark, setDark];
 }
 
-function Header({ dark, setDark, tab, setTab, inLesson }) {
+function Header({ dark, setDark, tab, setTab, inLesson, onHome }) {
   return (
     <header className="sticky top-0 z-30 px-4 sm:px-6 pt-4 pb-3">
       <div className="max-w-6xl mx-auto">
@@ -40,10 +40,16 @@ function Header({ dark, setDark, tab, setTab, inLesson }) {
           className="glass-strong px-3 py-2.5 sm:px-4 sm:py-3 flex items-center gap-3 sm:gap-4"
           style={{ borderRadius: 999 }}
         >
-          {/* Brand */}
-          <div className="flex items-center gap-2.5 shrink-0">
+          {/* Brand — home button */}
+          <button
+            type="button"
+            onClick={onHome}
+            aria-label="Home"
+            title="Home — back to modules"
+            className="brand-home flex items-center gap-2.5 shrink-0 rounded-full -ml-1 pl-1 pr-2 py-0.5 transition-colors"
+          >
             <div
-              className="w-8 h-8 rounded-full flex items-center justify-center text-[13px] font-bold text-white"
+              className="brand-badge w-8 h-8 rounded-full flex items-center justify-center text-[13px] font-bold text-white transition-transform"
               style={{
                 background:
                   "linear-gradient(135deg, var(--info-2), var(--plum-2))",
@@ -53,7 +59,7 @@ function Header({ dark, setDark, tab, setTab, inLesson }) {
             >
               S
             </div>
-            <div className="hidden sm:block leading-tight">
+            <div className="hidden sm:block leading-tight text-left">
               <div
                 className="font-display text-[15px] font-semibold tracking-tight"
                 style={{ color: "var(--ink)" }}
@@ -64,7 +70,7 @@ function Header({ dark, setDark, tab, setTab, inLesson }) {
                 {courses.meta.subtitle}
               </div>
             </div>
-          </div>
+          </button>
 
           {/* Tabs */}
           {!inLesson && (
@@ -131,6 +137,12 @@ export default function App() {
     setTab(id);
   };
 
+  const handleHome = () => {
+    setActiveLesson(null);
+    setTab("modules");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const inLesson = !!activeLesson;
 
   return (
@@ -141,6 +153,7 @@ export default function App() {
         tab={tab}
         setTab={handleTab}
         inLesson={inLesson}
+        onHome={handleHome}
       />
 
       <main className="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8">

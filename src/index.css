@@ -270,6 +270,26 @@ body {
   background: rgba(var(--surface), 0.5);
 }
 
+/* Brand — home button */
+.brand-home {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.brand-home:hover {
+  background: rgba(var(--surface), 0.6);
+}
+.brand-home:hover .brand-badge {
+  transform: scale(1.05) rotate(-3deg);
+}
+.brand-home:focus-visible {
+  outline: 2px solid var(--info);
+  outline-offset: 2px;
+}
+.brand-badge {
+  transition: transform 0.18s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
 /* =============================================================
    Tabs (segmented style)
    ============================================================= */
