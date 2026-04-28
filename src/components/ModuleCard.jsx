@@ -4,10 +4,7 @@ import { lessonMap } from "../data/lessons";
 
 function Tabs({ tabs, active, onChange }) {
   return (
-    <div
-      className="flex gap-6 border-b mb-6"
-      style={{ borderColor: "var(--rule)" }}
-    >
+    <div className="tabs mb-5 self-start">
       {tabs.map((t) => (
         <button
           key={t.id}
@@ -24,11 +21,12 @@ function Tabs({ tabs, active, onChange }) {
 
 export default function ModuleCard({
   module,
-  index,
   completed,
   onToggle,
   onOpenLesson,
   lessonState,
+  spanClass = "b-1",
+  featured = false,
 }) {
   const [open, setOpen] = useState(false);
   const [tab, setTab] = useState("courses");
@@ -36,91 +34,150 @@ export default function ModuleCard({
   const completedCount = module.courses.filter((co) => completed[co.id]).length;
   const total = module.courses.length;
   const isComplete = completedCount === total;
+  const pct = Math.round((completedCount / total) * 100);
+
+  const expandSpan = open ? "b-4" : spanClass;
+  const featuredStyle = featured
+    ? {
+        background: `radial-gradient(at 0% 100%, ${c.tint}, transparent 60%), var(--glass-bg)`,
+        boxShadow: `var(--glass-shadow), 0 0 0 1px ${c.accent}25`,
+      }
+    : {};
 
   return (
     <article
-      className="border-t fade-up"
-      style={{
-        borderColor: "var(--rule)",
-        animationDelay: `${index * 0.04}s`,
-      }}
+      className={`glass bento-tile ${expandSpan} flex flex-col p-5 sm:p-6 transition-[grid-column] duration-300`}
+      style={featuredStyle}
     >
-      {/* Chapter row */}
-      <button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        className="w-full text-left py-7 group"
-      >
-        <div className="grid grid-cols-[80px_1fr_auto] sm:grid-cols-[120px_1fr_auto] gap-4 sm:gap-6 items-baseline">
-          {/* Chapter number */}
+      {/* Top: number + status */}
+      <div className="flex items-start justify-between gap-3 mb-3">
+        <div className="flex items-center gap-3">
           <div
-            className="chapter-num text-5xl sm:text-7xl"
-            style={{ color: c.accent }}
+            className="w-10 h-10 rounded-xl flex items-center justify-center font-display text-[15px] font-bold tracking-tight"
+            style={{
+              background: `linear-gradient(135deg, ${c.accent2 || c.accent}, ${c.accent})`,
+              color: "#fff",
+              boxShadow:
+                "0 1px 0 rgba(255,255,255,0.4) inset, 0 4px 14px -4px " +
+                c.accent +
+                "60",
+            }}
           >
             {module.number}
           </div>
-
-          {/* Title block */}
-          <div>
-            <div className="flex items-center gap-3 mb-1.5 flex-wrap">
-              <span
-                className="font-mono text-[10px] tracking-widest uppercase"
-                style={{ color: c.accent }}
-              >
-                {c.label}
-              </span>
-              <span style={{ color: "var(--rule)" }}>·</span>
-              <span className="font-mono text-[10px] tracking-widest uppercase" style={{ color: "var(--ink-3)" }}>
-                {module.tag}
-              </span>
-              {module.highPriority && (
-                <>
-                  <span style={{ color: "var(--rule)" }}>·</span>
-                  <span
-                    className="font-mono text-[10px] tracking-widest uppercase"
-                    style={{ color: "var(--danger)" }}
-                  >
-                    ※ Critical
-                  </span>
-                </>
-              )}
-            </div>
-            <h3
-              className="font-display text-2xl sm:text-3xl font-normal leading-tight tracking-tight"
-              style={{ fontVariationSettings: '"SOFT" 30, "WONK" 0' }}
+          <div className="flex flex-col">
+            <span
+              className="text-[10px] font-bold tracking-widest uppercase"
+              style={{ color: c.accent }}
             >
-              {module.title}
-            </h3>
+              {c.label}
+            </span>
+            {featured && (
+              <span
+                className="text-[10px] font-bold tracking-widest uppercase mt-0.5"
+                style={{ color: "var(--danger)" }}
+              >
+                ※ Critical
+              </span>
+            )}
           </div>
+        </div>
+        <div className="text-right">
+          <div
+            className="font-num text-[12px] font-medium"
+            style={{ color: "var(--ink-2)" }}
+          >
+            {completedCount}/{total}
+          </div>
+          {isComplete && (
+            <div
+              className="text-[10px] font-semibold uppercase tracking-wider mt-0.5"
+              style={{ color: "var(--success)" }}
+            >
+              ✓ Done
+            </div>
+          )}
+        </div>
+      </div>
 
-          {/* Status */}
-          <div className="text-right">
-            <div className="font-mono text-xs tabular-nums" style={{ color: "var(--ink-2)" }}>
-              {completedCount.toString().padStart(2, "0")} / {total.toString().padStart(2, "0")}
-            </div>
-            <div className="smallcaps mt-1" style={{ color: isComplete ? "var(--success)" : "var(--ink-3)" }}>
-              {isComplete ? "Complete" : open ? "Close ↑" : "Read ↓"}
-            </div>
-          </div>
+      {/* Title */}
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        className="text-left flex-1 min-w-0 group"
+      >
+        <h3
+          className="font-display font-semibold leading-[1.15] tracking-tight"
+          style={{
+            color: "var(--ink)",
+            fontSize: featured ? "clamp(22px, 3vw, 30px)" : "20px",
+          }}
+        >
+          {module.title}
+        </h3>
+        <div
+          className="text-[12px] mt-1.5"
+          style={{ color: "var(--ink-3)" }}
+        >
+          {module.tag}
         </div>
       </button>
 
+      {/* Mini progress bar */}
+      <div className="mt-4">
+        <div
+          className="h-1 w-full rounded-full overflow-hidden"
+          style={{ background: "rgba(15,17,35,0.06)" }}
+        >
+          <div
+            className={`h-full ${c.bar} transition-all duration-500 rounded-full`}
+            style={{ width: `${pct}%` }}
+          />
+        </div>
+      </div>
+
+      {/* Footer toggle */}
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        className="mt-4 flex items-center justify-between text-[12px] font-medium pt-3 hairline-t"
+        style={{ color: "var(--ink-2)" }}
+      >
+        <span>{open ? "Close" : "Open chapter"}</span>
+        <svg
+          className={`w-4 h-4 transition-transform ${open ? "rotate-180" : ""}`}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+
+      {/* Expanded body */}
       {open && (
-        <div className="pb-10 pt-2 fade-in">
-          {module.highPriority && (
+        <div className="mt-5 fade-in">
+          {featured && (
             <div
-              className="mb-6 px-5 py-4 text-sm"
+              className="mb-5 p-4 r-md text-[13.5px] leading-relaxed"
               style={{
                 background: "var(--danger-tint)",
-                borderLeft: "3px solid var(--danger)",
+                border: "1px solid rgba(244,63,94,0.2)",
                 color: "var(--ink)",
               }}
             >
-              <div className="smallcaps mb-1" style={{ color: "var(--danger)" }}>
+              <div
+                className="text-[10px] font-bold tracking-widest uppercase mb-1"
+                style={{ color: "var(--danger)" }}
+              >
                 ※ High-priority module
               </div>
-              Hazardous-drug content overlays USP 800 on top of all preceding concepts.
-              Approach this chapter only after the prior modules are solid.
+              Hazardous-drug content overlays USP 800 on top of all preceding
+              concepts. Approach this chapter only after the prior modules are
+              solid.
             </div>
           )}
 
@@ -129,44 +186,58 @@ export default function ModuleCard({
             onChange={setTab}
             tabs={[
               { id: "courses", label: "Courses" },
-              { id: "concepts", label: "Key Concepts" },
+              { id: "concepts", label: "Concepts" },
               { id: "must", label: "Must Know" },
             ]}
           />
 
           {tab === "courses" && (
-            <ol className="space-y-0 -mt-2">
-              {module.courses.map((course, i) => {
+            <ol className="space-y-1.5">
+              {module.courses.map((course) => {
                 const done = !!completed[course.id];
                 const hasLesson = !!lessonMap[course.id];
                 const lstate = (lessonState && lessonState[course.id]) || {};
                 return (
                   <li
                     key={course.id}
-                    className="grid grid-cols-[28px_1fr_auto] gap-4 py-3.5 items-baseline border-t"
-                    style={{ borderColor: "var(--rule-soft)" }}
+                    className="glass-flat flex items-center gap-3 px-3.5 py-3"
                   >
                     <input
                       type="checkbox"
                       checked={done}
                       onChange={() => onToggle(course.id)}
-                      className="checkbox mt-1"
+                      className="checkbox"
                       onClick={(e) => e.stopPropagation()}
                     />
                     <button
                       type="button"
                       onClick={() => hasLesson && onOpenLesson(course.id)}
                       disabled={!hasLesson}
-                      className="text-left disabled:cursor-default group flex items-baseline gap-3 flex-wrap"
+                      className="text-left flex-1 min-w-0 disabled:cursor-default group"
                     >
+                      <div className="flex items-center gap-2 mb-0.5">
+                        <span
+                          className="font-num text-[10px] font-medium"
+                          style={{ color: "var(--ink-3)" }}
+                        >
+                          {course.id}
+                        </span>
+                        {lstate.started && !done && (
+                          <span
+                            className="text-[9px] uppercase tracking-wider font-semibold px-1.5 py-0.5 rounded-full"
+                            style={{
+                              background: "var(--warning-tint)",
+                              color: "var(--warning)",
+                            }}
+                          >
+                            in progress
+                          </span>
+                        )}
+                      </div>
                       <span
-                        className="font-mono text-[11px] tabular-nums"
-                        style={{ color: "var(--ink-3)" }}
-                      >
-                        {course.id}
-                      </span>
-                      <span
-                        className="text-[15px] leading-snug group-enabled:hover:link"
+                        className={`text-[13.5px] leading-snug ${
+                          hasLesson ? "group-enabled:group-hover:underline" : ""
+                        }`}
                         style={{
                           color: done ? "var(--ink-3)" : "var(--ink)",
                           textDecoration: done ? "line-through" : "none",
@@ -174,28 +245,13 @@ export default function ModuleCard({
                       >
                         {course.title}
                       </span>
-                      {lstate.started && !done && (
-                        <span
-                          className="font-mono text-[10px] tracking-widest uppercase"
-                          style={{ color: "var(--warning)" }}
-                        >
-                          · in progress
-                        </span>
-                      )}
                     </button>
-                    {hasLesson ? (
+                    {hasLesson && (
                       <span
-                        className="font-mono text-[10px] tracking-widest uppercase"
-                        style={{ color: "var(--ink-3)" }}
+                        className="font-num text-[11px] font-medium shrink-0"
+                        style={{ color: c.accent }}
                       >
                         Read →
-                      </span>
-                    ) : (
-                      <span
-                        className="font-mono text-[10px] tracking-widest uppercase"
-                        style={{ color: "var(--ink-3)" }}
-                      >
-                        —
                       </span>
                     )}
                   </li>
@@ -205,20 +261,19 @@ export default function ModuleCard({
           )}
 
           {tab === "concepts" && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-7">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
               {module.keyConcepts.map((kc, i) => (
-                <div
-                  key={i}
-                  className="border-t pt-4"
-                  style={{ borderColor: "var(--rule-soft)" }}
-                >
+                <div key={i} className="glass-flat p-3.5">
                   <div
-                    className="font-display text-lg leading-tight mb-1.5"
-                    style={{ fontVariationSettings: '"SOFT" 30' }}
+                    className="font-display text-[14px] font-semibold mb-1 leading-tight"
+                    style={{ color: "var(--ink)" }}
                   >
                     {kc.term}
                   </div>
-                  <div className="text-[15px] leading-relaxed" style={{ color: "var(--ink-2)" }}>
+                  <div
+                    className="text-[13px] leading-relaxed"
+                    style={{ color: "var(--ink-2)" }}
+                  >
                     {kc.definition}
                   </div>
                 </div>
@@ -227,40 +282,42 @@ export default function ModuleCard({
           )}
 
           {tab === "must" && (
-            <div className="space-y-6">
-              <ul className="space-y-3">
+            <div className="space-y-3">
+              <ol className="space-y-2">
                 {module.mustKnow.map((m, i) => (
                   <li
                     key={i}
-                    className="pl-5 py-3 text-[15px] leading-relaxed"
+                    className="glass-flat px-4 py-3 text-[13.5px] leading-relaxed flex gap-3"
                     style={{
                       borderLeft: `3px solid ${c.accent}`,
-                      background: c.tint,
                     }}
                   >
                     <span
-                      className="font-mono text-[11px] tabular-nums mr-3"
+                      className="font-num text-[11px] font-bold shrink-0"
                       style={{ color: c.accent }}
                     >
-                      № {(i + 1).toString().padStart(2, "0")}
+                      №{(i + 1).toString().padStart(2, "0")}
                     </span>
-                    {m}
+                    <span style={{ color: "var(--ink)" }}>{m}</span>
                   </li>
                 ))}
-              </ul>
+              </ol>
               <div
-                className="px-5 py-5 border-l-[3px]"
+                className="p-4 r-md"
                 style={{
-                  borderColor: "var(--plum)",
                   background: "var(--plum-tint)",
+                  border: "1px solid rgba(139,92,246,0.20)",
                 }}
               >
-                <div className="smallcaps mb-2" style={{ color: "var(--plum)" }}>
+                <div
+                  className="text-[10px] font-bold tracking-widest uppercase mb-1.5"
+                  style={{ color: "var(--plum)" }}
+                >
                   ¶ Clinical connection
                 </div>
                 <div
-                  className="font-display text-base leading-relaxed"
-                  style={{ fontVariationSettings: '"SOFT" 50', color: "var(--ink)" }}
+                  className="text-[14px] leading-relaxed"
+                  style={{ color: "var(--ink)" }}
                 >
                   {module.clinicalConnection}
                 </div>

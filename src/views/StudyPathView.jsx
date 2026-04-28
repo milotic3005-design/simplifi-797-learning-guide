@@ -6,121 +6,128 @@ const ROMANS = ["I", "II", "III", "IV", "V"];
 export default function StudyPathView() {
   const sp = data.studyPath;
   return (
-    <div className="space-y-14">
-      <section className="fade-up">
-        <div className="smallcaps mb-3">§ IV — Suggested route</div>
+    <div className="space-y-6 sm:space-y-8">
+      <section className="glass p-6 sm:p-8 fade-up">
+        <div className="eyebrow mb-3">§ Suggested route</div>
         <h2
-          className="font-display text-4xl sm:text-5xl md:text-6xl font-light leading-[0.95] tracking-tight"
-          style={{ fontVariationSettings: '"SOFT" 50, "WONK" 1' }}
+          className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold leading-[1.05] tracking-tight"
+          style={{ color: "var(--ink)" }}
         >
           {sp.title}
         </h2>
         <p
-          className="mt-4 max-w-2xl text-[16px] leading-relaxed"
+          className="mt-3 max-w-2xl text-[15px] leading-relaxed"
           style={{ color: "var(--ink-2)" }}
         >
           {sp.description}
         </p>
-        <div className="rule-thick mt-8" style={{ background: "var(--ink)" }} />
       </section>
 
-      <section>
+      <section className="bento" data-bento-stagger>
         {sp.phases.map((p, i) => {
           const c = cls(p.theme);
           return (
             <article
               key={p.phase}
-              className="fade-up py-12 border-t grid md:grid-cols-[180px_1fr] gap-8"
+              className="glass bento-tile b-2 p-6 sm:p-7 fade-up flex flex-col"
               style={{
-                borderColor: "var(--rule)",
-                animationDelay: `${i * 0.06}s`,
+                background: `radial-gradient(at 100% 100%, ${c.tint}, transparent 60%), var(--glass-bg)`,
               }}
             >
-              <div>
-                <div className="smallcaps mb-2">Phase</div>
-                <div
-                  className="font-display tracking-tight leading-none"
-                  style={{
-                    fontSize: "clamp(80px, 11vw, 140px)",
-                    fontWeight: 200,
-                    fontVariationSettings: '"SOFT" 70, "WONK" 1',
-                    color: c.accent,
-                  }}
-                >
-                  {ROMANS[i]}
+              <div className="flex items-baseline justify-between mb-4">
+                <div>
+                  <div
+                    className="text-[10px] font-bold tracking-widest uppercase mb-1"
+                    style={{ color: "var(--ink-3)" }}
+                  >
+                    Phase
+                  </div>
+                  <div
+                    className="font-display font-bold leading-none tracking-tight"
+                    style={{
+                      fontSize: "clamp(56px, 8vw, 84px)",
+                      background: `linear-gradient(135deg, ${c.accent2}, ${c.accent})`,
+                      WebkitBackgroundClip: "text",
+                      backgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    }}
+                  >
+                    {ROMANS[i]}
+                  </div>
+                </div>
+                <div className="text-right">
+                  <div
+                    className="font-num text-[13px] font-medium"
+                    style={{ color: "var(--ink-2)" }}
+                  >
+                    {p.estimatedHours}
+                  </div>
+                  <div
+                    className="text-[11px] mt-0.5"
+                    style={{ color: "var(--ink-3)" }}
+                  >
+                    {p.courseCount} courses
+                  </div>
                 </div>
               </div>
-              <div>
-                <h3
-                  className="font-display text-2xl sm:text-3xl font-normal leading-tight tracking-tight mb-3"
-                  style={{ fontVariationSettings: '"SOFT" 30' }}
-                >
-                  {p.label}
-                </h3>
-                <div
-                  className="flex flex-wrap items-center gap-x-5 gap-y-1 mb-5 font-mono text-[12px]"
-                  style={{ color: "var(--ink-2)" }}
-                >
-                  <span>Modules {p.modules.join(", ")}</span>
-                  <span style={{ color: "var(--rule)" }}>·</span>
-                  <span>{p.courseCount} courses</span>
-                  <span style={{ color: "var(--rule)" }}>·</span>
-                  <span>{p.estimatedHours}</span>
-                </div>
-                <div
-                  className="grid md:grid-cols-3 gap-3 mb-5"
-                >
-                  {p.moduleNames.map((name, j) => (
+              <h3
+                className="font-display text-xl sm:text-2xl font-semibold leading-tight tracking-tight mb-4"
+                style={{ color: "var(--ink)" }}
+              >
+                {p.label}
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-4">
+                {p.moduleNames.map((name, j) => (
+                  <div
+                    key={j}
+                    className="glass-flat px-3 py-2.5"
+                    style={{
+                      borderLeft: `2px solid ${c.accent}`,
+                    }}
+                  >
                     <div
-                      key={j}
-                      className="px-4 py-3 text-[13px] leading-tight"
-                      style={{
-                        background: c.tint,
-                        borderLeft: `3px solid ${c.accent}`,
-                      }}
+                      className="text-[10px] font-bold tracking-widest uppercase mb-0.5 font-num"
+                      style={{ color: c.accent }}
                     >
-                      <div className="smallcaps mb-1">№ {p.modules[j]}</div>
-                      <div style={{ color: "var(--ink)" }}>{name}</div>
+                      № {p.modules[j]}
                     </div>
-                  ))}
-                </div>
-                <p
-                  className="font-display text-[18px] leading-[1.55] italic max-w-2xl"
-                  style={{
-                    fontVariationSettings: '"SOFT" 50, "WONK" 1',
-                    color: "var(--ink)",
-                  }}
-                >
-                  {p.rationale}
-                </p>
+                    <div
+                      className="text-[12px] leading-snug"
+                      style={{ color: "var(--ink)" }}
+                    >
+                      {name}
+                    </div>
+                  </div>
+                ))}
               </div>
+              <p
+                className="text-[14px] leading-[1.65]"
+                style={{ color: "var(--ink-2)" }}
+              >
+                {p.rationale}
+              </p>
             </article>
           );
         })}
-        <div className="border-t" style={{ borderColor: "var(--rule)" }} />
       </section>
 
-      {/* Study tip pull-quote */}
-      <section className="fade-up max-w-3xl">
-        <div className="smallcaps mb-4" style={{ color: "var(--plum)" }}>
+      {/* Study tip */}
+      <section
+        className="glass p-6 sm:p-8 fade-up"
+        style={{
+          background: `radial-gradient(at 0% 100%, var(--plum-tint), transparent 60%), var(--glass-bg)`,
+        }}
+      >
+        <div
+          className="text-[10px] font-bold tracking-widest uppercase mb-3"
+          style={{ color: "var(--plum)" }}
+        >
           ¶ Study tip
         </div>
         <blockquote
-          className="font-display text-2xl sm:text-3xl leading-[1.3] tracking-tight"
-          style={{
-            fontVariationSettings: '"SOFT" 60, "WONK" 1',
-            color: "var(--ink)",
-          }}
+          className="font-display text-xl sm:text-2xl md:text-3xl leading-[1.3] font-medium tracking-tight max-w-3xl"
+          style={{ color: "var(--ink)" }}
         >
-          <span
-            className="font-display text-5xl block leading-none mb-2"
-            style={{
-              color: "var(--plum)",
-              fontVariationSettings: '"SOFT" 80, "WONK" 1',
-            }}
-          >
-            “
-          </span>
           {sp.studyTip}
         </blockquote>
       </section>

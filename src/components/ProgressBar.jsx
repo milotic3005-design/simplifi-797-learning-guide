@@ -1,4 +1,4 @@
-export default function ProgressBar({ value, total }) {
+export default function ProgressBar({ value, total, compact = false }) {
   const pct = total === 0 ? 0 : Math.round((value / total) * 100);
   let bar = "bar-danger";
   if (pct === 100) bar = "bar-success";
@@ -7,18 +7,23 @@ export default function ProgressBar({ value, total }) {
 
   return (
     <div className="w-full">
-      <div className="flex items-baseline justify-between mb-2">
-        <span className="smallcaps">Reading progress</span>
-        <span className="font-mono text-xs tabular-nums" style={{ color: "var(--ink-2)" }}>
-          {value} / {total} · {pct}%
-        </span>
-      </div>
+      {!compact && (
+        <div className="flex items-baseline justify-between mb-2">
+          <span className="smallcaps">Reading progress</span>
+          <span
+            className="font-num text-[12px] font-medium"
+            style={{ color: "var(--ink-2)" }}
+          >
+            {value} / {total} · {pct}%
+          </span>
+        </div>
+      )}
       <div
-        className="h-[3px] w-full"
-        style={{ background: "var(--rule)" }}
+        className="h-1.5 w-full rounded-full overflow-hidden"
+        style={{ background: "rgba(15,17,35,0.08)" }}
       >
         <div
-          className={`h-full ${bar} transition-all duration-500`}
+          className={`h-full ${bar} transition-all duration-500 rounded-full`}
           style={{ width: `${pct}%` }}
         />
       </div>

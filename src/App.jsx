@@ -14,9 +14,9 @@ const TABS = [
   { id: "modules", label: "Modules" },
   { id: "bud", label: "BUD" },
   { id: "iso", label: "ISO" },
-  { id: "study", label: "Study Path" },
-  { id: "exam", label: "Exam Prep" },
-  { id: "compliance", label: "TJC Readiness" },
+  { id: "study", label: "Study" },
+  { id: "exam", label: "Exam" },
+  { id: "compliance", label: "TJC" },
 ];
 
 function useDarkMode() {
@@ -32,83 +32,78 @@ function useDarkMode() {
   return [dark, setDark];
 }
 
-function Masthead({ dark, setDark, inLesson }) {
-  const today = new Date().toLocaleDateString("en-US", {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-
+function Header({ dark, setDark, tab, setTab, inLesson }) {
   return (
-    <header
-      className="border-b"
-      style={{ borderColor: "var(--rule)", background: "var(--paper)" }}
-    >
-      {/* Top metadata bar */}
-      <div
-        className="border-b text-[10px]"
-        style={{ borderColor: "var(--rule-soft)" }}
-      >
-        <div className="max-w-6xl mx-auto px-6 py-2 flex items-center justify-between">
-          <div className="flex items-center gap-4 smallcaps">
-            <span>Vol. 1</span>
-            <span style={{ color: "var(--rule)" }}>·</span>
-            <span>{courses.meta.subtitle}</span>
-            <span style={{ color: "var(--rule)" }} className="hidden sm:inline">·</span>
-            <span className="hidden sm:inline">{today}</span>
+    <header className="sticky top-0 z-30 px-4 sm:px-6 pt-4 pb-3">
+      <div className="max-w-6xl mx-auto">
+        <div
+          className="glass-strong px-3 py-2.5 sm:px-4 sm:py-3 flex items-center gap-3 sm:gap-4"
+          style={{ borderRadius: 999 }}
+        >
+          {/* Brand */}
+          <div className="flex items-center gap-2.5 shrink-0">
+            <div
+              className="w-8 h-8 rounded-full flex items-center justify-center text-[13px] font-bold text-white"
+              style={{
+                background:
+                  "linear-gradient(135deg, var(--info-2), var(--plum-2))",
+                boxShadow:
+                  "0 1px 0 rgba(255,255,255,0.4) inset, 0 4px 14px -4px rgba(99,102,241,0.5)",
+              }}
+            >
+              S
+            </div>
+            <div className="hidden sm:block leading-tight">
+              <div
+                className="font-display text-[15px] font-semibold tracking-tight"
+                style={{ color: "var(--ink)" }}
+              >
+                Simplifi 797
+              </div>
+              <div className="text-[10px]" style={{ color: "var(--ink-3)" }}>
+                {courses.meta.subtitle}
+              </div>
+            </div>
           </div>
+
+          {/* Tabs */}
+          {!inLesson && (
+            <nav className="tabs ml-auto overflow-x-auto max-w-full">
+              {TABS.map((t) => (
+                <button
+                  key={t.id}
+                  onClick={() => setTab(t.id)}
+                  data-active={tab === t.id}
+                  className="tab"
+                >
+                  {t.label}
+                </button>
+              ))}
+            </nav>
+          )}
+
+          {/* Dark toggle */}
           <button
             onClick={() => setDark(!dark)}
-            className="smallcaps hover:text-ink transition-colors"
             aria-label="Toggle dark mode"
+            className={`shrink-0 w-9 h-9 inline-flex items-center justify-center rounded-full hairline transition-colors ${
+              inLesson ? "ml-auto" : ""
+            }`}
+            style={{ background: "var(--glass-bg)" }}
           >
-            {dark ? "Light ◦" : "Dark •"}
+            {dark ? (
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+              </svg>
+            ) : (
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+              </svg>
+            )}
           </button>
         </div>
       </div>
-
-      {/* Title block */}
-      <div className="max-w-6xl mx-auto px-6 pt-8 pb-6 fade-up">
-        <div className="flex items-baseline justify-between flex-wrap gap-4">
-          <div>
-            <div className="smallcaps mb-2">A Learning Guide for Pharmacists</div>
-            <h1
-              className="font-display text-5xl sm:text-6xl md:text-7xl font-light leading-[0.92] tracking-tight"
-              style={{ fontVariationSettings: '"SOFT" 50, "WONK" 1' }}
-            >
-              Simplifi <span className="italic font-normal" style={{ fontVariationSettings: '"SOFT" 80, "WONK" 1' }}>797</span>
-            </h1>
-          </div>
-          <div className="text-right hidden md:block">
-            <div className="smallcaps">Issue №01</div>
-            <div className="font-mono text-xs mt-1" style={{ color: "var(--ink-2)" }}>
-              {courses.meta.totalCourses} courses · {courses.meta.totalModules} modules
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Tab nav */}
-      {!inLesson && (
-        <div
-          className="max-w-6xl mx-auto px-6 border-t"
-          style={{ borderColor: "var(--rule)" }}
-        >
-          <nav className="flex gap-6 sm:gap-8 overflow-x-auto">
-            {TABS.map((t) => (
-              <button
-                key={t.id}
-                onClick={() => window.dispatchEvent(new CustomEvent("nav-tab", { detail: t.id }))}
-                data-tab={t.id}
-                className="tab nav-tab"
-              >
-                {t.label}
-              </button>
-            ))}
-          </nav>
-        </div>
-      )}
     </header>
   );
 }
@@ -127,34 +122,28 @@ export default function App() {
     markStarted,
   } = useProgress();
 
-  // Listen to nav events from masthead
-  useEffect(() => {
-    const handler = (e) => {
-      setActiveLesson(null);
-      setTab(e.detail);
-    };
-    window.addEventListener("nav-tab", handler);
-    return () => window.removeEventListener("nav-tab", handler);
-  }, []);
-
-  // Update active tab attribute
-  useEffect(() => {
-    document.querySelectorAll(".nav-tab").forEach((el) => {
-      el.setAttribute("data-active", el.getAttribute("data-tab") === tab ? "true" : "false");
-    });
-  }, [tab, activeLesson]);
-
   useEffect(() => {
     if (activeLesson) window.scrollTo({ top: 0, behavior: "instant" });
   }, [activeLesson]);
 
+  const handleTab = (id) => {
+    setActiveLesson(null);
+    setTab(id);
+  };
+
   const inLesson = !!activeLesson;
 
   return (
-    <div className="min-h-screen" style={{ background: "var(--paper)", color: "var(--ink)" }}>
-      <Masthead dark={dark} setDark={setDark} inLesson={inLesson} />
+    <div className="min-h-screen" style={{ color: "var(--ink)" }}>
+      <Header
+        dark={dark}
+        setDark={setDark}
+        tab={tab}
+        setTab={handleTab}
+        inLesson={inLesson}
+      />
 
-      <main className="max-w-6xl mx-auto px-6 py-10">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
         {inLesson ? (
           <LessonView
             courseId={activeLesson}
@@ -185,17 +174,9 @@ export default function App() {
         )}
       </main>
 
-      <footer
-        className="border-t mt-16"
-        style={{ borderColor: "var(--rule)" }}
-      >
-        <div className="max-w-6xl mx-auto px-6 py-8 flex flex-wrap items-center justify-between gap-4 text-[11px]">
-          <div className="smallcaps">
-            {courses.meta.title} · v{courses.meta.version}
-          </div>
-          <div className="font-mono" style={{ color: "var(--ink-3)" }}>
-            ¶ {courses.meta.totalCourses} courses · {courses.meta.totalModules} modules
-          </div>
+      <footer className="max-w-6xl mx-auto px-6 py-10 text-center">
+        <div className="smallcaps">
+          {courses.meta.title} · v{courses.meta.version} · {courses.meta.totalCourses} courses · {courses.meta.totalModules} modules
         </div>
       </footer>
     </div>

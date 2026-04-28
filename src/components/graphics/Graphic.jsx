@@ -45,30 +45,30 @@ const REGISTRY = {
   "hd-handling-chain": { component: Diagrams.HdHandlingChain, title: "HD handling — receiving to patient" },
 };
 
-export default function Graphic({ id }) {
+export default function Graphic({ id, accent }) {
   const entry = REGISTRY[id];
   if (!entry) return null;
   const { component: C, title } = entry;
   return (
-    <figure
-      className="my-8 overflow-hidden border-y"
-      style={{
-        borderColor: "var(--rule)",
-        background: "var(--paper-2)",
-      }}
-    >
+    <figure className="glass overflow-hidden">
       <div
-        className="px-4 py-2.5 border-b flex items-baseline justify-between"
-        style={{ borderColor: "var(--rule-soft)" }}
+        className="flex items-baseline justify-between px-5 py-3"
+        style={{ borderBottom: "1px solid var(--line)" }}
       >
-        <figcaption className="smallcaps">
+        <figcaption
+          className="text-[10px] font-bold tracking-widest uppercase"
+          style={{ color: accent || "var(--ink-2)" }}
+        >
           ¶ Figure · {title}
         </figcaption>
-        <span className="font-mono text-[10px]" style={{ color: "var(--ink-3)" }}>
+        <span
+          className="font-num text-[10px] font-medium"
+          style={{ color: "var(--ink-3)" }}
+        >
           {id}
         </span>
       </div>
-      <div className="p-5 overflow-x-auto">
+      <div className="px-4 py-5 overflow-x-auto">
         <C />
       </div>
     </figure>
