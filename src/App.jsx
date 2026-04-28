@@ -174,7 +174,9 @@ export default function App() {
                 completed={completed}
                 toggle={toggle}
                 reset={reset}
-                onOpenLesson={(id) => setActiveLesson(id)}
+                // ⚡ Bolt: Pass function reference directly instead of inline arrow function
+                // to prevent creating a new function on every render
+                onOpenLesson={setActiveLesson}
                 lessonState={lessonState}
               />
             )}

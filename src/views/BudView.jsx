@@ -14,7 +14,7 @@ function tagFor(cat) {
   return { label: "", accent: "var(--ink)", accent2: "var(--ink-2)", tint: "rgba(15,17,35,0.06)" };
 }
 
-function BudCell({ label, value, accent }) {
+function BudCell({ label, value }) {
   const isNa = /not (applicable|permitted)/i.test(value);
   return (
     <div className="glass-flat px-3.5 py-3">

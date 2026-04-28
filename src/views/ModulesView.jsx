@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo } from "react";
 import courses from "../data/courses.json";
 import ModuleCard from "../components/ModuleCard";
 import ProgressBar from "../components/ProgressBar";
@@ -16,6 +16,8 @@ const SPAN_HINTS = {
   8: 4,  // HD — featured wide
 };
 
+const totalCourses = courses.modules.reduce((n, m) => n + m.courses.length, 0);
+
 export default function ModulesView({
   completed,
   toggle,
@@ -23,19 +25,24 @@ export default function ModulesView({
   onOpenLesson,
   lessonState,
 }) {
-  const totalCourses = courses.modules.reduce((n, m) => n + m.courses.length, 0);
-  const completedCount = courses.modules.reduce(
-    (n, m) => n + m.courses.filter((c) => completed[c.id]).length,
-    0
-  );
-  const moduleCounts = courses.modules.map((m) => ({
-    id: m.id,
-    completed: m.courses.filter((c) => completed[c.id]).length,
-    total: m.courses.length,
-  }));
-  const completedModules = moduleCounts.filter(
-    (m) => m.completed === m.total
-  ).length;
+  // ⚡ Bolt: Memoize expensive array operations to prevent recalculation on every render
+  // Only re-runs when the 'completed' state actually changes
+  const completedCount = useMemo(() => {
+    return courses.modules.reduce(
+      (n, m) => n + m.courses.filter((c) => completed[c.id]).length,
+      0
+    );
+  }, [completed]);
+
+  // ⚡ Bolt: Memoize module count calculations
+  const completedModules = useMemo(() => {
+    const moduleCounts = courses.modules.map((m) => ({
+      id: m.id,
+      completed: m.courses.filter((c) => completed[c.id]).length,
+      total: m.courses.length,
+    }));
+    return moduleCounts.filter((m) => m.completed === m.total).length;
+  }, [completed]);
 
   return (
     <div className="space-y-6 sm:space-y-8">
