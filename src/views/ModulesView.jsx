@@ -42,15 +42,14 @@ export default function ModulesView({
       {/* Hero bento — overview */}
       <section className="bento" data-bento-stagger>
         <article className="glass b-2 p-6 sm:p-8 fade-up">
-          <div className="eyebrow mb-3">A Learning Guide</div>
+          <div className="eyebrow mb-3">{courses.meta.title}</div>
           <h1
             className="font-display text-3xl sm:text-4xl md:text-[44px] font-semibold leading-[1.05]"
             style={{ color: "var(--ink)" }}
           >
-            USP <span style={{ color: "var(--info)" }}>797</span>{" "}
-            sterile compounding,
+            Sterile compounding,
             <br />
-            paced for the working pharmacist.
+            from <span style={{ color: "var(--info)" }}>first air</span> to final release.
           </h1>
           <p
             className="mt-4 max-w-md text-[15px] leading-relaxed"
