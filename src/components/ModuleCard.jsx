@@ -105,6 +105,7 @@ export default function ModuleCard({
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
         className="text-left flex-1 min-w-0 group"
       >
         <h3
@@ -141,6 +142,7 @@ export default function ModuleCard({
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
         className="mt-4 flex items-center justify-between text-[12px] font-medium pt-3 hairline-t"
         style={{ color: "var(--ink-2)" }}
       >
@@ -216,6 +218,7 @@ export default function ModuleCard({
                     <input
                       type="checkbox"
                       checked={done}
+                      aria-label={course.title}
                       onChange={() => onToggle(course.id)}
                       className="checkbox"
                       onClick={(e) => e.stopPropagation()}
