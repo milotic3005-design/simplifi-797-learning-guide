@@ -231,6 +231,10 @@ body {
   cursor: pointer;
   transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
 }
+.btn-primary:focus-visible {
+  outline: 2px solid var(--info);
+  outline-offset: 2px;
+}
 .btn-primary:hover {
   transform: translateY(-1px);
   filter: saturate(110%) brightness(1.03);
@@ -251,6 +255,10 @@ body {
   border-radius: 999px;
   cursor: pointer;
   transition: background 0.12s ease, border-color 0.12s ease, transform 0.12s ease;
+}
+.btn-ghost:focus-visible {
+  outline: 2px solid var(--info);
+  outline-offset: 2px;
 }
 .btn-ghost:hover {
   border-color: var(--ink);
@@ -317,6 +325,10 @@ body {
   cursor: pointer;
   white-space: nowrap;
   transition: background 0.15s ease, color 0.15s ease;
+}
+.tab:focus-visible {
+  outline: 2px solid var(--info);
+  outline-offset: 2px;
 }
 .tab:hover { color: var(--ink); }
 .tab[data-active="true"] {
