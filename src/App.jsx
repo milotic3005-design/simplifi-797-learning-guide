@@ -131,7 +131,7 @@ export default function App() {
   const [dark, setDark]             = useDarkMode();
   const [showAuth, setShowAuth]     = useState(false);
 
-  const { user, loading: authLoading, signIn, signUp, signInWithGoogle, signInAnonymously, signOut } = useAuth();
+  const { user, loading: authLoading, signIn, signUp, signInAnonymously, signOut } = useAuth();
 
   const {
     completed,
@@ -222,7 +222,6 @@ export default function App() {
           onClose={() => setShowAuth(false)}
           signIn={signIn}
           signUp={signUp}
-          signInWithGoogle={signInWithGoogle}
           signInAnonymously={signInAnonymously}
         />
       )}
