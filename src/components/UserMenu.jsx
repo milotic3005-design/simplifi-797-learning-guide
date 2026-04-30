@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-/** Avatar button when signed in, or "Sign in" ghost button when not. */
+/** Avatar button when signed in, "Guest" chip when anonymous, "Sign in" when no session. */
 export default function UserMenu({ user, signOut, onOpenAuth }) {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
@@ -12,12 +12,14 @@ export default function UserMenu({ user, signOut, onOpenAuth }) {
     return () => document.removeEventListener("mousedown", h);
   }, []);
 
-  // ── guest state ──
+  const isAnon = user?.is_anonymous === true;
+
+  // ── no session ──
   if (!user) {
     return (
       <button
         onClick={onOpenAuth}
-        className="shrink-0 text-[12px] font-semibold px-3.5 py-1.5 hairline r-lg transition-colors hover:bg-opacity-80"
+        className="shrink-0 text-[12px] font-semibold px-3.5 py-1.5 r-lg transition-colors"
         style={{
           background: "var(--info-tint)",
           color: "var(--info)",
@@ -29,12 +31,28 @@ export default function UserMenu({ user, signOut, onOpenAuth }) {
     );
   }
 
-  // ── signed-in state ──
+  // ── anonymous guest ──
+  if (isAnon) {
+    return (
+      <button
+        onClick={onOpenAuth}
+        className="shrink-0 text-[12px] font-semibold px-3.5 py-1.5 r-lg transition-colors"
+        style={{
+          background: "var(--glass-bg)",
+          color: "var(--ink-2)",
+          border: "1px solid var(--hairline)",
+        }}
+      >
+        Guest · Save progress ↑
+      </button>
+    );
+  }
+
+  // ── signed-in ──
   const initial = user.email?.charAt(0).toUpperCase() ?? "?";
 
   return (
     <div className="relative shrink-0" ref={ref}>
-      {/* Avatar button */}
       <button
         onClick={() => setOpen((o) => !o)}
         aria-label="Account menu"
@@ -42,40 +60,25 @@ export default function UserMenu({ user, signOut, onOpenAuth }) {
         className="w-9 h-9 rounded-full flex items-center justify-center text-[13px] font-bold text-white transition-transform active:scale-95"
         style={{
           background: "linear-gradient(135deg, var(--info-2), var(--plum-2))",
-          boxShadow:
-            "0 1px 0 rgba(255,255,255,0.4) inset, 0 4px 14px -4px rgba(99,102,241,0.5)",
+          boxShadow: "0 1px 0 rgba(255,255,255,0.4) inset, 0 4px 14px -4px rgba(99,102,241,0.5)",
         }}
       >
         {initial}
       </button>
 
-      {/* Dropdown */}
       {open && (
         <div
           className="absolute right-0 top-11 w-60 glass-strong fade-up"
           style={{ borderRadius: 14, zIndex: 100, overflow: "hidden" }}
         >
-          {/* Account row */}
-          <div
-            className="px-4 py-3 border-b"
-            style={{ borderColor: "var(--hairline)" }}
-          >
-            <div
-              className="text-[10px] font-bold tracking-widest uppercase mb-0.5"
-              style={{ color: "var(--ink-3)" }}
-            >
+          <div className="px-4 py-3 border-b" style={{ borderColor: "var(--hairline)" }}>
+            <div className="text-[10px] font-bold tracking-widest uppercase mb-0.5" style={{ color: "var(--ink-3)" }}>
               Signed in as
             </div>
-            <div
-              className="text-[13px] font-medium truncate"
-              style={{ color: "var(--ink)" }}
-              title={user.email}
-            >
+            <div className="text-[13px] font-medium truncate" style={{ color: "var(--ink)" }} title={user.email}>
               {user.email}
             </div>
           </div>
-
-          {/* Actions */}
           <div className="p-1.5">
             <button
               onClick={() => { signOut(); setOpen(false); }}

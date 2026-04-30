@@ -27,6 +27,7 @@ export function useAuth() {
     return () => subscription.unsubscribe();
   }, []);
 
+  // ── Email / password ──────────────────────────────────────────
   const signIn = async (email, password) => {
     if (!supabase) return { message: "Auth not configured." };
     const { error } = await supabase.auth.signInWithPassword({ email, password });
@@ -39,10 +40,30 @@ export function useAuth() {
     return error ?? null;
   };
 
+  // ── Google OAuth ─────────────────────────────────────────────
+  const signInWithGoogle = async () => {
+    if (!supabase) return { message: "Auth not configured." };
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: window.location.origin,
+      },
+    });
+    return error ?? null;
+  };
+
+  // ── Anonymous guest ──────────────────────────────────────────
+  const signInAnonymously = async () => {
+    if (!supabase) return { message: "Auth not configured." };
+    const { error } = await supabase.auth.signInAnonymously();
+    return error ?? null;
+  };
+
+  // ── Sign out ─────────────────────────────────────────────────
   const signOut = async () => {
     if (!supabase) return;
     await supabase.auth.signOut();
   };
 
-  return { user, loading, signIn, signUp, signOut };
+  return { user, loading, signIn, signUp, signInWithGoogle, signInAnonymously, signOut };
 }
