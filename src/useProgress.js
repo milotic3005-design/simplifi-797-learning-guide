@@ -1,43 +1,92 @@
-import { useEffect, useState, useCallback } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { supabase } from "./lib/supabase";
 
-const KEY = "simplifi797.progress.v1";
-const LESSON_KEY = "simplifi797.lessonState.v1";
+const LS_COMPLETED  = "simplifi797.progress.v1";
+const LS_LESSON     = "simplifi797.lessonState.v1";
 
-export function useProgress() {
-  const [completed, setCompleted] = useState(() => {
-    try {
-      const raw = localStorage.getItem(KEY);
-      return raw ? JSON.parse(raw) || {} : {};
-    } catch {
-      return {};
-    }
-  });
+// ── localStorage helpers ──────────────────────────────────────
+function readLocal() {
+  try {
+    const c = localStorage.getItem(LS_COMPLETED);
+    const l = localStorage.getItem(LS_LESSON);
+    return {
+      completed:   c ? JSON.parse(c) || {} : {},
+      lessonState: l ? JSON.parse(l) || {} : {},
+    };
+  } catch {
+    return { completed: {}, lessonState: {} };
+  }
+}
 
-  const [lessonState, setLessonState] = useState(() => {
-    try {
-      const raw = localStorage.getItem(LESSON_KEY);
-      return raw ? JSON.parse(raw) || {} : {};
-    } catch {
-      return {};
-    }
-  });
+// ── Supabase helpers ──────────────────────────────────────────
+async function loadCloud(userId) {
+  if (!supabase || !userId) return null;
+  const { data } = await supabase
+    .from("user_progress")
+    .select("completed, lesson_state")
+    .eq("id", userId)
+    .maybeSingle();
+  return data; // null if no row yet
+}
 
+async function saveCloud(userId, completed, lessonState) {
+  if (!supabase || !userId) return;
+  await supabase.from("user_progress").upsert(
+    { id: userId, completed, lesson_state: lessonState, updated_at: new Date().toISOString() },
+    { onConflict: "id" }
+  );
+}
+
+// ── hook ──────────────────────────────────────────────────────
+export function useProgress(userId) {
+  const init = readLocal();
+  const [completed,   setCompleted]   = useState(init.completed);
+  const [lessonState, setLessonState] = useState(init.lessonState);
+  const syncTimer = useRef(null);
+  const prevUser  = useRef(null);
+
+  // When user signs in: load cloud data, merge with local, push merged back
   useEffect(() => {
-    try {
-      localStorage.setItem(KEY, JSON.stringify(completed));
-    } catch {
-      /* ignore */
-    }
+    if (!userId || userId === prevUser.current) return;
+    prevUser.current = userId;
+
+    loadCloud(userId).then((cloud) => {
+      setCompleted((local) => {
+        const merged = { ...(cloud?.completed || {}), ...local };
+        return merged;
+      });
+      setLessonState((local) => {
+        const cloudLesson = cloud?.lesson_state || {};
+        const allIds = new Set([...Object.keys(cloudLesson), ...Object.keys(local)]);
+        const merged = {};
+        for (const id of allIds) {
+          merged[id] = { ...(cloudLesson[id] || {}), ...(local[id] || {}) };
+        }
+        return merged;
+      });
+    });
+  }, [userId]);
+
+  // Persist to localStorage on every change
+  useEffect(() => {
+    try { localStorage.setItem(LS_COMPLETED, JSON.stringify(completed)); } catch {}
   }, [completed]);
 
   useEffect(() => {
-    try {
-      localStorage.setItem(LESSON_KEY, JSON.stringify(lessonState));
-    } catch {
-      /* ignore */
-    }
+    try { localStorage.setItem(LS_LESSON, JSON.stringify(lessonState)); } catch {}
   }, [lessonState]);
 
+  // Debounced cloud save (1.5 s after last change)
+  useEffect(() => {
+    if (!userId) return;
+    clearTimeout(syncTimer.current);
+    syncTimer.current = setTimeout(() => {
+      saveCloud(userId, completed, lessonState);
+    }, 1500);
+    return () => clearTimeout(syncTimer.current);
+  }, [userId, completed, lessonState]);
+
+  // ── actions ──
   const toggle = useCallback((courseId) => {
     setCompleted((c) => {
       const next = { ...c };
@@ -59,7 +108,8 @@ export function useProgress() {
   const reset = useCallback(() => {
     setCompleted({});
     setLessonState({});
-  }, []);
+    if (userId) saveCloud(userId, {}, {});
+  }, [userId]);
 
   const updateLesson = useCallback((courseId, patch) => {
     setLessonState((s) => ({
@@ -68,21 +118,12 @@ export function useProgress() {
     }));
   }, []);
 
-  const markStarted = useCallback(
-    (courseId) => {
-      const cur = lessonState[courseId];
-      if (!cur || !cur.started) updateLesson(courseId, { started: true });
-    },
-    [lessonState, updateLesson]
-  );
+  const markStarted = useCallback((courseId) => {
+    setLessonState((s) => {
+      if (s[courseId]?.started) return s;
+      return { ...s, [courseId]: { ...(s[courseId] || {}), started: true } };
+    });
+  }, []);
 
-  return {
-    completed,
-    toggle,
-    setComplete,
-    reset,
-    lessonState,
-    updateLesson,
-    markStarted,
-  };
+  return { completed, toggle, setComplete, reset, lessonState, updateLesson, markStarted };
 }

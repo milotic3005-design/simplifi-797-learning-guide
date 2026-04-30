@@ -22,6 +22,8 @@ export default function ModulesView({
   reset,
   onOpenLesson,
   lessonState,
+  user,
+  onOpenAuth,
 }) {
   const totalCourses = courses.modules.reduce((n, m) => n + m.courses.length, 0);
   const completedCount = courses.modules.reduce(
@@ -100,7 +102,17 @@ export default function ModulesView({
           <div className="mt-5">
             <ProgressBar value={completedCount} total={totalCourses} compact />
             <div className="mt-3 flex items-center justify-between text-[11px]">
-              <span style={{ color: "var(--ink-3)" }}>Saves locally</span>
+              {user ? (
+                <span style={{ color: "var(--success)" }}>☁ Syncing to account</span>
+              ) : (
+                <button
+                  onClick={onOpenAuth}
+                  className="font-semibold hover:underline"
+                  style={{ color: "var(--info)" }}
+                >
+                  ↑ Sign in to sync
+                </button>
+              )}
               <button
                 onClick={() => {
                   if (confirm("Clear all progress?")) reset();

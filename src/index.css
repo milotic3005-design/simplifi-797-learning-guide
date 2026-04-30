@@ -505,3 +505,33 @@ body {
 .bento-tile:hover {
   transform: translateY(-2px);
 }
+
+/* =============================================================
+   Auth input
+   ============================================================= */
+.auth-input {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--ink);
+  background: rgba(var(--surface), 0.6);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-md);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  box-sizing: border-box;
+}
+.auth-input::placeholder { color: var(--ink-3); }
+.auth-input:focus {
+  border-color: var(--info);
+  box-shadow: 0 0 0 3px var(--info-tint);
+}
+.auth-input:hover:not(:focus) { border-color: var(--ink-2); }
+
+/* Hairline separator used in dropdowns / modals */
+.hairline-b { border-bottom: 1px solid var(--hairline, var(--line)); }
+:root { --hairline: rgba(15,17,35,0.08); }
+.dark { --hairline: rgba(255,255,255,0.10); }
