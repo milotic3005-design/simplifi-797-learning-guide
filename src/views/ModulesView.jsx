@@ -127,6 +127,58 @@ export default function ModulesView({
         </article>
       </section>
 
+      {/* ── Sign-in nudge (guests only) ── */}
+      {!user && (
+        <section className="fade-up">
+          <div
+            className="glass p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6"
+            style={{
+              background: "radial-gradient(at 0% 50%, var(--info-tint), transparent 60%), var(--glass-bg)",
+              border: "1px solid rgba(99,102,241,0.18)",
+            }}
+          >
+            {/* Icon */}
+            <div
+              className="shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center text-xl"
+              style={{
+                background: "linear-gradient(135deg, var(--info-2), var(--plum-2))",
+                boxShadow: "0 4px 14px -4px rgba(99,102,241,0.45)",
+              }}
+            >
+              ☁
+            </div>
+
+            {/* Text */}
+            <div className="flex-1 min-w-0">
+              <div className="font-display text-[17px] font-semibold mb-0.5" style={{ color: "var(--ink)" }}>
+                Save your progress to the cloud
+              </div>
+              <p className="text-[13px] leading-relaxed" style={{ color: "var(--ink-2)" }}>
+                Create a free account and your checkmarks sync across every device — phone, tablet, and desktop.
+              </p>
+            </div>
+
+            {/* CTAs */}
+            <div className="flex items-center gap-2 shrink-0">
+              <button
+                onClick={onOpenAuth}
+                className="btn-primary"
+                style={{ whiteSpace: "nowrap" }}
+              >
+                Create free account
+              </button>
+              <button
+                onClick={onOpenAuth}
+                className="btn-ghost"
+                style={{ whiteSpace: "nowrap" }}
+              >
+                Sign in
+              </button>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Module bento grid */}
       <section className="bento" data-bento-stagger>
         {courses.modules.map((m) => {

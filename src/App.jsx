@@ -35,12 +35,35 @@ function useDarkMode() {
   return [dark, setDark];
 }
 
+function DarkToggle({ dark, setDark }) {
+  return (
+    <button
+      onClick={() => setDark(!dark)}
+      aria-label="Toggle dark mode"
+      className="w-9 h-9 inline-flex items-center justify-center rounded-full hairline transition-colors shrink-0"
+      style={{ background: "var(--glass-bg)" }}
+    >
+      {dark ? (
+        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+      ) : (
+        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      )}
+    </button>
+  );
+}
+
 function Header({ dark, setDark, tab, setTab, inLesson, onHome, user, signOut, onOpenAuth }) {
   return (
-    <header className="sticky top-0 z-30 px-4 sm:px-6 pt-4 pb-3">
-      <div className="max-w-6xl mx-auto">
+    <header className="sticky top-0 z-30 px-3 sm:px-6 pt-3 pb-2 sm:pt-4 sm:pb-3">
+      <div className="max-w-6xl mx-auto space-y-2">
+        {/* ── Top row: brand · right controls ── */}
         <div
-          className="glass-strong px-3 py-2.5 sm:px-4 sm:py-3 flex items-center gap-3 sm:gap-4"
+          className="glass-strong px-3 py-2 sm:px-4 sm:py-2.5 flex items-center gap-3"
           style={{ borderRadius: 999 }}
         >
           {/* Brand — home button */}
@@ -55,17 +78,13 @@ function Header({ dark, setDark, tab, setTab, inLesson, onHome, user, signOut, o
               className="brand-badge w-8 h-8 rounded-full flex items-center justify-center text-[13px] font-bold text-white transition-transform"
               style={{
                 background: "linear-gradient(135deg, var(--info-2), var(--plum-2))",
-                boxShadow:
-                  "0 1px 0 rgba(255,255,255,0.4) inset, 0 4px 14px -4px rgba(99,102,241,0.5)",
+                boxShadow: "0 1px 0 rgba(255,255,255,0.4) inset, 0 4px 14px -4px rgba(99,102,241,0.5)",
               }}
             >
               {(courses.meta.shortTitle || courses.meta.title || "F").trim().charAt(0)}
             </div>
             <div className="hidden sm:block leading-tight text-left">
-              <div
-                className="font-display text-[15px] font-semibold tracking-tight"
-                style={{ color: "var(--ink)" }}
-              >
+              <div className="font-display text-[15px] font-semibold tracking-tight" style={{ color: "var(--ink)" }}>
                 {courses.meta.shortTitle || courses.meta.title}
               </div>
               <div className="text-[10px]" style={{ color: "var(--ink-3)" }}>
@@ -74,9 +93,20 @@ function Header({ dark, setDark, tab, setTab, inLesson, onHome, user, signOut, o
             </div>
           </button>
 
-          {/* Tabs — hidden when inside a lesson */}
-          {!inLesson && (
-            <nav className="tabs ml-auto overflow-x-auto max-w-full">
+          {/* Spacer */}
+          <div className="flex-1" />
+
+          {/* Right controls — always visible */}
+          <div className="flex items-center gap-2 shrink-0">
+            <UserMenu user={user} signOut={signOut} onOpenAuth={onOpenAuth} />
+            <DarkToggle dark={dark} setDark={setDark} />
+          </div>
+        </div>
+
+        {/* ── Bottom row: tabs (hidden inside lesson) ── */}
+        {!inLesson && (
+          <div className="overflow-x-auto">
+            <nav className="tabs w-max mx-auto">
               {TABS.map((t) => (
                 <button
                   key={t.id}
@@ -88,30 +118,8 @@ function Header({ dark, setDark, tab, setTab, inLesson, onHome, user, signOut, o
                 </button>
               ))}
             </nav>
-          )}
-
-          {/* Right side: user menu + dark toggle */}
-          <div className={`flex items-center gap-2 shrink-0 ${inLesson ? "ml-auto" : ""}`}>
-            <UserMenu user={user} signOut={signOut} onOpenAuth={onOpenAuth} />
-            <button
-              onClick={() => setDark(!dark)}
-              aria-label="Toggle dark mode"
-              className="w-9 h-9 inline-flex items-center justify-center rounded-full hairline transition-colors"
-              style={{ background: "var(--glass-bg)" }}
-            >
-              {dark ? (
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="4"/>
-                  <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
-                </svg>
-              ) : (
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                </svg>
-              )}
-            </button>
           </div>
-        </div>
+        )}
       </div>
     </header>
   );

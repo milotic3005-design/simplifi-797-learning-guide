@@ -389,7 +389,7 @@ export default function LessonView({
       </header>
 
       {/* Sticky tabs */}
-      <div className="sticky top-[76px] z-10 -mx-4 px-4 sm:-mx-6 sm:px-6 py-2">
+      <div className="sticky top-[60px] z-10 -mx-4 px-4 sm:-mx-6 sm:px-6 py-2">
         <nav className="tabs">
           {TABS.map((t) => (
             <button
