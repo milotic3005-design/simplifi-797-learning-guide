@@ -105,6 +105,8 @@ export default function ModuleCard({
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        aria-controls={"module-details-" + module.number}
         className="text-left flex-1 min-w-0 group"
       >
         <h3
@@ -141,6 +143,8 @@ export default function ModuleCard({
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        aria-controls={"module-details-" + module.number}
         className="mt-4 flex items-center justify-between text-[12px] font-medium pt-3 hairline-t"
         style={{ color: "var(--ink-2)" }}
       >
@@ -160,7 +164,7 @@ export default function ModuleCard({
 
       {/* Expanded body */}
       {open && (
-        <div className="mt-5 fade-in">
+        <div id={"module-details-" + module.number} className="mt-5 fade-in">
           {featured && (
             <div
               className="mb-5 p-4 r-md text-[13.5px] leading-relaxed"
