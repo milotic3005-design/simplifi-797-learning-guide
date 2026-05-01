@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo } from "react";
 import courses from "../data/courses.json";
 import ModuleCard from "../components/ModuleCard";
 import ProgressBar from "../components/ProgressBar";
@@ -25,19 +25,23 @@ export default function ModulesView({
   user,
   onOpenAuth,
 }) {
-  const totalCourses = courses.modules.reduce((n, m) => n + m.courses.length, 0);
-  const completedCount = courses.modules.reduce(
-    (n, m) => n + m.courses.filter((c) => completed[c.id]).length,
-    0
-  );
-  const moduleCounts = courses.modules.map((m) => ({
-    id: m.id,
-    completed: m.courses.filter((c) => completed[c.id]).length,
-    total: m.courses.length,
-  }));
-  const completedModules = moduleCounts.filter(
-    (m) => m.completed === m.total
-  ).length;
+  const { totalCourses, completedCount, completedModules } = useMemo(() => {
+    // ⚡ Bolt: memoize expensive operations to avoid re-calculating progress stats
+    // on every render when unrelated props change.
+    const total = courses.modules.reduce((n, m) => n + m.courses.length, 0);
+    const count = courses.modules.reduce(
+      (n, m) => n + m.courses.filter((c) => completed[c.id]).length,
+      0
+    );
+    const mCounts = courses.modules.map((m) => ({
+      id: m.id,
+      completed: m.courses.filter((c) => completed[c.id]).length,
+      total: m.courses.length,
+    }));
+    const mCompleted = mCounts.filter((m) => m.completed === m.total).length;
+
+    return { totalCourses: total, completedCount: count, completedModules: mCompleted };
+  }, [completed]);
 
   return (
     <div className="space-y-6 sm:space-y-8">
