@@ -6,6 +6,7 @@ import { useProgress } from "./useProgress";
 import AuthModal from "./components/AuthModal";
 import UserMenu from "./components/UserMenu";
 import ModulesView from "./views/ModulesView";
+import ModuleDetailView from "./views/ModuleDetailView";
 import BudView from "./views/BudView";
 import IsoView from "./views/IsoView";
 import StudyPathView from "./views/StudyPathView";
@@ -127,6 +128,7 @@ function Header({ dark, setDark, tab, setTab, inLesson, onHome, user, signOut, o
 
 export default function App() {
   const [tab, setTab]               = useState("modules");
+  const [activeModule, setActiveModule] = useState(null);
   const [activeLesson, setActiveLesson] = useState(null);
   const [dark, setDark]             = useDarkMode();
   const [showAuth, setShowAuth]     = useState(false);
@@ -152,9 +154,10 @@ export default function App() {
     if (user) setShowAuth(false);
   }, [user]);
 
-  const handleTab = (id) => { setActiveLesson(null); setTab(id); };
+  const handleTab = (id) => { setActiveLesson(null); setActiveModule(null); setTab(id); };
   const handleHome = () => {
     setActiveLesson(null);
+    setActiveModule(null);
     setTab("modules");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -188,6 +191,13 @@ export default function App() {
             updateLesson={updateLesson}
             markStarted={markStarted}
           />
+        ) : activeModule != null && tab === "modules" ? (
+          <ModuleDetailView
+            moduleId={activeModule}
+            onBack={() => setActiveModule(null)}
+            onOpenLesson={(id) => setActiveLesson(id)}
+            completed={completed}
+          />
         ) : (
           <>
             {tab === "modules" && (
@@ -195,7 +205,7 @@ export default function App() {
                 completed={completed}
                 toggle={toggle}
                 reset={reset}
-                onOpenLesson={(id) => setActiveLesson(id)}
+                onOpenModule={(id) => { setActiveModule(id); window.scrollTo({ top: 0, behavior: "instant" }); }}
                 lessonState={lessonState}
                 user={user}
                 onOpenAuth={() => setShowAuth(true)}
