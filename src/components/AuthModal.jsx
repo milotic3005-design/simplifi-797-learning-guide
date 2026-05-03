@@ -98,10 +98,11 @@ export default function AuthModal({ onClose, signIn, signUp, signInAnonymously }
           {/* ── email form ── */}
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-[10px] font-bold tracking-widest uppercase mb-1.5" style={{ color: "var(--ink-3)" }}>
+              <label htmlFor="auth-email" className="block text-[10px] font-bold tracking-widest uppercase mb-1.5" style={{ color: "var(--ink-3)" }}>
                 Email
               </label>
               <input
+                id="auth-email"
                 ref={emailRef}
                 type="email"
                 required
@@ -114,10 +115,11 @@ export default function AuthModal({ onClose, signIn, signUp, signInAnonymously }
             </div>
 
             <div>
-              <label className="block text-[10px] font-bold tracking-widest uppercase mb-1.5" style={{ color: "var(--ink-3)" }}>
+              <label htmlFor="auth-password" className="block text-[10px] font-bold tracking-widest uppercase mb-1.5" style={{ color: "var(--ink-3)" }}>
                 Password
               </label>
               <input
+                id="auth-password"
                 type="password"
                 required
                 value={password}
@@ -130,10 +132,11 @@ export default function AuthModal({ onClose, signIn, signUp, signInAnonymously }
 
             {mode === "signup" && (
               <div className="fade-in">
-                <label className="block text-[10px] font-bold tracking-widest uppercase mb-1.5" style={{ color: "var(--ink-3)" }}>
+                <label htmlFor="auth-confirm" className="block text-[10px] font-bold tracking-widest uppercase mb-1.5" style={{ color: "var(--ink-3)" }}>
                   Confirm password
                 </label>
                 <input
+                  id="auth-confirm"
                   type="password"
                   required
                   value={confirm}
