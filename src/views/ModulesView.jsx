@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React from "react";
 import courses from "../data/courses.json";
 import ModuleCard from "../components/ModuleCard";
 import ProgressBar from "../components/ProgressBar";
@@ -16,6 +16,9 @@ const SPAN_HINTS = {
   8: 4,  // HD — featured wide
 };
 
+// Bolt Optimization: Calculate totalCourses once outside the component since it's static
+const totalCourses = courses.modules.reduce((n, m) => n + m.courses.length, 0);
+
 export default function ModulesView({
   completed,
   toggle,
@@ -25,19 +28,27 @@ export default function ModulesView({
   user,
   onOpenAuth,
 }) {
-  const totalCourses = courses.modules.reduce((n, m) => n + m.courses.length, 0);
-  const completedCount = courses.modules.reduce(
-    (n, m) => n + m.courses.filter((c) => completed[c.id]).length,
-    0
-  );
-  const moduleCounts = courses.modules.map((m) => ({
-    id: m.id,
-    completed: m.courses.filter((c) => completed[c.id]).length,
-    total: m.courses.length,
-  }));
-  const completedModules = moduleCounts.filter(
-    (m) => m.completed === m.total
-  ).length;
+  // Bolt Optimization: Consolidate multiple map/filter/reduce passes into a single loop
+  // memoized to prevent recalculation on every render unless 'completed' changes.
+  const { completedCount, completedModules } = React.useMemo(() => {
+    let completedCount = 0;
+    let completedModules = 0;
+
+    for (const m of courses.modules) {
+      let moduleCompletedCourses = 0;
+      for (const c of m.courses) {
+        if (completed[c.id]) {
+          moduleCompletedCourses++;
+          completedCount++;
+        }
+      }
+      if (moduleCompletedCourses === m.courses.length) {
+        completedModules++;
+      }
+    }
+
+    return { completedCount, completedModules };
+  }, [completed]);
 
   return (
     <div className="space-y-6 sm:space-y-8">
