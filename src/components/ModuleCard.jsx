@@ -219,6 +219,7 @@ export default function ModuleCard({
                       onChange={() => onToggle(course.id)}
                       className="checkbox"
                       onClick={(e) => e.stopPropagation()}
+                      aria-label={`Mark ${course.title} as ${done ? "incomplete" : "complete"}`}
                     />
                     <button
                       type="button"
