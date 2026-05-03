@@ -535,3 +535,347 @@ body {
 .hairline-b { border-bottom: 1px solid var(--hairline, var(--line)); }
 :root { --hairline: rgba(15,17,35,0.08); }
 .dark { --hairline: rgba(255,255,255,0.10); }
+
+/* =============================================================
+   ▼▼▼ EDITORIAL DESIGN SYSTEM (lesson view) ▼▼▼
+   Warm-paper, serif, medical-journal aesthetic. Tokens scoped
+   under `.editorial` so they don't bleed into the bento UI.
+   ============================================================= */
+.editorial {
+  /* Surfaces — paper */
+  --paper:        #faf7f2;     /* warm off-white book stock */
+  --paper-2:      #f3eee5;     /* deeper page tone */
+  --paper-edge:   #ece6da;
+  --rule:         #d9d2c3;
+  --rule-soft:    #e6dfd0;
+
+  /* Ink */
+  --ed-ink:       #1a1816;
+  --ed-ink-2:     #4a4742;
+  --ed-ink-3:     #8a857a;
+  --ed-ink-4:     #b6b0a3;
+
+  /* Accent — oxblood */
+  --ed-accent:      #8a2a2a;
+  --ed-accent-soft: #f4e8e3;
+  --ed-accent-deep: #5e1c1c;
+
+  /* Module theme accents (refined editorial palette) */
+  --ed-info:         #2d4a8a;
+  --ed-info-soft:    #e3e9f3;
+  --ed-success:      #2f5d3a;
+  --ed-success-soft: #e3ece4;
+  --ed-warning:      #8a5a1a;
+  --ed-warning-soft: #f3ead8;
+  --ed-danger:       #8a2a2a;
+  --ed-danger-soft:  #f4e3e0;
+  --ed-neutral:      #4a4742;
+  --ed-neutral-soft: #ece6da;
+
+  /* Highlighter (editorial study-marker) */
+  --ed-hl:    #f7e391;
+  --ed-hl-2:  #c5e3a8;
+  --ed-hl-3:  #f0c1c1;
+
+  /* Type */
+  --ed-serif: "Source Serif 4", "Source Serif Pro", "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --ed-sans:  "Inter Tight", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --ed-mono:  "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  background: var(--paper);
+  color: var(--ed-ink);
+  font-family: var(--ed-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.dark .editorial {
+  --paper:        #15130f;
+  --paper-2:      #1c1a16;
+  --paper-edge:   #25221c;
+  --rule:         #2f2c25;
+  --rule-soft:    #25221c;
+  --ed-ink:       #f3ede0;
+  --ed-ink-2:     #c8c1b0;
+  --ed-ink-3:     #847e6f;
+  --ed-ink-4:     #4d4a42;
+  --ed-accent:      #d97a6c;
+  --ed-accent-soft: #2a1d1a;
+  --ed-accent-deep: #f0a594;
+  --ed-info:         #8aa9d6;
+  --ed-info-soft:    #1a2235;
+  --ed-success:      #8fb89a;
+  --ed-success-soft: #1a2620;
+  --ed-warning:      #d6ab78;
+  --ed-warning-soft: #2a2218;
+  --ed-danger:       #d97a6c;
+  --ed-danger-soft:  #2a1d1a;
+  --ed-neutral:      #c8c1b0;
+  --ed-neutral-soft: #25221c;
+  --ed-hl:    #6b5a1f;
+  --ed-hl-2:  #2f4a2a;
+  --ed-hl-3:  #5a2a2a;
+}
+
+/* ---- Typography utilities ---- */
+.ed-serif       { font-family: var(--ed-serif); font-feature-settings: "lnum"; }
+.ed-sans        { font-family: var(--ed-sans); }
+.ed-mono        { font-family: var(--ed-mono); }
+.ed-num         { font-feature-settings: "tnum", "lnum"; font-variant-numeric: tabular-nums lining-nums; }
+
+.ed-eyebrow {
+  font-family: var(--ed-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ed-ink-3);
+}
+.ed-eyebrow-accent {
+  font-family: var(--ed-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.ed-smallcaps {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
+/* ---- Drop cap (first letter of first paragraph) ---- */
+.ed-dropcap::first-letter {
+  font-family: var(--ed-serif);
+  font-weight: 600;
+  float: left;
+  font-size: 5.4em;
+  line-height: 0.85;
+  margin: 0.05em 0.08em -0.05em 0;
+  color: var(--ed-ink);
+  font-feature-settings: "lnum";
+}
+
+/* ---- Prose paragraphs ---- */
+.ed-prose p {
+  font-family: var(--ed-serif);
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--ed-ink);
+  margin: 0 0 1.2em 0;
+  text-wrap: pretty;
+  hanging-punctuation: first last;
+}
+.ed-prose p + p { text-indent: 1.4em; margin-top: -0.3em; }
+
+/* ---- Highlighters ---- */
+.ed-hl     { background: linear-gradient(180deg, transparent 55%, var(--ed-hl) 55%, var(--ed-hl) 92%, transparent 92%); padding: 0 2px; }
+.ed-hl-g   { background: linear-gradient(180deg, transparent 55%, var(--ed-hl-2) 55%, var(--ed-hl-2) 92%, transparent 92%); padding: 0 2px; }
+.ed-hl-p   { background: linear-gradient(180deg, transparent 55%, var(--ed-hl-3) 55%, var(--ed-hl-3) 92%, transparent 92%); padding: 0 2px; }
+
+/* ---- Term tooltip ---- */
+.ed-term {
+  border-bottom: 1.5px dotted var(--ed-accent);
+  cursor: help;
+  position: relative;
+  font-style: italic;
+  color: var(--ed-ink);
+  font-family: var(--ed-serif);
+}
+.ed-term:hover { color: var(--ed-accent); }
+.ed-term-tip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  background: var(--ed-ink);
+  color: var(--paper);
+  padding: 14px 16px;
+  border-radius: 4px;
+  font-family: var(--ed-sans);
+  font-size: 13px;
+  line-height: 1.5;
+  font-style: normal;
+  box-shadow: 0 8px 24px -8px rgba(0,0,0,0.3);
+  z-index: 50;
+  pointer-events: none;
+}
+.ed-term-tip::after {
+  content: "";
+  position: absolute;
+  top: 100%; left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--ed-ink);
+}
+.ed-term-tip .label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ed-accent-deep);
+  margin-bottom: 4px; display: block;
+}
+
+/* ---- Editorial buttons ---- */
+.ed-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--ed-sans);
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 10px 18px;
+  border-radius: 0;
+  border: 1px solid var(--ed-ink);
+  background: var(--ed-ink);
+  color: var(--paper);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.ed-btn:hover { background: var(--ed-accent); border-color: var(--ed-accent); }
+.ed-btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--ed-sans);
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 9px 16px;
+  border-radius: 0;
+  border: 1px solid var(--rule);
+  background: transparent;
+  color: var(--ed-ink);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.ed-btn-ghost:hover { border-color: var(--ed-ink); }
+.ed-btn-link {
+  font-family: var(--ed-sans);
+  font-size: 13px; font-weight: 600;
+  background: none; border: 0; padding: 0;
+  color: var(--ed-ink);
+  cursor: pointer;
+  border-bottom: 1px solid currentColor;
+}
+.ed-btn-link:hover { color: var(--ed-accent); }
+
+/* ---- Numerals ---- */
+.ed-numeral {
+  font-family: var(--ed-serif);
+  font-feature-settings: "lnum";
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ed-accent);
+}
+
+/* ---- Pull quote ---- */
+.ed-pullquote {
+  font-family: var(--ed-serif);
+  font-size: 28px;
+  line-height: 1.25;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ed-ink);
+  border-left: 2px solid var(--ed-accent);
+  padding: 4px 0 4px 24px;
+  margin: 0;
+  text-wrap: balance;
+}
+
+/* ---- Self-check checkpoint ---- */
+.ed-checkpoint {
+  background: var(--paper-2);
+  border-top: 1px solid var(--ed-ink);
+  border-bottom: 1px solid var(--ed-ink);
+  padding: 28px;
+  margin: 32px 0;
+  position: relative;
+}
+.ed-checkpoint::before {
+  content: "";
+  position: absolute;
+  top: -1px; left: 0; width: 80px; height: 3px;
+  background: var(--ed-accent);
+}
+.ed-reveal {
+  border-left: 2px solid var(--ed-accent);
+  padding: 12px 18px;
+  background: var(--ed-accent-soft);
+  margin-top: 12px;
+  font-family: var(--ed-sans);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ed-ink);
+}
+
+/* ---- Reading rail ---- */
+.ed-rail {
+  position: sticky;
+  top: 28px;
+  display: flex;
+  flex-direction: column;
+}
+.ed-rail-section {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  align-items: start;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--rule-soft);
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+  opacity: 0.55;
+  background: none;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  text-align: left;
+  width: 100%;
+  font-family: var(--ed-sans);
+}
+.ed-rail-section:last-child { border-bottom: 0; }
+.ed-rail-section:hover { opacity: 1; }
+.ed-rail-section[data-state="active"] { opacity: 1; }
+.ed-rail-section[data-state="done"] { opacity: 0.85; }
+.ed-rail-num {
+  font-family: var(--ed-serif);
+  font-feature-settings: "lnum";
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ed-ink-3);
+  padding-top: 1px;
+}
+.ed-rail-section[data-state="active"] .ed-rail-num { color: var(--ed-accent); }
+.ed-rail-section[data-state="done"] .ed-rail-num { color: var(--ed-ink); text-decoration: line-through; text-decoration-color: var(--ed-ink-3); }
+.ed-rail-title {
+  font-family: var(--ed-sans);
+  font-size: 13px;
+  line-height: 1.35;
+  color: var(--ed-ink);
+  font-weight: 500;
+}
+.ed-rail-section[data-state="active"] .ed-rail-title { font-weight: 600; }
+
+/* ---- Tag / chip (editorial) ---- */
+.ed-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--ed-sans);
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ed-ink-2);
+  padding: 5px 10px;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+}
+
+/* ---- Theme accent helpers (used per module) ---- */
+.editorial.theme-info    { --t-accent: var(--ed-info);    --t-soft: var(--ed-info-soft); }
+.editorial.theme-success { --t-accent: var(--ed-success); --t-soft: var(--ed-success-soft); }
+.editorial.theme-warning { --t-accent: var(--ed-warning); --t-soft: var(--ed-warning-soft); }
+.editorial.theme-danger  { --t-accent: var(--ed-danger);  --t-soft: var(--ed-danger-soft); }
+.editorial.theme-neutral { --t-accent: var(--ed-neutral); --t-soft: var(--ed-neutral-soft); }
+
+/* Animations local to editorial */
+@keyframes ed-fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+.ed-fade-in { animation: ed-fadeIn 0.4s ease both; }
+
+/* Selection inside editorial */
+.editorial ::selection { background: var(--ed-hl); color: var(--ed-ink); }
